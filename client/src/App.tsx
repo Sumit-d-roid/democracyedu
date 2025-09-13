@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -5,12 +6,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ProgressProvider } from "@/contexts/ProgressContext";
+import AchievementNotification from "@/components/AchievementNotification";
+import { Achievement } from "@shared/achievements";
 import Header from "@/components/Header";
 import Home from "@/pages/Home";
 import Lessons from "@/pages/Lessons";
 import LessonDetail from "@/pages/LessonDetail";
 import Quiz from "@/pages/Quiz";
 import Progress from "@/pages/Progress";
+import Achievements from "@/pages/Achievements";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,22 +25,43 @@ function Router() {
       <Route path="/lessons/:lessonId" component={LessonDetail} />
       <Route path="/quiz" component={Quiz} />
       <Route path="/progress" component={Progress} />
+      <Route path="/achievements" component={Achievements} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
 function App() {
+  const [achievementNotification, setAchievementNotification] = useState<Achievement | null>(null);
+
+  const handleAchievementUnlocked = (achievement: Achievement) => {
+    setAchievementNotification(achievement);
+  };
+
+  const handleCloseNotification = () => {
+    setAchievementNotification(null);
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LanguageProvider>
-          <ProgressProvider>
+          <ProgressProvider onAchievementUnlocked={handleAchievementUnlocked}>
             <div className="min-h-screen bg-background">
               <Header />
               <Router />
             </div>
             <Toaster />
+            
+            {/* Achievement Notification */}
+            {achievementNotification && (
+              <AchievementNotification
+                achievement={achievementNotification}
+                onClose={handleCloseNotification}
+                autoClose={true}
+                duration={6000}
+              />
+            )}
           </ProgressProvider>
         </LanguageProvider>
       </TooltipProvider>

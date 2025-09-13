@@ -3,6 +3,12 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    // Achievement category colors - prevent purging of dynamic classes
+    'bg-blue-100', 'bg-green-100', 'bg-purple-100', 'bg-orange-100',
+    'text-blue-800', 'text-green-800', 'text-purple-800', 'text-orange-800',
+    'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-orange-500',
+  ],
   theme: {
     extend: {
       borderRadius: {

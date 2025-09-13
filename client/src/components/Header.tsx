@@ -18,6 +18,7 @@ export default function Header() {
     { path: '/', key: 'nav.home' },
     { path: '/lessons', key: 'nav.lessons' },
     { path: '/quiz', key: 'nav.quiz' },
+    { path: '/achievements', key: 'nav.achievements' },
     { path: '/progress', key: 'nav.progress' },
   ];
 
