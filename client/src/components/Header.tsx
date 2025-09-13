@@ -1,3 +1,4 @@
+// ...existing code...
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useProgress } from '@/contexts/ProgressContext';
 
 export default function Header() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  function toggleTheme() {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.documentElement.classList.toggle('light', newTheme === 'light');
+  }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { progress } = useProgress();
@@ -49,6 +57,13 @@ export default function Header() {
 
         {/* Points and Language Toggle */}
         <div className="flex items-center space-x-4">
+          <button
+            onClick={toggleTheme}
+            className="px-2 py-1 rounded border"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? '🌞' : '🌙'}
+          </button>
           <Badge variant="secondary" className="hidden sm:flex items-center gap-1" data-testid="points-badge">
             <span className="text-xs">🏆</span>
             {progress.totalPoints}
