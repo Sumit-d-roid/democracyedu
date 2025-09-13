@@ -11,6 +11,8 @@ interface QuizQuestion {
   question: string;
   options: string[];
   correctAnswer: number;
+  explanation?: string;
+  difficulty?: 'easy' | 'medium' | 'hard';
 }
 
 interface QuizCardProps {
@@ -138,15 +140,29 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
         {showResult && (
           <div className="p-4 rounded-md border">
             {selectedAnswer === currentQuestion.correctAnswer ? (
-              <p className="text-green-600 font-medium flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2" />
-                {t('quiz.correct')}
-              </p>
+              <div className="space-y-2">
+                <p className="text-green-600 font-medium flex items-center">
+                  <CheckCircle className="w-5 h-5 mr-2" />
+                  {t('quiz.correct')}
+                </p>
+                {currentQuestion.explanation && (
+                  <p className="text-sm text-muted-foreground">
+                    {currentQuestion.explanation}
+                  </p>
+                )}
+              </div>
             ) : (
-              <p className="text-red-600 font-medium flex items-center">
-                <XCircle className="w-5 h-5 mr-2" />
-                {t('quiz.incorrect')}
-              </p>
+              <div className="space-y-2">
+                <p className="text-red-600 font-medium flex items-center">
+                  <XCircle className="w-5 h-5 mr-2" />
+                  {t('quiz.incorrect')}
+                </p>
+                {currentQuestion.explanation && (
+                  <p className="text-sm text-muted-foreground">
+                    {currentQuestion.explanation}
+                  </p>
+                )}
+              </div>
             )}
           </div>
         )}

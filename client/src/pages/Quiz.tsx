@@ -2,59 +2,15 @@ import { useState } from 'react';
 import QuizCard from '@/components/QuizCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { quizContents } from '@shared/quizContent';
 
 export default function Quiz() {
   const { t } = useLanguage();
   const [selectedQuiz, setSelectedQuiz] = useState<string | null>(null);
 
-  // todo: remove mock functionality - replace with real quiz data
-  const quizzes = [
-    {
-      id: 'constitution-basics',
-      title: 'Constitution Basics',
-      description: 'Test your knowledge of Nepal\'s Constitution fundamentals',
-      questions: [
-        {
-          id: '1',
-          question: 'What year was Nepal\'s current Constitution adopted?',
-          options: ['2015', '2016', '2017', '2018'],
-          correctAnswer: 0
-        },
-        {
-          id: '2', 
-          question: 'How many provinces does Nepal have according to the Constitution?',
-          options: ['5', '6', '7', '8'],
-          correctAnswer: 2
-        },
-        {
-          id: '3',
-          question: 'What is the highest court in Nepal?',
-          options: ['High Court', 'Supreme Court', 'Constitutional Court', 'Federal Court'],
-          correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 'fundamental-rights',
-      title: 'Fundamental Rights',
-      description: 'Quiz on fundamental rights guaranteed by the Constitution',
-      questions: [
-        {
-          id: '1',
-          question: 'Which article deals with the Right to Equality?',
-          options: ['Article 15', 'Article 16', 'Article 17', 'Article 18'],
-          correctAnswer: 3
-        },
-        {
-          id: '2',
-          question: 'The Right to Information is guaranteed under which article?',
-          options: ['Article 27', 'Article 28', 'Article 29', 'Article 30'],
-          correctAnswer: 0
-        }
-      ]
-    }
-  ];
+  const quizzes = Object.values(quizContents);
 
   const selectedQuizData = quizzes.find(quiz => quiz.id === selectedQuiz);
 
@@ -91,9 +47,12 @@ export default function Quiz() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">{quiz.description}</p>
-                <p className="text-sm text-muted-foreground">
-                  {quiz.questions.length} questions
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-muted-foreground">
+                    {quiz.questions.length} questions
+                  </p>
+                  <Badge variant="outline">{quiz.category}</Badge>
+                </div>
                 <Button 
                   onClick={() => setSelectedQuiz(quiz.id)}
                   className="w-full"

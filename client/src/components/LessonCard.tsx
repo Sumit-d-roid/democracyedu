@@ -7,13 +7,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LessonCardProps {
   id: string;
-  titleKey: string;
+  title: string;
   description: string;
   icon: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
+  estimatedTime?: string;
 }
 
-export default function LessonCard({ id, titleKey, description, icon, difficulty }: LessonCardProps) {
+export default function LessonCard({ id, title, description, icon, difficulty, estimatedTime }: LessonCardProps) {
   const { progress, markLessonComplete, addPoints } = useProgress();
   const { t } = useLanguage();
   const isCompleted = progress.completedLessons.includes(id);
@@ -51,8 +52,13 @@ export default function LessonCard({ id, titleKey, description, icon, difficulty
         </div>
         
         <h3 className="text-xl font-semibold mb-3" data-testid={`text-lesson-title-${id}`}>
-          {t(titleKey)}
+          {title}
         </h3>
+        {estimatedTime && (
+          <p className="text-sm text-muted-foreground mb-2">
+            ⏱️ {estimatedTime}
+          </p>
+        )}
         <p className="text-muted-foreground mb-4 line-clamp-2">
           {description}
         </p>

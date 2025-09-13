@@ -1,35 +1,11 @@
 import LessonCard from '@/components/LessonCard';
 import { useLanguage } from '@/contexts/LanguageContext';
-import fundamentalRightsIcon from '@assets/generated_images/Fundamental_Rights_Lesson_Icon_aa971e94.png';
-import governmentStructureIcon from '@assets/generated_images/Government_Structure_Lesson_Icon_b84c9620.png';
+import { lessonContents } from '@shared/lessonContent';
 
 export default function Lessons() {
   const { t } = useLanguage();
 
-  // todo: remove mock functionality - replace with real lesson data
-  const lessons = [
-    {
-      id: 'fundamental-rights',
-      titleKey: 'lessons.fundamental-rights',
-      description: 'Learn about the fundamental rights guaranteed by Nepal\'s Constitution, including civil liberties and human rights protections.',
-      icon: '⚖️',
-      difficulty: 'beginner' as const,
-    },
-    {
-      id: 'government-structure',
-      titleKey: 'lessons.government-structure', 
-      description: 'Understand the structure of Nepal\'s government including the executive, legislative, and judicial branches.',
-      icon: '🏛️',
-      difficulty: 'intermediate' as const,
-    },
-    {
-      id: 'federal-system',
-      titleKey: 'lessons.federal-system',
-      description: 'Explore Nepal\'s federal system with provinces, local governments, and power distribution.',
-      icon: '🗺️',
-      difficulty: 'advanced' as const,
-    },
-  ];
+  const lessons = Object.values(lessonContents);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -43,10 +19,11 @@ export default function Lessons() {
             <LessonCard
               key={lesson.id}
               id={lesson.id}
-              titleKey={lesson.titleKey}
+              title={lesson.title}
               description={lesson.description}
               icon={lesson.icon}
               difficulty={lesson.difficulty}
+              estimatedTime={lesson.estimatedTime}
             />
           ))}
         </div>
