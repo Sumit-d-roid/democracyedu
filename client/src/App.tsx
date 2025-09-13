@@ -1,3 +1,4 @@
+import { BookmarksProvider } from '@/contexts/BookmarksContext';
 import { useState } from "react";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
@@ -47,21 +48,21 @@ function App() {
       <TooltipProvider>
         <LanguageProvider>
           <ProgressProvider onAchievementUnlocked={handleAchievementUnlocked}>
-            <div className="min-h-screen bg-background">
-              <Header />
-              <Router />
-            </div>
-            <Toaster />
-            
-            {/* Achievement Notification */}
-            {achievementNotification && (
-              <AchievementNotification
-                achievement={achievementNotification}
-                onClose={handleCloseNotification}
-                autoClose={true}
-                duration={6000}
-              />
-            )}
+            <BookmarksProvider>
+              <div className="min-h-screen bg-background">
+                <Header />
+                <Router />
+              </div>
+              <Toaster />
+              {/* Achievement Notification */}
+              {achievementNotification && (
+                <AchievementNotification
+                  achievement={achievementNotification}
+                  onClose={handleCloseNotification}
+                  autoClose={true}
+                />
+              )}
+            </BookmarksProvider>
           </ProgressProvider>
         </LanguageProvider>
       </TooltipProvider>
