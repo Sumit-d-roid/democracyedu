@@ -3,6 +3,7 @@ import { createContext, useContext, useState, ReactNode, useEffect } from 'react
 interface ProgressData {
   totalPoints: number;
   completedLessons: string[];
+  completedSections: Record<string, string[]>; // lessonId -> sectionIds[]
   quizScores: Record<string, number>;
 }
 
@@ -10,6 +11,9 @@ interface ProgressContextType {
   progress: ProgressData;
   addPoints: (points: number) => void;
   markLessonComplete: (lessonId: string) => void;
+  markSectionComplete: (lessonId: string, sectionId: string) => void;
+  isSectionComplete: (lessonId: string, sectionId: string) => boolean;
+  isLessonComplete: (lessonId: string) => boolean;
   recordQuizScore: (quizId: string, score: number) => void;
   resetProgress: () => void;
 }
@@ -17,6 +21,7 @@ interface ProgressContextType {
 const defaultProgress: ProgressData = {
   totalPoints: 0,
   completedLessons: [],
+  completedSections: {},
   quizScores: {},
 };
 
@@ -58,6 +63,32 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }));
   };
 
+  const markSectionComplete = (lessonId: string, sectionId: string) => {
+    setProgress(prev => {
+      const lessonSections = prev.completedSections[lessonId] || [];
+      const newSections = lessonSections.includes(sectionId) 
+        ? lessonSections 
+        : [...lessonSections, sectionId];
+      
+      return {
+        ...prev,
+        completedSections: {
+          ...prev.completedSections,
+          [lessonId]: newSections
+        }
+      };
+    });
+  };
+
+  const isSectionComplete = (lessonId: string, sectionId: string) => {
+    const lessonSections = progress.completedSections[lessonId] || [];
+    return lessonSections.includes(sectionId);
+  };
+
+  const isLessonComplete = (lessonId: string) => {
+    return progress.completedLessons.includes(lessonId);
+  };
+
   const resetProgress = () => {
     setProgress(defaultProgress);
   };
@@ -67,6 +98,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       progress, 
       addPoints, 
       markLessonComplete, 
+      markSectionComplete,
+      isSectionComplete,
+      isLessonComplete,
       recordQuizScore, 
       resetProgress 
     }}>

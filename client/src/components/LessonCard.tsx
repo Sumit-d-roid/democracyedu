@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Play } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocation } from 'wouter';
 
 interface LessonCardProps {
   id: string;
@@ -15,16 +16,13 @@ interface LessonCardProps {
 }
 
 export default function LessonCard({ id, title, description, icon, difficulty, estimatedTime }: LessonCardProps) {
-  const { progress, markLessonComplete, addPoints } = useProgress();
+  const { isLessonComplete } = useProgress();
   const { t } = useLanguage();
-  const isCompleted = progress.completedLessons.includes(id);
+  const [, setLocation] = useLocation();
+  const isCompleted = isLessonComplete(id);
 
   const handleStartLesson = () => {
-    console.log(`Starting lesson: ${id}`);
-    if (!isCompleted) {
-      markLessonComplete(id);
-      addPoints(50); // Award points for completing lesson
-    }
+    setLocation(`/lessons/${id}`);
   };
 
   const difficultyColors = {
