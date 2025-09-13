@@ -45,7 +45,7 @@ interface ProgressProviderProps {
 
 export function ProgressProvider({ children, onAchievementUnlocked }: ProgressProviderProps) {
   const [progress, setProgress] = useState<ProgressData>(() => {
-    const saved = localStorage.getItem('democracyedu-progress');
+  const saved = localStorage.getItem('education-for-democracy-progress');
     if (saved) {
       const parsedProgress = JSON.parse(saved);
       // Migrate old progress data to include new fields
@@ -60,7 +60,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   });
 
   useEffect(() => {
-    localStorage.setItem('democracyedu-progress', JSON.stringify(progress));
+  localStorage.setItem('education-for-democracy-progress', JSON.stringify(progress));
   }, [progress]);
 
   const addPoints = (points: number) => {

@@ -22,7 +22,7 @@ const translations = {
     'hero.cta': 'Start Learning',
     
     // Features
-    'features.title': 'Why Choose DemocracyEdu?',
+  'features.title': 'Why Choose Education for Democracy?',
     'features.gamified.title': 'Gamified Learning',
     'features.gamified.desc': 'Earn points and unlock achievements as you learn',
     'features.bilingual.title': 'Bilingual Support',
@@ -125,7 +125,7 @@ const translations = {
     'hero.cta': 'सिक्न सुरु गर्नुहोस्',
     
     // Features
-    'features.title': 'किन DemocracyEdu छनोट गर्ने?',
+  'features.title': 'किन Education for Democracy छनोट गर्ने?',
     'features.gamified.title': 'खेलकुद शैली',
     'features.gamified.desc': 'सिक्दै अंक कमाउनुहोस् र उपलब्धिहरू अनलक गर्नुहोस्',
     'features.bilingual.title': 'द्विभाषिक समर्थन',
@@ -221,12 +221,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('democracyedu-language');
+  const saved = localStorage.getItem('education-for-democracy-language');
     return (saved as Language) || 'en';
   });
 
   useEffect(() => {
-    localStorage.setItem('democracyedu-language', language);
+  localStorage.setItem('education-for-democracy-language', language);
   }, [language]);
 
   const toggleLanguage = () => {

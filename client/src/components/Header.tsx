@@ -29,7 +29,7 @@ export default function Header() {
           <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">DE</span>
           </div>
-          <span className="font-bold text-lg">DemocracyEdu</span>
+          <span className="font-bold text-lg">Education for Democracy</span>
         </Link>
 
         {/* Desktop Navigation */}
