@@ -10,13 +10,14 @@ import { ProgressProvider } from "@/contexts/ProgressContext";
 import AchievementNotification from "@/components/AchievementNotification";
 import { Achievement } from "@shared/achievements";
 import Header from "@/components/Header";
-import Home from "@/pages/Home";
-import Lessons from "@/pages/Lessons";
-import LessonDetail from "@/pages/LessonDetail";
-import Quiz from "@/pages/Quiz";
-import Progress from "@/pages/Progress";
-import Achievements from "@/pages/Achievements";
-import NotFound from "@/pages/not-found";
+import Home from '@/pages/Home';
+import Lessons from '@/pages/Lessons';
+import LessonDetail from '@/pages/LessonDetail';
+import Quiz from '@/pages/Quiz';
+import Progress from '@/pages/Progress';
+import Achievements from '@/pages/Achievements';
+import GlossaryPage from '@/pages/Glossary';
+import NotFound from '@/pages/not-found';
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/quiz" component={Quiz} />
       <Route path="/progress" component={Progress} />
       <Route path="/achievements" component={Achievements} />
+      <Route path="/glossary" component={GlossaryPage} />
       <Route component={NotFound} />
     </Switch>
   );

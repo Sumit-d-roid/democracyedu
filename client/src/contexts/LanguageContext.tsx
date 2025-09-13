@@ -15,6 +15,7 @@ const translations = {
     'nav.lessons': 'Lessons',
     'nav.quiz': 'Quiz',
     'nav.progress': 'Progress',
+      'nav.glossary': 'Glossary',
     
     // Hero Section
     'hero.title': 'Learn Nepal\'s Constitution',
@@ -42,6 +43,12 @@ const translations = {
       'about.title': 'About Education for Democracy',
       'about.description': "Education for Democracy is an interactive platform that helps young people learn and understand Nepal’s Constitution. Through bite-sized lessons and engaging activities, users explore their fundamental rights, civic duties, and the structure of government, gaining a deeper understanding of how the Constitution protects citizens and shapes governance.",
       'about.mission': "Our mission is to make constitutional education accessible, engaging, and practical, empowering the next generation to become informed, responsible, and active citizens.",
+  // Timeline Section
+  'timeline.title': 'Nepal Constitutional Timeline',
+  // Glossary Section
+  'glossary.title': 'Glossary of Constitutional Terms',
+  'glossary.search': 'Search terms...',
+  'glossary.noresults': 'No matching terms found.',
   // Contact Section
   'contact.title': 'Contact / Feedback',
   'contact.description': 'Have a suggestion, question, or feedback? Fill out the form below to reach us.',
@@ -129,6 +136,7 @@ const translations = {
     'nav.lessons': 'पाठहरू',
     'nav.quiz': 'क्विज',
     'nav.progress': 'प्रगति',
+      'nav.glossary': 'शब्दकोश',
     
     // Hero Section
     'hero.title': 'नेपालको संविधान सिक्नुहोस्',
@@ -158,6 +166,12 @@ const translations = {
       'about.title': 'Education for Democracy बारेमा',
       'about.description': "Education for Democracy एक अन्तरक्रियात्मक प्लेटफर्म हो जसले युवाहरूलाई नेपालको संविधान सिक्न र बुझ्न मद्दत गर्छ। छोटो पाठ र आकर्षक गतिविधिहरूको माध्यमबाट, प्रयोगकर्ताहरूले मौलिक अधिकार, नागरिक कर्तव्य, र सरकारको संरचना अन्वेषण गर्छन्, जसले संविधानले नागरिकलाई कसरी संरक्षण गर्छ र शासनलाई कसरी आकार दिन्छ भन्ने गहिरो समझ प्रदान गर्छ।",
       'about.mission': "हाम्रो उद्देश्य संविधानिक शिक्षालाई पहुँचयोग्य, आकर्षक, र व्यवहारिक बनाउनु हो, जसले नयाँ पुस्तालाई जानकार, जिम्मेवार, र सक्रिय नागरिक बन्न सशक्त बनाउँछ।",
+  // Timeline Section
+  'timeline.title': 'नेपालको संविधानिक समयरेखा',
+  // Glossary Section
+  'glossary.title': 'संवैधानिक शब्दकोश',
+  'glossary.search': 'शब्द खोज्नुहोस्...',
+  'glossary.noresults': 'मिल्दो शब्द फेला परेन।',
   // Contact Section
   'contact.title': 'सम्पर्क / प्रतिक्रिया',
   'contact.description': 'के तपाईंको सुझाव, प्रश्न, वा प्रतिक्रिया छ? तलको फारम भरी हामीलाई जानकारी दिनुहोस्।',

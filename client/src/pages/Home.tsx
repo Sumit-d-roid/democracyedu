@@ -1,3 +1,5 @@
+import Glossary from '@/components/Glossary';
+// import Timeline from '@/components/Timeline';
 import { useState } from 'react';
 function ContactSection() {
   const { t } = useLanguage();
@@ -83,7 +85,9 @@ export default function Home() {
     <main>
       <HeroSection />
       <FeaturesSection />
-      <AboutSection />
+  <AboutSection />
+  {/* Glossary removed from homepage. Will be added to a separate page. */}
+  {/* <Timeline /> */}
       <ContactSection />
     </main>
   );

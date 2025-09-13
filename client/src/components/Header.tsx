@@ -28,6 +28,7 @@ export default function Header() {
     { path: '/quiz', key: 'nav.quiz' },
     { path: '/achievements', key: 'nav.achievements' },
     { path: '/progress', key: 'nav.progress' },
+    { path: '/glossary', key: 'nav.glossary' },
   ];
 
   return (
