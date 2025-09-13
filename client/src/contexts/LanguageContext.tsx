@@ -39,6 +39,17 @@ const translations = {
     'lessons.completed': 'Completed',
     
     // Quiz
+      'about.title': 'About Education for Democracy',
+      'about.description': "Education for Democracy is an interactive platform that helps young people learn and understand Nepal’s Constitution. Through bite-sized lessons and engaging activities, users explore their fundamental rights, civic duties, and the structure of government, gaining a deeper understanding of how the Constitution protects citizens and shapes governance.",
+      'about.mission': "Our mission is to make constitutional education accessible, engaging, and practical, empowering the next generation to become informed, responsible, and active citizens.",
+  // Contact Section
+  'contact.title': 'Contact / Feedback',
+  'contact.description': 'Have a suggestion, question, or feedback? Fill out the form below to reach us.',
+  'contact.name': 'Your Name',
+  'contact.email': 'Your Email',
+  'contact.message': 'Your Message',
+  'contact.submit': 'Send Message',
+  'contact.thankyou': 'Thank you for your feedback! We appreciate your input.',
     'quiz.title': 'Test Your Knowledge',
     'quiz.question': 'Question',
     'quiz.submit': 'Submit Answer',
@@ -144,6 +155,17 @@ const translations = {
     // Quiz
     'quiz.title': 'आफ्नो ज्ञान परीक्षण गर्नुहोस्',
     'quiz.question': 'प्रश्न',
+      'about.title': 'Education for Democracy बारेमा',
+      'about.description': "Education for Democracy एक अन्तरक्रियात्मक प्लेटफर्म हो जसले युवाहरूलाई नेपालको संविधान सिक्न र बुझ्न मद्दत गर्छ। छोटो पाठ र आकर्षक गतिविधिहरूको माध्यमबाट, प्रयोगकर्ताहरूले मौलिक अधिकार, नागरिक कर्तव्य, र सरकारको संरचना अन्वेषण गर्छन्, जसले संविधानले नागरिकलाई कसरी संरक्षण गर्छ र शासनलाई कसरी आकार दिन्छ भन्ने गहिरो समझ प्रदान गर्छ।",
+      'about.mission': "हाम्रो उद्देश्य संविधानिक शिक्षालाई पहुँचयोग्य, आकर्षक, र व्यवहारिक बनाउनु हो, जसले नयाँ पुस्तालाई जानकार, जिम्मेवार, र सक्रिय नागरिक बन्न सशक्त बनाउँछ।",
+  // Contact Section
+  'contact.title': 'सम्पर्क / प्रतिक्रिया',
+  'contact.description': 'के तपाईंको सुझाव, प्रश्न, वा प्रतिक्रिया छ? तलको फारम भरी हामीलाई जानकारी दिनुहोस्।',
+  'contact.name': 'तपाईंको नाम',
+  'contact.email': 'तपाईंको इमेल',
+  'contact.message': 'तपाईंको सन्देश',
+  'contact.submit': 'सन्देश पठाउनुहोस्',
+  'contact.thankyou': 'तपाईंको प्रतिक्रिया को लागि धन्यवाद! हामी तपाईंको सुझावको कदर गर्छौं।',
     'quiz.submit': 'उत्तर पेश गर्नुहोस्',
     'quiz.correct': 'सहि!',
     'quiz.points-earned': 'अंक कमाइयो',
