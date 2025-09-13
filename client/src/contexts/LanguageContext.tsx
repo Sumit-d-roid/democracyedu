@@ -42,7 +42,8 @@ const translations = {
     'quiz.title': 'Test Your Knowledge',
     'quiz.question': 'Question',
     'quiz.submit': 'Submit Answer',
-    'quiz.correct': 'Correct! +10 points',
+    'quiz.correct': 'Correct!',
+    'quiz.points-earned': 'points earned',
     'quiz.incorrect': 'Incorrect. Try again!',
     'quiz.next': 'Next Question',
     
@@ -100,6 +101,16 @@ const translations = {
     'general.continue': 'Continue',
     'general.back': 'Back',
     'general.language.toggle': 'नेपाली',
+    'quiz.show-hint': 'Show Hint',
+    'quiz.hide-hint': 'Hide Hint',
+    'quiz.complete-quiz': 'Complete Quiz',
+    'quiz.back-to-quizzes': 'Back to Quizzes',
+    'quiz.start': 'Start Quiz',
+    'quiz.questions-count': 'questions',
+    'quiz.category.constitution-basics': 'Constitution Basics',
+    'quiz.category.fundamental-rights': 'Fundamental Rights', 
+    'quiz.category.government-structure': 'Government Structure',
+    'quiz.category.federal-system': 'Federal System',
   },
   ne: {
     // Navigation  
@@ -134,7 +145,8 @@ const translations = {
     'quiz.title': 'आफ्नो ज्ञान परीक्षण गर्नुहोस्',
     'quiz.question': 'प्रश्न',
     'quiz.submit': 'उत्तर पेश गर्नुहोस्',
-    'quiz.correct': 'सहि! +१० अंक',
+    'quiz.correct': 'सहि!',
+    'quiz.points-earned': 'अंक कमाइयो',
     'quiz.incorrect': 'गलत। फेरि प्रयास गर्नुहोस्!',
     'quiz.next': 'अर्को प्रश्न',
     
@@ -192,6 +204,16 @@ const translations = {
     'general.continue': 'जारी राख्नुहोस्',
     'general.back': 'पछाडि',
     'general.language.toggle': 'English',
+    'quiz.show-hint': 'सहायता देखाउनुहोस्',
+    'quiz.hide-hint': 'सहायता लुकाउनुहोस्',
+    'quiz.complete-quiz': 'क्विज पूरा गर्नुहोस्',
+    'quiz.back-to-quizzes': 'क्विजहरूमा फर्कनुहोस्',
+    'quiz.start': 'क्विज सुरु गर्नुहोस्',
+    'quiz.questions-count': 'प्रश्नहरू',
+    'quiz.category.constitution-basics': 'संविधानका आधारहरू',
+    'quiz.category.fundamental-rights': 'मौलिक अधिकारहरू',
+    'quiz.category.government-structure': 'सरकारी संरचना',
+    'quiz.category.federal-system': 'संघीय प्रणाली',
   }
 };
 

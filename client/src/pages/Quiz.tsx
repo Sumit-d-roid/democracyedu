@@ -24,7 +24,7 @@ export default function Quiz() {
             className="mb-6"
             data-testid="button-back-to-quizzes"
           >
-            ← Back to Quizzes
+            ← {t('quiz.back-to-quizzes')}
           </Button>
           <QuizCard questions={selectedQuizData.questions} quizId={selectedQuiz} />
         </div>
@@ -49,16 +49,16 @@ export default function Quiz() {
                 <p className="text-muted-foreground">{quiz.description}</p>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-muted-foreground">
-                    {quiz.questions.length} questions
+                    {quiz.questions.length} {t('quiz.questions-count')}
                   </p>
-                  <Badge variant="outline">{quiz.category}</Badge>
+                  <Badge variant="outline">{t(`quiz.category.${quiz.id}`)}</Badge>
                 </div>
                 <Button 
                   onClick={() => setSelectedQuiz(quiz.id)}
                   className="w-full"
                   data-testid={`button-start-quiz-${quiz.id}`}
                 >
-                  Start Quiz
+                  {t('quiz.start')}
                 </Button>
               </CardContent>
             </Card>
