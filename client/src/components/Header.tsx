@@ -36,9 +36,9 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 hover-elevate rounded-md px-2 py-1">
           <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">DE</span>
+            <img src="/attached_assets/generated_images/sambhidanx_icon.svg" alt="SambhidanX Logo" className="h-7 w-7" />
           </div>
-          <span className="font-bold text-lg">Education for Democracy</span>
+          <span className="font-bold text-lg">SambhidanX</span>
         </Link>
 
         {/* Desktop Navigation */}

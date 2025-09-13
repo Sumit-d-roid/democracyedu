@@ -23,7 +23,7 @@ const translations = {
     'hero.cta': 'Start Learning',
     
     // Features
-  'features.title': 'Why Choose Education for Democracy?',
+  'features.title': 'Why Choose SambhidanX?',
     'features.gamified.title': 'Gamified Learning',
     'features.gamified.desc': 'Earn points and unlock achievements as you learn',
     'features.bilingual.title': 'Bilingual Support',
@@ -40,8 +40,8 @@ const translations = {
     'lessons.completed': 'Completed',
     
     // Quiz
-      'about.title': 'About Education for Democracy',
-      'about.description': "Education for Democracy is an interactive platform that helps young people learn and understand Nepal’s Constitution. Through bite-sized lessons and engaging activities, users explore their fundamental rights, civic duties, and the structure of government, gaining a deeper understanding of how the Constitution protects citizens and shapes governance.",
+  'about.title': 'About SambhidanX',
+  'about.description': "SambhidanX is an interactive platform that helps young people learn and understand Nepal’s Constitution. Through bite-sized lessons and engaging activities, users explore their fundamental rights, civic duties, and the structure of government, gaining a deeper understanding of how the Constitution protects citizens and shapes governance.",
       'about.mission': "Our mission is to make constitutional education accessible, engaging, and practical, empowering the next generation to become informed, responsible, and active citizens.",
   // Timeline Section
   'timeline.title': 'Nepal Constitutional Timeline',
@@ -144,7 +144,7 @@ const translations = {
     'hero.cta': 'सिक्न सुरु गर्नुहोस्',
     
     // Features
-  'features.title': 'किन Education for Democracy छनोट गर्ने?',
+  'features.title': 'किन SambhidanX छनोट गर्ने?',
     'features.gamified.title': 'खेलकुद शैली',
     'features.gamified.desc': 'सिक्दै अंक कमाउनुहोस् र उपलब्धिहरू अनलक गर्नुहोस्',
     'features.bilingual.title': 'द्विभाषिक समर्थन',
@@ -163,8 +163,8 @@ const translations = {
     // Quiz
     'quiz.title': 'आफ्नो ज्ञान परीक्षण गर्नुहोस्',
     'quiz.question': 'प्रश्न',
-      'about.title': 'Education for Democracy बारेमा',
-      'about.description': "Education for Democracy एक अन्तरक्रियात्मक प्लेटफर्म हो जसले युवाहरूलाई नेपालको संविधान सिक्न र बुझ्न मद्दत गर्छ। छोटो पाठ र आकर्षक गतिविधिहरूको माध्यमबाट, प्रयोगकर्ताहरूले मौलिक अधिकार, नागरिक कर्तव्य, र सरकारको संरचना अन्वेषण गर्छन्, जसले संविधानले नागरिकलाई कसरी संरक्षण गर्छ र शासनलाई कसरी आकार दिन्छ भन्ने गहिरो समझ प्रदान गर्छ।",
+  'about.title': 'SambhidanX बारेमा',
+  'about.description': "SambhidanX एक अन्तरक्रियात्मक प्लेटफर्म हो जसले युवाहरूलाई नेपालको संविधान सिक्न र बुझ्न मद्दत गर्छ। छोटो पाठ र आकर्षक गतिविधिहरूको माध्यमबाट, प्रयोगकर्ताहरूले मौलिक अधिकार, नागरिक कर्तव्य, र सरकारको संरचना अन्वेषण गर्छन्, जसले संविधानले नागरिकलाई कसरी संरक्षण गर्छ र शासनलाई कसरी आकार दिन्छ भन्ने गहिरो समझ प्रदान गर्छ।",
       'about.mission': "हाम्रो उद्देश्य संविधानिक शिक्षालाई पहुँचयोग्य, आकर्षक, र व्यवहारिक बनाउनु हो, जसले नयाँ पुस्तालाई जानकार, जिम्मेवार, र सक्रिय नागरिक बन्न सशक्त बनाउँछ।",
   // Timeline Section
   'timeline.title': 'नेपालको संविधानिक समयरेखा',
