@@ -51,6 +51,55 @@ const translations = {
     'progress.points': 'Total Points',
     'progress.lessons-completed': 'Lessons Completed',
     'progress.quiz-accuracy': 'Quiz Accuracy',
+    
+    // Achievements
+    'nav.achievements': 'Achievements',
+    'achievements.title': '🏆 Achievements',
+    'achievements.unlocked': 'Unlocked',
+    'achievements.total': 'Total',
+    'achievements.completion': 'Completion',
+    'achievements.points-earned': 'Points Earned',
+    'achievements.guide.title': 'Achievement Guide',
+    'achievements.guide.desc': 'Complete lessons, take quizzes, and explore the constitution to earn achievements and points!',
+    'achievements.category.learning': 'Learning',
+    'achievements.category.progress': 'Progress', 
+    'achievements.category.mastery': 'Mastery',
+    'achievements.category.dedication': 'Dedication', 
+    'achievements.locked': 'Locked',
+    'achievements.progress': 'Progress',
+    'achievements.category-achievements': 'Achievements',
+    'achievements.notification.title': 'Achievement Unlocked!',
+    'achievements.notification.points': 'points earned',
+    
+    // Lesson Details  
+    'lesson.section': 'Section',
+    'lesson.sections': 'Sections',
+    'lesson.of': 'of',
+    'lesson.not-found': 'Lesson not found',
+    'lesson.sections-count': 'sections',
+    'lesson.complete-section': 'Complete Section',
+    'lesson.section-completed': 'Section Completed!',
+    'lesson.next-section': 'Next Section',
+    'lesson.complete-lesson': 'Complete Lesson',
+    'lesson.back-to-lessons': 'Back to Lessons',
+    'lesson.progress': 'Progress',
+    
+    // Quiz Details
+    'quiz.score': 'Score',
+    'quiz.total-questions': 'Total Questions',
+    'quiz.correct-answers': 'Correct Answers',
+    'quiz.try-again': 'Try Again',
+    'quiz.excellent': 'Excellent!',
+    'quiz.good-job': 'Good Job!',
+    'quiz.keep-trying': 'Keep Trying!',
+    
+    // General
+    'general.loading': 'Loading...',
+    'general.error': 'Error',
+    'general.close': 'Close',
+    'general.continue': 'Continue',
+    'general.back': 'Back',
+    'general.language.toggle': 'नेपाली',
   },
   ne: {
     // Navigation  
@@ -94,6 +143,55 @@ const translations = {
     'progress.points': 'कुल अंकहरू',
     'progress.lessons-completed': 'पूरा भएका पाठहरू',
     'progress.quiz-accuracy': 'क्विज सटीकता',
+    
+    // Achievements  
+    'nav.achievements': 'उपलब्धिहरू',
+    'achievements.title': '🏆 उपलब्धिहरू',
+    'achievements.unlocked': 'अनलक भएको',
+    'achievements.total': 'कुल',
+    'achievements.completion': 'पूर्णता',
+    'achievements.points-earned': 'कमाएका अंकहरू',
+    'achievements.guide.title': 'उपलब्धि गाइड',
+    'achievements.guide.desc': 'पाठहरू पूरा गर्नुहोस्, क्विज लिनुहोस्, र संविधान अन्वेषण गरेर उपलब्धिहरू र अंकहरू कमाउनुहोस्!',
+    'achievements.category.learning': 'सिकाइ',
+    'achievements.category.progress': 'प्रगति',
+    'achievements.category.mastery': 'निपुणता', 
+    'achievements.category.dedication': 'समर्पण',
+    'achievements.locked': 'बन्द', 
+    'achievements.progress': 'प्रगति',
+    'achievements.category-achievements': 'उपलब्धिहरू',
+    'achievements.notification.title': 'उपलब्धि अनलक भयो!',
+    'achievements.notification.points': 'अंक कमाइयो',
+    
+    // Lesson Details
+    'lesson.section': 'खण्ड',
+    'lesson.sections': 'खण्डहरू',
+    'lesson.of': 'को',
+    'lesson.not-found': 'पाठ फेला परेन',
+    'lesson.sections-count': 'खण्डहरू',
+    'lesson.complete-section': 'खण्ड पूरा गर्नुहोस्',
+    'lesson.section-completed': 'खण्ड पूरा भयो!',
+    'lesson.next-section': 'अर्को खण्ड',
+    'lesson.complete-lesson': 'पाठ पूरा गर्नुहोस्',
+    'lesson.back-to-lessons': 'पाठहरूमा फर्कनुहोस्',
+    'lesson.progress': 'प्रगति',
+    
+    // Quiz Details
+    'quiz.score': 'स्कोर',
+    'quiz.total-questions': 'कुल प्रश्नहरू',
+    'quiz.correct-answers': 'सही उत्तरहरू',
+    'quiz.try-again': 'फेरि प्रयास गर्नुहोस्',
+    'quiz.excellent': 'उत्कृष्ट!',
+    'quiz.good-job': 'राम्रो काम!',
+    'quiz.keep-trying': 'प्रयास जारी राख्नुहोस्!',
+    
+    // General
+    'general.loading': 'लोड हुँदैछ...',
+    'general.error': 'त्रुटि',
+    'general.close': 'बन्द गर्नुहोस्',
+    'general.continue': 'जारी राख्नुहोस्',
+    'general.back': 'पछाडि',
+    'general.language.toggle': 'English',
   }
 };
 

@@ -40,9 +40,9 @@ export default function LessonDetail() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl font-bold mb-4">Lesson not found</h1>
+          <h1 className="text-2xl font-bold mb-4">{t('lesson.not-found')}</h1>
           <Button onClick={() => setLocation('/lessons')} data-testid="button-back-to-lessons">
-            Back to Lessons
+            {t('lesson.back-to-lessons')}
           </Button>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function LessonDetail() {
             data-testid="button-back-to-lessons"
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
-            Back to Lessons
+            {t('lesson.back-to-lessons')}
           </Button>
           
           <div className="flex items-start gap-4 mb-4">
@@ -121,21 +121,21 @@ export default function LessonDetail() {
                 </Badge>
                 <Badge variant="outline" data-testid="badge-sections">
                   <BookOpen className="w-3 h-3 mr-1" />
-                  {totalSections} sections
+                  {totalSections} {t('lesson.sections-count')}
                 </Badge>
                 {lessonCompleted && (
                   <Badge variant="default" className="bg-green-600" data-testid="badge-completed">
                     <CheckCircle2 className="w-3 h-3 mr-1" />
-                    Completed
+                    {t('lessons.completed')}
                   </Badge>
                 )}
               </div>
               
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span>Progress</span>
+                  <span>{t('lesson.progress')}</span>
                   <span data-testid="text-progress-fraction">
-                    {completedSections}/{totalSections} sections
+                    {completedSections}/{totalSections} {t('lesson.sections-count')}
                   </span>
                 </div>
                 <Progress value={progressPercentage} className="h-2" data-testid="progress-lesson" />
@@ -149,7 +149,7 @@ export default function LessonDetail() {
           <div className="lg:col-span-1">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Sections</CardTitle>
+                <CardTitle className="text-lg">{t('lesson.sections')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 {lesson.sections.map((section, index) => {
@@ -193,7 +193,7 @@ export default function LessonDetail() {
                     {currentSection.title}
                   </CardTitle>
                   <Badge variant="outline" data-testid="badge-section-number">
-                    {currentSectionIndex + 1} of {totalSections}
+                    {t('lesson.section')} {currentSectionIndex + 1} {t('lesson.of')} {totalSections}
                   </Badge>
                 </div>
               </CardHeader>

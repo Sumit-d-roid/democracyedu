@@ -20,10 +20,10 @@ export default function Achievements() {
   const completionPercentage = Math.round((unlockedAchievements.length / totalAchievements) * 100);
   
   const categoryData = [
-    { id: 'learning', label: 'Learning', icon: Trophy, color: 'blue' },
-    { id: 'progress', label: 'Progress', icon: Target, color: 'green' },
-    { id: 'mastery', label: 'Mastery', icon: Star, color: 'purple' },
-    { id: 'dedication', label: 'Dedication', icon: Heart, color: 'orange' }
+    { id: 'learning', label: t('achievements.category.learning'), icon: Trophy, color: 'blue' },
+    { id: 'progress', label: t('achievements.category.progress'), icon: Target, color: 'green' },
+    { id: 'mastery', label: t('achievements.category.mastery'), icon: Star, color: 'purple' },
+    { id: 'dedication', label: t('achievements.category.dedication'), icon: Heart, color: 'orange' }
   ] as const;
   
   const getCurrentProgress = (achievement: Achievement): number => {
@@ -60,10 +60,10 @@ export default function Achievements() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-4" data-testid="text-achievements-title">
-            🏆 Achievements
+            {t('achievements.title')}
           </h1>
           <p className="text-muted-foreground mb-6">
-            Track your learning progress and unlock achievements as you master Nepal's Constitution
+            {t('achievements.guide.desc')}
           </p>
           
           {/* Stats Overview */}
@@ -73,7 +73,7 @@ export default function Achievements() {
                 <div className="text-2xl font-bold text-primary" data-testid="text-unlocked-count">
                   {unlockedAchievements.length}
                 </div>
-                <div className="text-sm text-muted-foreground">Unlocked</div>
+                <div className="text-sm text-muted-foreground">{t('achievements.unlocked')}</div>
               </CardContent>
             </Card>
             
@@ -82,7 +82,7 @@ export default function Achievements() {
                 <div className="text-2xl font-bold" data-testid="text-total-count">
                   {totalAchievements}
                 </div>
-                <div className="text-sm text-muted-foreground">Total</div>
+                <div className="text-sm text-muted-foreground">{t('achievements.total')}</div>
               </CardContent>
             </Card>
             
@@ -91,7 +91,7 @@ export default function Achievements() {
                 <div className="text-2xl font-bold text-green-600" data-testid="text-completion-percentage">
                   {completionPercentage}%
                 </div>
-                <div className="text-sm text-muted-foreground">Complete</div>
+                <div className="text-sm text-muted-foreground">{t('achievements.completion')}</div>
               </CardContent>
             </Card>
             
@@ -100,7 +100,7 @@ export default function Achievements() {
                 <div className="text-2xl font-bold text-yellow-600" data-testid="text-achievement-points">
                   {unlockedAchievements.reduce((sum, achievement) => sum + achievement.points, 0)}
                 </div>
-                <div className="text-sm text-muted-foreground">Achievement Points</div>
+                <div className="text-sm text-muted-foreground">{t('achievements.points-earned')}</div>
               </CardContent>
             </Card>
           </div>
@@ -139,7 +139,7 @@ export default function Achievements() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <category.icon className="w-5 h-5" />
-                    {category.label} Achievements
+                    {category.label} {t('achievements.category-achievements')}
                   </CardTitle>
                 </CardHeader>
                 

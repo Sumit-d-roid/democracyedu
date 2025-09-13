@@ -56,13 +56,13 @@ export default function Header() {
           
           <Button
             variant="outline"
-            size="icon"
+            size="sm"
             onClick={toggleLanguage}
             data-testid="button-language-toggle"
-            className="hover-elevate"
+            className="hover-elevate flex items-center gap-2"
           >
             <Globe className="h-4 w-4" />
-            <span className="sr-only">Toggle language</span>
+            <span className="hidden sm:inline">{t('general.language.toggle')}</span>
           </Button>
 
           {/* Mobile menu button */}

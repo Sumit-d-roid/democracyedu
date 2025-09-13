@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Achievement, getCategoryColor } from '@shared/achievements';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface AchievementNotificationProps {
   achievement: Achievement;
@@ -20,6 +21,7 @@ export default function AchievementNotification({
 }: AchievementNotificationProps) {
   const [isVisible, setIsVisible] = useState(false);
   const categoryColor = getCategoryColor(achievement.category);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Animate in
@@ -66,7 +68,7 @@ export default function AchievementNotification({
                   className={`bg-${categoryColor}-100 text-${categoryColor}-800 text-xs`}
                   data-testid="badge-achievement-category"
                 >
-                  🎉 Achievement Unlocked!
+                  {t('achievements.notification.title')}
                 </Badge>
                 
                 <button
@@ -100,11 +102,11 @@ export default function AchievementNotification({
                   className="bg-yellow-100 text-yellow-800"
                   data-testid="badge-achievement-points"
                 >
-                  +{achievement.points} points
+                  +{achievement.points} {t('achievements.notification.points')}
                 </Badge>
                 
                 <span className="text-xs text-muted-foreground">
-                  {achievement.category} achievement
+                  {t(`achievements.category.${achievement.category}`)} {t('achievements.category-achievements').toLowerCase()}
                 </span>
               </div>
             </div>
