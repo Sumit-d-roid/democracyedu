@@ -1,10 +1,24 @@
 import { useBookmarks } from '@/contexts/BookmarksContext';
+import { useToast } from '@/hooks/use-toast';
 function BookmarkButton({ lessonId }: { lessonId: string }) {
   const { isBookmarked, toggleBookmark } = useBookmarks();
+  const { toast } = useToast();
+  function handleClick() {
+    toggleBookmark(lessonId);
+    toast({
+      title: isBookmarked(lessonId)
+        ? 'Removed from bookmarks'
+        : 'Added to bookmarks',
+      description: isBookmarked(lessonId)
+        ? 'Lesson removed from your favorites.'
+        : 'Lesson added to your favorites.',
+      duration: 3000,
+    });
+  }
   return (
     <button
       className={`ml-2 px-2 py-1 rounded ${isBookmarked(lessonId) ? 'bg-yellow-300' : 'bg-gray-200'}`}
-      onClick={() => toggleBookmark(lessonId)}
+      onClick={handleClick}
       aria-label={isBookmarked(lessonId) ? 'Remove Bookmark' : 'Add Bookmark'}
     >
       {isBookmarked(lessonId) ? '★' : '☆'}

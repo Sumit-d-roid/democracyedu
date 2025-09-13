@@ -1,3 +1,4 @@
+import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -14,6 +15,7 @@ interface QuizCardProps {
 }
 
 export default function QuizCard({ questions, quizId }: QuizCardProps) {
+  const { toast } = useToast();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | number[] | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -74,7 +76,11 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
     if (isLastQuestion) {
       // Quiz completed
       recordQuizScore(quizId, (score / questions.length) * 100);
-      console.log(`Quiz ${quizId} completed with score: ${score}/${questions.length}`);
+      toast({
+        title: 'Quiz Completed!',
+        description: `You scored ${score} out of ${questions.length}.`,
+        duration: 4000,
+      });
     } else {
       setCurrentQuestionIndex(prev => prev + 1);
     }
