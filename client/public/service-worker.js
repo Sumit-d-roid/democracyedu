@@ -1,5 +1,5 @@
 // Service Worker Version (increment to bust cache)
-const SW_VERSION = '3';
+const SW_VERSION = '5';
 const CACHE_NAME = `sambhidanx-static-v${SW_VERSION}`;
 const STATIC_ASSETS = [
   '/',
