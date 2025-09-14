@@ -1,0 +1,60 @@
+{
+  "id": "parliamentary-procedures",
+  "title": "Parliamentary Procedures",
+  "description": "Understanding how Nepal's Parliament functions, including legislative processes and parliamentary conventions.",
+  "icon": "🏛️",
+  "difficulty": "advanced",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "structure-houses",
+      "title": "Structure of the Houses",
+      "content": "The bicameral structure divides responsibilities between the lower and upper houses, enabling representation balance and review of legislation. Joint sessions occur for constitutional or ceremonial functions.",
+      "keyPoints": [
+        "Bicameral design rationale",
+        "Distinct roles of each house",
+        "Joint session purposes",
+        "Committee system foundation"
+      ]
+    },
+    {
+      "id": "bill-lifecycle",
+      "title": "Bill Lifecycle",
+      "content": "A bill progresses through introduction, committee scrutiny, debates, amendments, voting, and assent. Fiscal and constitutional bills may follow specialized pathways with heightened scrutiny.",
+      "keyPoints": [
+        "Stages: introduction to assent",
+        "Committee review depth",
+        "Amendment mechanisms",
+        "Special handling for certain bills"
+      ]
+    },
+    {
+      "id": "oversight-tools",
+      "title": "Parliamentary Oversight Tools",
+      "content": "Questions, motions, inquiries, and committee investigations allow parliamentarians to hold the executive accountable. Annual reports and audit findings feed into oversight deliberations.",
+      "keyPoints": [
+        "Question periods and motions",
+        "Committee investigations",
+        "Use of audit findings",
+        "Executive accountability enhancement"
+      ]
+    },
+    {
+      "id": "conduct-decorum",
+      "title": "Conduct and Decorum",
+      "content": "Rules of procedure maintain order, fairness in speaking opportunities, and respect among members. Breaches may attract disciplinary measures to preserve institutional integrity.",
+      "keyPoints": [
+        "Rules ensure orderly debate",
+        "Fair allocation of speaking time",
+        "Mechanisms for discipline",
+        "Institutional integrity focus"
+      ]
+    }
+  ],
+  "summary": [
+    "Parliament's bicameral structure enables review",
+    "Bills follow multi-stage lifecycle",
+    "Oversight tools strengthen accountability",
+    "Procedural rules uphold decorum and fairness"
+  ]
+}

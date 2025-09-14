@@ -33,6 +33,134 @@
       "difficulty": "intermediate",
       "estimatedTime": "25 minutes",
       "icon": "👷"
+    },
+    {
+      "id": "right-to-information",
+      "title": "Right to Information",
+      "file": "lessons/right-to-information.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "📝"
+    },
+    {
+      "id": "property-rights",
+      "title": "Property Rights",
+      "file": "lessons/property-rights.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "🏠"
+    },
+    {
+      "id": "media-press-freedom",
+      "title": "Media and Press Freedom",
+      "file": "lessons/media-press-freedom.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "📰"
+    },
+    {
+      "id": "language-cultural-rights",
+      "title": "Language and Cultural Rights",
+      "file": "lessons/language-cultural-rights.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "🗣️"
+    },
+    {
+      "id": "financial-procedures",
+      "title": "Financial Procedures",
+      "file": "lessons/financial-procedures.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "💰"
+    },
+    {
+      "id": "parliamentary-procedures",
+      "title": "Parliamentary Procedures",
+      "file": "lessons/parliamentary-procedures.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "🏛️"
+    },
+    {
+      "id": "judiciary-system",
+      "title": "Judiciary System",
+      "file": "lessons/judiciary-system.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "⚖️"
+    },
+    {
+      "id": "public-service-commission",
+      "title": "Public Service Commission",
+      "file": "lessons/public-service-commission.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "👔"
+    },
+    {
+      "id": "constitutional-amendments",
+      "title": "Constitutional Amendments",
+      "file": "lessons/constitutional-amendments.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "📜"
+    },
+    {
+      "id": "emergency-powers",
+      "title": "Emergency Powers",
+      "file": "lessons/emergency-powers.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "🚨"
+    },
+    {
+      "id": "citizenship-immigration",
+      "title": "Citizenship and Immigration",
+      "file": "lessons/citizenship-immigration.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "🛂"
+    },
+    {
+      "id": "political-parties-elections",
+      "title": "Political Parties and Elections",
+      "file": "lessons/political-parties-elections.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "🗳️"
+    },
+    {
+      "id": "local-government-system",
+      "title": "Local Government System",
+      "file": "lessons/local-government-system.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "🏘️"
+    },
+    {
+      "id": "constitutional-bodies-nepal",
+      "title": "Constitutional Bodies of Nepal",
+      "file": "lessons/constitutional-bodies-nepal.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "🏛️"
+    },
+    {
+      "id": "fundamental-duties-citizens",
+      "title": "Fundamental Duties of Citizens",
+      "file": "lessons/fundamental-duties-citizens.json",
+      "difficulty": "beginner",
+      "estimatedTime": "15 minutes",
+      "icon": "🤝"
+    },
+    {
+      "id": "directive-principles-state-policies",
+      "title": "Directive Principles & State Policies",
+      "file": "lessons/directive-principles-state-policies.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "📋"
     }
   ],
   "quizzes": [

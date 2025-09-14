@@ -1,0 +1,60 @@
+{
+  "id": "right-to-information",
+  "title": "Right to Information",
+  "description": "Understanding Nepal's constitutional provisions for Right to Information (RTI) and its implementation.",
+  "icon": "📝",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "rti-introduction",
+      "title": "What is the Right to Information?",
+      "content": "The Right to Information (RTI) empowers citizens to request and receive information held by public bodies. It promotes transparency, accountability, and informed civic participation. In Nepal, the Constitution and RTI Act establish mechanisms for public access to non-sensitive government records.",
+      "keyPoints": [
+        "RTI promotes transparency and accountability",
+        "Citizens can request information from public authorities",
+        "Certain sensitive information is exempt",
+        "Legal timelines exist for providing information"
+      ]
+    },
+    {
+      "id": "legal-framework",
+      "title": "Legal Framework in Nepal",
+      "content": "RTI is grounded in constitutional guarantees and implemented through legislation defining procedures, exemptions, and appeal mechanisms. Public agencies must designate information officers and maintain proactive disclosures to minimize individual requests.",
+      "keyPoints": [
+        "Constitutional basis for access to information",
+        "Dedicated RTI legislation and regulations",
+        "Information officers in public bodies",
+        "Proactive disclosure obligations"
+      ]
+    },
+    {
+      "id": "process-and-exemptions",
+      "title": "Request Process and Exemptions",
+      "content": "Citizens submit a written or electronic request specifying the information sought. Authorities must respond within a stipulated period—either providing the information, denying with reason, or extending time under defined circumstances. Exempt categories typically include national security, personal privacy, and ongoing investigations.",
+      "keyPoints": [
+        "Clear timeframes for response",
+        "Appeal pathway for denials",
+        "Exemptions: security, privacy, investigations",
+        "Duty to assist applicants"
+      ]
+    },
+    {
+      "id": "impact-and-challenges",
+      "title": "Impact and Implementation Challenges",
+      "content": "RTI has improved public oversight of budgets, procurement, and service delivery. Challenges remain: limited awareness, bureaucratic delays, incomplete record digitization, and overuse of exemption claims. Strengthening capacity and public education can enhance effectiveness.",
+      "keyPoints": [
+        "Improves oversight of public spending",
+        "Awareness gaps limit usage",
+        "Need for better record management",
+        "Training reduces improper denials"
+      ]
+    }
+  ],
+  "summary": [
+    "RTI empowers citizens to access public information",
+    "Legal framework mandates disclosure and officers",
+    "Defined process with exemptions and appeals",
+    "Impact positive but awareness and capacity challenges remain"
+  ]
+}

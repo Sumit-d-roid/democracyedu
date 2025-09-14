@@ -1,0 +1,60 @@
+{
+  "id": "judiciary-system",
+  "title": "Judiciary System",
+  "description": "Understanding Nepal's judicial system, court hierarchy, and the administration of justice.",
+  "icon": "⚖️",
+  "difficulty": "advanced",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "hierarchy-overview",
+      "title": "Court Hierarchy Overview",
+      "content": "Nepal's judiciary comprises the Supreme Court at the apex, High Courts regionally, and District Courts locally. Specialized benches may address constitutional, commercial, or human rights matters.",
+      "keyPoints": [
+        "Three-tier court structure",
+        "Specialized benches for complex cases",
+        "Appellate pathways defined",
+        "Judicial independence safeguards"
+      ]
+    },
+    {
+      "id": "constitutional-role",
+      "title": "Constitutional Interpretation Role",
+      "content": "The Supreme Court interprets constitutional provisions, adjudicates fundamental rights petitions, and can issue writs ensuring rule of law and administrative accountability.",
+      "keyPoints": [
+        "Supreme Court interpretive authority",
+        "Writ jurisdiction to protect rights",
+        "Judicial review of executive acts",
+        "Guardian of constitutional order"
+      ]
+    },
+    {
+      "id": "access-justice",
+      "title": "Access to Justice Challenges",
+      "content": "Geographic barriers, resource constraints, and procedural delays affect timely justice. Reforms emphasize digitization, legal aid expansion, and case management improvements.",
+      "keyPoints": [
+        "Delay reduction strategies",
+        "Legal aid for vulnerable groups",
+        "Case tracking systems",
+        "Infrastructure modernization"
+      ]
+    },
+    {
+      "id": "ethics-accountability",
+      "title": "Judicial Ethics and Accountability",
+      "content": "Codes of conduct, asset declarations, and performance evaluations bolster public confidence while respecting decisional independence.",
+      "keyPoints": [
+        "Ethics codes and declarations",
+        "Performance and integrity mechanisms",
+        "Balancing independence with accountability",
+        "Public confidence importance"
+      ]
+    }
+  ],
+  "summary": [
+    "Three-tier judiciary with specialized functions",
+    "Supreme Court safeguards constitutional rights",
+    "Access challenges drive reform efforts",
+    "Ethics and accountability sustain trust"
+  ]
+}

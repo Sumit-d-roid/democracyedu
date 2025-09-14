@@ -1,0 +1,60 @@
+{
+  "id": "citizenship-immigration",
+  "title": "Citizenship and Immigration",
+  "description": "Understanding citizenship acquisition, rights, and immigration policies in Nepal.",
+  "icon": "🛂",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "citizenship-categories",
+      "title": "Categories of Citizenship",
+      "content": "Citizenship may be acquired by descent, birth under defined criteria, naturalization, or honorary grant. Each pathway carries specific eligibility requirements.",
+      "keyPoints": [
+        "Descent and birth routes",
+        "Naturalization criteria",
+        "Honorary citizenship cases",
+        "Documentation prerequisites"
+      ]
+    },
+    {
+      "id": "rights-obligations",
+      "title": "Rights and Obligations",
+      "content": "Citizens enjoy fundamental rights, political participation, and access to public services while bearing obligations such as loyalty to the state and tax compliance.",
+      "keyPoints": [
+        "Political participation rights",
+        "Access to services",
+        "Tax and civic duties",
+        "Protection responsibilities"
+      ]
+    },
+    {
+      "id": "immigration-policy",
+      "title": "Immigration Policy Framework",
+      "content": "Immigration regulations govern entry, residence, work authorization, and deportation procedures, balancing economic needs with security and social cohesion.",
+      "keyPoints": [
+        "Entry and visa regulation",
+        "Work permit considerations",
+        "Residence compliance",
+        "Removal procedures safeguards"
+      ]
+    },
+    {
+      "id": "emerging-issues",
+      "title": "Emerging Issues and Debates",
+      "content": "Debates focus on diaspora engagement, statelessness risks, gender equality in transmission, and modernization of identity systems.",
+      "keyPoints": [
+        "Diaspora policy evolution",
+        "Addressing statelessness",
+        "Gender parity concerns",
+        "Digital identity modernization"
+      ]
+    }
+  ],
+  "summary": [
+    "Multiple pathways to citizenship exist",
+    "Citizens enjoy rights and bear obligations",
+    "Immigration policy balances diverse interests",
+    "Emerging debates shape future reforms"
+  ]
+}

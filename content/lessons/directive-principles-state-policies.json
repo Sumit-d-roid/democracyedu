@@ -1,0 +1,60 @@
+{
+  "id": "directive-principles-state-policies",
+  "title": "Directive Principles & State Policies",
+  "description": "Learn about the guidelines for governance given to the State in Part 4 of Nepal's Constitution.",
+  "icon": "📋",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "purpose-nature",
+      "title": "Purpose and Nature",
+      "content": "Directive principles and state policies articulate aspirational goals—social justice, equitable development, environmental stewardship—guiding legislative and executive action though not directly enforceable in courts.",
+      "keyPoints": [
+        "Aspirational governance goals",
+        "Guide policy and legislation",
+        "Not directly justiciable",
+        "Promote comprehensive development"
+      ]
+    },
+    {
+      "id": "implementation-mechanisms",
+      "title": "Implementation Mechanisms",
+      "content": "Plans, budgets, and sectoral strategies operationalize principles. Monitoring frameworks track progress toward inclusive growth and sustainability targets.",
+      "keyPoints": [
+        "Policy integration into plans",
+        "Budget alignment",
+        "Progress monitoring systems",
+        "Sustainable development orientation"
+      ]
+    },
+    {
+      "id": "balance-rights-policies",
+      "title": "Balancing Rights and Policies",
+      "content": "While not enforceable like fundamental rights, these principles shape interpretation and prioritization in governance decisions, influencing equitable resource allocation.",
+      "keyPoints": [
+        "Interpretive influence on laws",
+        "Resource allocation guidance",
+        "Equity and sustainability lenses",
+        "Long-term national vision"
+      ]
+    },
+    {
+      "id": "evaluation-challenges",
+      "title": "Evaluation and Challenges",
+      "content": "Data limitations, coordination gaps, and funding constraints challenge full realization. Strengthening metrics and inter-agency collaboration improves outcomes.",
+      "keyPoints": [
+        "Need for robust indicators",
+        "Cross-agency coordination",
+        "Resource mobilization hurdles",
+        "Continuous evaluation importance"
+      ]
+    }
+  ],
+  "summary": [
+    "Directive principles guide policy direction",
+    "Operationalized through plans and budgets",
+    "Influence interpretation of governance priorities",
+    "Challenges include data and coordination gaps"
+  ]
+}

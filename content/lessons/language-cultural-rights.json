@@ -1,0 +1,60 @@
+{
+  "id": "language-cultural-rights",
+  "title": "Language and Cultural Rights",
+  "description": "Understanding Nepal's constitutional provisions for language rights and cultural preservation.",
+  "icon": "🗣️",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "diversity-recognition",
+      "title": "Recognition of Diversity",
+      "content": "Nepal is linguistically and culturally diverse. Constitutional provisions recognize multiple languages and protect cultural heritage, rituals, and traditional knowledge systems.",
+      "keyPoints": [
+        "Multilingual constitutional recognition",
+        "Protection of cultural heritage",
+        "Support for indigenous communities",
+        "Preservation of traditional knowledge"
+      ]
+    },
+    {
+      "id": "language-use",
+      "title": "Official and Local Language Use",
+      "content": "While certain languages function in federal administration, provinces and local governments may adopt additional languages for official purposes, promoting inclusion and accessibility.",
+      "keyPoints": [
+        "Local adoption of working languages",
+        "Promotes inclusion and service access",
+        "Administrative flexibility",
+        "Supports linguistic minorities"
+      ]
+    },
+    {
+      "id": "cultural-preservation",
+      "title": "Cultural Preservation and Promotion",
+      "content": "Policies encourage documentation, education, and transmission of cultural practices. Museums, cultural centers, and festivals help sustain identity while fostering inter-community respect.",
+      "keyPoints": [
+        "Documentation of traditions",
+        "Educational integration of heritage",
+        "Cultural infrastructure development",
+        "Promotion of mutual respect"
+      ]
+    },
+    {
+      "id": "challenges-globalization",
+      "title": "Challenges in a Globalizing Era",
+      "content": "Urbanization, migration, and digital media can pressure smaller language communities. Strategic revitalization programs and inclusive curricula mitigate loss and marginalization.",
+      "keyPoints": [
+        "Language shift risk",
+        "Need for revitalization initiatives",
+        "Curriculum inclusion strategies",
+        "Digital tools for preservation"
+      ]
+    }
+  ],
+  "summary": [
+    "Nepal protects linguistic and cultural diversity",
+    "Local bodies can adopt working languages",
+    "Cultural preservation uses policy and institutions",
+    "Globalization creates risks requiring revitalization"
+  ]
+}

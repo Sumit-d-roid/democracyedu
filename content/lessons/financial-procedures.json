@@ -1,0 +1,60 @@
+{
+  "id": "financial-procedures",
+  "title": "Financial Procedures",
+  "description": "Understanding Nepal's government financial procedures, budget process, and fiscal management.",
+  "icon": "💰",
+  "difficulty": "advanced",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "budget-cycle",
+      "title": "Budget Cycle Overview",
+      "content": "The financial year process includes drafting, legislative approval, execution, and auditing. Coordination across federal, provincial, and local levels ensures resource alignment with development priorities.",
+      "keyPoints": [
+        "Drafting and submission phases",
+        "Legislative scrutiny and approval",
+        "Execution with fiscal controls",
+        "Audit and accountability cycle"
+      ]
+    },
+    {
+      "id": "revenue-sources",
+      "title": "Revenue Sources and Allocation",
+      "content": "Revenue derives from taxes, fees, grants, and shared revenues. Intergovernmental fiscal transfers aim to reduce disparities and fund constitutionally mandated services.",
+      "keyPoints": [
+        "Tax and non-tax revenue mix",
+        "Shared revenue mechanisms",
+        "Equalization transfers",
+        "Earmarked sectoral funding"
+      ]
+    },
+    {
+      "id": "public-financial-management",
+      "title": "Public Financial Management (PFM)",
+      "content": "PFM systems govern budgeting, accounting, procurement, and reporting. Transparency portals and audit institutions strengthen financial discipline and curb misuse.",
+      "keyPoints": [
+        "Integrated financial information systems",
+        "Procurement standards and oversight",
+        "Internal and external audit roles",
+        "Performance-based budgeting trends"
+      ]
+    },
+    {
+      "id": "challenges-reforms",
+      "title": "Challenges and Reform Priorities",
+      "content": "Capacity gaps, data fragmentation, and delayed reporting hinder efficient financial governance. Digitization, training, and harmonized standards drive reform progress.",
+      "keyPoints": [
+        "Capacity development needs",
+        "Data integration importance",
+        "Timeliness of financial reporting",
+        "Modernization and digitization efforts"
+      ]
+    }
+  ],
+  "summary": [
+    "Budget cycle spans drafting to audit",
+    "Revenues shared across government levels",
+    "PFM systems ensure discipline and transparency",
+    "Reforms target capacity, data, and digitization"
+  ]
+}

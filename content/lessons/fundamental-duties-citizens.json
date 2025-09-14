@@ -1,0 +1,60 @@
+{
+  "id": "fundamental-duties-citizens",
+  "title": "Fundamental Duties of Citizens",
+  "description": "Learn about the constitutional duties and responsibilities of Nepali citizens that complement fundamental rights.",
+  "icon": "🤝",
+  "difficulty": "beginner",
+  "estimatedTime": "15 minutes",
+  "sections": [
+    {
+      "id": "rights-duties-balance",
+      "title": "Rights and Duties Balance",
+      "content": "Duties reinforce the reciprocal nature of constitutional democracy: exercising rights responsibly strengthens collective welfare and institutional legitimacy.",
+      "keyPoints": [
+        "Reciprocal civic responsibilities",
+        "Responsible exercise of rights",
+        "Supports democratic stability",
+        "Collective welfare emphasis"
+      ]
+    },
+    {
+      "id": "core-duties",
+      "title": "Core Constitutional Duties",
+      "content": "Commonly recognized duties include upholding the Constitution, fostering harmony, protecting public property, and contributing to national service when required.",
+      "keyPoints": [
+        "Uphold constitutional order",
+        "Promote social harmony",
+        "Protect public property",
+        "Serve the nation if called"
+      ]
+    },
+    {
+      "id": "civic-culture",
+      "title": "Building Civic Culture",
+      "content": "Education, community participation, and volunteerism deepen civic identity and resilience against misinformation and polarization.",
+      "keyPoints": [
+        "Civic education importance",
+        "Community engagement",
+        "Volunteerism benefits",
+        "Resilience against misinformation"
+      ]
+    },
+    {
+      "id": "practical-application",
+      "title": "Practical Application",
+      "content": "Daily actions—law compliance, respectful dialogue, environmental stewardship—translate abstract duties into tangible democratic contributions.",
+      "keyPoints": [
+        "Law-abiding conduct",
+        "Constructive dialogue",
+        "Environmental responsibility",
+        "Everyday democratic practice"
+      ]
+    }
+  ],
+  "summary": [
+    "Duties complement fundamental rights",
+    "Citizens uphold and protect constitutional order",
+    "Civic culture builds resilience",
+    "Practical actions sustain democracy"
+  ]
+}

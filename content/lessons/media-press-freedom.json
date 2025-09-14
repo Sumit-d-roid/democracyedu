@@ -1,0 +1,60 @@
+{
+  "id": "media-press-freedom",
+  "title": "Media and Press Freedom",
+  "description": "Understanding constitutional guarantees for media freedom and press rights in Nepal.",
+  "icon": "📰",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "constitutional-basis",
+      "title": "Constitutional Basis",
+      "content": "Freedom of the press is an extension of freedom of expression, enabling journalists and media institutions to publish without undue censorship. The Constitution safeguards editorial independence and prohibits prior restraint except under narrowly defined circumstances.",
+      "keyPoints": [
+        "Press freedom linked to expression rights",
+        "Prohibits prior restraint except limited cases",
+        "Editorial independence protected",
+        "Supports democratic accountability"
+      ]
+    },
+    {
+      "id": "responsible-journalism",
+      "title": "Responsibilities and Ethics",
+      "content": "While enjoying freedom, media actors must adhere to accuracy, fairness, and ethical standards. Self-regulation through codes of conduct builds public trust and counters misinformation.",
+      "keyPoints": [
+        "Ethical standards guide reporting",
+        "Accuracy and fairness expectations",
+        "Self-regulation via codes of conduct",
+        "Combating misinformation and disinformation"
+      ]
+    },
+    {
+      "id": "regulation-framework",
+      "title": "Regulatory and Legal Framework",
+      "content": "Broadcast, print, and digital media may be subject to licensing, content standards, and ownership transparency rules. Laws address defamation, incitement, and national security while striving not to chill legitimate reporting.",
+      "keyPoints": [
+        "Licensing for certain media types",
+        "Defamation and incitement laws apply",
+        "Ownership transparency requirements",
+        "Balance between regulation and freedom"
+      ]
+    },
+    {
+      "id": "digital-challenges",
+      "title": "Digital Era Challenges",
+      "content": "Online platforms accelerate news distribution but raise challenges: fake news propagation, algorithmic bias, and pressures on traditional revenue models. Digital literacy and platform accountability measures help sustain an informed public sphere.",
+      "keyPoints": [
+        "Rapid spread of unverified content",
+        "Monetization pressures on traditional media",
+        "Need for digital literacy initiatives",
+        "Platform accountability debates"
+      ]
+    }
+  ],
+  "summary": [
+    "Press freedom underpins democratic oversight",
+    "Ethical journalism builds public trust",
+    "Regulation must avoid chilling effect",
+    "Digital changes create new accountability challenges"
+  ]
+}

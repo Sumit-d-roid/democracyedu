@@ -1,0 +1,60 @@
+{
+  "id": "public-service-commission",
+  "title": "Public Service Commission",
+  "description": "Understanding Nepal's Public Service Commission, its role in civil service recruitment, and administrative functions.",
+  "icon": "👔",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "mandate-overview",
+      "title": "Mandate and Independence",
+      "content": "The Public Service Commission (PSC) oversees merit-based recruitment, ensuring neutrality and competence in the civil service. Constitutional provisions protect its autonomy from political interference.",
+      "keyPoints": [
+        "Merit-based recruitment principle",
+        "Autonomy safeguards",
+        "Professionalization of civil service",
+        "Neutrality in selection"
+      ]
+    },
+    {
+      "id": "recruitment-process",
+      "title": "Recruitment Process",
+      "content": "Open competition, examinations, interviews, and assessments evaluate qualifications. Transparency measures include published syllabi, exam schedules, and results protocols.",
+      "keyPoints": [
+        "Open competitive exams",
+        "Structured assessments",
+        "Transparency and publication",
+        "Appeal or review avenues"
+      ]
+    },
+    {
+      "id": "capacity-building",
+      "title": "Capacity Building and Reform",
+      "content": "Modernization efforts integrate digital applications, competency frameworks, and diversity strategies to strengthen public administration responsiveness.",
+      "keyPoints": [
+        "Digital application systems",
+        "Competency-based evaluation",
+        "Diversity and inclusion goals",
+        "Continuous improvement focus"
+      ]
+    },
+    {
+      "id": "challenges-future",
+      "title": "Challenges and Future Directions",
+      "content": "Challenges include exam backlog, regional access disparities, and adapting to emerging skill needs. Strategic planning and technology adoption aim to address bottlenecks.",
+      "keyPoints": [
+        "Exam backlog management",
+        "Regional access considerations",
+        "Emerging skill alignment",
+        "Strategic modernization initiatives"
+      ]
+    }
+  ],
+  "summary": [
+    "PSC ensures merit-based civil service entry",
+    "Transparent recruitment builds trust",
+    "Capacity reforms leverage technology",
+    "Challenges drive modernization strategies"
+  ]
+}

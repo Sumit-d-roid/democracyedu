@@ -1,0 +1,60 @@
+{
+  "id": "constitutional-bodies-nepal",
+  "title": "Constitutional Bodies of Nepal",
+  "description": "Understanding the independent constitutional bodies that ensure good governance, oversight, and protection of citizens' rights.",
+  "icon": "🏛️",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "overview-roles",
+      "title": "Overview and Roles",
+      "content": "Constitutional bodies—such as audit, election, human rights, and anti-corruption commissions—provide oversight, integrity, and specialized governance functions independent from political branches.",
+      "keyPoints": [
+        "Independent oversight mandate",
+        "Specialized governance functions",
+        "Support rule of law",
+        "Promote accountability"
+      ]
+    },
+    {
+      "id": "independence-safeguards",
+      "title": "Independence Safeguards",
+      "content": "Appointment processes, tenure protections, budget guarantees, and removal thresholds preserve impartiality and effectiveness of constitutional bodies.",
+      "keyPoints": [
+        "Protected tenures",
+        "Transparent appointments",
+        "Budgetary autonomy",
+        "High removal thresholds"
+      ]
+    },
+    {
+      "id": "coordination-challenges",
+      "title": "Coordination and Challenges",
+      "content": "Overlapping jurisdictions, resource constraints, and public awareness gaps can hinder performance; inter-agency protocols and capacity development mitigate duplication and inefficiency.",
+      "keyPoints": [
+        "Overlap risk management",
+        "Resource constraints",
+        "Public awareness importance",
+        "Capacity building solutions"
+      ]
+    },
+    {
+      "id": "impact-assessment",
+      "title": "Impact and Public Trust",
+      "content": "Effectiveness is measured through audit findings implemented, cases resolved, and policy reforms influenced, contributing to public trust in democratic institutions.",
+      "keyPoints": [
+        "Outcome-based performance metrics",
+        "Resolution of key cases",
+        "Influence on policy reforms",
+        "Trust-building through transparency"
+      ]
+    }
+  ],
+  "summary": [
+    "Constitutional bodies uphold governance integrity",
+    "Independence relies on structural safeguards",
+    "Coordination improves efficiency and impact",
+    "Public trust grows with transparent results"
+  ]
+}

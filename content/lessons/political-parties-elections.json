@@ -1,0 +1,60 @@
+{
+  "id": "political-parties-elections",
+  "title": "Political Parties and Elections",
+  "description": "Understanding Nepal's political party system, election processes, and democratic governance.",
+  "icon": "🗳️",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "party-system",
+      "title": "Political Party System",
+      "content": "Political parties aggregate interests, recruit candidates, and structure legislative competition. Legal frameworks govern registration, internal democracy, and financial disclosure.",
+      "keyPoints": [
+        "Interest aggregation role",
+        "Candidate recruitment",
+        "Registration and compliance",
+        "Financial transparency requirements"
+      ]
+    },
+    {
+      "id": "electoral-framework",
+      "title": "Electoral Framework",
+      "content": "Mixed electoral systems combine proportional representation with direct constituency seats to balance inclusiveness and geographic accountability.",
+      "keyPoints": [
+        "Mixed system rationale",
+        "Proportional allocation",
+        "Constituency representation",
+        "Inclusiveness objectives"
+      ]
+    },
+    {
+      "id": "election-administration",
+      "title": "Election Administration",
+      "content": "Independent electoral bodies manage voter registration, ballot integrity, dispute resolution, and observation accreditation to safeguard credibility.",
+      "keyPoints": [
+        "Independent oversight",
+        "Voter roll management",
+        "Dispute resolution mechanisms",
+        "Observation and transparency"
+      ]
+    },
+    {
+      "id": "challenges-innovation",
+      "title": "Challenges and Innovation",
+      "content": "Campaign finance regulation, disinformation mitigation, and inclusive participation (youth, women, marginalized groups) drive ongoing innovation in electoral practice.",
+      "keyPoints": [
+        "Campaign finance oversight",
+        "Countering disinformation",
+        "Inclusive participation goals",
+        "Technology adoption debates"
+      ]
+    }
+  ],
+  "summary": [
+    "Parties structure democratic competition",
+    "Mixed system blends proportional and direct seats",
+    "Independent administration ensures credibility",
+    "Reforms target fairness and inclusivity"
+  ]
+}

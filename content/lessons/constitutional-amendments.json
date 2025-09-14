@@ -1,0 +1,60 @@
+{
+  "id": "constitutional-amendments",
+  "title": "Constitutional Amendments",
+  "description": "Understanding the process and history of amending Nepal's Constitution.",
+  "icon": "📜",
+  "difficulty": "advanced",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "amendment-purpose",
+      "title": "Purpose of Amendments",
+      "content": "Amendments allow the Constitution to adapt to evolving political, social, and economic realities while preserving foundational principles. They balance flexibility with stability.",
+      "keyPoints": [
+        "Adaptation to new realities",
+        "Balance between change and stability",
+        "Preservation of core values",
+        "Legitimacy through procedural rigor"
+      ]
+    },
+    {
+      "id": "procedural-steps",
+      "title": "Procedural Steps",
+      "content": "The amendment process involves proposal, committee review, debate, supermajority voting thresholds, and final authentication. Some provisions may have heightened requirements.",
+      "keyPoints": [
+        "Proposal and introduction",
+        "Committee scrutiny",
+        "Supermajority vote thresholds",
+        "Authentication formalities"
+      ]
+    },
+    {
+      "id": "constraints-limitations",
+      "title": "Constraints and Limitations",
+      "content": "Certain constitutional features may be entrenched or harder to amend, protecting fundamental structure and rights. Judicial review can assess procedural compliance.",
+      "keyPoints": [
+        "Entrenched feature protection",
+        "Judicial review oversight",
+        "Procedural compliance importance",
+        "Safeguard against arbitrary change"
+      ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context and Trends",
+      "content": "Past amendment patterns reflect shifts in governance models, decentralization efforts, and rights expansion. Analyzing trends informs future reform debates.",
+      "keyPoints": [
+        "Patterns mirror political evolution",
+        "Influence of decentralization",
+        "Rights expansion trajectory",
+        "Lessons for future reforms"
+      ]
+    }
+  ],
+  "summary": [
+    "Amendments balance flexibility and stability",
+    "Procedures ensure legitimacy and rigor",
+    "Constraints protect core structures",
+    "Historical trends guide future reforms"
+  ]
+}

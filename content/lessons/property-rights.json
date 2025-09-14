@@ -1,0 +1,60 @@
+{
+  "id": "property-rights",
+  "title": "Property Rights",
+  "description": "Understanding property rights and restrictions under Nepal's Constitution.",
+  "icon": "🏠",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "definition-scope",
+      "title": "Definition and Scope",
+      "content": "Property rights protect an individual's lawful ownership, use, transfer, and inheritance of property. Nepal's Constitution recognizes these rights while allowing the state to regulate or acquire property for public interest with fair compensation.",
+      "keyPoints": [
+        "Property rights include ownership and transfer",
+        "State can acquire property for public interest",
+        "Compensation principles are defined",
+        "Subject to regulation for social justice"
+      ]
+    },
+    {
+      "id": "acquisition-compensation",
+      "title": "Acquisition and Compensation",
+      "content": "When property is acquired for public purposes (infrastructure, conservation, development projects), the process must follow legal procedures ensuring fairness, transparency, and timely compensation to the owner.",
+      "keyPoints": [
+        "Public purpose must be demonstrated",
+        "Legal process for acquisition",
+        "Fair and timely compensation",
+        "Owner rights to appeal or review"
+      ]
+    },
+    {
+      "id": "limitations-regulation",
+      "title": "Limitations and Regulation",
+      "content": "Property rights are not absolute. The state can impose restrictions for land reform, environmental protection, urban planning, and equitable resource distribution, aiming to balance private interest with social welfare.",
+      "keyPoints": [
+        "Regulation for land reform and equity",
+        "Environmental and planning controls",
+        "Prevention of speculative misuse",
+        "Balancing private and public interests"
+      ]
+    },
+    {
+      "id": "disputes-protection",
+      "title": "Dispute Resolution and Protection",
+      "content": "Courts and administrative bodies adjudicate disputes over ownership, inheritance, boundary issues, or compensation disagreements, ensuring due process and legal certainty.",
+      "keyPoints": [
+        "Judicial oversight of disputes",
+        "Due process protections",
+        "Inheritance governed by law",
+        "Legal certainty encourages investment"
+      ]
+    }
+  ],
+  "summary": [
+    "Property rights allow lawful ownership and transfer",
+    "State acquisition requires public purpose and compensation",
+    "Regulation balances social welfare and private interest",
+    "Disputes resolved through formal legal processes"
+  ]
+}

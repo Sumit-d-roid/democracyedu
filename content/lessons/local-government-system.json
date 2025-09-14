@@ -1,0 +1,60 @@
+{
+  "id": "local-government-system",
+  "title": "Local Government System",
+  "description": "Understanding the structure, functions, and importance of local governments in Nepal's federal system.",
+  "icon": "🏘️",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "local-structure",
+      "title": "Structure and Types",
+      "content": "Local government units include municipalities and rural municipalities with elected councils, executive heads, and sectoral committees coordinating service delivery.",
+      "keyPoints": [
+        "Municipal and rural classifications",
+        "Elected councils and executives",
+        "Committee-based coordination",
+        "Local planning mandates"
+      ]
+    },
+    {
+      "id": "functions-mandates",
+      "title": "Functions and Mandates",
+      "content": "Responsibilities span primary education, basic healthcare, local infrastructure, sanitation, and community development programs tailored to local needs.",
+      "keyPoints": [
+        "Service delivery focus",
+        "Infrastructure maintenance",
+        "Community development projects",
+        "Local adaptation of national policies"
+      ]
+    },
+    {
+      "id": "finance-revenue",
+      "title": "Finance and Revenue Sources",
+      "content": "Local governments raise revenue through local taxes, fees, and intergovernmental transfers, enabling autonomy while adhering to fiscal responsibility norms.",
+      "keyPoints": [
+        "Local taxation instruments",
+        "Transfers and grants",
+        "Budget planning autonomy",
+        "Fiscal responsibility principles"
+      ]
+    },
+    {
+      "id": "participation-accountability",
+      "title": "Citizen Participation and Accountability",
+      "content": "Public hearings, participatory planning, and social audits enhance legitimacy and responsiveness of local governance.",
+      "keyPoints": [
+        "Participatory planning forums",
+        "Social audit practices",
+        "Transparency mechanisms",
+        "Enhanced local legitimacy"
+      ]
+    }
+  ],
+  "summary": [
+    "Local units deliver essential services",
+    "Elected structures tailor policies locally",
+    "Revenue mix supports autonomy",
+    "Participation boosts accountability"
+  ]
+}

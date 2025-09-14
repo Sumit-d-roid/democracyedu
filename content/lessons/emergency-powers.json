@@ -1,0 +1,60 @@
+{
+  "id": "emergency-powers",
+  "title": "Emergency Powers",
+  "description": "Understanding constitutional provisions for emergency situations and their implementation in Nepal.",
+  "icon": "🚨",
+  "difficulty": "advanced",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "emergency-concepts",
+      "title": "Concept and Rationale",
+      "content": "Emergency powers enable swift state response to crises threatening national security, public order, or catastrophe mitigation. They are exceptional and time-bound to prevent abuse.",
+      "keyPoints": [
+        "Purpose: rapid crisis response",
+        "Exceptional, temporary nature",
+        "Must meet legal criteria",
+        "Guardrails to prevent misuse"
+      ]
+    },
+    {
+      "id": "declaration-process",
+      "title": "Declaration Process",
+      "content": "Formal declaration requires defined triggers, executive initiation, and legislative oversight. Documentation specifies scope, duration, and affected rights.",
+      "keyPoints": [
+        "Trigger conditions defined",
+        "Legislative oversight role",
+        "Defined scope and duration",
+        "Transparency in proclamation"
+      ]
+    },
+    {
+      "id": "rights-derogation",
+      "title": "Rights Derogation and Limits",
+      "content": "Some rights may be limited under emergency conditions; others remain non-derogable. Proportionality and necessity principles guide any restriction applied.",
+      "keyPoints": [
+        "Differentiation of rights types",
+        "Proportionality standard",
+        "Necessity justification",
+        "Review and sunset provisions"
+      ]
+    },
+    {
+      "id": "accountability-transparency",
+      "title": "Accountability and Oversight",
+      "content": "Periodic reporting, judicial review, and legislative renewal requirements ensure emergency measures do not become normalized or abusive.",
+      "keyPoints": [
+        "Reporting obligations",
+        "Judicial review availability",
+        "Legislative renewal checks",
+        "Prevention of normalization"
+      ]
+    }
+  ],
+  "summary": [
+    "Emergency powers are exceptional and temporary",
+    "Declarations require defined criteria and oversight",
+    "Rights limits must be necessary and proportionate",
+    "Accountability prevents power entrenchment"
+  ]
+}
