@@ -34,7 +34,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <Card key={index} className="hover-elevate cursor-pointer" data-testid={`card-feature-${index}`}>
+              <Card key={index} className="hover-elevate cursor-pointer card-hover-scale transition-base" data-testid={`card-feature-${index}`}>
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
                     <IconComponent className="w-6 h-6 text-primary" />

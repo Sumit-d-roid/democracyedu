@@ -126,7 +126,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto" data-testid="card-quiz-question">
+  <Card className="w-full max-w-2xl mx-auto transition-base" data-testid="card-quiz-question">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>{t('quiz.title')}</CardTitle>
@@ -154,7 +154,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
                     : "secondary"
                   : "outline"
               }
-              className="w-full justify-start text-left h-auto p-4"
+              className="w-full justify-start text-left h-auto p-4 transition-base"
               onClick={() => handleAnswerSelect(index)}
               disabled={answered}
               data-testid={`button-answer-${index}`}
@@ -233,7 +233,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
           <Button 
             onClick={handleSubmitAnswer}
             disabled={selectedAnswer === null}
-            className="w-full"
+            className="w-full transition-base"
             data-testid="button-submit-answer"
           >
             {t('quiz.submit')}
@@ -241,7 +241,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
         ) : (
           <Button 
             onClick={handleNextQuestion}
-            className="w-full"
+            className="w-full transition-base"
             data-testid="button-next-question"
           >
             {isLastQuestion ? t('quiz.complete-quiz') : t('quiz.next')}

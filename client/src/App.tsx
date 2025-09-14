@@ -19,6 +19,7 @@ import Progress from '@/pages/Progress';
 import Achievements from '@/pages/Achievements';
 import GlossaryPage from '@/pages/Glossary';
 import NotFound from '@/pages/not-found';
+import Footer from '@/components/Footer';
 
 function Router() {
   return (
@@ -52,9 +53,12 @@ function App() {
         <LanguageProvider>
           <ProgressProvider onAchievementUnlocked={handleAchievementUnlocked}>
             <BookmarksProvider>
-              <div className="min-h-screen bg-background">
+              <div className="min-h-screen bg-background flex flex-col">
                 <Header />
-                <Router />
+                <div className="flex-1">
+                  <Router />
+                </div>
+                <Footer />
               </div>
               <Toaster />
               {/* Achievement Notification */}

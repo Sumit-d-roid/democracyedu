@@ -33,93 +33,105 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 hover-elevate rounded-md px-2 py-1">
-          <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-            <img src="/images/sambhidanx_icon.svg" alt="SambhidanX Logo" className="h-7 w-7" />
-          </div>
-          <span className="font-bold text-lg">SambhidanX</span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2">
-          {navItems.map((item) => (
-            <Link key={item.path} href={item.path}>
-              <Button
-                variant={isActive(item.path) ? 'secondary' : 'ghost'}
-                size="sm"
-                data-testid={`nav-${item.key.split('.')[1]}`}
-              >
-                {t(item.key)}
-              </Button>
-            </Link>
-          ))}
-        </nav>
-
-        {/* Points and Language Toggle */}
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={toggleTheme}
-            className="px-2 py-1 rounded border"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? '🌞' : '🌙'}
-          </button>
-          <Badge variant="secondary" className="hidden sm:flex items-center gap-1" data-testid="points-badge">
-            <span className="text-xs">🏆</span>
-            {progress.totalPoints}
-          </Badge>
-          
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleLanguage}
-            data-testid="button-language-toggle"
-            className="hover-elevate flex items-center gap-2"
-          >
-            <Globe className="h-4 w-4" />
-            <span className="hidden sm:inline">{t('general.language.toggle')}</span>
-          </Button>
-
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="border-b bg-background md:hidden">
-          <nav className="container flex flex-col space-y-2 px-4 py-4">
-            {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <Button
-                  variant={isActive(item.path) ? 'secondary' : 'ghost'}
-                  className="w-full justify-start"
-                  onClick={() => setIsMenuOpen(false)}
-                  data-testid={`mobile-nav-${item.key.split('.')[1]}`}
-                >
-                  {t(item.key)}
-                </Button>
-              </Link>
-            ))}
-            <div className="pt-2 border-t">
-              <Badge variant="secondary" className="flex items-center gap-1 w-fit">
-                <span className="text-xs">🏆</span>
-                {t('progress.points')}: {progress.totalPoints}
-              </Badge>
+    <>
+      {/* Skip navigation link for keyboard users */}
+      <a href="#main" className="skip-link">{t('general.skip-to-content') || 'Skip to content'}</a>
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <Link href="/" className="flex items-center space-x-2 hover-elevate rounded-md px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={t('nav.home')}>
+            <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
+              <img src="/images/sambhidanx_icon.svg" alt="SambhidanX" className="h-7 w-7" />
             </div>
-          </nav>
+            <span className="font-bold text-lg">SambhidanX</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-1" aria-label={t('general.primary-navigation') || 'Primary navigation'}>
+              {navItems.map((item) => (
+                <Link key={item.path} href={item.path}>
+                  <Button
+                    variant={isActive(item.path) ? 'secondary' : 'ghost'}
+                    size="sm"
+                    data-testid={`nav-${item.key.split('.')[1]}`}
+                    aria-current={isActive(item.path) ? 'page' : undefined}
+                    className="transition-base"
+                  >
+                    {t(item.key)}
+                  </Button>
+                </Link>
+              ))}
+            </nav>
+
+          {/* Points and Language Toggle */}
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={toggleTheme}
+              className="px-2 py-1 rounded border text-sm hover-elevate transition-base"
+              aria-label={t('general.theme.toggle') || 'Toggle theme'}
+              aria-pressed={theme === 'dark'}
+            >
+              <span aria-hidden>{theme === 'light' ? '🌞' : '🌙'}</span>
+            </button>
+            <Badge variant="secondary" className="hidden sm:inline-flex items-center gap-1 transition-base" data-testid="points-badge" aria-label={`${t('progress.points')}: ${progress.totalPoints}`}>
+              <span className="text-xs" aria-hidden>🏆</span>
+              {progress.totalPoints}
+            </Badge>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleLanguage}
+              data-testid="button-language-toggle"
+              className="hover-elevate flex items-center gap-2 transition-base"
+              aria-label={t('general.language.toggle')}
+            >
+              <Globe className="h-4 w-4" aria-hidden />
+              <span className="hidden sm:inline">{t('general.language.toggle')}</span>
+            </Button>
+
+            {/* Mobile menu button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden transition-base"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              data-testid="button-mobile-menu"
+              aria-label={isMenuOpen ? t('general.close-menu') || 'Close menu' : t('general.open-menu') || 'Open menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav"
+            >
+              {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </Button>
+          </div>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="border-b bg-background md:hidden" id="mobile-nav">
+            <nav className="container flex flex-col space-y-2 px-4 py-4" aria-label={t('general.mobile-navigation') || 'Mobile navigation'}>
+              {navItems.map((item) => (
+                <Link key={item.path} href={item.path}>
+                  <Button
+                    variant={isActive(item.path) ? 'secondary' : 'ghost'}
+                    className="w-full justify-start transition-base"
+                    onClick={() => setIsMenuOpen(false)}
+                    data-testid={`mobile-nav-${item.key.split('.')[1]}`}
+                    aria-current={isActive(item.path) ? 'page' : undefined}
+                  >
+                    {t(item.key)}
+                  </Button>
+                </Link>
+              ))}
+              <div className="pt-2 border-t">
+                <Badge variant="secondary" className="flex items-center gap-1 w-fit transition-base">
+                  <span className="text-xs" aria-hidden>🏆</span>
+                  {t('progress.points')}: {progress.totalPoints}
+                </Badge>
+              </div>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 }
