@@ -21,18 +21,23 @@ app.set('trust proxy', 1);
 // Security middleware
 app.use(
   helmet({
-    contentSecurityPolicy: process.env.NODE_ENV === 'development'
-      ? {
-          directives: {
-            'default-src': ["'self'"],
-            'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-            'connect-src': ["'self'", 'ws:', 'wss:'],
-            'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-            'font-src': ["'self'", 'https://fonts.gstatic.com'],
-            'img-src': ["'self'", 'data:', 'blob:'],
-          },
-        }
-      : undefined
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ["'self'"],
+        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'connect-src': ["'self'", 'ws:', 'wss:', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
+        'img-src': ["'self'", 'data:', 'blob:'],
+        'worker-src': ["'self'", 'blob:'],
+        'base-uri': ["'self'"],
+        'frame-ancestors': ["'self'"],
+        'object-src': ["'none'"],
+        'form-action': ["'self'"],
+        'script-src-attr': ["'none'"],
+        'upgrade-insecure-requests': [],
+      },
+    },
   })
 );
 app.use(cors(config.cors));

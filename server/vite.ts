@@ -20,12 +20,6 @@ export function log(message: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true as const,
-  };
-
   const vite = await createViteServer({
     ...viteConfig,
     configFile: false,
@@ -36,7 +30,16 @@ export async function setupVite(app: Express, server: Server) {
         process.exit(1);
       },
     },
-    server: serverOptions,
+    server: {
+      middlewareMode: true,
+      allowedHosts: true as const,
+      hmr: {
+        server,
+        protocol: 'ws',
+        host: 'localhost',
+        clientPort: 5000,
+      },
+    },
     appType: "custom",
   });
 
@@ -58,7 +61,9 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
-      const page = await vite.transformIndexHtml(url, template);
+  let page = await vite.transformIndexHtml(url, template);
+  // Temporary simplification: remove react-refresh runtime injection if present
+  page = page.replace(/<script type=\"module\">import { injectIntoGlobalHook[\s\S]*?<\/script>/, '');
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sambhidanx-v1';
+const CACHE_NAME = 'sambhidanx-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -12,24 +12,18 @@ const API_CACHE = 'sambhidanx-api-v1';
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)).then(() => self.skipWaiting())
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME && 
-                           name !== CONTENT_CACHE && 
-                           name !== API_CACHE)
-          .map((name) => caches.delete(name))
-      );
-    })
+    caches.keys().then((cacheNames) => Promise.all(
+      cacheNames
+        .filter((name) => name !== CACHE_NAME && name !== CONTENT_CACHE && name !== API_CACHE)
+        .map((name) => caches.delete(name))
+    )).then(() => self.clients.claim())
   );
 });
 
@@ -56,6 +50,11 @@ async function handleApiRequest(request) {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
+  // Skip non-http(s) schemes (e.g., chrome-extension://) which cannot be cached
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+    return; // allow default handling, don't attempt to cache
+  }
+
   // Handle API requests
   if (url.pathname.startsWith('/api/')) {
     event.respondWith(handleApiRequest(event.request));
@@ -68,15 +67,23 @@ self.addEventListener('fetch', (event) => {
       if (response) {
         return response;
       }
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
+      return fetch(event.request).then((networkResponse) => {
+        // Only cache successful, same-origin or font/css (to improve offline UX)
+        const isOk = networkResponse && networkResponse.status === 200;
+        const cacheableTypes = ['basic', 'cors'];
+        const isCacheableType = cacheableTypes.includes(networkResponse.type);
+        const isFontOrStyle = /\.(?:woff2?|ttf|otf)$/i.test(url.pathname) || networkResponse.headers.get('content-type')?.includes('text/css');
+
+        if (isOk && (isCacheableType || isFontOrStyle)) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache).catch(() => {/* ignore put errors */});
+          });
         }
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-        return response;
+        return networkResponse;
+      }).catch(() => {
+        // Optionally could return a fallback page or asset here
+        return response; // if we had an earlier cached response
       });
     })
   );

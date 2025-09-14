@@ -184,4 +184,4 @@ function openDB(): Promise<IDBDatabase> {
     };
   });
 }
-}
+
