@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useRoute, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -50,6 +50,17 @@ export default function LessonDetail() {
   }
   
   const currentSection = lesson.sections[currentSectionIndex];
+
+  // Reading time estimation (words per minute)
+  const READING_WPM = 200;
+  const sectionReadingTimeMinutes = useMemo(() => {
+    const textParts: string[] = [];
+    if (currentSection?.content) textParts.push(currentSection.content);
+    if (currentSection?.keyPoints) textParts.push(currentSection.keyPoints.join(' '));
+    const totalWords = textParts.join(' ').trim().split(/\s+/).filter(Boolean).length;
+    if (totalWords === 0) return 0;
+    return Math.max(1, Math.round(totalWords / READING_WPM));
+  }, [currentSection]);
   const totalSections = lesson.sections.length;
   const completedSections = lesson.sections.filter(section => 
     isSectionComplete(lesson.id, section.id)
@@ -58,6 +69,34 @@ export default function LessonDetail() {
   const isCurrentSectionComplete = isSectionComplete(lesson.id, currentSection.id);
   const isLastSection = currentSectionIndex === totalSections - 1;
   const lessonCompleted = isLessonComplete(lesson.id);
+
+  // Scroll progress within current section
+  const sectionContentRef = useRef<HTMLDivElement | null>(null);
+  const [sectionScrollProgress, setSectionScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = sectionContentRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      // If content shorter than viewport, mark 100%
+      if (rect.height <= viewportHeight * 0.6) {
+        setSectionScrollProgress(100);
+        return;
+      }
+
+      const distanceFromTop = window.scrollY + rect.top; // element top relative to document
+      const scrollPosition = window.scrollY - distanceFromTop; // how much we've scrolled into element
+      const scrollable = rect.height - viewportHeight * 0.6; // allow early completion
+      const pct = Math.min(100, Math.max(0, (scrollPosition / scrollable) * 100));
+      setSectionScrollProgress(pct);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currentSectionIndex]);
   
   const handleSectionComplete = () => {
     markSectionComplete(lesson.id, currentSection.id);
@@ -196,11 +235,28 @@ export default function LessonDetail() {
                     {t('lesson.section')} {currentSectionIndex + 1} {t('lesson.of')} {totalSections}
                   </Badge>
                 </div>
+                <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Clock className="w-3 h-3" />
+                  <span data-testid="text-section-reading-time">{sectionReadingTimeMinutes} min read</span>
+                  <span aria-hidden>•</span>
+                  <span className="flex items-center gap-1" data-testid="text-section-scroll-progress">
+                    {Math.round(sectionScrollProgress)}% {t('lesson.progress')}
+                  </span>
+                </div>
+                <div className="mt-2">
+                  <div className="h-1 w-full bg-muted rounded overflow-hidden" aria-label="Section scroll progress">
+                    <div
+                      className="h-full bg-primary transition-all duration-200"
+                      style={{ width: `${sectionScrollProgress}%` }}
+                      data-testid="progress-section-scroll"
+                    />
+                  </div>
+                </div>
               </CardHeader>
               
               <CardContent className="space-y-6">
                 {/* Section Content */}
-                <div className="prose max-w-none" data-testid="text-section-content">
+                <div className="prose max-w-none" data-testid="text-section-content" ref={sectionContentRef}>
                   <p className="text-base leading-relaxed">{currentSection.content}</p>
                 </div>
                 
