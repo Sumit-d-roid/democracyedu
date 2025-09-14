@@ -1,0 +1,15 @@
+{
+  "id": "political-parties-elections",
+  "title": "Political Parties & Elections",
+  "description": "Quiz on party systems, electoral processes, and representation.",
+  "category": "Governance",
+  "questions": [
+    {"id":"1","question":"Free and fair elections require:","type":"multiple-choice","options":["Intimidation","Equal opportunity & secrecy","Vote buying","Unverifiable counting"],"correctAnswer":1,"explanation":"Equality, secrecy, and integrity underpin fair contests.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Proportional systems aim to mirror party vote shares in seats.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"They translate vote proportions into representation.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select electoral integrity safeguards.","type":"multiple-select","options":["Transparent counting","Independent administration","Monitored campaign finance","Coercive voter suppression"],"correctAnswer":[0,1,2],"explanation":"Transparency, independence, and finance oversight enhance integrity.","difficulty":"medium","points":15},
+    {"id":"4","question":"Party system fragmentation risk:","type":"multiple-choice","options":["Excessive coalition instability","Stable majorities","Clear governance cycles","Simplified negotiation"],"correctAnswer":0,"explanation":"Fragmentation complicates durable coalitions.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of inclusive participation:","type":"multiple-choice","options":["High voter registration coverage","Systemic disenfranchisement","Opaque polling locations","Prohibited observers"],"correctAnswer":0,"explanation":"Registration breadth shows access.","difficulty":"hard","points":20},
+    {"id":"6","question":"Campaign finance disclosure supports:","type":"multiple-choice","options":["Transparency & accountability","Unlimited hidden funding","Unrecorded spending","Elimination of records"],"correctAnswer":0,"explanation":"Disclosure reveals influence patterns.","difficulty":"medium","points":15},
+    {"id":"7","question":"Electoral dispute resolution mechanism should be:","type":"multiple-choice","options":["Impartial & timely","Purely partisan","Secret and delayed","Non-existent"],"correctAnswer":0,"explanation":"Timely impartial adjudication preserves legitimacy.","difficulty":"medium","points":15}
+  ]
+}

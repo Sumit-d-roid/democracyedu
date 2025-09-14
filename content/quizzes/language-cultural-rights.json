@@ -1,0 +1,15 @@
+{
+  "id": "language-cultural-rights",
+  "title": "Language & Cultural Rights",
+  "description": "Quiz on linguistic diversity, cultural preservation, and inclusion.",
+  "category": "Rights",
+  "questions": [
+    {"id":"1","question":"Cultural rights aim to:","type":"multiple-choice","options":["Erase minority identities","Preserve and express heritage","Ban traditional knowledge","Monopolize language use"],"correctAnswer":1,"explanation":"They protect expression and continuity of cultural identity.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Mother tongue education can improve early learning outcomes.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Evidence shows comprehension and retention gains.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select policies supporting linguistic inclusion.","type":"multiple-select","options":["Multilingual services","Exclusive single-language courts","Community media grants","Language suppression fines"],"correctAnswer":[0,2],"explanation":"Services and community media build inclusion; suppression undermines rights.","difficulty":"medium","points":15},
+    {"id":"4","question":"Which risk emerges when heritage sites lack documentation?","type":"multiple-choice","options":["Enhanced protection","Loss or misappropriation","Guaranteed funding","Universal digitization"],"correctAnswer":1,"explanation":"Undocumented heritage is vulnerable to loss.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of cultural vitality:","type":"multiple-choice","options":["Declining practitioner numbers","Intergenerational transmission","Forced assimilation","Criminalized rituals"],"correctAnswer":1,"explanation":"Transmission ensures continuity.","difficulty":"hard","points":20},
+    {"id":"6","question":"Safeguarding intangible heritage often involves:","type":"multiple-choice","options":["Community inventories","Secret state-only archives","Banning oral traditions","Destroying artifacts"],"correctAnswer":0,"explanation":"Participatory inventories document practices.","difficulty":"medium","points":15},
+    {"id":"7","question":"Effective language policy balances:","type":"multiple-choice","options":["Dominance & exclusion","Pluralism & administrative practicality","Random prohibition","Monolingual coercion"],"correctAnswer":1,"explanation":"Pluralism with workable administration is key.","difficulty":"medium","points":15}
+  ]
+}

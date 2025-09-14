@@ -1,0 +1,15 @@
+{
+  "id": "citizenship-immigration",
+  "title": "Citizenship & Immigration",
+  "description": "Quiz on acquisition, naturalization, and citizenship principles.",
+  "category": "Rights",
+  "questions": [
+    {"id":"1","question":"Citizenship typically confers:","type":"multiple-choice","options":["Political rights & protection","Statelessness","Total tax exemption","Hereditary nobility"],"correctAnswer":0,"explanation":"It includes rights and state protection duties.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Naturalization often requires residency periods.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Residence demonstrates connection and integration.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select citizenship acquisition modes.","type":"multiple-select","options":["Birth (jus soli/jus sanguinis)","Naturalization","Registration","Unilateral foreign decree"],"correctAnswer":[0,1,2],"explanation":"Standard modes exclude foreign unilateral grants.","difficulty":"medium","points":15},
+    {"id":"4","question":"Denial risk signals include:","type":"multiple-choice","options":["Clear published criteria","Arbitrary discretionary rejection","Appeal rights","Transparent timelines"],"correctAnswer":1,"explanation":"Arbitrariness undermines fairness.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of inclusive citizenship regime:","type":"multiple-choice","options":["Gender-equal transmission","Opaque lineage rules","Perpetual statelessness","Hidden forms"],"correctAnswer":0,"explanation":"Gender equality fosters fairness.","difficulty":"hard","points":20},
+    {"id":"6","question":"Dual nationality debates often concern:","type":"multiple-choice","options":["Loyalty and rights balance","Cloud shape patterns","Unrelated patent law","Arbitrary colors"],"correctAnswer":0,"explanation":"Debate centers on allegiance and benefits.","difficulty":"medium","points":15},
+    {"id":"7","question":"Integration indicators include:","type":"multiple-choice","options":["Language competence & participation","Secret exclusion policies","Unsanctioned detention","Permanent legal limbo"],"correctAnswer":0,"explanation":"Language and civic participation show integration.","difficulty":"medium","points":15}
+  ]
+}

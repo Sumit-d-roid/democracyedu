@@ -1,0 +1,15 @@
+{
+  "id": "property-rights",
+  "title": "Property Rights",
+  "description": "Quiz on ownership, tenure security, and constitutional protections of property.",
+  "category": "Rights",
+  "questions": [
+    {"id":"1","question":"Property expropriation typically requires:","type":"multiple-choice","options":["No justification","Public purpose & compensation","Secret decree","Personal favor"],"correctAnswer":1,"explanation":"Constitutional norms require public purpose and fair compensation.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Secure tenure encourages investment.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Security reduces risk, incentivizing improvement and credit.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select elements strengthening land governance.","type":"multiple-select","options":["Transparent cadastre","Arbitrary title removal","Accessible dispute resolution","Gender-inclusive inheritance"],"correctAnswer":[0,2,3],"explanation":"Transparency, accessible courts, and inclusion reinforce governance.","difficulty":"medium","points":15},
+    {"id":"4","question":"Which dispute scenario signals boundary uncertainty?","type":"multiple-choice","options":["Digitized surveyed parcels","Overlapping claims in registry","Single unchallenged title","Mapped coordinates verified"],"correctAnswer":1,"explanation":"Overlap indicates weak demarcation or records.","difficulty":"medium","points":15},
+    {"id":"5","question":"Primary rationale for regulating land use zoning:","type":"multiple-choice","options":["Suppress market entirely","Coordinate sustainable & safe development","Randomize allocation","Erase community input"],"correctAnswer":1,"explanation":"Zoning balances growth, safety, and environmental stewardship.","difficulty":"medium","points":15},
+    {"id":"6","question":"Indicator of equitable property systems:","type":"multiple-choice","options":["Gender asset ownership parity","High litigation backlog","Opaque valuation","Systemic fraud"],"correctAnswer":0,"explanation":"Parity reflects inclusive access to assets.","difficulty":"hard","points":20},
+    {"id":"7","question":"A land readjustment project succeeds when:","type":"multiple-choice","options":["Owners lose all value","Infrastructure improves and value shared","Records destroyed","Participation barred"],"correctAnswer":1,"explanation":"Value sharing and improved infrastructure define success.","difficulty":"medium","points":15}
+  ]
+}

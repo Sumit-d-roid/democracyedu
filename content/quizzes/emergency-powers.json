@@ -1,0 +1,15 @@
+{
+  "id": "emergency-powers",
+  "title": "Emergency Powers",
+  "description": "Quiz on constitutional emergency declarations, safeguards, and limitations.",
+  "category": "Governance",
+  "questions": [
+    {"id":"1","question":"Emergency powers aim to:","type":"multiple-choice","options":["Address crises within legal bounds","Permanently suspend constitution","Eliminate oversight","Extend arbitrary rule"],"correctAnswer":0,"explanation":"They enable rapid response while preserving core norms.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Some rights remain non-derogable during emergencies.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Certain fundamental rights stay protected always.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select safeguards on emergency powers.","type":"multiple-select","options":["Time limits","Legislative approval","Judicial review","Indefinite secret rule"],"correctAnswer":[0,1,2],"explanation":"Temporal, legislative, and judicial checks prevent abuse.","difficulty":"medium","points":15},
+    {"id":"4","question":"Risk of indefinite emergency rule:","type":"multiple-choice","options":["Democratic erosion","Strengthened accountability","Transparent rotation","Enhanced rights"],"correctAnswer":0,"explanation":"Extended emergencies can erode democratic norms.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of proportional emergency measure:","type":"multiple-choice","options":["Narrowly tailored to threat","Unlimited general bans","Permanent surveillance for all","Unbounded decrees"],"correctAnswer":0,"explanation":"Proportionality aligns scope to necessity.","difficulty":"hard","points":20},
+    {"id":"6","question":"Exit strategy feature:","type":"multiple-choice","options":["Sunset triggers review","Automatic indefinite extension","No reporting","Secret annulment"],"correctAnswer":0,"explanation":"Sunsets force formal reconsideration.","difficulty":"medium","points":15},
+    {"id":"7","question":"Oversight body during emergency might:","type":"multiple-choice","options":["Publish compliance reports","Suspend legal standards","Criminalize scrutiny","Block courts"],"correctAnswer":0,"explanation":"Reporting sustains accountability.","difficulty":"medium","points":15}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "directive-principles-state-policies",
+  "title": "Directive Principles & State Policies",
+  "description": "Quiz on guiding principles shaping governance and social justice objectives.",
+  "category": "Civic",
+  "questions": [
+    {"id":"1","question":"Directive principles are typically:","type":"multiple-choice","options":["Non-justiciable guiding norms","Criminal statutes","Private contracts","Judicial decrees"],"correctAnswer":0,"explanation":"They guide policy but aren't directly enforceable claims.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: They influence interpretation of constitutional provisions.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Courts may use them as interpretive context.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select themes often found in directive principles.","type":"multiple-select","options":["Social justice","Environmental stewardship","Public welfare","Private vendetta"],"correctAnswer":[0,1,2],"explanation":"They emphasize welfare, justice, sustainability.","difficulty":"medium","points":15},
+    {"id":"4","question":"Policy alignment indicator:","type":"multiple-choice","options":["Budget allocations reflect priority principles","Chronic neglect of stated goals","Unrelated ad-hoc spending","Opaque divergence"],"correctAnswer":0,"explanation":"Resource alignment shows operationalization.","difficulty":"medium","points":15},
+    {"id":"5","question":"Risk of ignoring principles:","type":"multiple-choice","options":["Policy incoherence","Enhanced coherence","Improved equity","Strategic consistency"],"correctAnswer":0,"explanation":"Ignoring them leads to fragmented governance.","difficulty":"hard","points":20},
+    {"id":"6","question":"Monitoring progress tool:","type":"multiple-choice","options":["Indicator dashboards","Eliminating data","Untracked assertions","Closed metrics"],"correctAnswer":0,"explanation":"Dashboards support accountability.","difficulty":"medium","points":15},
+    {"id":"7","question":"Principles foster evolution by:","type":"multiple-choice","options":["Guiding long-term policy direction","Preventing adaptation","Locking outdated norms","Blocking innovation"],"correctAnswer":0,"explanation":"They serve as a compass for progressive realization.","difficulty":"medium","points":15}
+  ]
+}

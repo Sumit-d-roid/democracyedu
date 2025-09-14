@@ -1,0 +1,15 @@
+{
+  "id": "fundamental-duties-citizens",
+  "title": "Fundamental Duties of Citizens",
+  "description": "Quiz on civic responsibilities, constitutional loyalty, and public ethics.",
+  "category": "Civic",
+  "questions": [
+    {"id":"1","question":"A fundamental civic duty aims to:","type":"multiple-choice","options":["Undermine rule of law","Promote constitutional adherence","Enable tax evasion","Block public cooperation"],"correctAnswer":1,"explanation":"Duties reinforce respect for constitutional order.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Civic duties complement rights by fostering reciprocity.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Duties and rights are interdependent.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select examples of civic participation.","type":"multiple-select","options":["Jury or community service","Informed voting","Lawful tax payment","Systematic misinformation"],"correctAnswer":[0,1,2],"explanation":"Service, voting, and tax compliance sustain institutions.","difficulty":"medium","points":15},
+    {"id":"4","question":"Ethical public conduct includes:","type":"multiple-choice","options":["Conflict disclosure","Concealed corruption","Abuse of office","Retaliation against critics"],"correctAnswer":0,"explanation":"Disclosure prevents hidden conflicts.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of civic responsibility culture:","type":"multiple-choice","options":["Volunteerism rates","Chronic disengagement","Deliberate non-compliance","Persistent apathy"],"correctAnswer":0,"explanation":"Volunteerism signals active responsibility.","difficulty":"hard","points":20},
+    {"id":"6","question":"Community resilience strengthened by:","type":"multiple-choice","options":["Mutual aid networks","Intentional fragmentation","Disaster misinformation","Excluding collaboration"],"correctAnswer":0,"explanation":"Mutual aid fosters adaptive response.","difficulty":"medium","points":15},
+    {"id":"7","question":"Civic education programs help by:","type":"multiple-choice","options":["Increasing informed engagement","Suppressing awareness","Eliminating dialogue","Spreading ignorance"],"correctAnswer":0,"explanation":"Education empowers constructive participation.","difficulty":"medium","points":15}
+  ]
+}

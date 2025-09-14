@@ -1,0 +1,15 @@
+{
+  "id": "constitutional-amendments",
+  "title": "Constitutional Amendments",
+  "description": "Quiz on amendment procedures, thresholds, and constitutional evolution.",
+  "category": "Governance",
+  "questions": [
+    {"id":"1","question":"Amendment procedures often require:","type":"multiple-choice","options":["Simple executive order","Special legislative majorities","Secret informal votes","Automatic adoption"],"correctAnswer":1,"explanation":"Higher thresholds protect constitutional stability.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Entrenched clauses may require stricter approval.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Entrenchment adds procedural rigidity for core principles.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select amendment safeguard mechanisms.","type":"multiple-select","options":["Supermajority","Referendum","Judicial review scope","Unilateral decree"],"correctAnswer":[0,1,2],"explanation":"Procedural hurdles and review balance flexibility and stability.","difficulty":"medium","points":15},
+    {"id":"4","question":"Risk of overly rigid amendment rules:","type":"multiple-choice","options":["Adaptive evolution","Democratic stagnation","Balanced flexibility","Improved legitimacy"],"correctAnswer":1,"explanation":"Excess rigidity can hinder necessary reforms.","difficulty":"medium","points":15},
+    {"id":"5","question":"Indicator of amendment legitimacy:","type":"multiple-choice","options":["Broad participatory debate","Secret elite drafting only","No public record","Compressed hidden timetable"],"correctAnswer":0,"explanation":"Deliberative inclusivity enhances legitimacy.","difficulty":"hard","points":20},
+    {"id":"6","question":"Sunset clauses in amendments can:","type":"multiple-choice","options":["Provide temporary adjustment","Ban evaluation","Guarantee permanence","Erase oversight"],"correctAnswer":0,"explanation":"Sunsets enable reassessment of transitional provisions.","difficulty":"medium","points":15},
+    {"id":"7","question":"Judicial role post-amendment may include:","type":"multiple-choice","options":["Validity review under basic structure","Automatic endorsement","Drafting amendments","Ignoring conflicts"],"correctAnswer":0,"explanation":"Courts may test conformity with unamendable principles.","difficulty":"medium","points":15}
+  ]
+}

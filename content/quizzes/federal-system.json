@@ -1,0 +1,88 @@
+{
+  "id": "federal-system",
+  "title": "Federal System Quiz",
+  "description": "Quiz on Nepal's multi-tier governance, fiscal federalism, and devolution challenges.",
+  "category": "Governance",
+  "questions": [
+    {
+      "id": "1",
+      "question": "How many provinces does Nepal have under its federal structure?",
+      "type": "multiple-choice",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": 2,
+      "explanation": "Nepal is constitutionally divided into seven provinces.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "Which level typically handles local water supply and sanitation services?",
+      "type": "multiple-choice",
+      "options": ["Federal", "Provincial", "Local", "International"],
+      "correctAnswer": 2,
+      "explanation": "Local governments oversee basic service delivery like water and sanitation.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "3",
+      "question": "Select the elements commonly associated with fiscal federalism.",
+      "type": "multiple-select",
+      "options": ["Revenue assignment", "Equalization transfers", "Judicial impeachment", "Intergovernmental grants"],
+      "correctAnswer": [0,1,3],
+      "explanation": "Fiscal federalism concerns revenue assignment, transfers, and grants—not judicial impeachment.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "4",
+      "question": "True or False: All provinces possess identical fiscal capacity and administrative resources.",
+      "type": "true-false",
+      "options": ["True", "False"],
+      "correctAnswer": 1,
+      "explanation": "Resource disparities necessitate equalization and capacity-building measures.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "5",
+      "question": "Which coordination body/tool helps manage overlapping mandates across levels?",
+      "type": "multiple-choice",
+      "options": ["Intergovernmental forums", "Electoral rolls", "Court registries", "Diplomatic missions"],
+      "correctAnswer": 0,
+      "explanation": "Forums and councils negotiate overlaps in shared functional areas.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "6",
+      "question": "A key challenge in early devolution phases is:",
+      "type": "multiple-choice",
+      "options": ["Excess surplus capacity everywhere", "Uniform revenue distribution", "Administrative capacity gaps", "Elimination of local discretion"],
+      "correctAnswer": 2,
+      "explanation": "Capacity gaps often slow effective devolution and service improvement.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "7",
+      "question": "Which metric best evaluates local service delivery impact?",
+      "type": "multiple-choice",
+      "options": ["Number of constitutional amendments", "Citizen satisfaction and coverage outcomes", "Judicial vacancy count", "Size of national cabinet"],
+      "correctAnswer": 1,
+      "explanation": "Service impact is assessed via coverage, quality, and citizen satisfaction, not cabinet size.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "8",
+      "question": "Which characteristic distinguishes Nepal's federal model in its consolidation phase?",
+      "type": "multiple-choice",
+      "options": ["Total centralization", "Inclusion-focused adaptation", "Absence of local governments", "Fixed unchanging institutional design"],
+      "correctAnswer": 1,
+      "explanation": "An emphasis on inclusion and adaptive evolution marks Nepal's federal consolidation.",
+      "difficulty": "hard",
+      "points": 20
+    }
+  ]
+}

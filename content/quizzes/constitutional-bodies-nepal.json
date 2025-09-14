@@ -1,0 +1,15 @@
+{
+  "id": "constitutional-bodies-nepal",
+  "title": "Constitutional Bodies of Nepal",
+  "description": "Quiz on roles, independence, and oversight of constitutional commissions.",
+  "category": "Institutions",
+  "questions": [
+    {"id":"1","question":"Key feature of constitutional commissions:","type":"multiple-choice","options":["Political subservience","Mandated independence","Purely symbolic power","Unlimited budgets"],"correctAnswer":1,"explanation":"Independence supports credibility and mandate delivery.","difficulty":"easy","points":10},
+    {"id":"2","question":"True or False: Overlapping mandates can reduce effectiveness.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Overlap risks duplication and conflict.","difficulty":"easy","points":10},
+    {"id":"3","question":"Select accountability mechanisms.","type":"multiple-select","options":["Annual reporting","Legislative hearings","Judicial review","Unrecorded expenditures"],"correctAnswer":[0,1,2],"explanation":"Reporting, hearings, and review enhance accountability.","difficulty":"medium","points":15},
+    {"id":"4","question":"Indicator of mandate clarity:","type":"multiple-choice","options":["Precise statutory functions","Ambiguous overlapping text","Conflicting directives","Undefined scope"],"correctAnswer":0,"explanation":"Clear functions facilitate performance.","difficulty":"medium","points":15},
+    {"id":"5","question":"Risk sign for politicization:","type":"multiple-choice","options":["Transparent selection","Merit criteria","Partisan appointment dominance","Fixed tenure"],"correctAnswer":2,"explanation":"Dominant partisan appointments may erode neutrality.","difficulty":"hard","points":20},
+    {"id":"6","question":"Capacity development priority:","type":"multiple-choice","options":["Strategic planning skills","Random staff churn","Data destruction","Budget secrecy"],"correctAnswer":0,"explanation":"Planning skills improve impact orientation.","difficulty":"medium","points":15},
+    {"id":"7","question":"Performance indicator for oversight body:","type":"multiple-choice","options":["Implemented recommendations rate","Unpublished reports","Absent follow-up","Erased archives"],"correctAnswer":0,"explanation":"Implementation rate shows effectiveness of recommendations.","difficulty":"medium","points":15}
+  ]
+}

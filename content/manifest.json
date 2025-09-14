@@ -169,6 +169,120 @@
       "title": "Fundamental Rights Quiz",
       "file": "quizzes/fundamental-rights.json",
       "category": "Rights"
+    },
+    {
+      "id": "government-structure",
+      "title": "Government Structure Quiz",
+      "file": "quizzes/government-structure.json",
+      "category": "Governance"
+    },
+    {
+      "id": "federal-system",
+      "title": "Federal System Quiz",
+      "file": "quizzes/federal-system.json",
+      "category": "Governance"
+    },
+    {
+      "id": "labor-rights-employment",
+      "title": "Labor Rights & Employment Quiz",
+      "file": "quizzes/labor-rights-employment.json",
+      "category": "Rights"
+    },
+    {
+      "id": "right-to-information",
+      "title": "Right to Information Quiz",
+      "file": "quizzes/right-to-information.json",
+      "category": "Rights"
+    },
+    {
+      "id": "property-rights",
+      "title": "Property Rights Quiz",
+      "file": "quizzes/property-rights.json",
+      "category": "Rights"
+    },
+    {
+      "id": "media-press-freedom",
+      "title": "Media & Press Freedom Quiz",
+      "file": "quizzes/media-press-freedom.json",
+      "category": "Rights"
+    },
+    {
+      "id": "language-cultural-rights",
+      "title": "Language & Cultural Rights Quiz",
+      "file": "quizzes/language-cultural-rights.json",
+      "category": "Rights"
+    },
+    {
+      "id": "financial-procedures",
+      "title": "Financial Procedures Quiz",
+      "file": "quizzes/financial-procedures.json",
+      "category": "Governance"
+    },
+    {
+      "id": "parliamentary-procedures",
+      "title": "Parliamentary Procedures Quiz",
+      "file": "quizzes/parliamentary-procedures.json",
+      "category": "Governance"
+    },
+    {
+      "id": "judiciary-system",
+      "title": "Judiciary System Quiz",
+      "file": "quizzes/judiciary-system.json",
+      "category": "Institutions"
+    },
+    {
+      "id": "public-service-commission",
+      "title": "Public Service Commission Quiz",
+      "file": "quizzes/public-service-commission.json",
+      "category": "Institutions"
+    },
+    {
+      "id": "constitutional-amendments",
+      "title": "Constitutional Amendments Quiz",
+      "file": "quizzes/constitutional-amendments.json",
+      "category": "Governance"
+    },
+    {
+      "id": "emergency-powers",
+      "title": "Emergency Powers Quiz",
+      "file": "quizzes/emergency-powers.json",
+      "category": "Governance"
+    },
+    {
+      "id": "citizenship-immigration",
+      "title": "Citizenship & Immigration Quiz",
+      "file": "quizzes/citizenship-immigration.json",
+      "category": "Rights"
+    },
+    {
+      "id": "political-parties-elections",
+      "title": "Political Parties & Elections Quiz",
+      "file": "quizzes/political-parties-elections.json",
+      "category": "Governance"
+    },
+    {
+      "id": "local-government-system",
+      "title": "Local Government System Quiz",
+      "file": "quizzes/local-government-system.json",
+      "category": "Governance"
+    },
+    {
+      "id": "constitutional-bodies-nepal",
+      "title": "Constitutional Bodies of Nepal Quiz",
+      "file": "quizzes/constitutional-bodies-nepal.json",
+      "category": "Institutions"
+    },
+    {
+      "id": "fundamental-duties-citizens",
+      "title": "Fundamental Duties of Citizens Quiz",
+      "file": "quizzes/fundamental-duties-citizens.json",
+      "category": "Civic"
+    },
+    {
+      "id": "directive-principles-state-policies",
+      "title": "Directive Principles & State Policies Quiz",
+      "file": "quizzes/directive-principles-state-policies.json",
+      "category": "Civic"
     }
   ]
 }
