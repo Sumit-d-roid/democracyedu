@@ -16,8 +16,12 @@ export const LessonContentSchema = z.object({
   icon: z.string().min(1),
   difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
   estimatedTime: z.string().min(1),
+  // Progressive learning continuum (optional during migration, 1=basic,10=advanced)
+  level: z.number().int().min(1).max(10).optional(),
   sections: z.array(LessonSectionSchema).min(1),
-  summary: z.array(z.string().min(1)).min(1)
+  summary: z.array(z.string().min(1)).min(1),
+  // Traceability to constitutional articles / parts
+  sourceRefs: z.array(z.object({ article: z.string().min(1), part: z.string().optional(), note: z.string().optional() })).optional()
 });
 
 // Quiz question schema
@@ -39,7 +43,9 @@ export const QuizContentSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
   category: z.string().min(1),
-  questions: z.array(QuizQuestionSchema).min(1)
+  questions: z.array(QuizQuestionSchema).min(1),
+  level: z.number().int().min(1).max(10).optional(),
+  sourceRefs: z.array(z.object({ article: z.string().min(1), part: z.string().optional(), note: z.string().optional() })).optional()
 });
 
 export const ManifestLessonEntrySchema = z.object({
@@ -48,7 +54,8 @@ export const ManifestLessonEntrySchema = z.object({
   file: z.string(),
   difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
   estimatedTime: z.string(),
-  icon: z.string()
+  icon: z.string(),
+  level: z.number().int().min(1).max(10).optional()
 });
 
 export const ManifestQuizEntrySchema = z.object({
