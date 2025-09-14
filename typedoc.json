@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["./src"],
+  "out": "docs",
+  "exclude": ["**/node_modules/**", "**/*.test.ts", "**/*.test.tsx"],
+  "theme": "default",
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["Core", "Components", "Hooks", "Utils", "*"],
+  "searchInComments": true,
+  "readme": "README.md"
+}
