@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import { achievements, Achievement } from '@shared/achievements';
+import { useOfflineSupport } from '../hooks/use-offline-support';
 
 interface ProgressData {
   totalPoints: number;
@@ -44,8 +45,10 @@ interface ProgressProviderProps {
 }
 
 export function ProgressProvider({ children, onAchievementUnlocked }: ProgressProviderProps) {
+  const { isOnline, saveOfflineProgress, syncOfflineProgress } = useOfflineSupport();
+  
   const [progress, setProgress] = useState<ProgressData>(() => {
-  const saved = localStorage.getItem('education-for-democracy-progress');
+    const saved = localStorage.getItem('education-for-democracy-progress');
     if (saved) {
       const parsedProgress = JSON.parse(saved);
       // Migrate old progress data to include new fields
@@ -59,9 +62,23 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     return defaultProgress;
   });
 
+  // Sync with localStorage and handle offline storage
   useEffect(() => {
-  localStorage.setItem('education-for-democracy-progress', JSON.stringify(progress));
-  }, [progress]);
+    // Always save to localStorage
+    localStorage.setItem('education-for-democracy-progress', JSON.stringify(progress));
+    
+    // If offline, save to IndexedDB for later sync
+    if (!isOnline) {
+      saveOfflineProgress(progress);
+    }
+  }, [progress, isOnline, saveOfflineProgress]);
+
+  // Try to sync when we come back online
+  useEffect(() => {
+    if (isOnline) {
+      syncOfflineProgress();
+    }
+  }, [isOnline, syncOfflineProgress]);
 
   const addPoints = (points: number) => {
     setProgress(prev => ({

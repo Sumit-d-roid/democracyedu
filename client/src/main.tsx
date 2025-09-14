@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { ErrorProvider } from './contexts/ErrorContext';
 import { AppStateProvider } from './contexts/AppStateContext';
+import { Toaster } from './components/ui/toaster';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ViewportProvider } from './contexts/ViewportContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -40,6 +41,7 @@ createRoot(document.getElementById("root")!).render(
           <AuthProvider>
             <AppStateProvider>
               <AuthenticatedApp />
+              <Toaster />
             </AppStateProvider>
           </AuthProvider>
         </LanguageProvider>
@@ -47,3 +49,16 @@ createRoot(document.getElementById("root")!).render(
     </QueryClientProvider>
   </ErrorProvider>
 );
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful:', registration.scope);
+      })
+      .catch(error => {
+        console.error('ServiceWorker registration failed:', error);
+      });
+  });
+}

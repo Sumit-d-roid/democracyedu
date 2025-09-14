@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ProgressProvider } from "@/contexts/ProgressContext";
 import AchievementNotification from "@/components/AchievementNotification";
+import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { Achievement } from "@shared/achievements";
 import Header from "@/components/Header";
 import Home from '@/pages/Home';
@@ -64,6 +65,7 @@ function App() {
                   autoClose={true}
                 />
               )}
+              <OfflineIndicator />
             </BookmarksProvider>
           </ProgressProvider>
         </LanguageProvider>
