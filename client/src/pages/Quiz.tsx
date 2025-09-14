@@ -51,7 +51,7 @@ export default function Quiz() {
                   <p className="text-sm text-muted-foreground">
                     {quiz.questions.length} {t('quiz.questions-count')}
                   </p>
-                  <Badge variant="outline">{t(`quiz.category.${quiz.id}`)}</Badge>
+                  <Badge variant="outline" data-testid={`badge-quiz-category-${quiz.id}`}>{quiz.category}</Badge>
                 </div>
                 <Button 
                   onClick={() => setSelectedQuiz(quiz.id)}
