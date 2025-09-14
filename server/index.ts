@@ -1,10 +1,28 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import helmet from "helmet";
+import cors from "cors";
+import { rateLimiter } from "./middleware/rateLimit";
+import { cacheMiddleware } from "./middleware/cache";
+import { errorHandler } from "./middleware/errorHandler";
+
+// API Version
+const API_VERSION = "v1";
 
 const app = express();
-app.use(express.json());
+
+// Security middleware
+app.use(helmet());
+app.use(cors());
+app.use(rateLimiter);
+
+// Body parsing middleware
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
+
+// Cache successful GET requests
+app.use(`/api/${API_VERSION}`, cacheMiddleware);
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -39,13 +57,8 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
+  // Global error handling middleware
+  app.use(errorHandler);
 
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
