@@ -34,64 +34,55 @@ export default function LessonCard({ id, title, description, icon, difficulty, e
   };
 
   return (
-    <Card className="hover-elevate transition-all duration-300 hover:shadow-lg" data-testid={`card-lesson-${id}`}>
-      <CardContent className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex flex-col gap-2">
-            <div className="text-4xl bg-primary/10 p-3 rounded-lg" role="img" aria-label="lesson icon">
-              {icon}
-            </div>
-            <Badge variant="outline" className="w-fit">
-              {category}
-            </Badge>
+    <Card className="hover-elevate transition-base hover:shadow-md flex flex-col" data-testid={`card-lesson-${id}`}>
+      <CardContent className="p-5 flex-1 flex flex-col">
+        <div className="flex items-start gap-4 mb-4">
+          <div
+            className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center text-3xl shrink-0"
+            aria-hidden
+          >
+            <span className="translate-y-[1px]">{icon}</span>
           </div>
-          <div className="flex flex-col gap-2 items-end">
-            <Badge variant="secondary" className={difficultyColors[difficulty]}>
-              {difficulty}
-            </Badge>
-            {isCompleted ? (
-              <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                <CheckCircle className="w-3 h-3 mr-1" />
-                {t('lessons.completed')}
-              </Badge>
-            ) : progress > 0 && (
-              <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                {Math.round(progress)}% {t('lessons.inProgress')}
-              </Badge>
-            )}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-semibold leading-snug mb-1" data-testid={`text-lesson-title-${id}`}>{title}</h3>
+            <div className="flex flex-wrap items-center gap-2 text-[11px] md:text-xs">
+              <Badge variant="outline" className="px-2 py-0.5 leading-none">{category}</Badge>
+              <Badge variant="secondary" className={`${difficultyColors[difficulty]} px-2 py-0.5 leading-none`}>{difficulty}</Badge>
+              {isCompleted && (
+                <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-0.5 leading-none flex items-center gap-1">
+                  <CheckCircle className="w-3 h-3" />{t('lessons.completed')}
+                </Badge>
+              )}
+              {!isCompleted && progress > 0 && (
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-0.5 leading-none">
+                  {Math.round(progress)}% {t('lessons.inProgress')}
+                </Badge>
+              )}
+            </div>
           </div>
         </div>
-        
-        <div className="space-y-3">
-          <h3 className="text-xl font-semibold" data-testid={`text-lesson-title-${id}`}>
-            {title}
-          </h3>
-          
-          <div className="flex items-center gap-4">
+        <div className="space-y-3 flex-1">
+          <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">{description}</p>
+          <div className="flex items-center gap-3">
             {estimatedTime && (
-              <p className="text-sm text-muted-foreground flex items-center gap-1">
-                <span className="text-primary">⏱️</span> {estimatedTime}
-              </p>
+              <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-medium">
+                <span aria-hidden>⏱️</span>{estimatedTime}
+              </span>
             )}
-            <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-              <div 
+            <div className="flex-1 h-1.5 rounded-full bg-muted/60 overflow-hidden">
+              <div
                 className="h-full bg-primary transition-all duration-500 ease-out"
                 style={{ width: `${isCompleted ? 100 : progress}%` }}
               />
             </div>
           </div>
-          
-          <p className="text-muted-foreground line-clamp-2">
-            {description}
-          </p>
         </div>
       </CardContent>
-      
-      <CardFooter className="pt-0 px-6 pb-6">
-        <Button 
+      <CardFooter className="pt-0 px-5 pb-5">
+        <Button
           onClick={handleStartLesson}
-          className="w-full transition-all duration-300 hover:scale-105"
-          variant={isCompleted ? "secondary" : "default"}
+          className="w-full transition-base"
+          variant={isCompleted ? 'secondary' : 'default'}
           data-testid={`button-start-lesson-${id}`}
         >
           {isCompleted ? (

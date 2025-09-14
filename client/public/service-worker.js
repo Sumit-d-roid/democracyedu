@@ -1,5 +1,6 @@
-// Version bump to force clients to pick up new logic
-const CACHE_NAME = 'sambhidanx-v2';
+// Service Worker Version (increment to bust cache)
+const SW_VERSION = '3';
+const CACHE_NAME = `sambhidanx-static-v${SW_VERSION}`;
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -7,8 +8,8 @@ const STATIC_ASSETS = [
   '/images/sambhidanx_icon.svg'
 ];
 
-const CONTENT_CACHE = 'sambhidanx-content-v1';
-const API_CACHE = 'sambhidanx-api-v1';
+const CONTENT_CACHE = `sambhidanx-content-v${SW_VERSION}`;
+const API_CACHE = `sambhidanx-api-v${SW_VERSION}`;
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
@@ -22,17 +23,19 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    (async () => {
-      const cacheNames = await caches.keys();
-      await Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME && name !== CONTENT_CACHE && name !== API_CACHE)
-          .map((name) => caches.delete(name))
-      );
-      await self.clients.claim();
-    })()
-  );
+  event.waitUntil((async () => {
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames
+      .filter((name) => ![CACHE_NAME, CONTENT_CACHE, API_CACHE].includes(name))
+      .map((name) => caches.delete(name))
+    );
+    await self.clients.claim();
+    // Notify all clients to reload (optional prompt could be implemented instead)
+    const clientsList = await self.clients.matchAll({ includeUncontrolled: true });
+    for (const client of clientsList) {
+      client.postMessage({ type: 'SW_ACTIVATED', version: SW_VERSION });
+    }
+  })());
 });
 
 // Helper function to handle API requests

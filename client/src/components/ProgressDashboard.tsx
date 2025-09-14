@@ -39,17 +39,17 @@ export default function ProgressDashboard() {
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="text-center py-8">
-        <img 
-          src={achievementBadge} 
-          alt="Achievement Badge" 
-          className="w-24 h-24 mx-auto mb-4"
+    <div className="space-y-10">
+      <div className="text-center pt-4 pb-10 px-4">
+        <img
+          src={achievementBadge}
+          alt="Achievement Badge"
+          className="w-24 h-24 mx-auto mb-5 drop-shadow-sm"
         />
-        <h1 className="text-3xl font-bold mb-2" data-testid="text-progress-title">
+        <h1 className="h2 mb-3 text-gradient-primary" data-testid="text-progress-title">
           {t('progress.title')}
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground max-w-md mx-auto text-sm md:text-base leading-relaxed">
           Keep learning to unlock more achievements!
         </p>
       </div>
@@ -78,14 +78,17 @@ export default function ProgressDashboard() {
       </div>
 
       {progress.completedLessons.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Completed Lessons</CardTitle>
+        <Card className="shadow-lift transition-base">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-lg font-semibold tracking-tight flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary" />
+              Completed Lessons
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             <div className="flex flex-wrap gap-2">
               {progress.completedLessons.map((lessonId, index) => (
-                <Badge key={index} variant="secondary" data-testid={`badge-completed-lesson-${index}`}>
+                <Badge key={index} variant="secondary" className="text-xs md:text-sm" data-testid={`badge-completed-lesson-${index}`}>
                   {lessonId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
                 </Badge>
               ))}

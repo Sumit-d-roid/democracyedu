@@ -105,11 +105,17 @@ export default function Home() {
   return (
     <main id="main" tabIndex={-1} className="focus:outline-none">
       <HeroSection />
-      <FeaturesSection />
-      <AboutSection />
+      <div className="section-y-md">
+        <FeaturesSection />
+      </div>
+      <div className="section-y-md">
+        <AboutSection />
+      </div>
       {/* Glossary removed from homepage. Will be added to a separate page. */}
       {/* <Timeline /> */}
-      <ContactSection />
+      <div className="section-y-md">
+        <ContactSection />
+      </div>
     </main>
   );
 }

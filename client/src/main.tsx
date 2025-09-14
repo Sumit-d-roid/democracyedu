@@ -53,12 +53,24 @@ createRoot(document.getElementById("root")!).render(
 // Register service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
+    const versionParam = `v=${Date.now()}`; // force fresh fetch
+    navigator.serviceWorker.register(`/service-worker.js?${versionParam}`)
       .then(registration => {
-        console.log('ServiceWorker registration successful:', registration.scope);
+        console.log('ServiceWorker new registration scope:', registration.scope);
       })
       .catch(error => {
         console.error('ServiceWorker registration failed:', error);
       });
+  });
+
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    if (event.data?.type === 'SW_ACTIVATED') {
+      console.log('[SW] Activated version', event.data.version);
+      // Optionally auto-reload once when a new version activates.
+      if (!sessionStorage.getItem('sw-reloaded')) {
+        sessionStorage.setItem('sw-reloaded', '1');
+        window.location.reload();
+      }
+    }
   });
 }

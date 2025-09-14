@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useProgress } from '@/contexts/ProgressContext';
 
@@ -66,11 +66,11 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <button
               onClick={toggleTheme}
-              className="px-2 py-1 rounded border text-sm hover-elevate transition-base"
+              className="inline-flex items-center justify-center h-9 w-9 rounded-md border hover-elevate transition-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-background"
               aria-label={t('general.theme.toggle') || 'Toggle theme'}
               aria-pressed={theme === 'dark'}
             >
-              <span aria-hidden>{theme === 'light' ? '🌞' : '🌙'}</span>
+              {theme === 'light' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
             <Badge variant="secondary" className="hidden sm:inline-flex items-center gap-1 transition-base" data-testid="points-badge" aria-label={`${t('progress.points')}: ${progress.totalPoints}`}>
               <span className="text-xs" aria-hidden>🏆</span>
@@ -78,15 +78,15 @@ export default function Header() {
             </Badge>
             
             <Button
-              variant="outline"
-              size="sm"
+              variant="secondary"
+              size="default"
               onClick={toggleLanguage}
               data-testid="button-language-toggle"
-              className="hover-elevate flex items-center gap-2 transition-base"
+              className="hover-elevate flex items-center gap-2 transition-base font-medium px-4 shadow-sm"
               aria-label={t('general.language.toggle')}
             >
-              <Globe className="h-4 w-4" aria-hidden />
-              <span className="hidden sm:inline">{t('general.language.toggle')}</span>
+              <Globe className="h-5 w-5" aria-hidden />
+              <span>{t('general.language.toggle')}</span>
             </Button>
 
             {/* Mobile menu button */}

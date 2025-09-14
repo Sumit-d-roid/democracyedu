@@ -15,13 +15,14 @@ function BookmarkButton({ lessonId }: { lessonId: string }) {
       duration: 3000,
     });
   }
+  const active = isBookmarked(lessonId);
   return (
     <button
-      className={`ml-2 px-2 py-1 rounded ${isBookmarked(lessonId) ? 'bg-yellow-300' : 'bg-gray-200'}`}
       onClick={handleClick}
-      aria-label={isBookmarked(lessonId) ? 'Remove Bookmark' : 'Add Bookmark'}
+      aria-label={active ? 'Remove Bookmark' : 'Add Bookmark'}
+      className={`inline-flex items-center justify-center w-8 h-8 rounded-md border text-sm font-medium transition-base bg-background hover-elevate ${active ? 'text-yellow-600 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/30' : 'text-muted-foreground'}`}
     >
-      {isBookmarked(lessonId) ? '★' : '☆'}
+      {active ? '★' : '☆'}
     </button>
   );
 }
@@ -40,9 +41,9 @@ export default function Lessons() {
         <h1 className="text-3xl font-bold mb-8 text-center" data-testid="text-lessons-title">
           {t('lessons.title')}
         </h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {lessons.map((lesson) => (
-            <div key={lesson.id} className="flex items-center">
+            <div key={lesson.id} className="relative group">
               <LessonCard
                 id={lesson.id}
                 title={lesson.title}
@@ -51,7 +52,9 @@ export default function Lessons() {
                 difficulty={lesson.difficulty}
                 estimatedTime={lesson.estimatedTime}
               />
-              <BookmarkButton lessonId={lesson.id} />
+              <div className="absolute top-2 right-2 z-10">
+                <BookmarkButton lessonId={lesson.id} />
+              </div>
             </div>
           ))}
         </div>

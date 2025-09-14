@@ -114,22 +114,25 @@ export default function Glossary() {
   );
 
   return (
-    <section className="max-w-2xl mx-auto my-8 p-6 border rounded bg-background">
-      <h2 className="text-xl font-bold mb-4">{t('glossary.title') || 'Glossary of Constitutional Terms'}</h2>
-      <input
-        type="text"
-        className="w-full mb-4 p-2 border rounded"
-        placeholder={t('glossary.search') || 'Search terms...'}
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
-      <ul>
+    <section className="mx-auto my-8 p-6 border rounded-lg bg-card shadow-sm">
+      <div className="mb-5">
+        <input
+          type="text"
+          className="w-full px-3 py-2 text-sm rounded-md bg-background border focus:outline-none focus:ring-2 focus:ring-primary/40"
+          placeholder={t('glossary.search') || 'Search terms...'}
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          aria-label={t('glossary.search') || 'Search terms'}
+        />
+      </div>
+      <ul className="space-y-4">
         {filtered.length === 0 ? (
-          <li className="text-muted">{t('glossary.noresults') || 'No matching terms found.'}</li>
+          <li className="text-sm text-muted-foreground">{t('glossary.noresults') || 'No matching terms found.'}</li>
         ) : (
           filtered.map(item => (
-            <li key={item.term[language]} className="mb-4">
-              <span className="font-semibold text-primary">{item.term[language]}</span>: {item.definition[language]}
+            <li key={item.term[language]} className="text-sm leading-relaxed">
+              <span className="font-semibold text-primary mr-1">{item.term[language]}</span>
+              <span className="text-muted-foreground">{item.definition[language]}</span>
             </li>
           ))
         )}

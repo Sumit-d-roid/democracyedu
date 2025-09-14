@@ -161,11 +161,15 @@ export default function Achievements() {
                           
                           {/* Achievement Details Tooltip/Card */}
                           <div className="mt-2 text-center">
-                            <h4 className="font-medium text-sm mb-1" data-testid={`text-title-${achievement.id}`}>
+                            <h4 
+                              className="font-medium text-sm mb-1 break-words leading-snug px-1"
+                              data-testid={`text-title-${achievement.id}`}
+                              style={{wordBreak:'break-word'}}
+                            >
                               {achievement.title}
                             </h4>
                             <p 
-                              className="text-xs text-muted-foreground leading-relaxed"
+                              className="text-xs text-muted-foreground leading-relaxed line-clamp-4 px-2"
                               data-testid={`text-description-${achievement.id}`}
                             >
                               {achievement.description}

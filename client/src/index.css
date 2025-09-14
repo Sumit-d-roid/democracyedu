@@ -83,6 +83,13 @@
   --shadow-2xs: 0px 2px 0px 0px hsl(220 15% 0% / 0.05);
   --shadow-xs: 0px 2px 0px 0px hsl(220 15% 0% / 0.05);
   --shadow-sm: 0px 2px 0px 0px hsl(220 15% 0% / 0.05), 0px 1px 2px -1px hsl(220 15% 0% / 0.10);
+
+  /* Extended visual tokens */
+  --gradient-primary: linear-gradient(135deg, hsl(220 85% 55%) 0%, hsl(250 70% 55%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(35 85% 55%) 0%, hsl(350 75% 55%) 100%);
+  --glass-bg: hsl(var(--background) / 0.6);
+  --glass-border: hsl(var(--border) / 0.5);
+  --hero-overlay: radial-gradient(circle at 30% 40%, hsl(220 85% 25% / 0.35), transparent 60%);
   --shadow: 0px 2px 0px 0px hsl(220 15% 0% / 0.05), 0px 1px 2px -1px hsl(220 15% 0% / 0.10);
   --shadow-md: 0px 2px 0px 0px hsl(220 15% 0% / 0.05), 0px 2px 4px -1px hsl(220 15% 0% / 0.10);
   --shadow-lg: 0px 2px 0px 0px hsl(220 15% 0% / 0.05), 0px 4px 6px -1px hsl(220 15% 0% / 0.10);
@@ -379,4 +386,48 @@
       transform: none !important;
     }
   }
+
+  /* Glass panel utility */
+  .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Gradient text */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+  }
+
+  /* Section spacing scale */
+  .section-y-sm { padding-top: 2rem; padding-bottom: 2rem; }
+  .section-y-md { padding-top: 4rem; padding-bottom: 4rem; }
+  .section-y-lg { padding-top: 6rem; padding-bottom: 6rem; }
+
+  /* Standard horizontal content wrapper (optional if not using container) */
+  .content-wrap { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+  @media (min-width: 640px) { .content-wrap { padding-left: 1.25rem; padding-right: 1.25rem; } }
+
+  /* Heading scale helpers (opt-in) */
+  .h1 { @apply text-4xl md:text-5xl font-bold tracking-tight; }
+  .h2 { @apply text-3xl md:text-4xl font-semibold tracking-tight; }
+  .h3 { @apply text-2xl font-semibold tracking-tight; }
+  .h4 { @apply text-xl font-semibold; }
+
+  /* Shadow refinement utility */
+  .shadow-lift { box-shadow: 0 4px 16px -4px hsl(220 55% 15% / 0.08), 0 2px 4px -1px hsl(220 55% 15% / 0.06); }
+  .shadow-lift:hover { box-shadow: 0 8px 28px -6px hsl(220 55% 15% / 0.15), 0 4px 10px -2px hsl(220 55% 15% / 0.10); }
+  .shadow-lift:active { box-shadow: 0 3px 10px -2px hsl(220 55% 15% / 0.18); }
+
+  /* Simple fade/slide animation */
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(14px); }
+    60% { opacity: 1; }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in-up { animation: fade-in-up .7s cubic-bezier(.16,.8,.3,1) both; }
 }
