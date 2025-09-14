@@ -1,85 +1,244 @@
-# Content Expansion Plan
+<!--
+   content_expansion_plan.md
+   Comprehensive roadmap for scaling constitutional literacy content (Nepal) across dual audiences.
+   This document is source-of-truth for taxonomy, granularity, schema evolution, quiz strategy,
+   ingestion pipeline, and phased execution.
+-->
 
-## Vision
-Provide two audience-tailored learning tracks (School vs College) covering the full Constitution of Nepal with pedagogically structured lessons, cross-linked objectives, and progressively rigorous assessments.
+# Constitution Content Expansion Plan
 
-## Audience Differentiation
-| Aspect | School Track | College Track |
-|--------|--------------|---------------|
-| Reading Level | Simplified, introductory | Doctrinal + analytical |
-| Section Length | 120–250 words | 300–600 words |
-| Key Points | 3–5 per section | 5–9 per section |
-| Learning Objectives | Recall / Understand | Analyze / Apply / Evaluate |
-| Quiz Style | Definition & basic scenarios | Application, comparative, synthesis |
-| Metadata Depth | Minimal | Full (sources, related, complexity) |
+## 1. Goals & Guiding Principles
+**Primary Goal:** Build a durable, academically credible, dual-track (School / College) learning system covering the full Constitution of Nepal with progressive depth, pedagogical structure, and assessment fidelity.
 
-## Lesson Metadata Extensions
-- `audiences`: ['school' | 'college']
-- `learningObjectives`: Bloom-aligned verbs
-- `sourceArticles`: Formal references (e.g., `Art. 17(1)`)
-- `complexityIndex`: 0–1 heuristic (institutional interplay + abstraction)
-- `relatedLessons`: adjacency graph for navigation
-- `tags`: thematics: federalism, rights, institutions, finance, emergency
+**Principles:**
+- Pedagogy first, automation second.
+- Backward-compatible schema evolution (optional fields only until stabilization).
+- Coverage traceability: every lesson and quiz maps to constitutional articles or doctrinal clusters.
+- Dual-track differentiation by cognitive level, not by token duplication.
+- Incremental shipping: small, reversible commits; observable progress.
 
-## Quiz Metadata Extensions
-- `cognitiveLevel` per quiz (block-level inference; per-question future)
-- `relatedArticles`, `targetObjectives`
+## 2. Master Taxonomy (Teachability Map)
+Derived from Constitution of Nepal 2015 (public domain). Grouped for instructional coherence.
 
-## Coverage Strategy
-1. Map Parts → Clusters → Lessons → Sections
-2. Ensure every fundamental right & major institution has at least one dedicated lesson section
-3. Coverage Matrix Dimensions:
-   - Rights (Equality, Freedom, Social Justice, Economic, Cultural, Environment)
-   - Institutions (Executive, Legislature, Judiciary, Constitutional Bodies)
-   - Federal Layers (Federal, Provincial, Local)
-   - Processes (Legislation, Finance, Amendment, Emergency)
-   - Integrity & Oversight (Commissions, RTI, Anti-Corruption)
+| Cluster ID | Teaching Cluster | Core Sub-Themes (Sections) | Notes |
+|------------|------------------|----------------------------|-------|
+| prelim | State, Sovereignty & Preamble Context | Sovereignty, Supremacy, State form | Frame narrative |
+| citizenship | Citizenship | Acquisition, Descent, Dual restrictions, Documentation | Deep submodules later |
+| rights-foundations | Fundamental Rights: Equality & Freedom | Equality clauses, Non-discrimination, Freedom rights bundle | Often exam-heavy |
+| rights-justice | Justice & Access | Due process, Fair trial, Writs, Remedies | Link judiciary |
+| rights-social | Social & Economic Rights | Health, Education, Labor, Social security | Progressive realization angle |
+| rights-cultural | Identity & Cultural Rights | Language, Religion, Cultural heritage | Cross-link to inclusion bodies |
+| duties | Fundamental Duties | Civic duties, Responsibility framing | Small, pairs with rights |
+| directive-policies | Directive Principles & State Policies | Principles, Policies, State obligations | Distinguish from enforceable rights |
+| federal-structure | Federal Architecture | Distribution of powers, Residual powers, Inter-government relations | Link to fiscal |
+| executive-federal | President / VP / Council of Ministers | Election, Powers, Removal, Acting roles | Combine Parts 6 & 7 elements |
+| legislature | Federal Legislature | House of Representatives, National Assembly, Legislative process | Could split into two lessons |
+| judiciary | Judiciary | Appointment, Jurisdiction, Independence safeguards | Case references optional |
+| constitutional-bodies | Constitutional Commissions | CIAA, Auditor General, PSC, Election, NHRC, Inclusion Commissions | Multi-section mega-lesson or split |
+| provincial | Provincial Governance | Assemblies, Executives, Relations with federal | Harmonize with federal structure |
+| local | Local Governance | Municipalities, Rural municipalities, Competencies | Practical governance |
+| fiscal | Fiscal & Financial Procedure | Budget cycle, Auditor role, Finance Commission | Data for economic rights linkage |
+| emergency-security | Emergency & Security Framework | Emergency powers, National Security Council, Army command | Safeguards vs rights |
+| amendment | Amendment Process | Procedure, Limitations, Safeguards | Advanced analysis |
+| elections-parties | Elections & Political Parties | Regulation, Election process, Party governance | EC role emphasized |
+| environment-resources | Land & Natural Resources / Environment | Environmental rights, Resource allocation, Sustainable use | Cross with economic rights |
+| transitional | Transitional & Implementation | Legacy provisions, Continuity clauses | College-only depth |
+| comparative | Comparative & Analytical Modules | Nepal vs other constitutions, Rights alignment | Optional enrichment |
+| case-law | Interpretive Trends & Case Law | Landmark decisions, Jurisprudential shifts | College advanced only |
 
-## Phased Rollout (Condensed)
-1. Foundation: Schema + 2 dual-track sample lessons
-2. Core Rights & Institutions (≈12 lessons dual track)
-3. Federal Structure & Processes (≈10 lessons)
-4. Advanced Comparative & Applied (college-only + optional school enrichers)
-5. QA & Calibration (question difficulty balancing)
-6. Analytics & Adaptive (future: performance-based suggestion)
+Each cluster -> 1+ Lessons (School + College variants if justified). Large clusters (e.g., constitutional-bodies) can be split by functional grouping.
 
-## Authoring Workflow
-1. Extract Articles → JSON (raw article units)
-2. Cluster into thematic groups
-3. Draft school variant first (forces clarity) → expand into college variant (add nuance)
-4. Auto-suggest keyPoints & objectives (script later)
-5. Manual refinement + sourcing
-6. Generate initial quizzes (template library) → Human review
-7. Validate (schema + coverage script + duplication check)
+## 3. Granularity & Structuring Rules
+| Level | Criteria | Target Length | Quality Heuristics |
+|-------|---------|---------------|--------------------|
+| Lesson | Cohesive constitutional theme; >3 institutional relationships OR 15–25 min study | 900–1600 words (college), 600–1100 (school) | Reading flow, layered complexity |
+| Section | Single sub-theme with unified objective | 120–250 words (school) / 250–600 (college) | ≤1 concept pivot per section |
+| Key Point | High-yield doctrinal fact, definitional hinge, exam trigger | 12–30 words | Avoid redundancy; actionable memory hook |
+| Summary Block | 5–7 “Core Takeaways” | ~10% of lesson length | Must map back to sections |
+| Advanced Supplement | Only if optional complexity >30% of base lesson | Flexible | Flag difficulty: advanced |
 
-## Quality Gates
-- All lessons: ≥1 learning objective per section (college track)
-- Key point density: ≤1 per 40 words (school), ≤1 per 60 words (college)
-- Quiz explanation length: ≥15 words; must reference concept, not restate choice.
-- No lesson orphaned (must have ≥1 related lesson) once Phase 3 complete
+Decision heuristics:
+- If draft > 1200 words before supplements → split.
+- If >6 sections OR section >9 key points → restructure.
+- Merge trivial single-article sections unless conceptually distinct.
 
-## Metrics
-- Coverage % = (# rights / total rights) + (# bodies / total bodies) weighted
-- Cognitive balance: target distribution recall 30% / comprehension 30% / application 25% / analysis 10% / evaluation 5%
-- Readability index target (school): Flesch-Kincaid Grade ≤ 9
+## 4. Schema Extensions (All Optional Initially)
+Current base already has: `audiences`, `learningObjectives`, `tags`, `relatedLessons`, `sourceArticles`, `complexityIndex`.
 
-## Next Automation Targets
-- Script: generate scaffold from raw article cluster
-- Script: compute complexityIndex (links + cross references count)
-- Script: quiz distractor generation using semantic similarity filtering
+Proposed additional (future phases):
+- `prerequisites: string[]` (lesson ids)
+- `cognitiveFocus: ('recall'|'understand'|'apply'|'analyze'|'evaluate')[]`
+- `version: string` (semantic content version)
+- `reviewStatus: 'draft' | 'reviewed' | 'published'`
+- `citations: { type: 'case'|'article'|'doctrine'; ref: string; note?: string }[]`
+- `summary: string[]` (explicit takeaways)
 
-## Risks & Mitigations
-| Risk | Mitigation |
-|------|------------|
-| Scope creep | Strict phase boundaries | 
-| Inconsistent tone | Style guide + lint script |
-| Overlapping content | Coverage matrix diff tool |
-| Unbalanced quizzes | Difficulty calibration script |
+Quiz object future additions:
+- `validation: { reviewedBy?: string; reviewedAt?: string }`
+- `coverageTags: string[]` (align with matrix axes)
+- Per-question: `cognitiveLevel`, `sourceRefs`, `rationaleQualityScore` (script-estimated).
 
-## Immediate Next Micro-Batches
-1. Add two placeholder dual-track lessons (Fundamental Rights – Intro; Federalism – Intro)
-2. Add basic quiz variants (school vs college) referencing same concept but different depth
-3. Add coverage matrix stub JSON for tracking
+## 5. Ingestion & Normalization Pipeline
+| Stage | Input | Output | Tooling Idea |
+|-------|-------|--------|--------------|
+| Acquire | Official PDF / text | Raw text | Manual confirm hash |
+| Extract | Raw text | JSON article blocks (id, heading, text) | Simple regex + manual review |
+| Normalize | JSON blocks | Canonical article entities (slug, part, cluster guess) | Slug builder (`part-3-art-17`) |
+| Cluster | Article entities | Thematic groups (pre-lesson) | Keyword + rules + manual overrides JSON |
+| Scaffold | Clusters | Draft lesson JSON (sections empty/keyPoints TBD) | Script: `scripts/generateLessonScaffold.ts` |
+| Enrich | Draft lessons | Authored lessons (objectives, keyPoints, sources) | Human pass + lint script |
+| Quiz Seed | Authored lesson | Draft quiz (templates fill stems) | Template engine + param rules |
+| Validate | Draft quiz/lesson | Ready content | Schema + coverage + readability checks |
+
+Confidence scoring: Each cluster mapping gets `confidence: 0–1`; <0.6 flagged in TODO dashboard.
+
+## 6. Authoring Guidelines
+Tone: Neutral, instructive, civic literacy focused. Avoid partisan framing.
+School Track: Plain language, analogies acceptable, define every specialized term.
+College Track: Include doctrinal nuance, comparative framing, interpretive controversies.
+Key Points: Start with active noun phrase; avoid starting with “The”.
+Learning Objectives: Bloom verbs; no duplicate verbs within a section.
+
+### Style Lint (future script rules)
+- Reject objectives not starting with verb.
+- Reject key points > 30 words.
+- Flag sections with Flesch-Kincaid grade > target for school.
+
+## 7. Quiz Generation Framework
+Question Type Ratio (per 20):
+- Single-answer MCQ: 50%
+- Multi-select MCQ: 15%
+- True/False (careful, no trivial restatements): 10%
+- Scenario / Application (still MC format): 25%
+
+Difficulty Targets:
+- Easy 30–35% (definition / direct recall)
+- Medium 40–45% (comparative / relational)
+- Hard 20–25% (application / synthesis / exception)
+
+Validation Checks (script):
+- All `correctAnswer` indices valid
+- Explanations length ≥ 15 words
+- No duplicate stems (fuzzy match)
+- Distractors: Levenshtein distance threshold to avoid near-duplicates
+- Coverage matrix updated (logs under `analytics/coverage.json`)
+
+Future: dynamic difficulty adjustment using performance logs (not in current scope).
+
+## 8. Coverage Matrix Design
+Dimensions: Rights | Institutions | Governance Processes | Federal Layers | Emergency & Amendment | Oversight.
+Stored as JSON: `coverageMatrix.json` with entries:
+```json
+{
+   "id": "rights.equality",
+   "type": "right",
+   "lessons": ["fundamental-rights-equality-college", "fundamental-rights-equality-school"],
+   "quizzes": ["quiz-fundamental-rights-equality"],
+   "questions": 14,
+   "lastUpdated": "2025-09-14"
+}
+```
+Script aggregates totals and flags:
+- `missingLesson`: axis node without lesson
+- `underQuestioned`: node < threshold (e.g., <5 questions mid-phase)
+
+## 9. Phased Roadmap (Expanded)
+| Phase | Focus | Outputs | Success Criteria |
+|-------|-------|---------|------------------|
+| 1 | Foundation & Sample | Schema (optional fields), 2 dual-track lessons, initial quizzes | Build passes; sample lessons published |
+| 2 | Core Rights & Institutions | ~12 dual-track lessons + quizzes | Coverage ≥ 40% rights/institutions |
+| 3 | Federal & Processes | +10 lessons + process quizzes | All major parts represented |
+| 4 | Depth & Cross-links | Related lessons graph, comparative modules | ≥60% nodes linked ≥1 related |
+| 5 | Enrichment & Pedagogy | Objectives complete (college), cognitive metadata | 90% sections have ≥1 objective |
+| 6 | QA & Analytics | Coverage dashboard, difficulty balance pass | No axis flagged critical |
+| 7 (ongoing) | Sustain & Version | Version tags, changelog, lint scripts | All new content passes lint gates |
+
+## 10. Immediate Micro-Batch Backlog
+1. Script scaffold generator (inputs: cluster ID list → draft JSON lessons)
+2. Add coverage matrix seed file
+3. Add 3 more rights sub-lessons (Equality, Freedom, Social Justice) dual-track stubs
+4. Implement quiz template builder for definition vs scenario styles
+5. Add content lint CLI (objectives + key point validation)
+
+## 11. Automation & Tooling Roadmap
+| Tool | Purpose | Priority |
+|------|---------|----------|
+| `scripts/clusterArticles.ts` | Map raw article text to clusters | Medium |
+| `scripts/generateLessonScaffold.ts` | Create lesson JSON shells | High |
+| `scripts/quizTemplateSeed.ts` | Generate quiz drafts from lesson metadata | High |
+| `scripts/coverageReport.ts` | Summarize coverage & gaps | Medium |
+| `scripts/contentLint.ts` | Enforce style rules | Medium |
+| `scripts/difficultyAudit.ts` | Stats on question distribution | Low |
+
+## 12. Metrics & Analytics (Future)
+Planned JSON outputs under `analytics/`:
+- `coverage.json`: per axis node coverage
+- `difficulty.json`: question difficulty distribution
+- `readability.json`: FK scores per lesson (school track)
+
+## 13. Risks & Mitigations
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| Scope creep | Delays core coverage | Lock per-phase backlog |
+| Inconsistent pedagogical tone | Learner confusion | Style lint + peer review |
+| Over-emphasis on rote recall | Shallow learning | Maintain scenario ratio target |
+| Data drift (article grouping errors) | Misaligned lessons | Confidence scoring + manual review queue |
+| Quiz imbalance | Skewed assessment | Coverage + difficulty scripts |
+
+## 14. Versioning & Change Control
+- Add `version` field to new lessons starting Phase 4.
+- Maintain `docs/content_changelog.md` with semantic version + summary per batch.
+- Use conventional commits scope `content:` for lesson/quiz updates.
+
+## 15. Acceptance Criteria for Phase 1 Completion
+- Two dual-track lessons fully validated (schema parse, objectives present, no lint warnings once lint exists).
+- At least one quiz per lesson with ≥8 questions (balanced easy/medium).
+- Coverage matrix file seeded referencing these lessons.
+- Documentation (this file) committed.
+
+## 16. Appendix: Sample Lesson Skeleton (College)
+```json
+{
+   "id": "fundamental-rights-equality-college",
+   "title": "Fundamental Rights: Equality",
+   "audiences": ["college"],
+   "sections": [
+      {
+         "id": "equality-scope",
+         "title": "Scope & Constitutional Basis",
+         "content": "...",
+         "learningObjectives": ["Analyze scope differentiation", "Interpret non-discrimination principle"],
+         "keyPoints": ["Equality before law vs equal protection distinction", "Protected grounds enumerated"],
+         "sourceArticles": ["Art.17(1)", "Art.18"],
+         "tags": ["rights", "equality"]
+      }
+   ],
+   "relatedLessons": ["fundamental-rights-freedom-college"],
+   "complexityIndex": 0.42,
+   "prerequisites": ["fundamental-rights-intro-college"],
+   "summary": ["Equality clauses structure limitations."]
+}
+```
+
+## 17. Appendix: Sample Quiz Question (Scenario)
+```json
+{
+   "id": "equality-scenario-01",
+   "question": "A provincial law creates a benefit only for citizens of one province without justification. Which constitutional principle is most directly engaged?",
+   "type": "multiple-choice",
+   "options": [
+      "Due process",
+      "Equality before the law",
+      "Directive state policy",
+      "Freedom of movement"
+   ],
+   "correctAnswer": 1,
+   "explanation": "The scenario involves differential treatment requiring examination under equality before the law and non-discrimination guarantees.",
+   "difficulty": "medium",
+   "sourceArticles": ["Art.18"],
+   "cognitiveLevel": "analyze"
+}
+```
 
 ---
-(End of initial plan – expand iteratively as implementation proceeds.)
+This plan is a living document; update iteratively as tooling and content mature.
