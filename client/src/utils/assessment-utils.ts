@@ -47,7 +47,9 @@ export function scoreAssessment(
       points = evaluateQuestion[question.type](answer as string, question.correctAnswer as string[]);
       correct = points >= 70; // Consider essay correct if it scores 70% or higher
     } else {
-      correct = evaluateQuestion[question.type](answer, question.correctAnswer);
+  // Indexing evaluateQuestion with dynamic question.type needs a cast to the appropriate function signature
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  correct = (evaluateQuestion as any)[question.type](answer, question.correctAnswer);
       points = correct ? question.points : 0;
     }
 

@@ -123,8 +123,10 @@ export function useCalculationCache<T>(
 
     // Implement LRU cache
     if (cache.current.size >= cacheSize) {
-      const firstKey = cache.current.keys().next().value;
-      cache.current.delete(firstKey);
+      const iteratorResult = cache.current.keys().next();
+      if (!iteratorResult.done) {
+        cache.current.delete(iteratorResult.value as string);
+      }
     }
 
     cache.current.set(key, result);

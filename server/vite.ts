@@ -2,6 +2,7 @@ import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
 import { createServer as createViteServer, createLogger } from "vite";
+import net from 'net';
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
@@ -19,12 +20,35 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
+async function findOpenPort(start: number, attempts = 10): Promise<number> {
+  for (let i = 0; i < attempts; i++) {
+    const port = start + i;
+    const free = await new Promise<boolean>(resolve => {
+      const srv = net.createServer()
+        .once('error', () => resolve(false))
+        .once('listening', () => srv.close(() => resolve(true)))
+        .listen(port, '127.0.0.1');
+    });
+    if (free) return port;
+  }
+  throw new Error(`No open port found near ${start}`);
+}
+
 export async function setupVite(app: Express, server: Server) {
   const hmrHost = process.env.HMR_HOST || process.env.VITE_HMR_HOST || undefined;
   const hmrPort = process.env.HMR_PORT ? Number(process.env.HMR_PORT) : undefined;
   const hmrProtocol = process.env.HMR_PROTOCOL || undefined; // 'ws' | 'wss'
 
   log(`Vite HMR config -> host: ${hmrHost ?? 'auto'} | port: ${hmrPort ?? 'auto'} | protocol: ${hmrProtocol ?? 'ws (default)'}`);
+
+  let resolvedHmrPort = hmrPort;
+  if (!resolvedHmrPort) {
+    try {
+      resolvedHmrPort = await findOpenPort(24678); // typical Vite baseline
+    } catch {
+      resolvedHmrPort = undefined;
+    }
+  }
 
   const vite = await createViteServer({
     ...viteConfig,
@@ -39,11 +63,11 @@ export async function setupVite(app: Express, server: Server) {
     server: {
       middlewareMode: true,
       allowedHosts: true as const,
-      hmr: (hmrHost || hmrPort || hmrProtocol) ? {
+      hmr: (hmrHost || resolvedHmrPort || hmrProtocol) ? {
         server,
         protocol: (hmrProtocol as 'ws' | 'wss') || 'ws',
         host: hmrHost,
-        clientPort: hmrPort,
+        clientPort: resolvedHmrPort,
       } : undefined,
     },
     appType: "custom",

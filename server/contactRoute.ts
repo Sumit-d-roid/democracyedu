@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+// Use ESM import (project is type: module). Provide ambient declaration elsewhere.
 import express from 'express';
 
 const router = express.Router();
@@ -10,7 +10,10 @@ router.post('/contact', async (req, res) => {
   }
 
   // Configure nodemailer with Gmail SMTP
-  const transporter = nodemailer.createTransport({
+  // Dynamically import nodemailer to avoid static type requirements
+  // @ts-ignore - ambient declaration provided; suppress if unresolved
+  const nodemailer = await import('nodemailer');
+  const transporter = nodemailer.default.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,

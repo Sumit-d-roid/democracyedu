@@ -65,7 +65,8 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
       isTablet: width >= breakpoints.md && width < breakpoints.lg,
       isDesktop: width >= breakpoints.lg,
       isPwa: window.matchMedia('(display-mode: standalone)').matches,
-      isStandalone: window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches,
+  // Non-standard iOS Safari property access via casting
+  isStandalone: (window.navigator as any).standalone || window.matchMedia('(display-mode: standalone)').matches,
     };
   });
 
@@ -118,7 +119,8 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
       setState(prev => ({
         ...prev,
         isPwa: e.matches,
-        isStandalone: e.matches || window.navigator.standalone || false,
+  // Non-standard iOS Safari property access via casting
+  isStandalone: e.matches || (window.navigator as any).standalone || false,
       }));
     }
 
