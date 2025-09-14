@@ -49,12 +49,71 @@
         "Contribution-based social security expansion",
         "Support for vulnerable worker groups"
       ]
+    },
+    {
+      "id": "historical-evolution",
+      "title": "Historical Evolution of Labor Protections",
+      "content": "Regulation expanded from basic safety and wage provisions toward comprehensive rights: social security expansion, anti‑harassment codes, and formal dispute mechanisms.",
+      "keyPoints": [
+        "From minimal to comprehensive standards",
+        "Addition of social protection pillars",
+        "Formalization of dispute resolution",
+        "Progressive rights layering"
+      ]
+    },
+    {
+      "id": "enforcement-challenges",
+      "title": "Enforcement Challenges",
+      "content": "Inspectorate capacity, informal sector prevalence, and limited reporting channels impede consistent enforcement, especially in remote or small enterprises.",
+      "keyPoints": [
+        "Resource-limited inspections",
+        "High informal employment share",
+        "Underreporting of violations",
+        "Rural enforcement gaps"
+      ]
+    },
+    {
+      "id": "informal-sector-focus",
+      "title": "Informal Sector Focus",
+      "content": "Extending protections to informal workers requires simplified registration, portable benefits, and tailored compliance incentives for micro‑enterprises.",
+      "keyPoints": [
+        "Simplified registration pathways",
+        "Portable social benefits",
+        "Incentives for compliance",
+        "Micro‑enterprise outreach"
+      ]
+    },
+    {
+      "id": "case-study-safety",
+      "title": "Case Study: Occupational Safety Program",
+      "content": "A pilot safety training with medium manufacturing firms reduced incidents and informed national guidelines on protective equipment standards.",
+      "keyPoints": [
+        "Incident reduction evidence",
+        "Guideline formation influence",
+        "Scalable training model",
+        "Reinforces preventive approach"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Priorities include digitized compliance reporting, expanded portable social security for informal workers, and integrated OSH (occupational safety and health) analytics for prevention.",
+      "keyPoints": [
+        "Digital compliance platforms",
+        "Expanded portable benefits",
+        "Predictive OSH analytics",
+        "Inclusive workforce protections"
+      ]
     }
   ],
   "summary": [
-    "Labor rights are constitutionally supported in Nepal",
-    "Workers have protections against exploitation and unsafe conditions",
-    "Trade union rights and fair pay principles are recognized",
-    "Social security systems are expanding to cover more workers"
+    "Labor rights rooted in constitutional guarantees and evolving statutes",
+    "Historical expansion added social security & dispute mechanisms",
+    "Enforcement gaps: inspectorate capacity & informality",
+    "Informal sector inclusion needs portable, simple systems",
+    "Safety programs & training reduce incident rates",
+    "Unions and collective voice reinforce bargaining equity",
+    "Digital compliance + analytics to modernize oversight",
+    "Future: extended protections and predictive prevention tools"
   ]
 }

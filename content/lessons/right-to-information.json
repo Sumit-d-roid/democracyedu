@@ -49,12 +49,71 @@
         "Need for better record management",
         "Training reduces improper denials"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context of RTI",
+      "content": "RTI emerged from broader democratic reforms emphasizing accountability and anti‑corruption. Progressive jurisprudence clarified disclosure duties and narrowed broad secrecy claims.",
+      "keyPoints": [
+        "Democratic reform origin",
+        "Anti‑corruption impetus",
+        "Court rulings narrowed exemptions",
+        "Gradual cultural shift toward openness"
+      ]
+    },
+    {
+      "id": "practical-applications",
+      "title": "Practical Applications",
+      "content": "Civic groups use RTI to audit local project spending, verify procurement fairness, and monitor service delivery quality—creating feedback loops for administrative improvement.",
+      "keyPoints": [
+        "Budget tracking by citizens",
+        "Procurement transparency gains",
+        "Service quality monitoring",
+        "Feedback loops spur reform"
+      ]
+    },
+    {
+      "id": "implementation-gaps",
+      "title": "Implementation Gaps",
+      "content": "Inconsistent record digitization, limited metadata standards, and variable officer training produce response delays and quality variance. Proactive data catalogs remain underdeveloped.",
+      "keyPoints": [
+        "Record digitization uneven",
+        "Metadata standards lacking",
+        "Officer training variability",
+        "Underdeveloped data catalogs"
+      ]
+    },
+    {
+      "id": "case-study-budget",
+      "title": "Case Study: Local Budget Transparency",
+      "content": "A community organization files RTI requests on a stalled infrastructure project, uncovering procurement delays and prompting administrative corrective measures and public disclosure updates.",
+      "keyPoints": [
+        "RTI exposed procedural delay",
+        "Prompted corrective action",
+        "Enhanced local accountability",
+        "Model for community monitoring"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Next steps include machine‑readable proactive publication, integrated request tracking dashboards, strengthened sanctions for wrongful denial, and public digital literacy expansion.",
+      "keyPoints": [
+        "Machine‑readable proactive data",
+        "Unified tracking dashboards",
+        "Stronger denial sanctions",
+        "Expanded public RTI literacy"
+      ]
     }
   ],
   "summary": [
-    "RTI empowers citizens to access public information",
-    "Legal framework mandates disclosure and officers",
-    "Defined process with exemptions and appeals",
-    "Impact positive but awareness and capacity challenges remain"
+    "RTI enables citizen oversight of spending & services",
+    "Legal framework + officers structure access pathways",
+    "Historical reforms narrowed overbroad secrecy claims",
+    "Practical use cases drive procurement and budget transparency",
+    "Implementation gaps: digitization, metadata, training variability",
+    "Case studies show RTI catalyzes corrective governance action",
+    "Future: proactive machine‑readable publication & accountability",
+    "Digital literacy expansion increases equitable utilization"
   ]
 }

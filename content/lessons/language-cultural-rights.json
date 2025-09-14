@@ -49,12 +49,71 @@
         "Curriculum inclusion strategies",
         "Digital tools for preservation"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context and Evolution",
+      "content": "Policies evolved from limited recognition toward broader multilingual accommodation and indigenous cultural preservation emphasis aligned with inclusion objectives.",
+      "keyPoints": [
+        "From limited to broader recognition",
+        "Inclusion-driven policy shifts",
+        "Growing institutional support",
+        "Alignment with identity rights"
+      ]
+    },
+    {
+      "id": "revitalization-strategies",
+      "title": "Revitalization Strategies",
+      "content": "Community language nests, bilingual education, documentation grants, and elder knowledge transmission programs sustain endangered linguistic heritage.",
+      "keyPoints": [
+        "Community immersion approaches",
+        "Bilingual curriculum models",
+        "Grant-funded documentation",
+        "Intergenerational transmission"
+      ]
+    },
+    {
+      "id": "digital-preservation",
+      "title": "Digital Preservation and Access",
+      "content": "Open archives, digital orthography standards, and participatory mapping of cultural sites leverage technology for preservation and educational integration.",
+      "keyPoints": [
+        "Open digital archives",
+        "Standardized orthographies",
+        "Cultural site mapping",
+        "EdTech integration potential"
+      ]
+    },
+    {
+      "id": "case-study-program",
+      "title": "Case Study: Community Language Program",
+      "content": "A rural bilingual education pilot improved literacy outcomes while increasing retention of heritage vocabulary among primary learners.",
+      "keyPoints": [
+        "Improved literacy results",
+        "Heritage vocabulary retention",
+        "Pilot scalability insight",
+        "Community ownership critical"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Integrated digital corpora, cross‑regional collaboration hubs, culturally responsive curricula, and sustainable funding models will shape next‑phase preservation.",
+      "keyPoints": [
+        "Digital corpora integration",
+        "Collaboration & knowledge hubs",
+        "Culturally responsive pedagogy",
+        "Sustainable funding pathways"
+      ]
     }
   ],
   "summary": [
-    "Nepal protects linguistic and cultural diversity",
-    "Local bodies can adopt working languages",
-    "Cultural preservation uses policy and institutions",
-    "Globalization creates risks requiring revitalization"
+    "Constitutional framework protects multilingual & cultural diversity",
+    "Historical shift toward broader inclusive recognition",
+    "Revitalization uses community immersion & bilingual education",
+    "Digital preservation expands access & documentation quality",
+    "Globalization pressures mitigated by targeted strategies",
+    "Case evidence: bilingual pilots boost literacy & retention",
+    "Future: integrated digital corpora & collaboration hubs",
+    "Sustainable funding vital for long-term cultural resilience"
   ]
 }

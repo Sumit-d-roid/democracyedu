@@ -49,12 +49,71 @@
         "Environmental responsibility",
         "Everyday democratic practice"
       ]
+    },
+    {
+      "id": "historical-origin",
+      "title": "Historical Origin of Duties Concept",
+      "content": "Civic duties gained prominence to complement expanding rights catalogues—embedding responsibility narratives that reinforce social cohesion and constitutional loyalty.",
+      "keyPoints": [
+        "Response to expanding rights",
+        "Narrative of shared responsibility",
+        "Cohesion and loyalty emphasis",
+        "Comparative influence from global constitutions"
+      ]
+    },
+    {
+      "id": "practical-engagement",
+      "title": "Practical Engagement Channels",
+      "content": "School civic clubs, digital participation platforms, and community service programs operationalize duty concepts for youth and broader populations.",
+      "keyPoints": [
+        "Civic clubs for experiential learning",
+        "Digital participation tools",
+        "Structured service programs",
+        "Youth engagement multiplier"
+      ]
+    },
+    {
+      "id": "education-strategies",
+      "title": "Education and Awareness Strategies",
+      "content": "Curriculum integration, scenario-based simulations, and public campaigns nurture practical understanding of duties tied to democratic resilience.",
+      "keyPoints": [
+        "Curriculum mainstreaming",
+        "Simulation-based learning",
+        "Campaigns build awareness",
+        "Link to resilience messaging"
+      ]
+    },
+    {
+      "id": "modern-challenges",
+      "title": "Modern Challenges",
+      "content": "Digital echo chambers, misinformation, and declining volunteerism rates test the translation of duties into sustained civic participation.",
+      "keyPoints": [
+        "Misinformation undermines informed duty",
+        "Echo chambers reduce pluralism",
+        "Volunteerism sustainability issues",
+        "Need for adaptive engagement tactics"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Gamified civic platforms, lifelong civic learning pathways, and data-informed participation incentives may deepen practical enactment of constitutional duties.",
+      "keyPoints": [
+        "Gamification of civic tasks",
+        "Lifelong civic learning",
+        "Data‑informed incentive design",
+        "Integrated engagement ecosystems"
+      ]
     }
   ],
   "summary": [
-    "Duties complement fundamental rights",
-    "Citizens uphold and protect constitutional order",
-    "Civic culture builds resilience",
-    "Practical actions sustain democracy"
+    "Fundamental duties reinforce reciprocal democratic responsibility",
+    "Historical emergence paralleled rights expansion",
+    "Education + engagement channels operationalize duty concepts",
+    "Modern challenges: misinformation & participation fatigue",
+    "Civic culture + volunteerism build resilience",
+    "Practical daily conduct embodies abstract obligations",
+    "Future: gamified and data‑driven civic participation pathways",
+    "Sustained awareness strategies ensure long-term adherence"
   ]
 }

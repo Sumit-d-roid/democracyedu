@@ -49,12 +49,71 @@
         "Legislative renewal checks",
         "Prevention of normalization"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context and Lessons",
+      "content": "Past emergency applications highlight risks of scope creep and delayed termination, informing stronger temporal limits and transparency norms.",
+      "keyPoints": [
+        "Experience revealed scope creep risk",
+        "Later reforms tightened temporal limits",
+        "Transparency norms strengthened",
+        "Lessons shape current safeguards"
+      ]
+    },
+    {
+      "id": "operational-coordination",
+      "title": "Operational Coordination",
+      "content": "Inter-agency command structures, resource mapping dashboards, and decentralized reporting channels enhance situational awareness and targeted response.",
+      "keyPoints": [
+        "Unified command structures",
+        "Resource mapping dashboards",
+        "Decentralized reporting inputs",
+        "Improved situational awareness"
+      ]
+    },
+    {
+      "id": "oversight-enhancements",
+      "title": "Oversight Enhancement Mechanisms",
+      "content": "Independent review panels, publication of derogation justifications, and real‑time civil society feedback portals bolster legitimacy and proportionality assessment.",
+      "keyPoints": [
+        "Independent review panels",
+        "Justification publication",
+        "Civil society feedback loops",
+        "Enhanced proportionality evaluation"
+      ]
+    },
+    {
+      "id": "case-study-public-health",
+      "title": "Case Study: Public Health Emergency",
+      "content": "A health emergency response used targeted movement restrictions with sunset clauses and frequent data releases, preserving essential rights while containing spread.",
+      "keyPoints": [
+        "Targeted restriction approach",
+        "Sunset clauses enforced",
+        "Frequent data transparency",
+        "Balance between control and rights"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Advances will emphasize granular risk zoning, interoperable crisis data, AI‑assisted early warning, and codified proportionality audit trails.",
+      "keyPoints": [
+        "Granular risk zoning",
+        "Interoperable crisis datasets",
+        "AI early warning tools",
+        "Proportionality audit codification"
+      ]
     }
   ],
   "summary": [
-    "Emergency powers are exceptional and temporary",
-    "Declarations require defined criteria and oversight",
-    "Rights limits must be necessary and proportionate",
-    "Accountability prevents power entrenchment"
+    "Emergency powers are exceptional, time‑bound governance tools",
+    "Declarations hinge on defined triggers + legislative oversight",
+    "Historical use underscores need for strict temporal limits",
+    "Operational coordination improves situational responsiveness",
+    "Enhanced oversight: review panels & justification transparency",
+    "Case evidence: targeted, data‑transparent health measures work",
+    "Future: granular risk zoning & interoperable early warning data",
+    "Proportionality audits institutionalize rights safeguards"
   ]
 }

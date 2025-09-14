@@ -49,12 +49,71 @@
         "Balancing independence with accountability",
         "Public confidence importance"
       ]
+    },
+    {
+      "id": "historical-evolution",
+      "title": "Historical Evolution of the Judiciary",
+      "content": "Nepal's judiciary transitioned from a centralized monarchical model to a constitutional rights‑review body. Successive constitutions expanded writ jurisdiction, procedural guarantees, and structural independence features.",
+      "keyPoints": [
+        "Shift from monarchical to constitutional oversight",
+        "Expanded writ and review scope",
+        "Progressive strengthening of independence",
+        "Historical reforms shape present design"
+      ]
+    },
+    {
+      "id": "case-management-reforms",
+      "title": "Case Management and Procedural Reforms",
+      "content": "Digital filing pilots, automated cause‑lists, time standards, and ADR (alternative dispute resolution) integration seek to reduce backlog and improve predictability for litigants.",
+      "keyPoints": [
+        "Digital filing experimentation",
+        "Time standards for priority matters",
+        "ADR reduces trial burden",
+        "Predictability improves trust"
+      ]
+    },
+    {
+      "id": "landmark-case-example",
+      "title": "Landmark Case Example",
+      "content": "A writ petition challenging administrative detention prompts the Supreme Court to reinforce due process timelines and mandate periodic detention reviews—signaling intolerance for procedural delay in liberty cases.",
+      "keyPoints": [
+        "Landmark clarified due process timing",
+        "Periodic review obligation emphasized",
+        "Strengthened protection of liberty",
+        "Precedent guides lower courts"
+      ]
+    },
+    {
+      "id": "comparative-perspective",
+      "title": "Comparative Perspective",
+      "content": "Regional peers illustrate varied models: some adopt specialized constitutional courts; Nepal relies on a unified apex court blending general and constitutional jurisdiction—enhancing coherence but increasing workload.",
+      "keyPoints": [
+        "Unified apex vs separate constitutional courts",
+        "Coherence vs caseload trade‑off",
+        "Regional innovation informs reform",
+        "Comparative lessons on efficiency"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Priorities include scaling e‑justice platforms, standardizing performance metrics, deepening judicial training in technology and complex commercial matters, and expanding legal aid coverage.",
+      "keyPoints": [
+        "Scaled e‑justice infrastructure",
+        "Performance metric maturation",
+        "Advanced specialization training",
+        "Broader legal aid reach"
+      ]
     }
   ],
   "summary": [
-    "Three-tier judiciary with specialized functions",
-    "Supreme Court safeguards constitutional rights",
-    "Access challenges drive reform efforts",
-    "Ethics and accountability sustain trust"
+    "Three-tier judiciary with expanding specialization",
+    "Supreme Court anchors constitutional interpretation & writs",
+    "Historical reforms strengthened structural independence",
+    "Case management and digitization target backlog reduction",
+    "Ethics, transparency, and metrics bolster public trust",
+    "Access gaps addressed through legal aid and ADR integration",
+    "Comparative models highlight coherence vs caseload trade‑offs",
+    "Future focus: scalable e‑justice and deeper specialization"
   ]
 }

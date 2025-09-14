@@ -49,12 +49,71 @@
         "Inheritance governed by law",
         "Legal certainty encourages investment"
       ]
+    },
+    {
+      "id": "historical-reform",
+      "title": "Historical Land and Property Reform",
+      "content": "Reforms addressed concentrated holdings and tenure insecurity, introducing ceilings, cadastral surveys, and progressive acquisition frameworks for equitable redistribution.",
+      "keyPoints": [
+        "Addressing concentration",
+        "Cadastral survey modernization",
+        "Tenure security emphasis",
+        "Redistribution equity goals"
+      ]
+    },
+    {
+      "id": "urbanization-pressures",
+      "title": "Urbanization and Market Pressures",
+      "content": "Rapid urban growth drives land value escalation, informal settlements, and planning compliance strain—necessitating integrated zoning and infrastructure coordination.",
+      "keyPoints": [
+        "Escalating urban land values",
+        "Informal settlement challenges",
+        "Planning compliance strain",
+        "Need for integrated zoning"
+      ]
+    },
+    {
+      "id": "environmental-considerations",
+      "title": "Environmental and Resilience Considerations",
+      "content": "Land use regulation now integrates hazard mapping, conservation corridors, and sustainable resource stewardship to mitigate environmental and disaster risks.",
+      "keyPoints": [
+        "Hazard-informed planning",
+        "Conservation corridor protection",
+        "Sustainable resource stewardship",
+        "Disaster risk mitigation"
+      ]
+    },
+    {
+      "id": "case-study-resettlement",
+      "title": "Case Study: Infrastructure Resettlement",
+      "content": "A transport corridor project applied transparent valuation panels and livelihood restoration support, improving acceptance of compulsory acquisition outcomes.",
+      "keyPoints": [
+        "Transparent valuation process",
+        "Livelihood restoration support",
+        "Improved community acceptance",
+        "Model for equitable acquisition"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Priorities include digitized land registries, integrated spatial planning, climate resilience zoning, and streamlined dispute resolution through online adjudication tools.",
+      "keyPoints": [
+        "Digitized and interoperable registries",
+        "Spatial planning integration",
+        "Climate resilience zoning",
+        "Online dispute resolution systems"
+      ]
     }
   ],
   "summary": [
-    "Property rights allow lawful ownership and transfer",
-    "State acquisition requires public purpose and compensation",
-    "Regulation balances social welfare and private interest",
-    "Disputes resolved through formal legal processes"
+    "Property rights balance private interest & public purpose",
+    "Historical reforms targeted concentration & tenure insecurity",
+    "Acquisition frameworks hinge on transparency & fair compensation",
+    "Urbanization pressures demand integrated zoning & planning",
+    "Environmental resilience integrated into land regulation",
+    "Case: livelihood restoration boosts acquisition acceptance",
+    "Future: digitized registries & streamlined dispute resolution",
+    "Equity + resilience principles shape evolving governance"
   ]
 }

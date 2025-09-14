@@ -49,12 +49,71 @@
         "Inclusive participation goals",
         "Technology adoption debates"
       ]
+    },
+    {
+      "id": "historical-evolution",
+      "title": "Historical Evolution",
+      "content": "Party system development reflects transitions toward competitive pluralism, with reforms enhancing internal democracy, disclosure, and inclusion requirements.",
+      "keyPoints": [
+        "Transition to pluralism",
+        "Internal democracy reforms",
+        "Disclosure enhancement",
+        "Inclusion mandates growth"
+      ]
+    },
+    {
+      "id": "campaign-finance",
+      "title": "Campaign Finance and Accountability",
+      "content": "Disclosure portals, expenditure caps, and audit processes aim to reduce undue influence while ensuring feasible compliance for smaller parties.",
+      "keyPoints": [
+        "Spending caps rationale",
+        "Disclosure portal transparency",
+        "Audit and enforcement mechanisms",
+        "Level playing field considerations"
+      ]
+    },
+    {
+      "id": "digital-transformation",
+      "title": "Digital Transformation of Elections",
+      "content": "Voter information platforms, social media campaigning, and data analytics reshape engagement—raising issues of targeting ethics and misinformation.",
+      "keyPoints": [
+        "Data-driven outreach",
+        "Ethical targeting debates",
+        "Social media misinformation",
+        "Need for transparency norms"
+      ]
+    },
+    {
+      "id": "case-study-observation",
+      "title": "Case Study: Election Observation Collaboration",
+      "content": "Joint domestic observer coalition aggregated rapid reports, enabling swift response to procedural issues and strengthening confidence in results tabulation.",
+      "keyPoints": [
+        "Rapid reporting synergy",
+        "Procedural issue escalation",
+        "Enhanced public confidence",
+        "Model for future cycles"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Trends point to stronger data governance, expanded political finance analytics, inclusive civic tech for participation, and resilient information integrity frameworks.",
+      "keyPoints": [
+        "Data governance frameworks",
+        "Finance analytics sophistication",
+        "Inclusive civic technology",
+        "Information integrity safeguards"
+      ]
     }
   ],
   "summary": [
-    "Parties structure democratic competition",
-    "Mixed system blends proportional and direct seats",
-    "Independent administration ensures credibility",
-    "Reforms target fairness and inclusivity"
+    "Parties aggregate interests & structure competition",
+    "Mixed system balances inclusiveness with geographic accountability",
+    "Historical reforms deepened internal democracy & transparency",
+    "Campaign finance rules pursue fairness & curb undue influence",
+    "Digital transformation reshapes outreach & integrity challenges",
+    "Observation collaboration boosts trust and rapid issue resolution",
+    "Inclusive participation remains a core innovation driver",
+    "Future: data governance, civic tech, integrity safeguards"
   ]
 }

@@ -49,12 +49,71 @@
         "Mechanisms for discipline",
         "Institutional integrity focus"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Procedural Evolution",
+      "content": "Procedural frameworks have matured through constitutional change and comparative borrowing, refining committee mandates, minority protections, and time allocation rules.",
+      "keyPoints": [
+        "Evolution via constitutional phases",
+        "Comparative influence on refinement",
+        "Enhanced committee mandate clarity",
+        "Improved minority voice mechanisms"
+      ]
+    },
+    {
+      "id": "committee-dynamics",
+      "title": "Committee Dynamics and Specialization",
+      "content": "Standing and sector committees provide technical scrutiny, stakeholder consultation, and iterative amendment drafting—improving legislative quality and oversight depth.",
+      "keyPoints": [
+        "Technical scrutiny increases quality",
+        "Stakeholder hearings add evidence",
+        "Iterative redrafting improves clarity",
+        "Committee specialization deepens oversight"
+      ]
+    },
+    {
+      "id": "challenges-innovation",
+      "title": "Challenges and Innovation",
+      "content": "Legislative backlog, limited data integration, and uneven research capacity drive innovation—digital bill tracking, evidence units, and open data portals.",
+      "keyPoints": [
+        "Backlog pressures scheduling",
+        "Data integration gaps",
+        "Research capacity variability",
+        "Digital tracking & open data solutions"
+      ]
+    },
+    {
+      "id": "case-study-budget",
+      "title": "Case Study: Budget Bill Review",
+      "content": "A finance committee conducts clause‑by‑clause analysis integrating audit findings and civil society submissions, resulting in targeted amendments to procurement oversight clauses.",
+      "keyPoints": [
+        "Clause analysis improves precision",
+        "Audit evidence informs amendments",
+        "Civic input broadens perspective",
+        "Outcome: stronger procurement oversight"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Expect expansion of digital deliberation tools, structured evidence standards, enhanced public submission portals, and performance metrics for committees.",
+      "keyPoints": [
+        "Digital deliberation platforms",
+        "Evidence submission standards",
+        "Open public engagement portals",
+        "Committee performance indicators"
+      ]
     }
   ],
   "summary": [
-    "Parliament's bicameral structure enables review",
-    "Bills follow multi-stage lifecycle",
-    "Oversight tools strengthen accountability",
-    "Procedural rules uphold decorum and fairness"
+    "Bicameral design balances representation and review",
+    "Structured lifecycle + committees refine bills",
+    "Historical evolution improved minority protections",
+    "Committee specialization deepens technical scrutiny",
+    "Innovation tackles backlog via digital tracking & data",
+    "Case-driven amendments strengthen governance clauses",
+    "Oversight tools integrate audits & public input",
+    "Future: evidence standards and performance metrics"
   ]
 }

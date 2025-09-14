@@ -49,12 +49,71 @@
         "Need for digital literacy initiatives",
         "Platform accountability debates"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context",
+      "content": "Media liberalization progressed alongside democratic transitions, expanding private outlets and investigative reporting culture while testing regulatory capacity.",
+      "keyPoints": [
+        "Democratic transition broadened space",
+        "Growth of private outlets",
+        "Investigative culture emergence",
+        "Regulatory adaptation needed"
+      ]
+    },
+    {
+      "id": "investigative-journalism",
+      "title": "Investigative Journalism Role",
+      "content": "In‑depth probes into procurement, environmental impact, and governance irregularities catalyze reforms, relying on source protection and data access.",
+      "keyPoints": [
+        "Exposes governance failures",
+        "Requires robust source protection",
+        "Data access critical",
+        "Drives policy and accountability"
+      ]
+    },
+    {
+      "id": "regulatory-challenges",
+      "title": "Regulatory Challenges",
+      "content": "Striking balance between combating harmful content and avoiding over‑broad restrictions is complicated by evolving digital dissemination and cross‑platform virality.",
+      "keyPoints": [
+        "Harm mitigation vs free expression",
+        "Cross-platform virality complexity",
+        "Need for proportionate standards",
+        "Regulator capacity constraints"
+      ]
+    },
+    {
+      "id": "case-study-misinformation",
+      "title": "Case Study: Countering Misinformation",
+      "content": "Collaborative newsroom fact‑checking of viral claims during a public health event reduced panic, with transparent sourcing increasing public trust in verified updates.",
+      "keyPoints": [
+        "Fact‑checking lowered misinformation spread",
+        "Transparency built credibility",
+        "Cross‑outlet collaboration effective",
+        "Model for crisis communication"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Expect growth in data journalism, AI‑assisted verification, diversified revenue models, and stronger cross‑border cooperation against disinformation networks.",
+      "keyPoints": [
+        "Data journalism expansion",
+        "AI verification tools",
+        "Revenue model diversification",
+        "Cross‑border anti‑disinformation collaboration"
+      ]
     }
   ],
   "summary": [
-    "Press freedom underpins democratic oversight",
-    "Ethical journalism builds public trust",
-    "Regulation must avoid chilling effect",
-    "Digital changes create new accountability challenges"
+    "Press freedom sustains democratic accountability",
+    "Historical liberalization expanded private and investigative media",
+    "Ethics + self‑regulation build credibility",
+    "Regulatory balance challenged by fast digital virality",
+    "Investigative work triggers governance reforms",
+    "Misinformation responses hinge on collaboration & transparency",
+    "Future: AI verification, data journalism, diversified revenue",
+    "Cross‑border cooperation vital against disinformation networks"
   ]
 }

@@ -49,12 +49,71 @@
         "Emerging skill alignment",
         "Strategic modernization initiatives"
       ]
+    },
+    {
+      "id": "historical-evolution",
+      "title": "Historical Evolution",
+      "content": "Recruitment shifted from patronage tendencies toward formalized merit systems, with successive reforms adding anonymized scripts, structured interview rubrics, and appeal channels.",
+      "keyPoints": [
+        "Shift from patronage to merit",
+        "Standardization of evaluations",
+        "Introduction of appeals",
+        "Progressive professionalization"
+      ]
+    },
+    {
+      "id": "technology-innovation",
+      "title": "Technology and Innovation",
+      "content": "Candidate portals, remote testing pilots, item bank analytics, and biometric verification aim to improve fairness, accessibility, and integrity of examinations.",
+      "keyPoints": [
+        "Online candidate lifecycle management",
+        "Remote assessment pilots",
+        "Analytics detect anomalous patterns",
+        "Integrity via biometric verification"
+      ]
+    },
+    {
+      "id": "diversity-inclusion",
+      "title": "Diversity and Inclusion Strategies",
+      "content": "Targeted outreach, language accommodations, and preparatory materials for underrepresented groups support a representative civil service cadre.",
+      "keyPoints": [
+        "Outreach to underserved regions",
+        "Inclusive language accommodations",
+        "Preparatory support materials",
+        "Representative workforce objective"
+      ]
+    },
+    {
+      "id": "case-study-example",
+      "title": "Case Study: Digital Application Rollout",
+      "content": "Deployment of an online application reduced processing time and error rates while expanding rural applicant participation through simplified document submission.",
+      "keyPoints": [
+        "Processing time reduction",
+        "Error rate decline",
+        "Rural participation increase",
+        "Scalable digital infrastructure"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Advanced psychometrics, AI‑assisted screening with transparency safeguards, continuous competency mapping, and broader accessibility enhancements are emerging priorities.",
+      "keyPoints": [
+        "Transparent AI screening standards",
+        "Continuous competency mapping",
+        "Enhanced accessibility design",
+        "Refined integrity analytics"
+      ]
     }
   ],
   "summary": [
-    "PSC ensures merit-based civil service entry",
-    "Transparent recruitment builds trust",
-    "Capacity reforms leverage technology",
-    "Challenges drive modernization strategies"
+    "PSC anchors merit-based, independent recruitment",
+    "Historical reforms reduced patronage and added appeals",
+    "Technology drives fairness, speed, and integrity",
+    "Backlogs & regional access shape modernization agenda",
+    "Diversity strategies pursue representative workforce",
+    "Case rollout shows digital platforms boost inclusion",
+    "Future: psychometrics & transparent AI augmentation",
+    "Continuous competency mapping guides workforce planning"
   ]
 }

@@ -49,12 +49,71 @@
         "Resource mobilization hurdles",
         "Continuous evaluation importance"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context",
+      "content": "Principles have evolved to incorporate broader socio‑economic equity, environmental resilience, and inclusive governance priorities reflecting national transformation phases.",
+      "keyPoints": [
+        "Evolution toward inclusive equity focus",
+        "Integration of sustainability aims",
+        "Reflects governance transformation phases",
+        "Adaptive policy signaling tool"
+      ]
+    },
+    {
+      "id": "practical-applications",
+      "title": "Practical Applications",
+      "content": "Budget circulars, sector strategies, and impact statements embed directive concepts—steering investments into social protection, green infrastructure, and balanced regional development.",
+      "keyPoints": [
+        "Budget guidance embeds principles",
+        "Green and social investment targeting",
+        "Regional balance considerations",
+        "Impact statements align execution"
+      ]
+    },
+    {
+      "id": "measurement-gaps",
+      "title": "Measurement Gaps",
+      "content": "Fragmented baseline data, weak outcome attribution, and limited disaggregated indicators impede rigorous evaluation of principle realization.",
+      "keyPoints": [
+        "Baseline fragmentation issue",
+        "Attribution complexity",
+        "Disaggregation shortcomings",
+        "Need for standardized metrics"
+      ]
+    },
+    {
+      "id": "comparative-insight",
+      "title": "Comparative Insight",
+      "content": "Other jurisdictions leverage directive-style clauses as interpretive aids in socio‑economic litigation; Nepal's use remains primarily policy‑oriented with emerging judicial reference.",
+      "keyPoints": [
+        "Elsewhere: increased judicial citation",
+        "Policy orientation predominant locally",
+        "Potential for growing interpretive role",
+        "Comparative models guide evolution"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Expect integration of climate resilience metrics, open data dashboards for tracking directive progress, and stronger linkage to medium‑term expenditure frameworks.",
+      "keyPoints": [
+        "Climate resilience indicators added",
+        "Open data tracking dashboards",
+        "Expenditure framework alignment",
+        "Enhanced evaluation architecture"
+      ]
     }
   ],
   "summary": [
-    "Directive principles guide policy direction",
-    "Operationalized through plans and budgets",
-    "Influence interpretation of governance priorities",
-    "Challenges include data and coordination gaps"
+    "Directive principles articulate aspirational governance compass",
+    "Historical evolution broadened equity & sustainability scope",
+    "Operationalized via plans, budgets, impact statements",
+    "Measurement gaps: baselines, attribution, disaggregation",
+    "Comparative practice suggests rising interpretive relevance",
+    "Applications steer social & green investment prioritization",
+    "Future: climate metrics + open tracking dashboards",
+    "Stronger MTEF linkage to reinforce execution"
   ]
 }

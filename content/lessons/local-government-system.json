@@ -49,12 +49,71 @@
         "Transparency mechanisms",
         "Enhanced local legitimacy"
       ]
+    },
+    {
+      "id": "historical-transition",
+      "title": "Historical Transition to Federal Localism",
+      "content": "Transition from centralized administration to constitutionally empowered local units expanded functional assignments and fiscal discretion to address localized priorities.",
+      "keyPoints": [
+        "Centralized to devolved governance",
+        "Expanded functional scope",
+        "Fiscal discretion growth",
+        "Local priority responsiveness"
+      ]
+    },
+    {
+      "id": "capacity-development",
+      "title": "Capacity Development",
+      "content": "Training academies, peer learning networks, and standardized planning templates aim to reduce capacity variance between better‑resourced and emerging local units.",
+      "keyPoints": [
+        "Training & peer learning",
+        "Template standardization",
+        "Variance reduction goals",
+        "Institutional maturity progression"
+      ]
+    },
+    {
+      "id": "coordination-challenges",
+      "title": "Coordination Challenges",
+      "content": "Overlap with provincial mandates, data fragmentation, and procurement bottlenecks can slow service outcomes; integrated MIS and joint forums mitigate friction.",
+      "keyPoints": [
+        "Mandate overlap issues",
+        "Data fragmentation barriers",
+        "Procurement bottlenecks",
+        "Integrated MIS solutions"
+      ]
+    },
+    {
+      "id": "case-study-service",
+      "title": "Case Study: Local Health Outreach",
+      "content": "A coordinated health outreach initiative using local ward data improved immunization coverage and informed targeted budget reallocations.",
+      "keyPoints": [
+        "Improved coverage metrics",
+        "Data-driven allocation",
+        "Inter-tier collaboration",
+        "Scalable outreach model"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Focus areas: integrated digital service portals, performance-based grants, expanded participatory budgeting, and standardized outcome dashboards.",
+      "keyPoints": [
+        "Digital service portal integration",
+        "Performance grant incentives",
+        "Broader participatory budgeting",
+        "Outcome dashboard transparency"
+      ]
     }
   ],
   "summary": [
-    "Local units deliver essential services",
-    "Elected structures tailor policies locally",
-    "Revenue mix supports autonomy",
-    "Participation boosts accountability"
+    "Devolution created empowered local service units",
+    "Historical shift expanded functional & fiscal space",
+    "Capacity programs reduce variance across municipalities",
+    "Revenue mix + transfers underpin autonomy",
+    "Coordination + data integration mitigate overlap",
+    "Citizen participation & social audits strengthen legitimacy",
+    "Case evidence: data‑guided health outreach boosts outcomes",
+    "Future: digital portals & performance-based grant systems"
   ]
 }

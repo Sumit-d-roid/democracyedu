@@ -49,12 +49,60 @@
         "Rights expansion trajectory",
         "Lessons for future reforms"
       ]
+    },
+    {
+      "id": "comparative-perspective",
+      "title": "Comparative Perspective",
+      "content": "Different systems impose varied rigidity: some require referenda or multi‑term approvals. Nepal balances supermajority thresholds with deliberative committee scrutiny for flexibility plus safeguard.",
+      "keyPoints": [
+        "Spectrum of amendment rigidity",
+        "Referenda vs parliamentary supermajorities",
+        "Committee deliberation adds scrutiny",
+        "Balance of adaptability and stability"
+      ]
+    },
+    {
+      "id": "implementation-challenges",
+      "title": "Implementation Challenges",
+      "content": "Political polarization, time constraints, and limited public engagement can narrow debate quality. Limited civic understanding risks procedural skepticism.",
+      "keyPoints": [
+        "Polarization narrows consensus",
+        "Compressed timelines reduce deliberation",
+        "Public engagement often limited",
+        "Civic literacy gaps affect legitimacy"
+      ]
+    },
+    {
+      "id": "case-study-example",
+      "title": "Case Study: Structural Clarification Amendment",
+      "content": "An amendment clarifying intergovernmental fiscal authority underwent multi‑committee hearings incorporating provincial feedback—illustrating iterative negotiation before supermajority passage.",
+      "keyPoints": [
+        "Provincial consultation improved clarity",
+        "Iterative redrafting built consensus",
+        "Demonstrated safeguard effectiveness",
+        "Enhanced legitimacy via inclusion"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Likely trajectory: structured public consultation portals, enhanced impact analyses, and clearer entrenchment definitions to reduce procedural disputes.",
+      "keyPoints": [
+        "Public consultation digitization",
+        "Pre‑amendment impact assessments",
+        "Clarified entrenchment criteria",
+        "Data‑driven deliberation support"
+      ]
     }
   ],
   "summary": [
-    "Amendments balance flexibility and stability",
-    "Procedures ensure legitimacy and rigor",
-    "Constraints protect core structures",
-    "Historical trends guide future reforms"
+    "Amendments reconcile adaptability with constitutional stability",
+    "Structured multi‑stage procedure underpins legitimacy",
+    "Entrenchment + judicial review protect core architecture",
+    "Historical patterns reflect governance and rights evolution",
+    "Comparative lens clarifies rigidity trade‑offs",
+    "Challenges: polarization, limited civic engagement",
+    "Case processes show value of iterative consultation",
+    "Future: impact assessments & clearer entrenchment criteria"
   ]
 }

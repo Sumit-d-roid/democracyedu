@@ -49,12 +49,71 @@
         "Timeliness of financial reporting",
         "Modernization and digitization efforts"
       ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context of Fiscal Reforms",
+      "content": "Fiscal governance evolved from manual, centralized processes toward integrated information systems and multi‑tier planning frameworks supporting federal devolution.",
+      "keyPoints": [
+        "Manual to digital transition",
+        "Centralized to devolved coordination",
+        "Integrated planning emergence",
+        "Evolution improves transparency"
+      ]
+    },
+    {
+      "id": "expenditure-control",
+      "title": "Expenditure Control and Risk Management",
+      "content": "Commitment controls, cash forecasting, and internal audit risk matrices manage liquidity, reduce arrears, and detect irregularities early.",
+      "keyPoints": [
+        "Commitment control discipline",
+        "Cash flow forecasting",
+        "Risk-based internal audits",
+        "Arrears prevention focus"
+      ]
+    },
+    {
+      "id": "procurement-modernization",
+      "title": "Procurement Modernization",
+      "content": "E‑procurement portals, standardized bidding documents, and supplier performance tracking enhance competition, value for money, and integrity in contracting.",
+      "keyPoints": [
+        "E‑procurement adoption",
+        "Standard documents consistency",
+        "Supplier performance metrics",
+        "Enhanced competition & transparency"
+      ]
+    },
+    {
+      "id": "case-study-capital-project",
+      "title": "Case Study: Capital Project Oversight",
+      "content": "A multi‑year infrastructure project uses milestone-based disbursements and dashboard reporting, reducing delays and cost overruns through real‑time variance alerts.",
+      "keyPoints": [
+        "Milestone disbursement discipline",
+        "Dashboard variance visibility",
+        "Delay and cost overrun reduction",
+        "Model for large capital management"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Next phase: accrual adoption pilots, open fiscal data APIs, program budgeting expansion, and analytics for predictive revenue and expenditure management.",
+      "keyPoints": [
+        "Accrual basis pilots",
+        "Open fiscal data APIs",
+        "Program budgeting scaling",
+        "Predictive analytics utilization"
+      ]
     }
   ],
   "summary": [
-    "Budget cycle spans drafting to audit",
-    "Revenues shared across government levels",
-    "PFM systems ensure discipline and transparency",
-    "Reforms target capacity, data, and digitization"
+    "Budget lifecycle integrates planning, execution, & audit loops",
+    "Historical reforms digitized and decentralized fiscal management",
+    "Equalization & shared revenues pursue inter‑regional equity",
+    "PFM controls + risk management reinforce fiscal discipline",
+    "Procurement modernization boosts value & integrity",
+    "Case oversight dashboards curb overruns in capital projects",
+    "Reform challenges: capacity, data integration, timeliness",
+    "Future: accrual pilots, program budgeting & predictive analytics"
   ]
 }

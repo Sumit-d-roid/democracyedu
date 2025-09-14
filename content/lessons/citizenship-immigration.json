@@ -49,12 +49,71 @@
         "Gender parity concerns",
         "Digital identity modernization"
       ]
+    },
+    {
+      "id": "historical-evolution",
+      "title": "Historical Evolution",
+      "content": "Citizenship and immigration frameworks shifted alongside political transitions, refining eligibility clarity, gender equity, and procedural safeguards.",
+      "keyPoints": [
+        "Transition-driven legal updates",
+        "Gender equity improvements",
+        "Clarified eligibility pathways",
+        "Strengthened procedural safeguards"
+      ]
+    },
+    {
+      "id": "diaspora-engagement",
+      "title": "Diaspora Engagement Strategies",
+      "content": "Policy focus on investment facilitation, knowledge exchange, and cultural linkage programs encourages diaspora contributions while maintaining regulatory compliance.",
+      "keyPoints": [
+        "Investment facilitation",
+        "Knowledge and skills networks",
+        "Cultural linkage initiatives",
+        "Regulatory compliance balance"
+      ]
+    },
+    {
+      "id": "statelessness-mitigation",
+      "title": "Statelessness Mitigation",
+      "content": "Targeted documentation drives, birth registration expansion, and gender‑neutral transmission policies reduce statelessness risk among vulnerable populations.",
+      "keyPoints": [
+        "Birth registration expansion",
+        "Documentation outreach",
+        "Gender‑neutral policy impact",
+        "Risk reduction for vulnerable groups"
+      ]
+    },
+    {
+      "id": "case-study-digital-id",
+      "title": "Case Study: Digital Identity Rollout",
+      "content": "Pilot digital ID linking civil registry and immigration records improved verification speed and reduced duplicate applications while raising data privacy considerations.",
+      "keyPoints": [
+        "Verification speed gains",
+        "Duplicate reduction",
+        "Data privacy implications",
+        "Model for integrated registries"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Integrated digital identity ecosystems, streamlined risk‑based visa processes, diaspora innovation platforms, and robust privacy safeguards will shape modernization.",
+      "keyPoints": [
+        "Integrated digital ecosystems",
+        "Risk-based processing",
+        "Diaspora innovation platforms",
+        "Enhanced privacy governance"
+      ]
     }
   ],
   "summary": [
-    "Multiple pathways to citizenship exist",
-    "Citizens enjoy rights and bear obligations",
-    "Immigration policy balances diverse interests",
-    "Emerging debates shape future reforms"
+    "Multiple acquisition pathways with clarified eligibility",
+    "Rights balanced by civic and tax obligations",
+    "Historical evolution improved gender equity & safeguards",
+    "Diaspora engagement leverages investment & knowledge",
+    "Statelessness mitigation hinges on documentation & registration",
+    "Digital ID pilots enhance integrity but raise privacy needs",
+    "Policy debates steer modernization & inclusion aims",
+    "Future: integrated IDs, risk-based processing, privacy frameworks"
   ]
 }

@@ -4,7 +4,7 @@
   "description": "Learn about the fundamental rights guaranteed by Nepal's Constitution, including civil liberties and human rights protections.",
   "icon": "⚖️",
   "difficulty": "beginner",
-  "estimatedTime": "15 minutes",
+  "estimatedTime": "30 minutes",
   "sections": [
     {
       "id": "introduction",
@@ -51,13 +51,104 @@
         "Right to safe drinking water and sanitation",
         "Progressive implementation by the state"
       ]
+    },
+    {
+      "id": "enforcement-remedies",
+      "title": "Enforcement and Remedies",
+      "content": "Fundamental rights become meaningful only when enforceable. Individuals may petition higher courts—often the Supreme Court—seeking writs (such as habeas corpus or mandamus) to compel state compliance or prevent rights violations. Interim orders can halt ongoing infringements while a case is adjudicated.",
+      "keyPoints": [
+        "Courts issue writs to protect rights",
+        "Remedies include injunctions and compensation",
+        "Interim orders prevent ongoing harm",
+        "Judicial review scrutinizes state action"
+      ]
+    },
+    {
+      "id": "vulnerable-groups",
+      "title": "Protection of Vulnerable Groups",
+      "content": "Targeted constitutional clauses and legislation seek to dismantle systemic barriers faced by women, Dalits, indigenous nationalities, persons with disabilities, and marginalized regions. Affirmative measures—such as representation quotas—aim to accelerate substantive equality beyond formal non-discrimination.",
+      "keyPoints": [
+        "Affirmative measures accelerate inclusion",
+        "Special provisions for historically excluded groups",
+        "Equality aims for outcomes, not only access",
+        "Monitoring needed to ensure effectiveness"
+      ]
+    },
+    {
+      "id": "case-study-application",
+      "title": "Case Study: Freedom of Expression in Practice",
+      "content": "A citizen challenges a local authority's attempt to block a peaceful assembly citing 'public inconvenience'. The court weighs whether the restriction is narrowly tailored and necessary for public order. This illustrates proportionality analysis—balancing expression with legitimate regulatory aims.",
+      "keyPoints": [
+        "Restrictions must be necessary and proportionate",
+        "Public inconvenience alone may be insufficient",
+        "Burden on authority to justify limitation",
+        "Judicial balancing protects core liberties"
+      ]
+    },
+    {
+      "id": "comparative-perspective",
+      "title": "Comparative Perspective",
+      "content": "Nepal's catalogue of socio-economic rights is comparatively expansive in the region, aligning with global trends recognizing education, health, and food as justiciable interests. Enforcement still depends on institutional capacity, budget prioritization, and sustained civic advocacy.",
+      "keyPoints": [
+        "Expansive socio-economic rights set",
+        "Regional leadership in rights articulation",
+        "Implementation hinges on resources",
+        "Civic engagement sustains progress"
+      ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context and Evolution",
+      "content": "Fundamental rights in Nepal matured through successive constitutional experiments and social movements advocating inclusion. Landmark jurisprudence refined scope—especially around equality, dignity, and socio‑economic entitlements—shaping today’s broader catalogue.",
+      "keyPoints": [
+        "Rights expanded over successive constitutions",
+        "Social movements drove inclusion focus",
+        "Judicial decisions clarified scope",
+        "Evolution responds to contextual needs"
+      ]
+    },
+    {
+      "id": "practical-applications",
+      "title": "Practical Applications in Governance",
+      "content": "Administrative guidelines, sector budgets, and impact litigation operationalize abstract guarantees. Strategic litigation has advanced rights to education materials, health access, and anti‑discrimination enforcement in service delivery contexts.",
+      "keyPoints": [
+        "Budgets translate rights into services",
+        "Impact cases trigger policy change",
+        "Administrative directives standardize practice",
+        "Monitoring converts norms into outcomes"
+      ]
+    },
+    {
+      "id": "implementation-gaps",
+      "title": "Implementation Gaps and Challenges",
+      "content": "Capacity constraints, uneven local awareness, and resource scarcity slow realization of socio‑economic rights. Data fragmentation hampers measuring substantive equality, requiring better disaggregated indicators and rights‑based budgeting.",
+      "keyPoints": [
+        "Capacity and resource constraints",
+        "Awareness disparities among regions",
+        "Need for disaggregated rights indicators",
+        "Budget alignment still uneven"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Next‑phase priorities include deepening enforcement remedies, integrating rights impact assessments into legislation, expanding digital legal aid, and institutionalizing periodic rights progress reporting for transparency.",
+      "keyPoints": [
+        "Rights impact assessment mainstreaming",
+        "Digital access to remedies",
+        "Periodic progress reporting",
+        "Stronger local implementation frameworks"
+      ]
     }
   ],
   "summary": [
-    "Fundamental rights ensure equality and dignity for all citizens",
-    "Article 18 guarantees right to equality and prohibits discrimination",
-    "Freedom rights include expression, information, and assembly",
-    "Economic and social rights cover education, health, and basic needs",
-    "These rights are enforceable through constitutional mechanisms"
+    "Comprehensive set of civil, political, and socio‑economic rights",
+    "Equality and anti‑discrimination norms central (Art 18)",
+    "Judicial writs enable enforceability of guarantees",
+    "Progressive realization depends on capacity & budgets",
+    "Affirmative measures pursue substantive—not only formal—equality",
+    "Implementation gaps persist in data, funding, and awareness",
+    "Strategic litigation catalyzes policy adaptation",
+    "Future focus: impact assessment and transparent progress reviews"
   ]
 }

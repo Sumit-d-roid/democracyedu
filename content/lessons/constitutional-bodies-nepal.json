@@ -49,12 +49,71 @@
         "Influence on policy reforms",
         "Trust-building through transparency"
       ]
+    },
+    {
+      "id": "historical-development",
+      "title": "Historical Development",
+      "content": "Creation and expansion of constitutional bodies paralleled governance reforms seeking integrity, decentralization oversight, and rights protection modernization.",
+      "keyPoints": [
+        "Reform-driven institutionalization",
+        "Expansion of oversight scope",
+        "Alignment with integrity agenda",
+        "Adaptive mandate evolution"
+      ]
+    },
+    {
+      "id": "performance-metrics",
+      "title": "Performance Metrics and Evaluation",
+      "content": "KPIs include implementation rate of audit recommendations, case resolution efficiency, sanction follow‑through, and proactive disclosure of findings.",
+      "keyPoints": [
+        "Audit recommendation uptake",
+        "Case resolution timeliness",
+        "Sanction enforcement tracking",
+        "Transparent publication cadence"
+      ]
+    },
+    {
+      "id": "challenges-reform",
+      "title": "Challenges and Reform Priorities",
+      "content": "Budget unpredictability, talent retention, and technology adoption gaps constrain performance; reforms target multi‑year funding certainty and digital case systems.",
+      "keyPoints": [
+        "Funding predictability need",
+        "Retention of skilled personnel",
+        "Technology modernization gap",
+        "Digital case management priority"
+      ]
+    },
+    {
+      "id": "case-study-example",
+      "title": "Case Study: Audit Follow-Up",
+      "content": "An audit body publishes a follow‑up dashboard increasing implementation of financial control recommendations through heightened visibility and departmental benchmarking.",
+      "keyPoints": [
+        "Dashboard improved compliance",
+        "Benchmarking spurred departments",
+        "Transparency drove accountability",
+        "Model scalable to other bodies"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Data interoperability, integrated whistleblower platforms, AI‑supported anomaly detection, and citizen feedback channels will enhance oversight impact.",
+      "keyPoints": [
+        "Interoperable data systems",
+        "Unified whistleblower portals",
+        "AI anomaly detection",
+        "Citizen feedback integration"
+      ]
     }
   ],
   "summary": [
-    "Constitutional bodies uphold governance integrity",
-    "Independence relies on structural safeguards",
-    "Coordination improves efficiency and impact",
-    "Public trust grows with transparent results"
+    "Independent constitutional bodies reinforce integrity architecture",
+    "Historical development aligned with reform and rights agendas",
+    "Safeguards: tenure, budgets, removal thresholds underpin autonomy",
+    "Performance metrics track implementation & resolution effectiveness",
+    "Challenges: funding certainty, talent, tech modernization",
+    "Case transparency tools boost compliance and trust",
+    "Future: data interoperability & AI anomaly detection",
+    "Citizen feedback loops to deepen accountability"
   ]
 }

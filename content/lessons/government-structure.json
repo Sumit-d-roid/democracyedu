@@ -4,7 +4,7 @@
   "description": "Understand the structure of Nepal's government including the executive, legislative, and judicial branches.",
   "icon": "🏛️",
   "difficulty": "intermediate",
-  "estimatedTime": "20 minutes",
+  "estimatedTime": "35 minutes",
   "sections": [
     {
       "id": "three-branches",
@@ -51,13 +51,104 @@
         "Independent judiciary ensures rule of law",
         "Courts protect constitutional rights"
       ]
+    },
+    {
+      "id": "checks-balances",
+      "title": "Checks and Balances in Practice",
+      "content": "Oversight tools—legislative questioning, budget control, judicial review, and constitutional bodies—form a network restraining concentration of power. Each branch both limits and depends on the others, producing dynamic accountability rather than rigid separation.",
+      "keyPoints": [
+        "Legislative oversight of executive actions",
+        "Judicial review invalidates unconstitutional acts",
+        "Budget approval as leverage",
+        "Independent commissions augment scrutiny"
+      ]
+    },
+    {
+      "id": "inter-branch-coordination",
+      "title": "Inter-Branch Coordination",
+      "content": "Complex policies (public health, disaster response) require coordinated action—executive implementation, legislative authorization, and judicial assurance of rights compliance. Informal consultation and joint committees can mitigate fragmentation.",
+      "keyPoints": [
+        "Policy complexity demands coordination",
+        "Joint committees facilitate dialogue",
+        "Informal consultation reduces delays",
+        "Rights oversight integrated into execution"
+      ]
+    },
+    {
+      "id": "accountability-mechanisms",
+      "title": "Accountability Mechanisms",
+      "content": "Transparency reports, audits, asset declarations, and public hearings reinforce institutional trust. Whistleblower protections and media freedom amplify external checks on misconduct.",
+      "keyPoints": [
+        "Audit findings drive reforms",
+        "Asset declarations deter corruption",
+        "Public hearings enhance legitimacy",
+        "Media and civil society extend oversight"
+      ]
+    },
+    {
+      "id": "comparative-insight",
+      "title": "Comparative Insight",
+      "content": "Nepal's evolving federal-parliamentary system blends elements from regional parliamentary traditions with localized autonomy commitments. Comparative observation highlights the importance of institutional maturation and adaptive procedural refinement.",
+      "keyPoints": [
+        "Hybrid influences shape structure",
+        "Gradual institutional maturation",
+        "Procedural refinement over time",
+        "Context-specific adaptation"
+      ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Institutional Context",
+      "content": "Institutional arrangements emerged from constitutional negotiations balancing central stability with demands for regional inclusion. Earlier centralized paradigms ceded to layered oversight structures and expanded parliamentary committees.",
+      "keyPoints": [
+        "Negotiated balance of central & regional needs",
+        "Shift from centralization to layered governance",
+        "Committee system growth over time",
+        "Inclusion shaped structural design"
+      ]
+    },
+    {
+      "id": "practical-governance",
+      "title": "Practical Governance Interfaces",
+      "content": "Policy lifecycles span executive drafting, legislative scrutiny, judicial conformity review, and oversight feedback loops. Informal coordination forums supplement formal instruments to expedite multi‑sector initiatives (e.g., disaster response).",
+      "keyPoints": [
+        "Lifecycle links drafting to oversight",
+        "Informal forums bridge process gaps",
+        "Judicial review ensures constitutional fit",
+        "Cross‑sector initiatives require agility"
+      ]
+    },
+    {
+      "id": "emerging-challenges",
+      "title": "Emerging Challenges",
+      "content": "Complex policy domains (climate adaptation, digital regulation) strain existing capacity. Data interoperability, legislative backlog management, and skills development are pivotal for adaptive governance resilience.",
+      "keyPoints": [
+        "Capacity strain in complex domains",
+        "Need for interoperable data systems",
+        "Backlog and agenda prioritization issues",
+        "Skill development for emerging policy areas"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Priorities: enhancing evidence use in legislation, digitizing committee workflows, strengthening constitutional body coordination, and embedding civic participation technologies into decision processes.",
+      "keyPoints": [
+        "Evidence-informed legislative drafting",
+        "Digital workflow modernization",
+        "Stronger inter-body coordination",
+        "Civic tech integration for participation"
+      ]
     }
   ],
   "summary": [
-    "Nepal follows separation of powers with three branches",
-    "Executive led by President and Prime Minister",
-    "Bicameral federal parliament makes laws",
-    "Independent judiciary ensures constitutional compliance",
-    "System provides checks and balances for democratic governance"
+    "Separation of powers adapted to federal-parliamentary context",
+    "Checks & balances reinforced by independent commissions",
+    "Lifecycle: draft -> scrutiny -> implementation -> review",
+    "Coordination (formal + informal) enables complex policy delivery",
+    "Capacity & data interoperability are emerging bottlenecks",
+    "Committees central to specialization and oversight depth",
+    "Digital modernization to shape future procedural efficiency",
+    "Inclusive institutional evolution remains a core objective"
   ]
 }

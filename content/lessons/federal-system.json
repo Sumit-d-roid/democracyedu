@@ -4,7 +4,7 @@
   "description": "Explore Nepal's federal system with provinces, local governments, and power distribution.",
   "icon": "🗺️",
   "difficulty": "advanced",
-  "estimatedTime": "25 minutes",
+  "estimatedTime": "35 minutes",
   "sections": [
     {
       "id": "federalism-concept",
@@ -53,13 +53,115 @@
         "Local taxation and budget powers",
         "Community-focused development programs"
       ]
+    },
+    {
+      "id": "fiscal-federalism",
+      "title": "Fiscal Federalism and Revenue Sharing",
+      "content": "Fiscal federalism defines how revenue powers and transfers are structured—assigning taxes, sharing national revenue, and providing equalization grants to address disparities. Transparent formulas and predictable transfers underpin stable service delivery and trust among tiers.",
+      "keyPoints": [
+        "Assignment of tax bases to levels",
+        "Revenue sharing formulas",
+        "Equalization to reduce disparities",
+        "Predictability fosters planning"
+      ]
+    },
+    {
+      "id": "intergovernmental-coordination",
+      "title": "Intergovernmental Coordination",
+      "content": "Councils, forums, and joint committees facilitate negotiation over overlapping mandates—especially in health, education, and infrastructure—reducing duplication and conflict. Data sharing platforms enhance policy coherence.",
+      "keyPoints": [
+        "Forums manage overlapping mandates",
+        "Joint committees resolve disputes",
+        "Data harmonization improves planning",
+        "Coordination reduces inefficiencies"
+      ]
+    },
+    {
+      "id": "devolution-challenges",
+      "title": "Devolution Challenges",
+      "content": "Capacity gaps, uneven resource endowments, and administrative fragmentation can slow effective devolution. Targeted training, performance benchmarking, and digital systems help strengthen local governance maturity.",
+      "keyPoints": [
+        "Capacity-building imperative",
+        "Resource disparity concerns",
+        "Need for administrative harmonization",
+        "Digital tools accelerate capability"
+      ]
+    },
+    {
+      "id": "service-delivery-impact",
+      "title": "Service Delivery Impact",
+      "content": "Closer proximity to citizens enables tailored programs in agriculture, sanitation, and primary education. Measuring outcomes (coverage, quality, satisfaction) informs iterative improvements and equitable scaling.",
+      "keyPoints": [
+        "Localized program tailoring",
+        "Outcome metrics guide adaptation",
+        "Citizen feedback loops",
+        "Equity considerations in scaling"
+      ]
+    },
+    {
+      "id": "comparative-federalism",
+      "title": "Comparative Perspective on Federalism",
+      "content": "Nepal’s relatively recent transition places it in a formative consolidation phase compared with long-established federations. Emphasis on inclusion and geographic balance distinguishes its model. Learning networks and international benchmarking accelerate institutional learning.",
+      "keyPoints": [
+        "Recent transition phase",
+        "Inclusion as design principle",
+        "Benchmarking accelerates learning",
+        "Adaptive evolution over time"
+      ]
+    },
+    {
+      "id": "historical-context",
+      "title": "Historical Context of Federal Transition",
+      "content": "Adoption of federalism followed demands for equitable representation, post‑conflict restructuring, and decentralization to address historical marginalization. Negotiated settlements embedded multi‑level governance commitments.",
+      "keyPoints": [
+        "Response to historical marginalization",
+        "Post-conflict restructuring driver",
+        "Negotiated multi-level commitments",
+        "Equity and inclusion at core"
+      ]
+    },
+    {
+      "id": "practical-implementation",
+      "title": "Practical Implementation Dynamics",
+      "content": "Rollout requires sequencing legal frameworks, fiscal transfers, human resource deployment, and digital registries. Capacity mapping and staged devolution mitigate disruption of essential services.",
+      "keyPoints": [
+        "Sequenced legal & fiscal rollout",
+        "HR deployment critical to continuity",
+        "Digital registries enable coordination",
+        "Staged devolution reduces service shocks"
+      ]
+    },
+    {
+      "id": "challenges-adaptation",
+      "title": "Adaptive Challenges",
+      "content": "Overlapping functional lists, variable provincial capacity, and uneven revenue bases create coordination friction. Standardized reporting templates and peer‑learning forums accelerate convergence.",
+      "keyPoints": [
+        "Overlap creates mandate friction",
+        "Capacity variance affects outcomes",
+        "Revenue disparity impacts equity",
+        "Peer learning fosters convergence"
+      ]
+    },
+    {
+      "id": "future-outlook",
+      "title": "Future Outlook",
+      "content": "Next steps emphasize results‑oriented intergovernmental compacts, data harmonization, outcome benchmarking across provinces, and inclusive fiscal equalization refinement.",
+      "keyPoints": [
+        "Outcome-based intergovernmental compacts",
+        "Data harmonization for comparability",
+        "Benchmarking strengthens accountability",
+        "Refining equalization formulas for inclusion"
+      ]
     }
   ],
   "summary": [
-    "Nepal adopted federal system through 2015 Constitution",
-    "Three levels: federal, provincial, and local governments",
-    "Seven provinces with their own governments and assemblies",
-    "753 local governments provide basic services",
-    "System promotes inclusive development and local autonomy"
+    "Three-tier federal design seeks inclusion and equity",
+    "Transition emerged from decentralization & post‑conflict needs",
+    "Sequenced implementation reduces service disruption",
+    "Fiscal transfers & equalization address disparities",
+    "Coordination & data standards mitigate overlap",
+    "Capacity variance drives differentiated outcomes",
+    "Peer learning and benchmarking accelerate maturation",
+    "Future: outcome compacts and refined equalization models"
   ]
 }
