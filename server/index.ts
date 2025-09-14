@@ -4,6 +4,7 @@ import { setupVite, serveStatic, log } from "./vite";
 import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import config from "./config";
 import { rateLimiter } from "./middleware/rateLimit";
 import { cacheMiddleware } from "./middleware/cache";
 import { errorHandler } from "./middleware/errorHandler";
@@ -14,12 +15,27 @@ const API_VERSION = "v1";
 
 const app = express();
 
+// Trust first proxy
+app.set('trust proxy', 1);
+
 // Security middleware
-app.use(helmet());
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://yourdomain.com' : 'http://localhost:5000',
-  credentials: true
-}));
+app.use(
+  helmet({
+    contentSecurityPolicy: process.env.NODE_ENV === 'development'
+      ? {
+          directives: {
+            'default-src': ["'self'"],
+            'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+            'connect-src': ["'self'", 'ws:', 'wss:'],
+            'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+            'font-src': ["'self'", 'https://fonts.gstatic.com'],
+            'img-src': ["'self'", 'data:', 'blob:'],
+          },
+        }
+      : undefined
+  })
+);
+app.use(cors(config.cors));
 app.use(rateLimiter);
 
 // Body parsing middleware
@@ -82,12 +98,11 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
+    server.listen({
+    port: config.port,
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${port}`);
+    log(`serving on port ${config.port}`);
   });
 })();

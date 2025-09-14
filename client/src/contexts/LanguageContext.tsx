@@ -1,6 +1,4 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import { useError } from './ErrorContext';
-import { withErrorHandling } from './ErrorContext';
 
 type Language = 'en' | 'ne';
 
@@ -270,7 +268,6 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
   });
 
   const [error, setError] = useState<Error | null>(null);
-  const { addError } = useError();
 
   useEffect(() => {
     try {
@@ -278,9 +275,9 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       const err = error instanceof Error ? error : new Error('Failed to save language preference');
       setError(err);
-      addError('LanguageContext', err);
+      console.error('Language Context Error:', err);
     }
-  }, [language, addError]);
+  }, [language]);
 
   const toggleLanguage = () => {
     try {
@@ -289,7 +286,7 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       const err = error instanceof Error ? error : new Error('Failed to toggle language');
       setError(err);
-      addError('LanguageContext', err);
+      console.error('Language Context Error:', err);
     }
   };
 
@@ -303,7 +300,7 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       const err = error instanceof Error ? error : new Error(`Failed to translate key: ${key}`);
       setError(err);
-      addError('LanguageContext', err);
+      console.error('Language Context Error:', err);
       return key;
     }
   };
@@ -315,8 +312,8 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// Apply error handling to the base provider
-export const LanguageProvider = withErrorHandling(BaseLanguageProvider, 'LanguageContext');
+// Export the base provider directly
+export const LanguageProvider = BaseLanguageProvider;
 
 export function useLanguage() {
   const context = useContext(LanguageContext);

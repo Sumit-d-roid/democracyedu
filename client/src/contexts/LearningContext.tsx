@@ -1,8 +1,5 @@
-import { createContext, useContext, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useCallback, useState, useEffect, ReactNode } from 'react';
 import { createSelectableContext } from '../hooks/use-context-selector';
-import { useError } from './ErrorContext';
-import { useAuth } from './AuthContext';
-import { useAppState } from './AppStateContext';
 import type {
   Course,
   Module,
@@ -61,10 +58,13 @@ const initialState: LearningState = {
   error: null,
 };
 
-export function LearningProvider({ children }: { children: ReactNode }) {
-  const { addError } = useError();
-  const { user } = useAuth();
-  const { addNotification } = useAppState();
+interface LearningProviderProps {
+  children: ReactNode;
+  userId?: string;
+}
+
+export function LearningProvider({ children, userId }: LearningProviderProps) {
+  const [error, setError] = useState<Error | null>(null);
 
   // Utility function for API calls with error handling
   const apiCall = useCallback(async <T,>(
@@ -87,10 +87,11 @@ export function LearningProvider({ children }: { children: ReactNode }) {
       return response.json();
     } catch (error) {
       const err = error instanceof Error ? error : new Error(String(error));
-      addError('LearningContext', err);
+      setError(err);
+      console.error('Learning Context Error:', err);
       throw err;
     }
-  }, [addError]);
+  }, []);
 
   // Content Management Methods
   const loadCourse = useCallback(async (courseId: string): Promise<Course> => {
@@ -111,7 +112,7 @@ export function LearningProvider({ children }: { children: ReactNode }) {
     status: CompletionStatus,
     data?: Partial<ContentProgress>
   ): Promise<void> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     await apiCall('progress', {
       method: 'POST',
@@ -119,111 +120,99 @@ export function LearningProvider({ children }: { children: ReactNode }) {
         contentId,
         status,
         ...data,
-        userId: user.id,
+        userId,
       }),
     });
-
-    addNotification('Progress updated', 'success');
-  }, [apiCall, user, addNotification]);
+  }, [apiCall, userId]);
 
   const submitAssessment = useCallback(async (
     assessmentId: string,
     answers: Record<string, string | string[]>
   ): Promise<AssessmentResult> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     const result = await apiCall<AssessmentResult>('assessment/submit', {
       method: 'POST',
       body: JSON.stringify({
         assessmentId,
         answers,
-        userId: user.id,
+        userId,
       }),
     });
 
-    const message = result.score >= 70 
-      ? '🎉 Great job on the assessment!' 
-      : 'Keep practicing, you\'ll get there!';
-    addNotification(message, result.score >= 70 ? 'success' : 'info');
-
     return result;
-  }, [apiCall, user, addNotification]);
+  }, [apiCall, userId]);
 
   // Learning Path Methods
   const enrollInPath = useCallback(async (pathId: string): Promise<void> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     await apiCall('paths/enroll', {
       method: 'POST',
       body: JSON.stringify({
         pathId,
-        userId: user.id,
+        userId,
       }),
     });
-
-    addNotification('Successfully enrolled in learning path', 'success');
-  }, [apiCall, user, addNotification]);
+  }, [apiCall, userId]);
 
   const switchPath = useCallback(async (pathId: string): Promise<void> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     await apiCall('paths/switch', {
       method: 'POST',
       body: JSON.stringify({
         pathId,
-        userId: user.id,
+        userId,
       }),
     });
-
-    addNotification('Learning path updated', 'success');
-  }, [apiCall, user, addNotification]);
+  }, [apiCall, userId]);
 
   const getNextContent = useCallback(async (): Promise<{ type: ContentType; id: string } | null> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     return apiCall('content/next', {
       method: 'GET',
     });
-  }, [apiCall, user]);
+  }, [apiCall, userId]);
 
   // User Profile Methods
   const updatePreferences = useCallback(async (
     preferences: Partial<LearningProfile['preferences']>
   ): Promise<void> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     await apiCall('profile/preferences', {
       method: 'PATCH',
       body: JSON.stringify(preferences),
     });
-
-    addNotification('Learning preferences updated', 'success');
-  }, [apiCall, user, addNotification]);
+  }, [apiCall, userId]);
 
   // Analytics Methods
   const getRecommendations = useCallback(async (): Promise<Course[]> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     return apiCall('recommendations');
-  }, [apiCall, user]);
+  }, [apiCall, userId]);
 
   const getProgress = useCallback(async (courseId?: string): Promise<ContentProgress[]> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     return apiCall('progress', {
       method: 'GET',
       ...(courseId ? { params: { courseId } } : {}),
     });
-  }, [apiCall, user]);
+  }, [apiCall, userId]);
 
   const getStatistics = useCallback(async (): Promise<LearningProfile['statistics']> => {
-    if (!user) throw new Error('User must be authenticated');
+    if (!userId) throw new Error('User must be authenticated');
 
     return apiCall('statistics');
-  }, [apiCall, user]);
+  }, [apiCall, userId]);
 
   const value: LearningContextValue = {
     ...initialState,
+    error,
     loadCourse,
     loadModule,
     loadLesson,
@@ -279,9 +268,18 @@ export function useAssessment() {
   const [currentAssessment, setCurrentAssessment] = useState<Assessment | null>(null);
 
   const startAssessment = useCallback(async (assessmentId: string) => {
-    // Load assessment details
-    const assessment = await apiCall<Assessment>(`assessment/${assessmentId}`);
-    setCurrentAssessment(assessment);
+    try {
+      // Load assessment details
+      const response = await fetch(`/api/learning/assessment/${assessmentId}`);
+      if (!response.ok) {
+        throw new Error(`Failed to load assessment: ${response.statusText}`);
+      }
+      const assessment = await response.json();
+      setCurrentAssessment(assessment);
+    } catch (error) {
+      console.error('Assessment loading error:', error);
+      throw error;
+    }
   }, []);
 
   return {

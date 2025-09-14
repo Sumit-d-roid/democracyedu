@@ -1,7 +1,5 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react';
 import { createSelectableContext } from '../hooks/use-context-selector';
-import { useError } from './ErrorContext';
-import { useAppState } from './AppStateContext';
 
 interface User {
   id: string;
@@ -68,8 +66,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   });
 
-  const { addError } = useError();
-  const { addNotification } = useAppState();
+  const handleError = useCallback((error: unknown) => {
+    const err = error instanceof Error ? error : new Error(String(error));
+    console.error('Auth Error:', err);
+    setState(prev => ({ ...prev, error: err }));
+  }, []);
 
   // Save auth state to localStorage
   useEffect(() => {
@@ -139,8 +140,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   function handleAuthError(error: unknown) {
     const err = error instanceof Error ? error : new Error(String(error));
     setState(prev => ({ ...prev, error: err }));
-    addError('AuthContext', err);
-    addNotification(err.message, 'error');
+    console.error('Auth Error:', err);
   }
 
   async function login({ email, password }: LoginCredentials) {
@@ -168,8 +168,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         loading: false,
         error: null,
       }));
-
-      addNotification('Successfully logged in', 'success');
     } catch (error) {
       handleAuthError(error);
     } finally {
@@ -190,8 +188,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!response.ok) throw new Error('Registration failed');
-
-      addNotification('Successfully registered. Please verify your email.', 'success');
     } catch (error) {
       handleAuthError(error);
     } finally {
@@ -215,7 +211,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } finally {
       setState(defaultAuthState);
       localStorage.removeItem('auth-state');
-      addNotification('Successfully logged out', 'info');
     }
   }
 
@@ -239,8 +234,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         ...prev,
         user: updatedUser,
       }));
-
-      addNotification('Preferences updated successfully', 'success');
     } catch (error) {
       handleAuthError(error);
     }
@@ -259,8 +252,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!response.ok) throw new Error('Failed to initiate password reset');
-
-      addNotification('Password reset email sent. Please check your inbox.', 'success');
     } catch (error) {
       handleAuthError(error);
     } finally {
@@ -281,8 +272,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!response.ok) throw new Error('Failed to verify email');
-
-      addNotification('Email verified successfully', 'success');
     } catch (error) {
       handleAuthError(error);
     } finally {

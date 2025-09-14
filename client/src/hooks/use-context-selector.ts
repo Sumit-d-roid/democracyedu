@@ -15,10 +15,9 @@ export function createSelectableContext<T>(contextName: string) {
       stableValue.current = value;
     }
 
-    return (
-      <Context.Provider value={stableValue.current}>
-        {children}
-      </Context.Provider>
+    return React.createElement(Context.Provider, 
+      { value: stableValue.current },
+      children
     );
   }
 

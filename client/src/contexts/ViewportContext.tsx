@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { useDebounce } from './use-performance';
-import { createSelectableContext } from './use-context-selector';
+import { useDebouncedCallback } from '../hooks/use-performance';
+import { createSelectableContext } from '../hooks/use-context-selector';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 export type Orientation = 'portrait' | 'landscape';
@@ -70,7 +70,7 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
   });
 
   // Debounce viewport updates to avoid excessive re-renders
-  const debouncedSetState = useDebounce((updates: Partial<ViewportState>) => {
+  const debouncedSetState = useDebouncedCallback((updates: Partial<ViewportState>) => {
     setState(prev => ({ ...prev, ...updates }));
   }, 150);
 

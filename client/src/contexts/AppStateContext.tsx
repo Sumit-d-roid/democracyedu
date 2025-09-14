@@ -129,14 +129,18 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   };
 
   const addNotification = (message: string, type: 'info' | 'success' | 'error' | 'warning') => {
-    const id = Date.now().toString();
-    setState(prev => ({
-      ...prev,
-      notifications: [...prev.notifications, { id, message, type }],
-    }));
+    try {
+      const id = Date.now().toString();
+      setState(prev => ({
+        ...prev,
+        notifications: [...prev.notifications, { id, message, type }],
+      }));
 
-    // Auto-remove notifications after 5 seconds
-    setTimeout(() => removeNotification(id), 5000);
+      // Auto-remove notifications after 5 seconds
+      setTimeout(() => removeNotification(id), 5000);
+    } catch (error) {
+      console.error('Failed to add notification:', error);
+    }
   };
 
   const removeNotification = (id: string) => {
