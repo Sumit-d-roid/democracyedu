@@ -17,6 +17,1271 @@ export interface LessonContent {
 }
 
 export const lessonContents: Record<string, LessonContent> = {
+  'labor-rights': {
+    id: 'labor-rights',
+    title: 'Labor Rights and Employment',
+    description: 'Understanding labor rights, employment laws, and worker protections in Nepal\'s Constitution.',
+    icon: '👷',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Labor Rights',
+        content: `Nepal's Constitution guarantees fundamental labor rights as part of its commitment to social justice and worker welfare. These rights include fair wages, safe working conditions, and collective bargaining. The constitution establishes a framework for protecting workers while promoting economic development.`,
+        keyPoints: [
+          'Constitutional labor rights',
+          'Worker welfare protection',
+          'Fair wage guarantees',
+          'Safe working conditions'
+        ]
+      },
+      {
+        id: 'fundamental-rights',
+        title: 'Fundamental Labor Rights',
+        content: `Workers have the right to fair wages, proper working conditions, and social security. The constitution prohibits forced labor and child labor. Workers can form and join trade unions, engage in collective bargaining, and participate in labor-related activities. Anti-discrimination provisions ensure equal treatment in employment.`,
+        keyPoints: [
+          'Fair wage rights',
+          'Union formation rights',
+          'Collective bargaining',
+          'Anti-discrimination measures',
+          'Social security provisions'
+        ]
+      },
+      {
+        id: 'employment-laws',
+        title: 'Employment Laws and Regulations',
+        content: `The Labor Act implements constitutional provisions through detailed regulations. It covers employment contracts, working hours, leave policies, and termination procedures. Special provisions exist for different sectors of employment. The act also establishes mechanisms for dispute resolution and worker grievance handling.`,
+        keyPoints: [
+          'Labor Act provisions',
+          'Working hour regulations',
+          'Leave policies',
+          'Termination rules',
+          'Dispute resolution'
+        ]
+      },
+      {
+        id: 'social-security',
+        title: 'Social Security and Benefits',
+        content: `The social security system provides various benefits including health insurance, accident compensation, and retirement benefits. Employers must contribute to social security funds. Special provisions exist for informal sector workers and vulnerable groups. The system aims to ensure comprehensive worker protection.`,
+        keyPoints: [
+          'Health insurance coverage',
+          'Accident compensation',
+          'Retirement benefits',
+          'Employer contributions',
+          'Informal sector protection'
+        ]
+      },
+      {
+        id: 'implementation',
+        title: 'Implementation and Enforcement',
+        content: `Labor offices and tribunals enforce labor rights and regulations. Labor inspectors monitor workplace compliance. Trade unions play crucial roles in rights protection. The Department of Labour oversees implementation while courts provide legal remedies for violations. Regular policy reviews ensure effectiveness.`,
+        keyPoints: [
+          'Enforcement mechanisms',
+          'Workplace monitoring',
+          'Union roles',
+          'Legal remedies',
+          'Policy reviews'
+        ]
+      }
+    ],
+    summary: [
+      'Comprehensive constitutional protection of labor rights',
+      'Detailed regulations through Labor Act',
+      'Strong social security system',
+      'Effective implementation mechanisms',
+      'Active role of trade unions in rights protection'
+    ]
+  },
+  'right-to-information': {
+    id: 'right-to-information',
+    title: 'Right to Information',
+    description: 'Understanding Nepal\'s constitutional provisions for Right to Information (RTI) and its implementation.',
+    icon: '📝',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Right to Information',
+        content: `The Right to Information (RTI) is a fundamental right guaranteed by Nepal's Constitution. It ensures citizens' access to information of public importance held by government bodies and public institutions, promoting transparency and accountability in governance.`,
+        keyPoints: [
+          'Constitutional guarantee of RTI',
+          'Access to public information',
+          'Transparency promotion',
+          'Accountability measures'
+        ]
+      },
+      {
+        id: 'legal-framework',
+        title: 'Legal Framework and Scope',
+        content: `The Right to Information Act provides the legal framework for implementing RTI. It covers all public bodies, including government offices, public enterprises, and organizations receiving public funding. The act details procedures for requesting information, timeframes for responses, and appeal mechanisms.`,
+        keyPoints: [
+          'RTI Act provisions',
+          'Coverage of public bodies',
+          'Request procedures',
+          'Response timeframes',
+          'Appeal processes'
+        ]
+      },
+      {
+        id: 'implementation',
+        title: 'Implementation Mechanisms',
+        content: `The National Information Commission oversees RTI implementation. Public bodies must appoint Information Officers, maintain records, and proactively disclose certain information. Digital platforms facilitate information requests and dissemination. Regular monitoring ensures compliance with RTI provisions.`,
+        keyPoints: [
+          'Information Commission role',
+          'Information Officer duties',
+          'Record maintenance',
+          'Proactive disclosure',
+          'Digital platforms'
+        ]
+      },
+      {
+        id: 'exemptions',
+        title: 'Exemptions and Restrictions',
+        content: `Certain information categories are exempt from disclosure, including national security, personal privacy, and commercial confidentiality. However, these exemptions are subject to public interest tests. The act provides clear guidelines for determining exempt information while ensuring maximum disclosure.`,
+        keyPoints: [
+          'Security exemptions',
+          'Privacy protection',
+          'Commercial confidentiality',
+          'Public interest test',
+          'Disclosure guidelines'
+        ]
+      },
+      {
+        id: 'citizen-engagement',
+        title: 'Citizen Engagement and Impact',
+        content: `RTI has become a powerful tool for citizen engagement and good governance. Success stories include exposing corruption, improving public services, and enhancing policy implementation. Civil society organizations play crucial roles in RTI awareness and usage.`,
+        keyPoints: [
+          'Citizen empowerment',
+          'Governance improvement',
+          'Success stories',
+          'Civil society role',
+          'Public awareness'
+        ]
+      }
+    ],
+    summary: [
+      'Constitutional guarantee of Right to Information',
+      'Comprehensive legal framework through RTI Act',
+      'Strong implementation mechanisms and oversight',
+      'Clear guidelines on exemptions and restrictions',
+      'Significant impact on governance and transparency'
+    ]
+  },
+  'property-rights': {
+    id: 'property-rights',
+    title: 'Property Rights',
+    description: 'Understanding property rights and restrictions under Nepal\'s Constitution.',
+    icon: '🏠',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Property Rights',
+        content: `The Constitution of Nepal guarantees property rights as a fundamental right while ensuring social justice. It establishes a framework for property ownership, use, and transfer while balancing individual rights with social welfare.`,
+        keyPoints: [
+          'Constitutional guarantee of property rights',
+          'Balance with social justice',
+          'Framework for ownership',
+          'Social welfare considerations'
+        ]
+      },
+      {
+        id: 'ownership-rights',
+        title: 'Property Ownership Rights',
+        content: `Citizens have the right to acquire, own, sell, and otherwise deal with property, subject to legal provisions. The constitution protects against arbitrary seizure while allowing acquisition for public purpose with compensation. Special provisions exist for land ownership and management.`,
+        keyPoints: [
+          'Right to acquire and own property',
+          'Protection against seizure',
+          'Compensation requirements',
+          'Land ownership rules',
+          'Transfer rights'
+        ]
+      },
+      {
+        id: 'restrictions-limitations',
+        title: 'Restrictions and Limitations',
+        content: `Property rights come with certain restrictions aimed at promoting social welfare. These include land ceiling limits, restrictions on foreign ownership, environmental protection requirements, and urban planning regulations. The state can impose reasonable restrictions for public benefit.`,
+        keyPoints: [
+          'Land ceiling provisions',
+          'Foreign ownership rules',
+          'Environmental restrictions',
+          'Urban planning compliance',
+          'Public benefit considerations'
+        ]
+      },
+      {
+        id: 'inheritance-succession',
+        title: 'Inheritance and Succession',
+        content: `The constitution guarantees equal inheritance rights regardless of gender. It provides framework for property succession, addressing both ancestral and self-acquired property. Special provisions exist for protection of family property and joint ownership arrangements.`,
+        keyPoints: [
+          'Equal inheritance rights',
+          'Gender equality',
+          'Succession framework',
+          'Family property protection',
+          'Joint ownership rules'
+        ]
+      },
+      {
+        id: 'implementation-remedies',
+        title: 'Implementation and Legal Remedies',
+        content: `Various mechanisms exist to protect property rights, including legal and administrative remedies. Courts can enforce property rights through civil proceedings. Special tribunals handle property disputes. Administrative bodies provide additional protection through registration and record-keeping.`,
+        keyPoints: [
+          'Legal enforcement mechanisms',
+          'Administrative protections',
+          'Dispute resolution systems',
+          'Registration procedures',
+          'Record maintenance'
+        ]
+      }
+    ],
+    summary: [
+      'Constitutional protection of property rights',
+      'Balance between individual rights and social welfare',
+      'Clear framework for ownership and transfer',
+      'Equal inheritance rights regardless of gender',
+      'Strong implementation and protection mechanisms'
+    ]
+  },
+  'media-press-freedom': {
+    id: 'media-press-freedom',
+    title: 'Media and Press Freedom',
+    description: 'Understanding constitutional guarantees for media freedom and press rights in Nepal.',
+    icon: '📰',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Media and Press Freedom',
+        content: `The Constitution of Nepal guarantees press freedom as a fundamental right, recognizing its crucial role in democracy. This includes protection for print, broadcast, and digital media, ensuring free flow of information and promoting transparency in governance.`,
+        keyPoints: [
+          'Constitutional guarantees for press freedom',
+          'Protection across all media types',
+          'Role in democratic governance',
+          'Information flow safeguards'
+        ]
+      },
+      {
+        id: 'fundamental-rights',
+        title: 'Fundamental Press Rights',
+        content: `Media organizations and journalists are protected against censorship, closure, or seizure of equipment. The constitution prohibits cancellation of media registrations for content. It guarantees rights to gather and disseminate news, protect sources, and operate without interference.`,
+        keyPoints: [
+          'Protection against censorship',
+          'Registration safeguards',
+          'Source protection rights',
+          'Operational independence',
+          'Equipment protection'
+        ]
+      },
+      {
+        id: 'regulatory-framework',
+        title: 'Media Regulatory Framework',
+        content: `Nepal's media regulations balance freedom with responsibility. The Press Council Nepal oversees ethical standards. The National Mass Communication Policy provides guidelines for media operation. Licensing procedures ensure fair access to broadcast frequencies while maintaining professional standards.`,
+        keyPoints: [
+          'Press Council role',
+          'Ethical guidelines',
+          'Licensing procedures',
+          'Broadcasting standards',
+          'Professional requirements'
+        ]
+      },
+      {
+        id: 'digital-media',
+        title: 'Digital Media Rights',
+        content: `The constitution extends press freedom protections to digital and online media. This includes social media, news websites, and digital broadcasting platforms. Specific provisions address cybersecurity, digital privacy, and online content regulation while protecting freedom of expression.`,
+        keyPoints: [
+          'Digital platform protection',
+          'Online content rights',
+          'Cybersecurity balance',
+          'Digital privacy safeguards',
+          'Social media considerations'
+        ]
+      },
+      {
+        id: 'challenges-solutions',
+        title: 'Current Challenges and Solutions',
+        content: `Media freedom faces various challenges including economic pressures, safety concerns, and evolving technology. The government and civil society work together to address these through policy reforms, safety mechanisms for journalists, and capacity building programs.`,
+        keyPoints: [
+          'Economic sustainability',
+          'Journalist safety measures',
+          'Technology adaptation',
+          'Policy reforms',
+          'Capacity development'
+        ]
+      }
+    ],
+    summary: [
+      'Comprehensive constitutional protection for press freedom',
+      'Balanced regulatory framework ensuring responsible journalism',
+      'Extended protection for digital media platforms',
+      'Strong institutional support through Press Council',
+      'Ongoing adaptation to address modern challenges'
+    ]
+  },
+  'language-culture': {
+    id: 'language-culture',
+    title: 'Language and Cultural Rights',
+    description: 'Understanding Nepal\'s constitutional provisions for language rights and cultural preservation.',
+    icon: '🗣️',
+    difficulty: 'intermediate',
+    estimatedTime: '20 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Language and Cultural Rights',
+        content: `Nepal's Constitution recognizes the country's diverse linguistic and cultural heritage as national assets. It guarantees fundamental rights related to language, culture, and heritage preservation. These rights ensure that all communities can maintain and promote their distinct identities while contributing to national unity.`,
+        keyPoints: [
+          'Constitutional recognition of diversity',
+          'Language and cultural rights protection',
+          'Heritage preservation guarantees',
+          'Balance with national unity'
+        ]
+      },
+      {
+        id: 'language-rights',
+        title: 'Language Rights and Policies',
+        content: `All languages spoken in Nepal are recognized as national languages. Communities have the right to preserve and promote their languages, and to receive basic education in their mother tongue. Local and provincial governments can determine additional official languages for their regions. The Language Commission advises on language policies and preservation.`,
+        keyPoints: [
+          'National language status',
+          'Mother tongue education rights',
+          'Regional official languages',
+          'Language Commission role',
+          'Preservation mechanisms'
+        ]
+      },
+      {
+        id: 'cultural-preservation',
+        title: 'Cultural Preservation',
+        content: `The Constitution protects cultural practices, traditions, and heritage sites. Communities have the right to preserve and promote their cultures, religions, and customs. Special provisions exist for indigenous peoples and traditional communities. Cultural institutions receive state support for preservation activities.`,
+        keyPoints: [
+          'Protection of traditions',
+          'Community cultural rights',
+          'Indigenous peoples\' rights',
+          'State support for preservation',
+          'Heritage site protection'
+        ]
+      },
+      {
+        id: 'implementation-mechanisms',
+        title: 'Implementation Mechanisms',
+        content: `Various institutions implement language and cultural rights. The Ministry of Culture oversees heritage preservation programs. Educational institutions provide mother tongue education. Local governments develop cultural preservation plans. The judiciary protects these rights through legal enforcement mechanisms.`,
+        keyPoints: [
+          'Institutional framework',
+          'Educational programs',
+          'Local government role',
+          'Legal protection measures',
+          'Community participation'
+        ]
+      },
+      {
+        id: 'challenges-progress',
+        title: 'Challenges and Progress',
+        content: `While Nepal has made significant progress in protecting language and cultural rights, challenges remain. These include resource limitations, standardization of mother tongue education, and balancing modernization with preservation. Ongoing initiatives address these challenges through policy reforms and increased community involvement.`,
+        keyPoints: [
+          'Implementation challenges',
+          'Resource allocation issues',
+          'Education standardization',
+          'Modernization balance',
+          'Community-based solutions'
+        ]
+      }
+    ],
+    summary: [
+      'Constitutional protection for linguistic and cultural diversity',
+      'Comprehensive language rights including mother tongue education',
+      'Strong cultural preservation mechanisms',
+      'Multiple implementation institutions and programs',
+      'Ongoing efforts to address challenges'
+    ]
+  },
+  'financial-procedures': {
+    id: 'financial-procedures',
+    title: 'Financial Procedures',
+    description: 'Understanding Nepal\'s government financial procedures, budget process, and fiscal management.',
+    icon: '💰',
+    difficulty: 'advanced',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Financial Procedures',
+        content: `Nepal's Constitution establishes comprehensive procedures for managing public finances. These procedures govern budget preparation, revenue collection, expenditure control, and fiscal accountability. The system ensures transparent and responsible management of public resources across all levels of government.`,
+        keyPoints: [
+          'Constitutional financial framework',
+          'Public resource management',
+          'Multi-level fiscal system',
+          'Transparency requirements'
+        ]
+      },
+      {
+        id: 'budget-process',
+        title: 'Budget Process',
+        content: `The annual budget process begins with ministry-level preparations, followed by consolidation by the Ministry of Finance. The Finance Minister presents the budget to Parliament, where it undergoes extensive debate and scrutiny. The process includes revenue projections, expenditure planning, and consideration of development goals. Parliamentary approval is required before implementation.`,
+        keyPoints: [
+          'Annual budget cycle',
+          'Ministry-level preparation',
+          'Parliamentary presentation',
+          'Debate and scrutiny',
+          'Implementation approval'
+        ]
+      },
+      {
+        id: 'revenue-management',
+        title: 'Revenue Management',
+        content: `Revenue management involves tax collection, non-tax revenue, and foreign aid coordination. The constitution divides revenue rights between federal, provincial, and local governments. The Revenue Advisory Board recommends policy improvements, while various agencies ensure efficient collection. Inter-governmental fiscal transfers help balance resource distribution.`,
+        keyPoints: [
+          'Tax and non-tax revenue',
+          'Multi-level revenue rights',
+          'Collection efficiency',
+          'Fiscal transfer system',
+          'Policy coordination'
+        ]
+      },
+      {
+        id: 'expenditure-control',
+        title: 'Expenditure Control and Audit',
+        content: `Expenditure control mechanisms include pre-audit checks, budget controls, and treasury management. The Office of the Auditor General conducts annual audits of all government accounts. Parliamentary committees review audit reports and can recommend actions. The system emphasizes accountability and prevention of financial irregularities.`,
+        keyPoints: [
+          'Internal control systems',
+          'Auditor General\'s role',
+          'Parliamentary oversight',
+          'Treasury management',
+          'Accountability measures'
+        ]
+      },
+      {
+        id: 'fiscal-federalism',
+        title: 'Fiscal Federalism',
+        content: `Nepal's federal structure requires coordinated financial management across government levels. The National Natural Resources and Fiscal Commission recommends resource distribution formulas. Each level has defined financial powers and responsibilities. Mechanisms exist for resolving fiscal disputes and ensuring cooperative development.`,
+        keyPoints: [
+          'Federal resource sharing',
+          'Commission recommendations',
+          'Inter-governmental coordination',
+          'Dispute resolution',
+          'Cooperative development'
+        ]
+      }
+    ],
+    summary: [
+      'Structured budget process ensures planned development',
+      'Multi-level revenue management system',
+      'Strong expenditure control and audit mechanisms',
+      'Fiscal federalism promotes balanced development',
+      'Emphasis on transparency and accountability'
+    ]
+  },
+  'parliamentary-procedures': {
+    id: 'parliamentary-procedures',
+    title: 'Parliamentary Procedures',
+    description: 'Understanding how Nepal\'s Parliament functions, including legislative processes and parliamentary conventions.',
+    icon: '🏛️',
+    difficulty: 'advanced',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Parliamentary Procedures',
+        content: `Nepal's Parliament operates through established procedures and rules that ensure orderly conduct of business and effective lawmaking. These procedures govern how bills are introduced, debated, and passed, how committees function, and how parliamentary oversight works. Understanding these procedures is crucial for democratic governance.`,
+        keyPoints: [
+          'Established rules and procedures',
+          'Orderly conduct of business',
+          'Legislative process framework',
+          'Democratic governance principles'
+        ]
+      },
+      {
+        id: 'legislative-process',
+        title: 'Legislative Process',
+        content: `The legislative process begins with bill introduction, followed by multiple readings and debates. Bills undergo committee scrutiny, where detailed examination and public consultation may occur. After committee recommendations, bills return for final debate and voting. Different procedures exist for ordinary bills, finance bills, and constitutional amendments.`,
+        keyPoints: [
+          'Bill introduction process',
+          'Multiple reading stages',
+          'Committee examination',
+          'Public consultation',
+          'Voting procedures'
+        ]
+      },
+      {
+        id: 'parliamentary-committees',
+        title: 'Parliamentary Committees',
+        content: `Parliamentary committees are essential working units that examine bills, conduct investigations, and oversee government activities. Standing committees focus on specific subjects like finance or foreign affairs, while special committees handle specific issues. Committees can summon officials, gather evidence, and make recommendations to Parliament.`,
+        keyPoints: [
+          'Standing committee system',
+          'Specialized oversight',
+          'Investigative powers',
+          'Evidence gathering authority',
+          'Recommendation making'
+        ]
+      },
+      {
+        id: 'oversight-functions',
+        title: 'Parliamentary Oversight',
+        content: `Parliament exercises oversight over the executive through questions, debates, motions, and committee investigations. Question Hour allows members to seek information and accountability. Opposition Days provide opportunities to scrutinize government policies. Parliamentary privileges protect members in performing their duties.`,
+        keyPoints: [
+          'Executive accountability',
+          'Question Hour procedures',
+          'Opposition Day rights',
+          'Motion procedures',
+          'Parliamentary privileges'
+        ]
+      },
+      {
+        id: 'house-business',
+        title: 'Conduct of House Business',
+        content: `Daily parliamentary business follows a structured schedule including Question Hour, Zero Hour for urgent matters, and scheduled debates. The Speaker maintains order and ensures adherence to rules. Various parliamentary tools like calling attention motions and adjournment motions allow members to raise important issues.`,
+        keyPoints: [
+          'Daily business structure',
+          'Speaker\'s role',
+          'Time allocation',
+          'Debate procedures',
+          'Member participation tools'
+        ]
+      }
+    ],
+    summary: [
+      'Structured procedures ensure effective lawmaking',
+      'Committees play crucial oversight role',
+      'Multiple mechanisms for executive accountability',
+      'Parliamentary privileges protect member functions',
+      'Organized conduct of daily business'
+    ]
+  },
+  'judiciary': {
+    id: 'judiciary',
+    title: 'Judiciary System',
+    description: 'Understanding Nepal\'s judicial system, court hierarchy, and the administration of justice.',
+    icon: '⚖️',
+    difficulty: 'advanced',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Nepal\'s Judiciary',
+        content: `Nepal's judiciary is an independent branch of government responsible for interpreting laws, administering justice, and protecting constitutional rights. The Constitution establishes a three-tier court system with the Supreme Court at the apex. The judiciary plays a crucial role in maintaining the rule of law and ensuring justice for all citizens.`,
+        keyPoints: [
+          'Independent judicial branch',
+          'Three-tier court system',
+          'Constitutional protection',
+          'Rule of law maintenance'
+        ]
+      },
+      {
+        id: 'supreme-court',
+        title: 'The Supreme Court',
+        content: `The Supreme Court is Nepal's highest court and the final interpreter of the Constitution. Led by the Chief Justice, it has both original and appellate jurisdiction. It can issue extraordinary writs, review its own judgments, and ensure constitutional compliance. The Court's decisions are binding on all other courts and authorities.`,
+        keyPoints: [
+          'Highest court of Nepal',
+          'Constitutional interpretation power',
+          'Original and appellate jurisdiction',
+          'Binding decisions',
+          'Extraordinary writ authority'
+        ]
+      },
+      {
+        id: 'high-courts',
+        title: 'High Courts and District Courts',
+        content: `High Courts operate at the provincial level, hearing appeals from District Courts and exercising original jurisdiction in certain matters. District Courts are the courts of first instance for most cases, handling civil and criminal matters. These courts ensure access to justice at local levels and manage the majority of legal cases.`,
+        keyPoints: [
+          'Provincial High Courts',
+          'District-level courts',
+          'Original jurisdiction cases',
+          'Appeal mechanisms',
+          'Local justice access'
+        ]
+      },
+      {
+        id: 'special-courts',
+        title: 'Special Courts and Tribunals',
+        content: `Nepal has various specialized courts and tribunals for specific types of cases. These include the Administrative Court, Labor Court, and other special tribunals. These specialized bodies ensure expert handling of specific legal matters and help reduce the burden on regular courts while providing specialized justice.`,
+        keyPoints: [
+          'Specialized jurisdiction',
+          'Expert case handling',
+          'Administrative matters',
+          'Labor disputes',
+          'Efficient justice delivery'
+        ]
+      },
+      {
+        id: 'judicial-independence',
+        title: 'Judicial Independence and Accountability',
+        content: `The Constitution guarantees judicial independence through various provisions including security of tenure, financial autonomy, and immunity for judicial acts. However, this independence is balanced with accountability measures including the Judicial Council's oversight, parliamentary scrutiny of the judiciary's budget, and transparency requirements in judicial proceedings.`,
+        keyPoints: [
+          'Constitutional guarantees',
+          'Financial autonomy',
+          'Judicial oversight',
+          'Transparency requirements',
+          'Accountability measures'
+        ]
+      }
+    ],
+    summary: [
+      'Three-tier court system ensures comprehensive justice delivery',
+      'Supreme Court as final constitutional interpreter',
+      'Provincial and district courts provide local access to justice',
+      'Special courts handle specialized legal matters',
+      'Balance between independence and accountability maintained'
+    ]
+  },
+  'public-service': {
+    id: 'public-service',
+    title: 'Public Service Commission',
+    description: 'Understanding Nepal\'s Public Service Commission, its role in civil service recruitment, and administrative functions.',
+    icon: '👔',
+    difficulty: 'intermediate',
+    estimatedTime: '20 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Public Service Commission',
+        content: `The Public Service Commission (PSC) is an independent constitutional body responsible for recruiting qualified personnel for Nepal's civil service. It ensures merit-based selection through competitive examinations and maintains high standards in public administration. The PSC plays a crucial role in building an efficient, professional civil service.`,
+        keyPoints: [
+          'Independent constitutional body',
+          'Merit-based recruitment system',
+          'Competitive examination process',
+          'Professional civil service standards'
+        ]
+      },
+      {
+        id: 'structure-composition',
+        title: 'Structure and Composition',
+        content: `The PSC consists of a Chairperson and other members appointed by the President on recommendation of the Constitutional Council. Members serve six-year terms and must have extensive experience in public service, management, or academia. The Commission operates through central and regional offices to conduct examinations and interviews nationwide.`,
+        keyPoints: [
+          'Chairperson and members appointment',
+          'Six-year term of office',
+          'Qualification requirements',
+          'Nationwide operational network',
+          'Regional office system'
+        ]
+      },
+      {
+        id: 'functions-powers',
+        title: 'Functions and Powers',
+        content: `The PSC conducts examinations for civil service recruitment, provides recommendations on civil service policies, and advises the government on personnel management. It handles promotions, departmental actions, and ensures fairness in civil service administration. The Commission's recommendations are binding on matters within its jurisdiction.`,
+        keyPoints: [
+          'Examination administration',
+          'Policy recommendations',
+          'Personnel management advice',
+          'Promotion oversight',
+          'Binding recommendations'
+        ]
+      },
+      {
+        id: 'examination-process',
+        title: 'Examination and Selection Process',
+        content: `The selection process includes written examinations, interviews, and practical tests where applicable. Examinations test candidates' knowledge, skills, and aptitude for public service. The Commission ensures transparency, fairness, and equal opportunity in all stages of selection. Special provisions exist for inclusive representation of various social groups.`,
+        keyPoints: [
+          'Multi-stage selection process',
+          'Comprehensive testing methods',
+          'Transparency in selection',
+          'Equal opportunity principles',
+          'Inclusive representation'
+        ]
+      },
+      {
+        id: 'recent-developments',
+        title: 'Recent Developments and Reforms',
+        content: `The PSC has modernized its processes through online applications, computerized testing, and digital result publication. Recent reforms focus on making examinations more practical and relevant to modern governance needs. The Commission also adapts its procedures to accommodate federal structure requirements and changing administrative demands.`,
+        keyPoints: [
+          'Modernization initiatives',
+          'Digital transformation',
+          'Updated examination patterns',
+          'Federal structure adaptation',
+          'Administrative modernization'
+        ]
+      }
+    ],
+    summary: [
+      'PSC ensures merit-based civil service recruitment',
+      'Independent constitutional body with nationwide presence',
+      'Comprehensive examination and selection process',
+      'Promotes inclusive representation in civil service',
+      'Modernizing systems for better efficiency'
+    ]
+  },
+  'constitutional-amendments': {
+    id: 'constitutional-amendments',
+    title: 'Constitutional Amendments',
+    description: 'Understanding the process and history of amending Nepal\'s Constitution.',
+    icon: '📜',
+    difficulty: 'advanced',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Constitutional Amendments',
+        content: `Constitutional amendments are formal changes to the Constitution that allow it to evolve with society's needs while maintaining its core principles. Nepal's Constitution provides a structured process for amendments to ensure stability while allowing necessary changes. Understanding this process is crucial for democratic participation and constitutional development.`,
+        keyPoints: [
+          'Purpose of constitutional amendments',
+          'Balance between stability and change',
+          'Democratic importance',
+          'Constitutional evolution process'
+        ]
+      },
+      {
+        id: 'amendment-process',
+        title: 'Amendment Process and Requirements',
+        content: `The amendment process begins with a bill in Parliament, requiring a two-thirds majority for passage. Some amendments also need approval from Provincial Assemblies. Certain fundamental aspects of the Constitution, like sovereignty and territorial integrity, have special protection. The process includes public consultation and extensive parliamentary debate to ensure thorough consideration.`,
+        keyPoints: [
+          'Parliamentary bill requirement',
+          'Two-thirds majority needed',
+          'Provincial approval for certain changes',
+          'Protected constitutional features',
+          'Public consultation process'
+        ]
+      },
+      {
+        id: 'historical-amendments',
+        title: 'Historical Amendments and Their Impact',
+        content: `Nepal's Constitution has undergone several amendments since 2015, addressing issues like federal boundaries, citizenship, and representation. Each amendment reflects the evolving needs of Nepali society and the democratic process. These changes have helped strengthen democratic institutions and address various community concerns.`,
+        keyPoints: [
+          'Key amendments since 2015',
+          'Changes in federal structure',
+          'Citizenship provisions',
+          'Representation issues',
+          'Social impact of changes'
+        ]
+      },
+      {
+        id: 'limitations',
+        title: 'Limitations and Restrictions',
+        content: `The Constitution places certain limitations on amendments to protect core values and structures. Changes affecting sovereignty, territorial integrity, and fundamental democratic principles require special procedures. These restrictions ensure that essential characteristics of the Nepali state remain protected while allowing for necessary adaptations.`,
+        keyPoints: [
+          'Protected constitutional features',
+          'Special amendment procedures',
+          'Core value protection',
+          'Sovereignty safeguards',
+          'Democratic principle preservation'
+        ]
+      },
+      {
+        id: 'current-debates',
+        title: 'Current Debates and Future Prospects',
+        content: `Current constitutional amendment debates focus on various issues including federal structure refinement, citizenship provisions, and electoral system improvements. These discussions reflect ongoing efforts to perfect Nepal's democratic framework. Understanding these debates is crucial for informed civic participation.`,
+        keyPoints: [
+          'Current amendment proposals',
+          'Federal structure debates',
+          'Electoral system discussions',
+          'Citizenship issues',
+          'Democratic development'
+        ]
+      }
+    ],
+    summary: [
+      'Amendments allow constitutional evolution while maintaining stability',
+      'Process requires broad consensus and careful consideration',
+      'Historical amendments have strengthened democracy',
+      'Core constitutional features have special protection',
+      'Ongoing debates shape future amendments'
+    ]
+  },
+  'emergency-powers': {
+    id: 'emergency-powers',
+    title: 'Emergency Powers',
+    description: 'Understanding constitutional provisions for emergency situations and their implementation in Nepal.',
+    icon: '🚨',
+    difficulty: 'advanced',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Emergency Powers',
+        content: `Emergency powers are extraordinary constitutional provisions that allow the government to take special measures during crises. In Nepal, these powers are carefully defined and regulated to balance emergency needs with democratic safeguards. The Constitution provides specific conditions and procedures for declaring and managing states of emergency.`,
+        keyPoints: [
+          'Constitutional basis for emergency powers',
+          'Balance between crisis management and rights',
+          'Specific conditions for declaration',
+          'Democratic safeguards'
+        ]
+      },
+      {
+        id: 'declaration-process',
+        title: 'Declaration and Implementation',
+        content: `The President, on the recommendation of the Council of Ministers, can declare a state of emergency if serious threats arise to sovereignty, territorial integrity, or security. The declaration must be approved by Parliament within 30 days and can be extended for up to three months at a time. The government must justify the necessity and scope of emergency measures.`,
+        keyPoints: [
+          'Presidential declaration required',
+          'Council of Ministers\' recommendation',
+          'Parliamentary approval necessary',
+          'Time limitations apply',
+          'Justification requirements'
+        ]
+      },
+      {
+        id: 'scope-limitations',
+        title: 'Scope and Limitations',
+        content: `During emergencies, certain fundamental rights can be suspended, except basic rights like the right to life, habeas corpus, and protection against torture. The government gains additional powers to maintain security and order but must act within constitutional bounds. All emergency actions are subject to parliamentary and judicial oversight.`,
+        keyPoints: [
+          'Suspension of certain rights possible',
+          'Core rights remain protected',
+          'Additional government powers',
+          'Constitutional limitations',
+          'Oversight mechanisms'
+        ]
+      },
+      {
+        id: 'oversight-accountability',
+        title: 'Oversight and Accountability',
+        content: `Parliament maintains oversight of emergency powers through regular reviews and approval requirements. The Supreme Court can review the constitutionality of emergency declarations and measures. The government must report all actions taken during emergencies and justify any restrictions on rights. This ensures transparency and prevents abuse of power.`,
+        keyPoints: [
+          'Parliamentary supervision',
+          'Judicial review available',
+          'Regular reporting required',
+          'Transparency mechanisms',
+          'Prevention of power abuse'
+        ]
+      },
+      {
+        id: 'historical-context',
+        title: 'Historical Context and Modern Application',
+        content: `Nepal's emergency powers framework reflects lessons learned from historical experiences. Modern provisions include stronger checks and balances compared to previous constitutions. The system aims to enable effective crisis response while preventing misuse. Recent emergencies, such as the COVID-19 response, have tested these constitutional provisions.`,
+        keyPoints: [
+          'Historical development of powers',
+          'Modern safeguards',
+          'Crisis response capability',
+          'Recent applications',
+          'Lessons from experience'
+        ]
+      }
+    ],
+    summary: [
+      'Emergency powers allow special measures during crises',
+      'Declaration requires multiple approvals and justification',
+      'Core rights remain protected even during emergencies',
+      'Strong oversight mechanisms prevent abuse',
+      'Modern framework balances security and democracy'
+    ]
+  },
+  'citizenship': {
+    id: 'citizenship',
+    title: 'Citizenship and Immigration',
+    description: 'Understanding citizenship acquisition, rights, and immigration policies in Nepal.',
+    icon: '📝',
+    difficulty: 'intermediate',
+    estimatedTime: '20 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Citizenship',
+        content: `Citizenship is a fundamental legal bond between an individual and Nepal, conferring rights and duties. The Constitution of Nepal provides various methods of acquiring citizenship and outlines the rights and responsibilities of citizens. Understanding citizenship laws is crucial for ensuring legal identity and access to state services.`,
+        keyPoints: [
+          'Legal relationship between individual and state',
+          'Constitutional provisions for citizenship',
+          'Rights and duties of citizens',
+          'Importance of legal identity'
+        ]
+      },
+      {
+        id: 'acquisition-methods',
+        title: 'Methods of Acquiring Citizenship',
+        content: `Nepal's Constitution provides multiple pathways to citizenship: by descent (through parents), by birth (for those born in Nepal), by naturalization (through marriage or long-term residence), and by honorary grant. Each method has specific requirements and procedures. Children of Nepali citizens have the right to citizenship by descent, while foreign nationals can apply for naturalization under certain conditions.`,
+        keyPoints: [
+          'Citizenship by descent',
+          'Citizenship by birth',
+          'Naturalization process',
+          'Honorary citizenship provisions',
+          'Requirements for each method'
+        ]
+      },
+      {
+        id: 'citizenship-rights',
+        title: 'Rights and Responsibilities',
+        content: `Nepali citizens enjoy fundamental rights guaranteed by the Constitution, including the right to live with dignity, freedom of movement, property ownership, and participation in governance. Citizens must fulfill duties such as paying taxes, obeying laws, and defending national interests. Non-citizens have limited rights and restrictions on property ownership and political participation.`,
+        keyPoints: [
+          'Fundamental rights of citizens',
+          'Constitutional duties',
+          'Property ownership rights',
+          'Political participation',
+          'Restrictions for non-citizens'
+        ]
+      },
+      {
+        id: 'immigration-policy',
+        title: 'Immigration Policies',
+        content: `Nepal's immigration policies regulate entry, stay, and exit of foreigners. The Department of Immigration manages visas, residence permits, and foreign national registration. Different visa categories exist for tourists, students, business people, and workers. The government maintains strict control over immigration to protect national security and manage population dynamics.`,
+        keyPoints: [
+          'Visa categories and requirements',
+          'Residence permit regulations',
+          'Foreign registration system',
+          'Immigration control measures',
+          'Security considerations'
+        ]
+      },
+      {
+        id: 'current-issues',
+        title: 'Current Issues and Reforms',
+        content: `Nepal faces various citizenship-related challenges, including issues of statelessness, citizenship for children of single mothers, and naturalization procedures. Recent reforms aim to address these challenges while maintaining national security. The government continues to update policies to align with international standards while protecting national interests.`,
+        keyPoints: [
+          'Addressing statelessness',
+          'Gender equality in citizenship',
+          'Reform initiatives',
+          'International standards',
+          'Policy modernization efforts'
+        ]
+      }
+    ],
+    summary: [
+      'Multiple pathways exist for acquiring Nepali citizenship',
+      'Citizens have both constitutional rights and duties',
+      'Immigration policies regulate foreign nationals',
+      'Ongoing reforms address current challenges',
+      'Balance between accessibility and security maintained'
+    ]
+  },
+  'political-parties': {
+    id: 'political-parties',
+    title: 'Political Parties and Elections',
+    description: 'Understanding Nepal\'s political party system, election processes, and democratic governance.',
+    icon: '🗳️',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Political Parties',
+        content: `Political parties are essential institutions in Nepal's democracy, representing different ideologies, interests, and visions for the nation. They compete in elections, form governments, and provide political leadership. The Constitution guarantees multi-party democracy and regulates party formation and operation to ensure democratic principles are maintained.`,
+        keyPoints: [
+          'Essential democratic institutions',
+          'Represent diverse political ideologies',
+          'Constitutional recognition of multi-party system',
+          'Role in government formation'
+        ]
+      },
+      {
+        id: 'party-registration',
+        title: 'Party Registration and Regulation',
+        content: `Political parties must register with the Election Commission and meet specific criteria: democratic internal organization, inclusive representation in party committees, regular internal elections, and transparent financial management. Parties cannot discriminate based on religion, caste, ethnicity, gender, or regional identity. They must submit annual audits and follow the code of conduct.`,
+        keyPoints: [
+          'Registration with Election Commission',
+          'Democratic internal structure required',
+          'Inclusive representation mandatory',
+          'Financial transparency essential',
+          'Non-discrimination principles'
+        ]
+      },
+      {
+        id: 'election-system',
+        title: 'Electoral System',
+        content: `Nepal uses a mixed electoral system combining First-Past-the-Post (FPTP) and Proportional Representation (PR). For the House of Representatives, 165 members are elected through FPTP and 110 through PR. Provincial assemblies and local governments also use mixed systems. This ensures both direct representation and inclusive participation of various groups.`,
+        keyPoints: [
+          'Mixed electoral system',
+          'FPTP for direct representation',
+          'PR for inclusive participation',
+          'Multiple levels of elections',
+          'Balanced representation approach'
+        ]
+      },
+      {
+        id: 'election-process',
+        title: 'Election Process and Management',
+        content: `The Election Commission manages all aspects of elections: voter registration, candidate nomination, polling, vote counting, and result declaration. It enforces the election code of conduct, deploys security forces, and ensures free and fair elections. Modern technology, including electronic voting machines in some areas, helps maintain electoral integrity.`,
+        keyPoints: [
+          'Comprehensive election management',
+          'Strict code of conduct enforcement',
+          'Security arrangements',
+          'Technology integration',
+          'Result management system'
+        ]
+      },
+      {
+        id: 'political-financing',
+        title: 'Political Financing and Transparency',
+        content: `Political parties receive funding through membership fees, donations, and state funding based on electoral performance. They must maintain transparent accounts, submit regular financial reports, and follow spending limits during elections. Illegal funding sources are prohibited, and violations can lead to penalties or deregistration.`,
+        keyPoints: [
+          'Multiple funding sources',
+          'Transparent financial reporting',
+          'Campaign spending limits',
+          'State funding provisions',
+          'Penalty for violations'
+        ]
+      }
+    ],
+    summary: [
+      'Political parties are fundamental to Nepal\'s democracy',
+      'Mixed electoral system ensures balanced representation',
+      'Election Commission manages comprehensive electoral processes',
+      'Strict regulations govern party operations and financing',
+      'System promotes inclusive and transparent democracy'
+    ]
+  },
+  'local-government': {
+    id: 'local-government',
+    title: 'Local Government System',
+    description: 'Understanding the structure, functions, and importance of local governments in Nepal\'s federal system.',
+    icon: '🏛️',
+    difficulty: 'intermediate',
+    estimatedTime: '20 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Local Government',
+        content: `Nepal's Constitution establishes local governments as the closest governing bodies to citizens. They operate with significant autonomy to deliver basic services and development programs. Local governments are crucial for grassroots democracy, ensuring citizen participation in governance, and implementing development initiatives that directly affect communities.`,
+        keyPoints: [
+          'Constitutional status of local governments',
+          'Closest governing body to citizens',
+          'Autonomous operation and service delivery',
+          'Foundation of grassroots democracy'
+        ]
+      },
+      {
+        id: 'structure-types',
+        title: 'Structure and Types of Local Government',
+        content: `Nepal has two types of local governments: Municipalities (Nagarpalika) for urban areas and Rural Municipalities (Gaupalika) for rural areas. There are 293 municipalities and 460 rural municipalities across Nepal. Each local government has a legislative assembly (council) and an executive board. The Mayor/Chair leads the executive while the Deputy Mayor/Vice-Chair often heads the judicial committee.`,
+        keyPoints: [
+          'Municipalities for urban areas',
+          'Rural Municipalities for rural areas',
+          'Legislative and executive bodies',
+          'Mayor/Chair leads executive functions',
+          'Judicial committees at local level'
+        ]
+      },
+      {
+        id: 'powers-functions',
+        title: 'Powers and Functions',
+        content: `Local governments have extensive powers including local development planning, basic education, primary healthcare, local infrastructure, agriculture, and social security. They can collect local taxes, prepare and implement budgets, and make local laws. They also manage vital registrations, social services, and environmental protection within their jurisdiction.`,
+        keyPoints: [
+          'Local development planning',
+          'Basic service delivery',
+          'Revenue collection powers',
+          'Local law-making authority',
+          'Environmental management'
+        ]
+      },
+      {
+        id: 'fiscal-management',
+        title: 'Fiscal Management and Resources',
+        content: `Local governments receive funds from federal and provincial governments and can generate their own revenue through local taxes and fees. They prepare annual budgets, implement development projects, and maintain financial accountability. The National Natural Resources and Fiscal Commission helps ensure equitable resource distribution among local units.`,
+        keyPoints: [
+          'Federal and provincial fiscal transfers',
+          'Local revenue generation',
+          'Budget preparation and execution',
+          'Development project implementation',
+          'Financial accountability measures'
+        ]
+      },
+      {
+        id: 'citizen-participation',
+        title: 'Citizen Participation and Accountability',
+        content: `Local governments must ensure citizen participation through ward committees, user groups, and public hearings. They are required to practice transparency in decision-making, share information publicly, and conduct regular social audits. Citizens can participate in planning processes and monitor local government performance through various mechanisms.`,
+        keyPoints: [
+          'Ward committee involvement',
+          'Public hearings and consultations',
+          'Transparent decision-making',
+          'Social audit requirements',
+          'Citizen monitoring mechanisms'
+        ]
+      }
+    ],
+    summary: [
+      'Local governments are fundamental units of democratic governance',
+      'Two types: Municipalities and Rural Municipalities',
+      'Extensive powers for local development and service delivery',
+      'Independent fiscal management with multiple funding sources',
+      'Strong focus on citizen participation and accountability'
+    ]
+  },
+  'constitutional-bodies': {
+    id: 'constitutional-bodies',
+    title: 'Constitutional Bodies of Nepal',
+    description: 'Understanding the independent constitutional bodies that ensure good governance, oversight, and protection of citizens\' rights.',
+    icon: '🏛️',
+    difficulty: 'intermediate',
+    estimatedTime: '25 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Constitutional Bodies',
+        content: `Constitutional Bodies are independent institutions established by Nepal's Constitution to ensure good governance, protect citizens' rights, and maintain checks and balances. These bodies operate independently from the executive branch and report to the Federal Parliament. They play crucial roles in maintaining transparency, accountability, and the rule of law in Nepal's democratic system.`,
+        keyPoints: [
+          'Independent institutions established by Constitution',
+          'Ensure good governance and oversight',
+          'Report directly to Federal Parliament',
+          'Maintain democratic checks and balances'
+        ]
+      },
+      {
+        id: 'commission-for-investigation',
+        title: 'Commission for Investigation of Abuse of Authority (CIAA)',
+        content: `The CIAA is Nepal's premier anti-corruption agency. It investigates and prevents corruption, improper conduct, and abuse of authority in public offices. The CIAA can investigate any person holding public office accused of corruption, file cases in court, and recommend departmental actions. It plays a vital role in promoting good governance and preventing misuse of public resources.`,
+        keyPoints: [
+          'Investigates corruption in public offices',
+          'Files cases against corrupt officials',
+          'Prevents abuse of authority',
+          'Promotes transparency in governance',
+          'Protects public resources'
+        ]
+      },
+      {
+        id: 'election-commission',
+        title: 'Election Commission',
+        content: `The Election Commission conducts, supervises, directs, and controls all elections in Nepal, including federal parliament, provincial assemblies, and local bodies. It maintains voter lists, enforces election codes of conduct, and ensures free and fair elections. The Commission has the power to void elections where serious violations occur and can impose penalties for breaking election laws.`,
+        keyPoints: [
+          'Conducts all levels of elections',
+          'Maintains voter registration',
+          'Enforces election codes of conduct',
+          'Ensures free and fair voting',
+          'Has power to void compromised elections'
+        ]
+      },
+      {
+        id: 'national-human-rights',
+        title: 'National Human Rights Commission (NHRC)',
+        content: `The NHRC is responsible for ensuring respect, protection, and promotion of human rights. It investigates human rights violations, recommends compensation for victims, and advises the government on human rights improvements. The Commission can visit and inspect any government premises or institution where people are detained, and make recommendations for reform.`,
+        keyPoints: [
+          'Protects and promotes human rights',
+          'Investigates rights violations',
+          'Recommends victim compensation',
+          'Inspects detention facilities',
+          'Advises on human rights policies'
+        ]
+      },
+      {
+        id: 'other-commissions',
+        title: 'Other Important Constitutional Bodies',
+        content: `Nepal's Constitution establishes several other crucial bodies: The Public Service Commission ensures fair recruitment in civil service; the National Natural Resources and Fiscal Commission manages resource distribution between federal units; the National Women Commission protects women's rights; and various other commissions represent marginalized communities including Indigenous Peoples, Madheshi, Tharu, and Muslim communities.`,
+        keyPoints: [
+          'Public Service Commission manages civil service recruitment',
+          'Fiscal Commission handles resource distribution',
+          'Women Commission protects gender rights',
+          'Special commissions for marginalized communities',
+          'Each body has specific mandate and powers'
+        ]
+      }
+    ],
+    summary: [
+      'Constitutional Bodies are independent institutions ensuring good governance',
+      'CIAA fights corruption and abuse of authority',
+      'Election Commission ensures free and fair elections',
+      'NHRC protects and promotes human rights',
+      'Specialized commissions serve various national needs'
+    ]
+  },
+  'fundamental-duties': {
+    id: 'fundamental-duties',
+    title: 'Fundamental Duties of Citizens',
+    description: 'Learn about the constitutional duties and responsibilities of Nepali citizens that complement fundamental rights.',
+    icon: '🤝',
+    difficulty: 'beginner',
+    estimatedTime: '15 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'Introduction to Fundamental Duties',
+        content: `Alongside Fundamental Rights and Directive Principles, Nepal's Constitution lists Fundamental Duties for citizens. These duties are responsibilities every citizen must uphold to strengthen democracy, rule of law, and national development. They complement rights by ensuring citizens act in the interest of society and the nation, promoting civic responsibility and awareness.`,
+        keyPoints: [
+          'Constitutional duties complement fundamental rights',
+          'Duties strengthen democracy and rule of law',
+          'Promote civic responsibility and awareness',
+          'Ensure citizens act in society\'s interest'
+        ]
+      },
+      {
+        id: 'loyalty-rule-of-law',
+        title: 'Loyalty and Rule of Law',
+        content: `Citizens have a duty to be loyal to Nepal and uphold its sovereignty, unity, and integrity. This includes respecting the Constitution, national flag, anthem, and symbols. Additionally, citizens must obey the laws of the nation and ensure law and order is maintained in their communities. Active participation in democracy through voting and responsible engagement in public affairs is also a key duty.`,
+        keyPoints: [
+          'Loyalty to Nepal\'s sovereignty and unity',
+          'Respect for national symbols and Constitution',
+          'Obedience to laws and maintaining order',
+          'Participation in democratic processes'
+        ]
+      },
+      {
+        id: 'social-environmental',
+        title: 'Social and Environmental Duties',
+        content: `Citizens have a duty to promote social justice by opposing discrimination, untouchability, and exploitation while promoting equality and harmony among all groups. Environmental responsibilities include protecting natural resources like forests, rivers, wildlife, and biodiversity, as well as reducing pollution and supporting sustainable development. These duties ensure inclusive development and environmental preservation.`,
+        keyPoints: [
+          'Oppose discrimination and promote equality',
+          'Protect natural resources and biodiversity',
+          'Support sustainable development',
+          'Promote social harmony and justice'
+        ]
+      },
+      {
+        id: 'education-security',
+        title: 'Education, Culture, and National Security',
+        content: `Citizens have duties to encourage education, research, innovation, and knowledge sharing while protecting and promoting languages, culture, literature, and heritage. In terms of national security, citizens may be required to serve in national defense and protect the country from external and internal threats. These duties help build a civic-minded generation that contributes to social, economic, and political development.`,
+        keyPoints: [
+          'Promote education and research',
+          'Protect cultural heritage and languages',
+          'Contribute to national security',
+          'Build civic-minded society'
+        ]
+      }
+    ],
+    summary: [
+      'Fundamental Duties balance constitutional rights with responsibilities',
+      'Citizens must uphold democracy, law, and national unity',
+      'Environmental and social justice duties promote sustainable development',
+      'Education and cultural preservation ensure national progress',
+      'National security duties protect sovereignty and integrity'
+    ]
+  },
+  'directive-principles': {
+    id: 'directive-principles',
+    title: 'Directive Principles & State Policies',
+    description: 'Learn about the guidelines for governance given to the State in Part 4 of Nepal\'s Constitution.',
+    icon: '📋',
+    difficulty: 'intermediate',
+    estimatedTime: '20 minutes',
+    sections: [
+      {
+        id: 'introduction',
+        title: 'What are Directive Principles & Policies?',
+        content: `Directive Principles and State Policies are the guidelines for governance given to the State in Nepal's Constitution. Unlike Fundamental Rights, they are not directly enforceable in court. Their purpose is to guide law-making, government policies, and national planning to ensure Nepal develops as a democratic, inclusive, just, and prosperous nation.`,
+        keyPoints: [
+          'Guidelines for governance and state direction',
+          'Not directly enforceable in court',
+          'Guide law-making and policy formation',
+          'Promote democratic and inclusive development'
+        ]
+      },
+      {
+        id: 'directive-principles',
+        title: 'Directive Principles (Article 50)',
+        content: `Article 50 outlines the core principles that guide the State's actions. These include protecting sovereignty and independence, promoting democracy and rule of law, maintaining equality and justice, achieving a socialism-oriented economy, ensuring good governance, and encouraging participation of marginalized communities in governance.`,
+        keyPoints: [
+          'Protect sovereignty and independence',
+          'Promote democracy and rule of law',
+          'Achieve socialism-oriented economy',
+          'Ensure inclusive governance',
+          'Encourage marginalized community participation'
+        ]
+      },
+      {
+        id: 'state-policies',
+        title: 'Policies of the State (Article 51)',
+        content: `The Constitution sets specific policies across various sectors. These include economic policies for building a socialism-oriented economy, social policies for uplifting disadvantaged groups, education policies for free education, health policies for basic healthcare access, environmental policies for protecting biodiversity, and international relations policies promoting peaceful cooperation.`,
+        keyPoints: [
+          'Economic policies for equitable distribution',
+          'Social policies for marginalized groups',
+          'Education and cultural preservation',
+          'Healthcare and environmental protection',
+          'International relations and cooperation'
+        ]
+      },
+      {
+        id: 'state-obligations',
+        title: 'Obligations of the State (Article 55)',
+        content: `The State is constitutionally bound to apply Directive Principles and Policies in governance. This includes formulating laws, budgets, and programs according to these principles, and reporting annually to the Federal Parliament about progress in implementing them. While not legally enforceable, these obligations ensure political accountability.`,
+        keyPoints: [
+          'Apply principles in governance',
+          'Guide law and budget formation',
+          'Annual progress reporting required',
+          'Ensures political accountability',
+          'Shapes government programs'
+        ]
+      }
+    ],
+    summary: [
+      'Directive Principles guide state governance and policy',
+      'Not court-enforceable but politically binding',
+      'Cover economic, social, educational, and environmental aspects',
+      'State must report on implementation progress',
+      'Ensures inclusive and sustainable development'
+    ]
+  },
   'fundamental-rights': {
     id: 'fundamental-rights',
     title: 'Fundamental Rights',
