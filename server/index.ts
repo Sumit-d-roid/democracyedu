@@ -19,22 +19,51 @@ const app = express();
 app.set('trust proxy', 1);
 
 // Security middleware
+// Allow disabling CSP quickly in development if it becomes noisy
+const disableCSP = process.env.DISABLE_CSP === 'true';
+
 app.use(
   helmet({
-    contentSecurityPolicy: process.env.NODE_ENV === 'development'
-      ? {
-          directives: {
-            'default-src': ["'self'"],
-            'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-            'connect-src': ["'self'", 'ws:', 'wss:'],
-            'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-            'font-src': ["'self'", 'https://fonts.gstatic.com'],
-            'img-src': ["'self'", 'data:', 'blob:'],
-          },
-        }
-      : undefined
+    contentSecurityPolicy: disableCSP ? false : process.env.NODE_ENV === 'development' ? {
+      useDefaults: true,
+      directives: {
+        // Base
+        'default-src': ["'self'"],
+        // Development convenience: allow inline/eval for Vite + React Refresh
+        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        // Allow websocket + any localhost port + fonts + data/blob + same-origin API
+        'connect-src': [
+          "'self'",
+          'ws:',
+          'wss:',
+          'http://localhost:*',
+          'https://localhost:*',
+          'data:',
+          'blob:',
+          'https://fonts.googleapis.com',
+          'https://fonts.gstatic.com'
+        ],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
+        'img-src': ["'self'", 'data:', 'blob:'],
+        'worker-src': ["'self'", 'blob:'],
+      },
+    } : undefined,
   })
 );
+
+// Log the active CSP header once for debugging (first request only)
+let cspLogged = false;
+app.use((req, res, next) => {
+  if (!cspLogged) {
+    const csp = res.getHeader('Content-Security-Policy');
+    if (csp) {
+      log(`Active CSP header: ${csp}`);
+      cspLogged = true;
+    }
+  }
+  next();
+});
 app.use(cors(config.cors));
 app.use(rateLimiter);
 
@@ -79,7 +108,30 @@ app.use((req, res, next) => {
   next();
 });
 
+import net from 'net';
+
+async function findAvailablePort(start: number, maxAttempts = 10): Promise<number> {
+  for (let i = 0; i < maxAttempts; i++) {
+    const port = start + i;
+    const available = await new Promise<boolean>((resolve) => {
+      const tester = net.createServer()
+        .once('error', () => resolve(false))
+        .once('listening', () => tester.close(() => resolve(true)))
+        .listen(port, '0.0.0.0');
+    });
+    if (available) return port;
+  }
+  throw new Error(`No available port found starting from ${start}`);
+}
+
 (async () => {
+  const resolvedPort = await findAvailablePort(config.port);
+  if (resolvedPort !== config.port) {
+    log(`port ${config.port} in use, switching to ${resolvedPort}`);
+  }
+  // Override config.port locally (do not mutate config object if frozen externally)
+  const effectivePort = resolvedPort;
+
   const server = await registerRoutes(app);
 
   // Global error handling middleware
@@ -99,10 +151,10 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
     server.listen({
-    port: config.port,
+    port: effectivePort,
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${config.port}`);
+    log(`serving on port ${effectivePort}`);
   });
 })();

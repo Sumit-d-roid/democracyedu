@@ -20,6 +20,12 @@ export function log(message: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
+  const hmrHost = process.env.HMR_HOST || process.env.VITE_HMR_HOST || undefined;
+  const hmrPort = process.env.HMR_PORT ? Number(process.env.HMR_PORT) : undefined;
+  const hmrProtocol = process.env.HMR_PROTOCOL || undefined; // 'ws' | 'wss'
+
+  log(`Vite HMR config -> host: ${hmrHost ?? 'auto'} | port: ${hmrPort ?? 'auto'} | protocol: ${hmrProtocol ?? 'ws (default)'}`);
+
   const vite = await createViteServer({
     ...viteConfig,
     configFile: false,
@@ -33,12 +39,12 @@ export async function setupVite(app: Express, server: Server) {
     server: {
       middlewareMode: true,
       allowedHosts: true as const,
-      hmr: {
+      hmr: (hmrHost || hmrPort || hmrProtocol) ? {
         server,
-        protocol: 'ws',
-        host: 'localhost',
-        clientPort: 5000,
-      },
+        protocol: (hmrProtocol as 'ws' | 'wss') || 'ws',
+        host: hmrHost,
+        clientPort: hmrPort,
+      } : undefined,
     },
     appType: "custom",
   });
@@ -62,8 +68,6 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
   let page = await vite.transformIndexHtml(url, template);
-  // Temporary simplification: remove react-refresh runtime injection if present
-  page = page.replace(/<script type=\"module\">import { injectIntoGlobalHook[\s\S]*?<\/script>/, '');
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
