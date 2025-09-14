@@ -78,4 +78,15 @@
   "general.continue": "जारी राख्नुहोस्",
   "general.back": "पछाडि",
   "general.language.toggle": "English"
+  ,
+  "about.title": "SambhidanX बारे",
+  "about.description": "SambhidanX ले संरचित पाठ, क्विज, उपलब्धि र द्विभाषिक समर्थन मार्फत नेपालको संविधान बुझ्न मद्दत गर्दछ।",
+  "about.mission": "हाम्रो उद्देश्य संविधान सम्बन्धी ज्ञानलाई रोचक, समावेशी र सबैका लागि पहुँचयोग्य बनाउनु हो।",
+  "contact.title": "हामीलाई सम्पर्क गर्नुहोस्",
+  "contact.description": "प्रतिक्रिया, प्रश्न वा सहकार्यमूलक विचारहरू छन्? हामीलाई सन्देश पठाउनुहोस्।",
+  "contact.name": "तपाईंको नाम",
+  "contact.email": "तपाईंको इमेल",
+  "contact.message": "तपाईंको सन्देश",
+  "contact.submit": "सन्देश पठाउनुहोस्",
+  "contact.thankyou": "धन्यवाद! तपाईंको सन्देश हामीसम्म पुगेको छ।"
 }

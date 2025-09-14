@@ -78,4 +78,15 @@
   "general.continue": "Continue",
   "general.back": "Back",
   "general.language.toggle": "नेपाली"
+  ,
+  "about.title": "About SambhidanX",
+  "about.description": "SambhidanX helps learners explore Nepal's Constitution through structured lessons, quizzes, achievements, and bilingual support.",
+  "about.mission": "Our mission is to make constitutional literacy engaging, inclusive, and accessible to every learner.",
+  "contact.title": "Contact Us",
+  "contact.description": "Have feedback, questions, or collaboration ideas? Send us a message.",
+  "contact.name": "Your Name",
+  "contact.email": "Your Email",
+  "contact.message": "Your Message",
+  "contact.submit": "Send Message",
+  "contact.thankyou": "Thank you! Your message has been sent."
 }
