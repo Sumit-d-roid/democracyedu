@@ -17,7 +17,13 @@ export const LessonContentSchema = z.object({
   difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
   estimatedTime: z.string().min(1),
   sections: z.array(LessonSectionSchema).min(1),
-  summary: z.array(z.string().min(1)).min(1)
+  summary: z.array(z.string().min(1)).min(1),
+  audiences: z.array(z.enum(['school','college'])).optional(),
+  learningObjectives: z.array(z.string().min(1)).optional(),
+  tags: z.array(z.string().min(1)).optional(),
+  relatedLessons: z.array(z.string().min(1)).optional(),
+  sourceArticles: z.array(z.object({ ref: z.string().min(1), note: z.string().optional() })).optional(),
+  complexityIndex: z.number().min(0).max(1).optional()
 });
 
 // Quiz question schema
@@ -39,7 +45,12 @@ export const QuizContentSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
   category: z.string().min(1),
-  questions: z.array(QuizQuestionSchema).min(1)
+  questions: z.array(QuizQuestionSchema).min(1),
+  audiences: z.array(z.enum(['school','college'])).optional(),
+  relatedArticles: z.array(z.string().min(1)).optional(),
+  cognitiveLevel: z.enum(['recall','comprehension','application','analysis','evaluation']).optional(),
+  targetObjectives: z.array(z.string().min(1)).optional(),
+  sourceArticles: z.array(z.object({ ref: z.string().min(1), note: z.string().optional() })).optional()
 });
 
 export const ManifestLessonEntrySchema = z.object({
@@ -48,14 +59,16 @@ export const ManifestLessonEntrySchema = z.object({
   file: z.string(),
   difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
   estimatedTime: z.string(),
-  icon: z.string()
+  icon: z.string(),
+  audiences: z.array(z.enum(['school','college'])).optional()
 });
 
 export const ManifestQuizEntrySchema = z.object({
   id: z.string(),
   title: z.string(),
   file: z.string(),
-  category: z.string()
+  category: z.string(),
+  audiences: z.array(z.enum(['school','college'])).optional()
 });
 
 export const ContentManifestSchema = z.object({

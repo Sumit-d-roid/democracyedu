@@ -1,0 +1,44 @@
+{
+  "id": "fundamental-rights-intro-school",
+  "title": "Fundamental Rights (School Intro)",
+  "description": "A simple introduction to fundamental rights in Nepal's Constitution.",
+  "icon": "🛡️",
+  "difficulty": "beginner",
+  "estimatedTime": "10 minutes",
+  "audiences": ["school"],
+  "sections": [
+    {
+      "id": "what-are-rights",
+      "title": "What Are Fundamental Rights?",
+      "content": "Fundamental rights are basic protections the Constitution gives to every person or citizen. They make sure people are treated fairly and have freedoms like speech and equality.",
+      "keyPoints": [
+        "Basic protections",
+        "Fair treatment",
+        "Freedoms guaranteed"
+      ]
+    },
+    {
+      "id": "why-important",
+      "title": "Why They Matter",
+      "content": "These rights help protect people from unfair rules and abuse. They also help make sure everyone has chances to learn, speak, and live with dignity.",
+      "keyPoints": [
+        "Protect from abuse",
+        "Support dignity",
+        "Enable opportunity"
+      ]
+    }
+  ],
+  "summary": [
+    "Fundamental rights keep people safe and free.",
+    "They ensure fairness and dignity.",
+    "They belong to everyone in protected categories."
+  ],
+  "learningObjectives": [
+    "Define fundamental rights simply",
+    "Recognize why rights protect fairness"
+  ],
+  "tags": ["rights", "intro"],
+  "sourceArticles": [
+    { "ref": "Part 3", "note": "Fundamental Rights" }
+  ]
+}

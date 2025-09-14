@@ -14,6 +14,12 @@ export interface LessonContent {
   estimatedTime: string;
   sections: LessonSection[];
   summary: string[];
+  audiences?: ('school' | 'college')[];
+  learningObjectives?: string[];
+  tags?: string[];
+  relatedLessons?: string[];
+  sourceArticles?: { ref: string; note?: string }[];
+  complexityIndex?: number;
 }
 
 export const lessonContents: Record<string, LessonContent> = {

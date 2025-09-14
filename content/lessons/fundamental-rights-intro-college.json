@@ -1,0 +1,61 @@
+{
+  "id": "fundamental-rights-intro-college",
+  "title": "Fundamental Rights: Doctrinal Foundations",
+  "description": "Analytical overview of the structure, scope, and enforceability of fundamental rights under Nepal's Constitution.",
+  "icon": "⚖️",
+  "difficulty": "intermediate",
+  "estimatedTime": "18 minutes",
+  "audiences": ["college"],
+  "sections": [
+    {
+      "id": "conceptual-framework",
+      "title": "Conceptual Framework",
+      "content": "Fundamental rights constitute justiciable guarantees that structure the relationship between the individual and the state. They operationalize constitutionalism by limiting arbitrary power and articulating normative commitments to equality, dignity, and participation.",
+      "keyPoints": [
+        "Rights as state-limiting instruments",
+        "Justiciability ensures enforceability",
+        "Normative grounding: dignity and equality",
+        "Structural relationship: citizen–state"
+      ]
+    },
+    {
+      "id": "classification",
+      "title": "Classification & Clustering",
+      "content": "Rights may be grouped functionally: civil-political (speech, assembly), socio-economic (health, education), group-differentiated (women, marginalized groups), and procedural (due process, access to justice). Such clustering aids doctrinal analysis and comparative evaluation.",
+      "keyPoints": [
+        "Functional clustering clarifies doctrine",
+        "Civil-political vs socio-economic",
+        "Group-differentiated protections",
+        "Procedural safeguards"
+      ]
+    },
+    {
+      "id": "enforcement-mechanisms",
+      "title": "Enforcement & Limitations",
+      "content": "Judicial remedies (including writ jurisdiction) provide enforcement architecture. Limitations must satisfy tests of reasonableness, proportionality, and legitimate aim. The interface between directive principles and enforceable rights shapes interpretation in socio-economic claims.",
+      "keyPoints": [
+        "Writ jurisdiction central",
+        "Reasonableness & proportionality",
+        "Legitimate aim doctrine",
+        "Interaction with directive principles"
+      ]
+    }
+  ],
+  "summary": [
+    "Fundamental rights are enforceable constraints on state power.",
+    "Functional clustering supports doctrinal clarity.",
+    "Limitation doctrines structure judicial review."
+  ],
+  "learningObjectives": [
+    "Differentiate functional clusters of rights",
+    "Explain proportionality in limitation analysis",
+    "Relate directive principles to socio-economic adjudication"
+  ],
+  "tags": ["rights", "doctrine", "enforcement"],
+  "sourceArticles": [
+    { "ref": "Part 3", "note": "Core rights" },
+    { "ref": "Writ Jurisdiction", "note": "Enforcement mechanisms" }
+  ],
+  "relatedLessons": ["fundamental-rights-intro-school"],
+  "complexityIndex": 0.62
+}

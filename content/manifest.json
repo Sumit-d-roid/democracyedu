@@ -162,6 +162,25 @@
       "estimatedTime": "20 minutes",
       "icon": "📋"
     }
+    ,
+    {
+      "id": "fundamental-rights-intro-school",
+      "title": "Fundamental Rights (School Intro)",
+      "file": "lessons/fundamental-rights-intro-school.json",
+      "difficulty": "beginner",
+      "estimatedTime": "10 minutes",
+      "icon": "🛡️",
+      "audiences": ["school"]
+    },
+    {
+      "id": "fundamental-rights-intro-college",
+      "title": "Fundamental Rights: Doctrinal Foundations",
+      "file": "lessons/fundamental-rights-intro-college.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "18 minutes",
+      "icon": "⚖️",
+      "audiences": ["college"]
+    }
   ],
   "quizzes": [
     {

@@ -16,6 +16,11 @@ export interface QuizContent {
   description: string;
   category: string;
   questions: QuizQuestion[];
+  audiences?: ('school' | 'college')[];
+  relatedArticles?: string[];
+  cognitiveLevel?: 'recall' | 'comprehension' | 'application' | 'analysis' | 'evaluation';
+  targetObjectives?: string[];
+  sourceArticles?: { ref: string; note?: string }[];
 }
 
 export const quizContents: Record<string, QuizContent> = {
