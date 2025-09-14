@@ -3,9 +3,11 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import helmet from "helmet";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { rateLimiter } from "./middleware/rateLimit";
 import { cacheMiddleware } from "./middleware/cache";
 import { errorHandler } from "./middleware/errorHandler";
+import authRoutes from "./auth/routes";
 
 // API Version
 const API_VERSION = "v1";
@@ -14,14 +16,21 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' ? 'https://yourdomain.com' : 'http://localhost:5000',
+  credentials: true
+}));
 app.use(rateLimiter);
 
 // Body parsing middleware
+app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
 
-// Cache successful GET requests
+// Authentication routes (no caching)
+app.use(`/api/${API_VERSION}/auth`, authRoutes);
+
+// Cache successful GET requests for other routes
 app.use(`/api/${API_VERSION}`, cacheMiddleware);
 
 app.use((req, res, next) => {
