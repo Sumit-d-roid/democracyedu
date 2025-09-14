@@ -18,10 +18,14 @@ export const LessonContentSchema = z.object({
   estimatedTime: z.string().min(1),
   sections: z.array(LessonSectionSchema).min(1),
   summary: z.array(z.string().min(1)).min(1),
+  // Optional semantic content version (increments on meaning-level changes)
+  version: z.number().int().positive().optional(),
   audiences: z.array(z.enum(['school','college'])).optional(),
   learningObjectives: z.array(z.string().min(1)).optional(),
   tags: z.array(z.string().min(1)).optional(),
   relatedLessons: z.array(z.string().min(1)).optional(),
+  // Lightweight graph links (can include lessons, quizzes, future enrichment ids)
+  relatedIds: z.array(z.string().min(1)).optional(),
   sourceArticles: z.array(z.object({ ref: z.string().min(1), note: z.string().optional() })).optional(),
   complexityIndex: z.number().min(0).max(1).optional()
 });
@@ -46,8 +50,10 @@ export const QuizContentSchema = z.object({
   description: z.string().min(1),
   category: z.string().min(1),
   questions: z.array(QuizQuestionSchema).min(1),
+  version: z.number().int().positive().optional(),
   audiences: z.array(z.enum(['school','college'])).optional(),
   relatedArticles: z.array(z.string().min(1)).optional(),
+  relatedIds: z.array(z.string().min(1)).optional(),
   cognitiveLevel: z.enum(['recall','comprehension','application','analysis','evaluation']).optional(),
   targetObjectives: z.array(z.string().min(1)).optional(),
   sourceArticles: z.array(z.object({ ref: z.string().min(1), note: z.string().optional() })).optional()

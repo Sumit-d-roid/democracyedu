@@ -145,6 +145,7 @@ Script aggregates totals and flags:
 ## 9. Phased Roadmap (Expanded)
 | Phase | Focus | Outputs | Success Criteria |
 |-------|-------|---------|------------------|
+| 0 | Schema & Validation Bootstrap | Added version + relatedIds fields (optional), slug conventions documented, validation test over all lessons/quizzes, Phase 0 checklist committed | All existing content passes validation test |
 | 1 | Foundation & Sample | Schema (optional fields), 2 dual-track lessons, initial quizzes | Build passes; sample lessons published |
 | 2 | Core Rights & Institutions | ~12 dual-track lessons + quizzes | Coverage ≥ 40% rights/institutions |
 | 3 | Federal & Processes | +10 lessons + process quizzes | All major parts represented |
@@ -242,3 +243,57 @@ Planned JSON outputs under `analytics/`:
 
 ---
 This plan is a living document; update iteratively as tooling and content mature.
+
+---
+
+## Phase 0 (New): Schema & Validation Bootstrap
+
+Purpose: Lock minimal stable identifiers and add lightweight validation so future content expansion is safe and low-friction.
+
+### Deliverables
+1. Schema enhancements in `shared/contentSchemas.ts`:
+   - Optional `version: number` (default 1 if absent during runtime load)
+   - Optional `relatedIds: string[]` (lightweight cross-link list distinct from `relatedLessons` which is curated pedagogically)
+2. Slug / ID conventions documented (below) and referenced by authors.
+3. Automated validation test `tests/contentSchemaValidation.test.ts` that iterates all JSON under `content/lessons` & `content/quizzes` and asserts schema parse success.
+4. Phase 0 checklist added & completed.
+
+### Slug / ID Conventions
+| Entity | Pattern | Example | Notes |
+|--------|---------|---------|-------|
+| Lesson (school) | `<topic>-<focus>-school` | `fundamental-rights-intro-school` | Keep tokens lowercase kebab; avoid stopwords unless needed for disambiguation |
+| Lesson (college) | `<topic>-<focus>-college` | `fundamental-rights-intro-college` | Must share prefix with school variant when conceptually same |
+| Quiz | `quiz-<topic>-<focus>` | `quiz-fundamental-rights-intro` | No audience suffix; quiz can branch internally by audience if needed |
+| Section IDs | `<short-topic>-<subfocus>` | `equality-scope` | Stable even if section title text changes |
+| Question IDs | `<quiz-id>-q##` | `quiz-fundamental-rights-intro-q03` | Zero-pad for ordering predictability |
+
+Rules:
+- Only lowercase a–z, digits, and hyphens.
+- Hyphen delimiter only; no underscores.
+- Changes to an `id` require deprecation entry (future Phase 4) and redirect mapping.
+
+### Version Field Policy (Content)
+- `version` increments only when semantic meaning shifts (not typo fixes).
+- Patch-level textual refinements tracked in VCS history; major conceptual restructure → increment.
+- Migration scripts (if ever needed) will key off `version` when performing transforms.
+
+### relatedIds vs relatedLessons
+- `relatedLessons`: curated pedagogical suggestions surfaced to learner UI.
+- `relatedIds`: backend/content graph use (enables analytics & automatic suggestions). Can include quizzes or future enrichment nodes.
+
+### Validation Test Scope
+- Ensures: required fields present, arrays non-empty per schema, enumerations valid.
+- Logs schema issues with formatted Zod error tree for quick author feedback.
+- Future extension: readability grade + key point count checks (Phase 2+).
+
+### Phase 0 Checklist
+ - [x] Add schema optional fields (`version`, `relatedIds`).
+ - [x] Create validation test file.
+ - [x] Run tests and ensure pass.
+ - [x] Update this document with conventions (this section).
+ - [ ] Commit changes under conventional commit scope `content:` and `chore:test` for test addition.
+
+### Exit Criteria
+All existing lesson & quiz JSON files parse successfully and the checklist above is fully checked. After exit, adding new required fields before Phase 3 is discouraged to avoid churn.
+
+---
