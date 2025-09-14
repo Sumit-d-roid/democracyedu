@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "generatedAt": "${ISO_TIMESTAMP}",
+  "lessons": [
+    {
+      "id": "fundamental-rights",
+      "title": "Fundamental Rights",
+      "file": "lessons/fundamental-rights.json",
+      "difficulty": "beginner",
+      "estimatedTime": "15 minutes",
+      "icon": "⚖️"
+    },
+    {
+      "id": "government-structure",
+      "title": "Government Structure",
+      "file": "lessons/government-structure.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "🏛️"
+    },
+    {
+      "id": "federal-system",
+      "title": "Federal System",
+      "file": "lessons/federal-system.json",
+      "difficulty": "advanced",
+      "estimatedTime": "25 minutes",
+      "icon": "🗺️"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "fundamental-rights",
+      "title": "Fundamental Rights Quiz",
+      "file": "quizzes/fundamental-rights.json",
+      "category": "Rights"
+    }
+  ]
+}

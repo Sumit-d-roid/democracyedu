@@ -1,0 +1,28 @@
+{
+  "id": "fundamental-rights",
+  "title": "Fundamental Rights",
+  "description": "Quiz on fundamental rights guaranteed by Nepal's Constitution",
+  "category": "Rights",
+  "questions": [
+    {
+      "id": "1",
+      "question": "Which article of Nepal's Constitution deals with the Right to Equality?",
+      "type": "multiple-choice",
+      "options": ["Article 16", "Article 17", "Article 18", "Article 19"],
+      "correctAnswer": 2,
+      "explanation": "Article 18 of Nepal's Constitution guarantees the Right to Equality, ensuring all citizens are equal before the law.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "2",
+      "question": "The Right to Information is guaranteed under which article?",
+      "type": "multiple-choice",
+      "options": ["Article 27", "Article 28", "Article 29", "Article 30"],
+      "correctAnswer": 0,
+      "explanation": "Article 27 of the Constitution guarantees the Right to Information, ensuring citizens can access information from public bodies.",
+      "difficulty": "medium",
+      "points": 15
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Offline • SambhidanX</title>
+    <style>
+      body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; margin:0; padding:2rem; background:#0f172a; color:#f1f5f9; display:flex; min-height:100vh; align-items:center; justify-content:center; }
+      .card { max-width:520px; background:#1e293b; padding:2rem 2.25rem; border-radius:1rem; box-shadow:0 6px 24px -4px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.4); }
+      h1 { margin-top:0; font-size:1.75rem; display:flex; gap:.5rem; align-items:center; }
+      p { line-height:1.5; }
+      .actions { margin-top:1.5rem; display:flex; gap:.75rem; flex-wrap:wrap; }
+      a, button { cursor:pointer; font:inherit; background:#3b82f6; color:#fff; border:none; padding:.75rem 1.1rem; border-radius:.6rem; text-decoration:none; display:inline-flex; gap:.35rem; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,.4); transition:background .18s, transform .18s; }
+      a:hover, button:hover { background:#2563eb; }
+      a:active, button:active { transform:translateY(1px); }
+      .hint { font-size:.8rem; opacity:.7; margin-top:1rem; }
+      @media (max-width:600px){ body{padding:1.25rem;} .card{padding:1.5rem;} }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="alert" aria-live="polite">
+      <h1>📡 Offline</h1>
+      <p>You are currently offline. Core parts of the app you've already visited may still work, but network features like syncing progress or loading new lessons are unavailable.</p>
+      <p>When your connection returns, this page will automatically refresh.</p>
+      <div class="actions">
+        <button type="button" onclick="window.location.reload()">🔄 Retry</button>
+        <a href="/">🏠 Home</a>
+      </div>
+      <p class="hint">Tip: Add SambhidanX to your home screen for a better offline experience.</p>
+      <script>
+        window.addEventListener('online', () => location.reload());
+      </script>
+    </main>
+  </body>
+</html>

@@ -2,8 +2,8 @@ const CACHE_NAME = 'sambhidanx-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/images/sambhidanx_icon.svg',
-  // Add other static assets here
+  '/offline.html',
+  '/images/sambhidanx_icon.svg'
 ];
 
 const CONTENT_CACHE = 'sambhidanx-content-v1';
@@ -56,27 +56,43 @@ async function handleApiRequest(request) {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Handle API requests
+  // API requests: network-first
   if (url.pathname.startsWith('/api/')) {
     event.respondWith(handleApiRequest(event.request));
     return;
   }
 
-  // Handle static assets
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) {
-        return response;
-      }
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
+  // Navigation requests (HTML) - offline fallback
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      (async () => {
+        try {
+          const preloadResp = await event.preloadResponse;
+          if (preloadResp) return preloadResp;
+          const networkResp = await fetch(event.request);
+          return networkResp;
+        } catch (_) {
+          const cache = await caches.open(CACHE_NAME);
+          const offline = await cache.match('/offline.html');
+          return offline || new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
         }
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-        return response;
+      })()
+    );
+    return;
+  }
+
+  // Static & other assets: cache-first
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request).then((resp) => {
+        if (!resp || resp.status !== 200 || resp.type !== 'basic') return resp;
+        const clone = resp.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        return resp;
+      }).catch(async () => {
+        // If request is for an image, could return a placeholder in future
+        return new Response('', { status: 504 });
       });
     })
   );
@@ -95,7 +111,7 @@ async function syncProgress() {
   if (!offlineProgress.length) return;
 
   try {
-    await fetch('/api/learning/sync-progress', {
+    await fetch('/api/v1/progress/sync', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

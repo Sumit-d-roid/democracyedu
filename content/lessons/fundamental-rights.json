@@ -1,0 +1,63 @@
+{
+  "id": "fundamental-rights",
+  "title": "Fundamental Rights",
+  "description": "Learn about the fundamental rights guaranteed by Nepal's Constitution, including civil liberties and human rights protections.",
+  "icon": "⚖️",
+  "difficulty": "beginner",
+  "estimatedTime": "15 minutes",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction to Fundamental Rights",
+      "content": "Fundamental rights are basic human rights guaranteed by Nepal's Constitution to all citizens. These rights ensure dignity, equality, and freedom for every person in Nepal. The Constitution of Nepal 2015 includes comprehensive fundamental rights that protect citizens from discrimination and ensure access to justice, education, and basic services.",
+      "keyPoints": [
+        "Fundamental rights are constitutionally guaranteed",
+        "They protect all citizens equally",
+        "These rights ensure human dignity and freedom",
+        "They are enforceable through courts"
+      ]
+    },
+    {
+      "id": "right-to-equality",
+      "title": "Right to Equality (Article 18)",
+      "content": "Article 18 of Nepal's Constitution guarantees the right to equality. This means all citizens are equal before the law and entitled to equal protection. No person can be discriminated against based on religion, race, caste, tribe, sex, language, or political belief. This article also prohibits untouchability and caste-based discrimination.",
+      "keyPoints": [
+        "All citizens are equal before the law",
+        "No discrimination based on religion, race, caste, or gender",
+        "Untouchability is prohibited and punishable",
+        "Equal access to public services and facilities"
+      ]
+    },
+    {
+      "id": "freedom-rights",
+      "title": "Freedom Rights (Articles 16-17)",
+      "content": "The Constitution guarantees several freedom rights including the right to live with dignity (Article 16) and freedom of opinion and expression (Article 17). Citizens have the right to express their thoughts freely, access information, and participate in peaceful assembly. However, these freedoms come with reasonable restrictions to maintain public order and national security.",
+      "keyPoints": [
+        "Right to live with dignity",
+        "Freedom of opinion and expression",
+        "Right to access information",
+        "Freedom of peaceful assembly",
+        "Rights subject to reasonable restrictions"
+      ]
+    },
+    {
+      "id": "economic-social-rights",
+      "title": "Economic and Social Rights",
+      "content": "Nepal's Constitution includes important economic and social rights such as the right to education (Article 31), right to health (Article 35), and right to food (Article 36). These rights ensure basic standards of living and human development. The state has the obligation to progressively implement these rights through appropriate legislation and policies.",
+      "keyPoints": [
+        "Right to free and compulsory basic education",
+        "Right to healthcare services",
+        "Right to food sovereignty",
+        "Right to safe drinking water and sanitation",
+        "Progressive implementation by the state"
+      ]
+    }
+  ],
+  "summary": [
+    "Fundamental rights ensure equality and dignity for all citizens",
+    "Article 18 guarantees right to equality and prohibits discrimination",
+    "Freedom rights include expression, information, and assembly",
+    "Economic and social rights cover education, health, and basic needs",
+    "These rights are enforceable through constitutional mechanisms"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "government-structure",
+  "title": "Government Structure",
+  "description": "Understand the structure of Nepal's government including the executive, legislative, and judicial branches.",
+  "icon": "🏛️",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "sections": [
+    {
+      "id": "three-branches",
+      "title": "Three Branches of Government",
+      "content": "Nepal follows the principle of separation of powers with three distinct branches: Executive, Legislative, and Judicial. Each branch has specific powers and responsibilities, providing checks and balances to prevent abuse of power. This system ensures democratic governance and protection of citizens' rights.",
+      "keyPoints": [
+        "Executive branch implements and enforces laws",
+        "Legislative branch makes laws",
+        "Judicial branch interprets laws and ensures justice",
+        "Separation of powers prevents concentration of authority"
+      ]
+    },
+    {
+      "id": "executive-branch",
+      "title": "Executive Branch",
+      "content": "The executive branch is headed by the President as the Head of State and the Prime Minister as the Head of Government. The President performs ceremonial functions and acts on the advice of the Council of Ministers. The Prime Minister leads the government and is responsible to the federal parliament. The Council of Ministers assists in policy implementation and administration.",
+      "keyPoints": [
+        "President is the Head of State",
+        "Prime Minister is the Head of Government",
+        "Council of Ministers assists in governance",
+        "Executive implements policies and laws"
+      ]
+    },
+    {
+      "id": "legislative-branch",
+      "title": "Legislative Branch - Federal Parliament",
+      "content": "Nepal has a bicameral federal parliament consisting of the House of Representatives (Lower House) and the National Assembly (Upper House). The House of Representatives has 275 members elected through mixed electoral system. The National Assembly has 59 members representing provinces and special groups. Parliament makes laws, controls public finances, and oversees the executive.",
+      "keyPoints": [
+        "Bicameral parliament with two houses",
+        "House of Representatives: 275 members",
+        "National Assembly: 59 members",
+        "Makes laws and controls public finances",
+        "Provides oversight of executive actions"
+      ]
+    },
+    {
+      "id": "judicial-branch",
+      "title": "Judicial Branch",
+      "content": "The judicial system is headed by the Supreme Court, followed by High Courts at the provincial level, and District Courts at the local level. The Chief Justice leads the Supreme Court, which is the highest court for constitutional interpretation and final appeals. The judiciary is independent and ensures rule of law, constitutional compliance, and protection of fundamental rights.",
+      "keyPoints": [
+        "Supreme Court is the highest judicial authority",
+        "High Courts operate at provincial level",
+        "District Courts handle local matters",
+        "Independent judiciary ensures rule of law",
+        "Courts protect constitutional rights"
+      ]
+    }
+  ],
+  "summary": [
+    "Nepal follows separation of powers with three branches",
+    "Executive led by President and Prime Minister",
+    "Bicameral federal parliament makes laws",
+    "Independent judiciary ensures constitutional compliance",
+    "System provides checks and balances for democratic governance"
+  ]
+}

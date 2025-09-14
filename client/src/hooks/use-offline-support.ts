@@ -100,7 +100,7 @@ export function useOfflineSupport() {
       for (const progress of pendingProgress) {
         try {
           // Here you would make your API call to sync the progress
-          await fetch('/api/progress/sync', {
+          await fetch('/api/v1/progress/sync', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
