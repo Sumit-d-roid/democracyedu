@@ -1,8 +1,6 @@
 import { defineConfig } from "vite";
-// Using plugin-react without fast refresh to simplify debugging
 import react from "@vitejs/plugin-react";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import * as process from 'process';
 
 export default defineConfig({
@@ -29,8 +27,6 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    // Disable HMR websocket entirely for now (simplifies environment)
-    hmr: false,
     fs: {
       strict: true,
       deny: ["**/.*"],
