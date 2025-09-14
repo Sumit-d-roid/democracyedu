@@ -1,0 +1,47 @@
+{
+  "id": "fundamental-rights-equality-school",
+  "title": "Fundamental Rights: Equality (School)",
+  "description": "An accessible explanation of equality rights and non-discrimination in Nepal's Constitution.",
+  "icon": "🟰",
+  "difficulty": "beginner",
+  "estimatedTime": "12 minutes",
+  "audiences": ["school"],
+  "sections": [
+    {
+      "id": "equality-basics",
+      "title": "What Equality Means",
+      "content": "Equality means treating people fairly under the law. It does not always mean treating everyone exactly the same, but making sure rules are not unfair or discriminatory.",
+      "keyPoints": [
+        "Fair treatment under law",
+        "Not always identical treatment",
+        "Blocks unfair discrimination"
+      ]
+    },
+    {
+      "id": "protected-grounds",
+      "title": "Protected Grounds",
+      "content": "The Constitution lists reasons people cannot be unfairly treated, such as origin, religion, gender, or disability. These are called protected grounds.",
+      "keyPoints": [
+        "Specific protected grounds",
+        "Prevents exclusion",
+        "Supports dignity"
+      ]
+    }
+  ],
+  "summary": [
+    "Equality protects fair treatment.",
+    "Certain reasons cannot justify discrimination.",
+    "Goal: dignity and opportunity for all."
+  ],
+  "learningObjectives": [
+    "Define equality in simple terms",
+    "Recognize protected grounds"
+  ],
+  "tags": ["rights", "equality"],
+  "sourceArticles": [
+    { "ref": "Art.18", "note": "Equality and non-discrimination" }
+  ],
+  "relatedLessons": ["fundamental-rights-intro-school"],
+  "relatedIds": ["fundamental-rights-intro-school", "fundamental-rights-equality-college"],
+  "version": 1
+}

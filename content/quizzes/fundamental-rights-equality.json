@@ -1,0 +1,90 @@
+{
+  "id": "fundamental-rights-equality",
+  "title": "Equality Rights Quiz",
+  "description": "Assesses understanding of equality concepts, protected grounds, and limitation analysis.",
+  "category": "Rights",
+  "questions": [
+    {
+      "id": "fundamental-rights-equality-q01",
+      "question": "Equality under the Constitution primarily aims to prevent what?",
+      "type": "multiple-choice",
+      "options": ["Any difference in outcomes", "Unjustified discrimination", "All regulation", "Judicial review"],
+      "correctAnswer": 1,
+      "explanation": "Constitutional equality targets unjustified discrimination, not every disparity.",
+      "difficulty": "easy",
+      "points": 1
+    },
+    {
+      "id": "fundamental-rights-equality-q02",
+      "question": "Which term best captures a reason the state may not arbitrarily disadvantage a group?",
+      "type": "multiple-choice",
+      "options": ["Protected ground", "Directive principle", "Procedural writ", "Budget clause"],
+      "correctAnswer": 0,
+      "explanation": "Protected grounds enumerate characteristics shielded from unfair disadvantage.",
+      "difficulty": "easy",
+      "points": 1
+    },
+    {
+      "id": "fundamental-rights-equality-q03",
+      "question": "A law differentiates based on a listed protected ground. Which scrutiny element is LEAST likely relevant?",
+      "type": "multiple-choice",
+      "options": ["Legitimate aim", "Rational connection", "Proportionality balancing", "Budget surplus compliance"],
+      "correctAnswer": 3,
+      "explanation": "Budget surplus is unrelated; limitation analysis focuses on aim, connection, necessity, proportionality.",
+      "difficulty": "medium",
+      "points": 2
+    },
+    {
+      "id": "fundamental-rights-equality-q04",
+      "question": "Select ALL components commonly cited in proportionality analysis.",
+      "type": "multiple-select",
+      "options": ["Legitimate aim", "Least restrictive means", "Arbitrary enforcement", "Rational connection"],
+      "correctAnswer": [0,1,3],
+      "explanation": "Legitimate aim, rational connection, and necessity (least restrictive means) are core elements.",
+      "difficulty": "medium",
+      "points": 3
+    },
+    {
+      "id": "fundamental-rights-equality-q05",
+      "question": "True or False: Equality always requires identical treatment irrespective of context.",
+      "type": "true-false",
+      "options": ["True", "False"],
+      "correctAnswer": 1,
+      "explanation": "Substantive equality may justify differential measures to achieve fairness.",
+      "difficulty": "easy",
+      "points": 1
+    },
+    {
+      "id": "fundamental-rights-equality-q06",
+      "question": "Scenario: A policy burdens a historically marginalized group. Which analytical factor likely increases scrutiny?",
+      "type": "multiple-choice",
+      "options": ["Historical disadvantage", "Budget neutrality", "International citation count", "Media coverage"],
+      "correctAnswer": 0,
+      "explanation": "Historical disadvantage triggers heightened attention to justification quality.",
+      "difficulty": "medium",
+      "points": 2
+    },
+    {
+      "id": "fundamental-rights-equality-q07",
+      "question": "Advanced: Which sequence best reflects proportionality steps?",
+      "type": "multiple-choice",
+      "options": ["Aim → Necessity → Connection → Balancing", "Connection → Aim → Necessity → Balancing", "Aim → Connection → Necessity → Balancing", "Necessity → Aim → Connection → Balancing"],
+      "correctAnswer": 2,
+      "explanation": "Standard ordering is legitimate aim, rational connection, necessity, then proportionality balancing (stricto sensu).",
+      "difficulty": "hard",
+      "points": 3
+    },
+    {
+      "id": "fundamental-rights-equality-q08",
+      "question": "True or False: Enumerated protected grounds can never be interpreted to include analogous grounds.",
+      "type": "true-false",
+      "options": ["True", "False"],
+      "correctAnswer": 1,
+      "explanation": "Analogous grounds doctrine may extend protection where similar rationale (e.g., structural exclusion) applies.",
+      "difficulty": "medium",
+      "points": 2
+    }
+  ],
+  "relatedIds": ["fundamental-rights-equality-school", "fundamental-rights-equality-college"],
+  "version": 1
+}

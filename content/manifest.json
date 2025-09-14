@@ -181,6 +181,25 @@
       "icon": "⚖️",
       "audiences": ["college"]
     }
+    ,
+    {
+      "id": "fundamental-rights-equality-school",
+      "title": "Fundamental Rights: Equality (School)",
+      "file": "lessons/fundamental-rights-equality-school.json",
+      "difficulty": "beginner",
+      "estimatedTime": "12 minutes",
+      "icon": "🟰",
+      "audiences": ["school"]
+    },
+    {
+      "id": "fundamental-rights-equality-college",
+      "title": "Fundamental Rights: Equality Doctrine",
+      "file": "lessons/fundamental-rights-equality-college.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "20 minutes",
+      "icon": "⚖️",
+      "audiences": ["college"]
+    }
   ],
   "quizzes": [
     {
@@ -302,6 +321,13 @@
       "title": "Directive Principles & State Policies Quiz",
       "file": "quizzes/directive-principles-state-policies.json",
       "category": "Civic"
+    }
+    ,
+    {
+      "id": "fundamental-rights-equality",
+      "title": "Equality Rights Quiz",
+      "file": "quizzes/fundamental-rights-equality.json",
+      "category": "Rights"
     }
   ]
 }

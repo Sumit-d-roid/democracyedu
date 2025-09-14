@@ -1,0 +1,60 @@
+{
+  "id": "fundamental-rights-equality-college",
+  "title": "Fundamental Rights: Equality Doctrine",
+  "description": "Doctrinal exploration of equality guarantees, protected grounds, and limitation analysis in Nepal's constitutional framework.",
+  "icon": "⚖️",
+  "difficulty": "intermediate",
+  "estimatedTime": "20 minutes",
+  "audiences": ["college"],
+  "sections": [
+    {
+      "id": "normative-foundations",
+      "title": "Normative Foundations",
+      "content": "Equality clauses articulate normative commitments to dignity, non-subordination, and fair participation. They structure judicial scrutiny of differential treatment and guide proportionality analysis.",
+      "keyPoints": [
+        "Dignity & non-subordination",
+        "Judicial scrutiny lens",
+        "Participation fairness"
+      ]
+    },
+    {
+      "id": "grounds-scope",
+      "title": "Protected Grounds & Scope",
+      "content": "Protected grounds specify traits immune from unjustified disadvantage. Open-textured interpretation may extend analogous grounds where underlying rationales—historical disadvantage or structural exclusion—are present.",
+      "keyPoints": [
+        "Enumerated vs analogous grounds",
+        "Historical disadvantage rationale",
+        "Structural exclusion focus"
+      ]
+    },
+    {
+      "id": "limitations-tests",
+      "title": "Limitations & Tests",
+      "content": "Limitation analysis weighs legitimate aim, rational connection, necessity (least restrictive means), and proportionality stricto sensu. Comparative jurisprudence informs emergent domestic standards.",
+      "keyPoints": [
+        "Legitimate aim threshold",
+        "Necessity & least restrictive means",
+        "Proportionality balancing"
+      ]
+    }
+  ],
+  "summary": [
+    "Equality doctrine centers dignity and anti-subordination.",
+    "Protected grounds frame scrutiny intensity.",
+    "Proportionality mediates justified limitations."
+  ],
+  "learningObjectives": [
+    "Differentiate enumerated vs analogous grounds",
+    "Apply proportionality elements to a fact pattern",
+    "Explain normative bases of equality review"
+  ],
+  "tags": ["rights", "equality", "doctrine"],
+  "sourceArticles": [
+    { "ref": "Art.18", "note": "Equality and non-discrimination" },
+    { "ref": "Comparative Jurisprudence", "note": "Analytical parallels" }
+  ],
+  "relatedLessons": ["fundamental-rights-intro-college"],
+  "relatedIds": ["fundamental-rights-intro-college", "fundamental-rights-equality-school"],
+  "complexityIndex": 0.58,
+  "version": 1
+}

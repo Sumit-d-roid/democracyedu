@@ -296,4 +296,19 @@ Rules:
 ### Exit Criteria
 All existing lesson & quiz JSON files parse successfully and the checklist above is fully checked. After exit, adding new required fields before Phase 3 is discouraged to avoid churn.
 
+### Schema Evolution Guardrail
+Until Phase 3, only additive optional fields may be introduced. Any proposal for a new required field must include:
+1. Rationale (learner impact & analytics impact).
+2. Backfill strategy (script or manual) with estimated effort.
+3. Verification step added to validation test.
+If accepted, increment `version` of affected content objects; older content updated in same commit to avoid mixed-version state.
+
+### ID Migration Policy (Future)
+If an `id` change becomes unavoidable (rare), create a `content/id_redirects.json` mapping old -> new. The loader layer should check and remap while logging a deprecation warning. This file is not yet created (defer to Phase 4 unless triggered sooner).
+
 ---
+
+## Phase 1 Progress Log (Representative Slice)
+Date: 2025-09-14
+Added dual-track Equality lessons (`fundamental-rights-equality-school`, `fundamental-rights-equality-college`) and associated quiz (`fundamental-rights-equality`). All pass schema validation. This forms the initial rights-focused representative slice together with existing intro lessons. Next targets: add one scenario-heavy application question set and begin coverage tagging (planned for later sub-phase).
+
