@@ -1,0 +1,60 @@
+{
+  "id": "labor-rights-employment",
+  "title": "Labor Rights and Employment",
+  "description": "Understanding labor rights, employment laws, and worker protections in Nepal's Constitution.",
+  "icon": "👷",
+  "difficulty": "intermediate",
+  "estimatedTime": "25 minutes",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview of Labor Rights",
+      "content": "Labor rights in Nepal are grounded in constitutional guarantees and labor legislation that aim to promote fair wages, safe working conditions, social security, and the dignity of workers. The Constitution recognizes the right to employment and prohibits exploitation, including forced and child labor.",
+      "keyPoints": [
+        "Constitution supports fair labor standards",
+        "Prohibition of forced and child labor",
+        "Focus on dignity, safety, and equity",
+        "Employment rights linked to social justice"
+      ]
+    },
+    {
+      "id": "constitutional-provisions",
+      "title": "Constitutional Provisions",
+      "content": "Key constitutional provisions relate to labor rights, such as the right to employment, the right to form trade unions, and protections against exploitation. These establish a framework that labor laws expand upon to regulate employer-employee relations and workplace standards.",
+      "keyPoints": [
+        "Right to form and join trade unions",
+        "Right to fair remuneration",
+        "Prohibition of exploitation",
+        "State obligation to create employment opportunities"
+      ]
+    },
+    {
+      "id": "worker-protections",
+      "title": "Worker Protections and Safety",
+      "content": "Workplace safety standards, regulated working hours, rest periods, and occupational health provisions aim to protect workers from harm. Employers must comply with labor inspections and provide safety equipment where necessary.",
+      "keyPoints": [
+        "Occupational safety regulations",
+        "Limits on working hours",
+        "Mandatory rest and leave policies",
+        "Employer responsibility for safe conditions"
+      ]
+    },
+    {
+      "id": "social-security",
+      "title": "Social Security and Benefits",
+      "content": "Social security mechanisms, including pensions, health insurance, and maternity protections, are expanding to cover more workers, especially in the formal sector. The government encourages enrollment in contribution-based systems.",
+      "keyPoints": [
+        "Pension and provident fund systems",
+        "Maternity and health protections",
+        "Contribution-based social security expansion",
+        "Support for vulnerable worker groups"
+      ]
+    }
+  ],
+  "summary": [
+    "Labor rights are constitutionally supported in Nepal",
+    "Workers have protections against exploitation and unsafe conditions",
+    "Trade union rights and fair pay principles are recognized",
+    "Social security systems are expanding to cover more workers"
+  ]
+}

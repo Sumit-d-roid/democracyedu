@@ -25,6 +25,14 @@
       "difficulty": "advanced",
       "estimatedTime": "25 minutes",
       "icon": "🗺️"
+    },
+    {
+      "id": "labor-rights-employment",
+      "title": "Labor Rights and Employment",
+      "file": "lessons/labor-rights-employment.json",
+      "difficulty": "intermediate",
+      "estimatedTime": "25 minutes",
+      "icon": "👷"
     }
   ],
   "quizzes": [
