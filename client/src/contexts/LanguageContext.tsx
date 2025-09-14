@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { useError } from './ErrorContext';
+import { withErrorHandling } from './ErrorContext';
 
 type Language = 'en' | 'ne';
 
@@ -6,6 +8,7 @@ interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
   t: (key: string) => string;
+  error: Error | null;
 }
 
 const translations = {
@@ -255,30 +258,65 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+export function BaseLanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-  const saved = localStorage.getItem('education-for-democracy-language');
-    return (saved as Language) || 'en';
+    try {
+      const saved = localStorage.getItem('education-for-democracy-language');
+      return (saved as Language) || 'en';
+    } catch (error) {
+      console.error('Failed to load language preference:', error);
+      return 'en';
+    }
   });
 
+  const [error, setError] = useState<Error | null>(null);
+  const { addError } = useError();
+
   useEffect(() => {
-  localStorage.setItem('education-for-democracy-language', language);
-  }, [language]);
+    try {
+      localStorage.setItem('education-for-democracy-language', language);
+    } catch (error) {
+      const err = error instanceof Error ? error : new Error('Failed to save language preference');
+      setError(err);
+      addError('LanguageContext', err);
+    }
+  }, [language, addError]);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'ne' : 'en');
+    try {
+      setLanguage(prev => prev === 'en' ? 'ne' : 'en');
+      setError(null);
+    } catch (error) {
+      const err = error instanceof Error ? error : new Error('Failed to toggle language');
+      setError(err);
+      addError('LanguageContext', err);
+    }
   };
 
   const t = (key: string) => {
-    return translations[language][key as keyof typeof translations['en']] || key;
+    try {
+      const translation = translations[language][key as keyof typeof translations['en']];
+      if (!translation) {
+        console.warn(`Translation missing for key: ${key}`);
+      }
+      return translation || key;
+    } catch (error) {
+      const err = error instanceof Error ? error : new Error(`Failed to translate key: ${key}`);
+      setError(err);
+      addError('LanguageContext', err);
+      return key;
+    }
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, t, error }}>
       {children}
     </LanguageContext.Provider>
   );
 }
+
+// Apply error handling to the base provider
+export const LanguageProvider = withErrorHandling(BaseLanguageProvider, 'LanguageContext');
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
