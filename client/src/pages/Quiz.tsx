@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import QuizCard from '@/components/QuizCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +11,16 @@ export default function Quiz() {
   const [selectedQuiz, setSelectedQuiz] = useState<string | null>(null);
 
   const quizzes = Object.values(quizContents);
+  const [search, setSearch] = useState('');
+  const filteredQuizzes = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    if (!term) return quizzes;
+    return quizzes.filter(q =>
+      q.title.toLowerCase().includes(term) ||
+      q.description.toLowerCase().includes(term) ||
+      q.category.toLowerCase().includes(term)
+    );
+  }, [search, quizzes]);
 
   const selectedQuizData = quizzes.find(quiz => quiz.id === selectedQuiz);
 
@@ -39,8 +49,26 @@ export default function Quiz() {
           {t('quiz.title')}
         </h1>
         
+        <div className="mb-6">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t('quiz.search')}
+            className="w-full rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            data-testid="input-quiz-search"
+            aria-label={t('quiz.search')}
+          />
+        </div>
+
+        {filteredQuizzes.length === 0 && (
+          <div className="text-center text-sm text-muted-foreground py-12" data-testid="text-quiz-no-results">
+            {t('quiz.no-results')}
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 gap-6">
-          {quizzes.map((quiz) => (
+          {filteredQuizzes.map((quiz) => (
             <Card key={quiz.id} className="hover-elevate cursor-pointer" data-testid={`card-quiz-${quiz.id}`}>
               <CardHeader>
                 <CardTitle>{quiz.title}</CardTitle>

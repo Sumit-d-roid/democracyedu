@@ -48,6 +48,8 @@
   "quiz.back-to-quizzes": "Back to Quizzes",
   "quiz.start": "Start Quiz",
   "quiz.questions-count": "questions",
+  "quiz.search": "Search",
+  "quiz.no-results": "No quizzes match your search",
   "progress.title": "Your Progress",
   "progress.points": "Total Points",
   "progress.lessons-completed": "Lessons Completed",
