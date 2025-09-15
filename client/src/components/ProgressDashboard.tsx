@@ -1,18 +1,49 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, BookOpen, Target } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Trophy, BookOpen, Target, Play, Brain } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import achievementBadge from '@assets/generated_images/Achievement_Badge_Icon_a648ffe6.png';
+import { useState } from 'react';
 
 export default function ProgressDashboard() {
-  const { progress } = useProgress();
+  const { progress, markLessonComplete, recordQuizScore } = useProgress();
   const { t } = useLanguage();
+  const [testing, setTesting] = useState(false);
 
   const quizScores = Object.values(progress.quizScores);
   const averageScore = quizScores.length > 0 
     ? Math.round(quizScores.reduce((sum, score) => sum + score, 0) / quizScores.length)
     : 0;
+
+  // Test API integration
+  const handleTestLessonComplete = async () => {
+    setTesting(true);
+    try {
+      await markLessonComplete('api-test-lesson');
+      alert('✅ Lesson completion sent to API! Check browser console for details.');
+    } catch (error) {
+      console.error('Test failed:', error);
+      alert('❌ Test failed - check console for details. Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
+    } finally {
+      setTesting(false);
+    }
+  };
+
+  const handleTestQuizResult = async () => {
+    setTesting(true);
+    try {
+      const randomScore = Math.floor(Math.random() * 40) + 60; // Random score between 60-100
+      await recordQuizScore('api-test-quiz', randomScore);
+      alert(`✅ Quiz result (${randomScore}%) sent to API! Check browser console for details.`);
+    } catch (error) {
+      console.error('Test failed:', error);
+      alert('❌ Test failed - check console for details. Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
+    } finally {
+      setTesting(false);
+    }
+  };
 
   const stats = [
     {
@@ -96,6 +127,49 @@ export default function ProgressDashboard() {
           </CardContent>
         </Card>
       )}
+
+      {/* API Integration Test Section */}
+      <Card className="shadow-lift transition-base border-blue-200">
+        <CardHeader className="pb-4">
+          <CardTitle className="text-lg font-semibold tracking-tight flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-blue-500" />
+            API Integration Test
+          </CardTitle>
+          <p className="text-sm text-muted-foreground mt-2">
+            Test the backend progress tracking endpoints. Check browser console for API responses.
+          </p>
+        </CardHeader>
+        <CardContent className="pt-0">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button
+              onClick={handleTestLessonComplete}
+              disabled={testing}
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+            >
+              <Play className="h-4 w-4" />
+              {testing ? 'Testing...' : 'Test Lesson Complete'}
+            </Button>
+            <Button
+              onClick={handleTestQuizResult}
+              disabled={testing}
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+            >
+              <Brain className="h-4 w-4" />
+              {testing ? 'Testing...' : 'Test Quiz Result'}
+            </Button>
+          </div>
+          <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+            <p className="text-xs text-blue-800">
+              <strong>Note:</strong> These buttons will send test data to the backend API endpoints. 
+              Open browser DevTools → Console to see the API requests and responses.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

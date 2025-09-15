@@ -5,12 +5,12 @@ dotenv.config();
 
 const config = {
   env: process.env.NODE_ENV || 'development',
-  port: parseInt(process.env.PORT || '5000', 10),
+  port: parseInt(process.env.PORT || '5001', 10),
   isProduction: process.env.NODE_ENV === 'production',
   cors: {
     origin: process.env.NODE_ENV === 'production' 
       ? process.env.CORS_ORIGIN || 'https://yourdomain.com'
-      : 'http://localhost:5000',
+      : 'http://localhost:5001',
     credentials: true
   },
   rateLimit: {

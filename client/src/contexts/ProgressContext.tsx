@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import { achievements, Achievement } from '@shared/achievements';
 import { useOfflineSupport } from '../hooks/use-offline-support';
+import { progressAPI } from '@/lib/progressApi';
 
 interface ProgressData {
   totalPoints: number;
@@ -15,11 +16,11 @@ interface ProgressData {
 interface ProgressContextType {
   progress: ProgressData;
   addPoints: (points: number) => void;
-  markLessonComplete: (lessonId: string) => void;
+  markLessonComplete: (lessonId: string) => Promise<void>;
   markSectionComplete: (lessonId: string, sectionId: string) => void;
   isSectionComplete: (lessonId: string, sectionId: string) => boolean;
   isLessonComplete: (lessonId: string) => boolean;
-  recordQuizScore: (quizId: string, score: number) => void;
+  recordQuizScore: (quizId: string, score: number) => Promise<void>;
   resetProgress: () => void;
   getUnlockedAchievements: () => Achievement[];
   getLockedAchievements: () => Achievement[];
@@ -87,7 +88,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     }));
   };
 
-  const markLessonComplete = (lessonId: string) => {
+  const markLessonComplete = async (lessonId: string) => {
     const now = Date.now();
     setProgress(prev => ({
       ...prev,
@@ -96,9 +97,24 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         : [...prev.completedLessons, lessonId],
       lastLessonCompletionTime: now
     }));
+
+    // Sync with API
+    try {
+      if (isOnline) {
+        await progressAPI.markLessonComplete({
+          lessonId,
+          userId: progressAPI.getUserId(),
+          completed: true
+        });
+        console.log('Lesson completion synced with API:', lessonId);
+      }
+    } catch (error) {
+      console.error('Failed to sync lesson completion with API:', error);
+      // Continue with local storage - offline support will handle sync later
+    }
   };
 
-  const recordQuizScore = (quizId: string, score: number) => {
+  const recordQuizScore = async (quizId: string, score: number) => {
     setProgress(prev => {
       const newPerfectQuizzes = score === 100 && !prev.perfectQuizzes.includes(quizId)
         ? [...prev.perfectQuizzes, quizId]
@@ -113,6 +129,27 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         perfectQuizzes: newPerfectQuizzes
       };
     });
+
+    // Sync with API
+    try {
+      if (isOnline) {
+        // Assuming a standard quiz has 10 questions and we calculate correctAnswers from score
+        const totalQuestions = 10; // Default, should be passed as parameter in real implementation
+        const correctAnswers = Math.round((score / 100) * totalQuestions);
+        
+        await progressAPI.recordQuizResult({
+          quizId,
+          userId: progressAPI.getUserId(),
+          score,
+          totalQuestions,
+          correctAnswers
+        });
+        console.log('Quiz result synced with API:', { quizId, score });
+      }
+    } catch (error) {
+      console.error('Failed to sync quiz result with API:', error);
+      // Continue with local storage - offline support will handle sync later
+    }
   };
 
   const markSectionComplete = (lessonId: string, sectionId: string) => {

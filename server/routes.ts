@@ -16,7 +16,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // API routes with versioning
   app.use(`/api/${API_VERSION}`, contactRoute);
 
-  // Unified progress sync endpoint
+  // Unified progress sync endpoint (keeping existing one)
   const progressSchema = z.object({
     progress: z.array(z.object({
       lessonId: z.string(),

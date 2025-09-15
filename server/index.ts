@@ -75,8 +75,77 @@ app.use(express.urlencoded({ extended: false }));
 // Authentication routes (no caching)
 app.use(`/api/${API_VERSION}/auth`, authRoutes);
 
-// Cache successful GET requests for other routes
-app.use(`/api/${API_VERSION}`, cacheMiddleware);
+// Cache successful GET requests for other routes (temporarily disabled for debugging)
+// app.use(`/api/${API_VERSION}`, cacheMiddleware);
+
+// Progress tracking endpoints (simple implementation)
+app.post(`/api/${API_VERSION}/progress/lesson`, express.json(), async (req, res) => {
+  console.log('Lesson progress endpoint hit:', req.body);
+  try {
+    const { lessonId, userId, completed } = req.body;
+    if (!lessonId || !userId) {
+      return res.status(400).json({ error: 'lessonId and userId are required' });
+    }
+    
+    // For now, just return success (later we'll connect to storage)
+    res.status(200).json({ 
+      status: 'success', 
+      message: `Lesson ${lessonId} marked as ${completed ? 'complete' : 'in-progress'} for user ${userId}` 
+    });
+  } catch (error) {
+    console.log('Error in lesson endpoint:', error);
+    res.status(500).json({ error: 'Failed to update progress' });
+  }
+});
+
+// Test endpoint to debug
+app.post(`/api/${API_VERSION}/test`, express.json(), async (req, res) => {
+  console.log('Test endpoint hit:', req.body);
+  res.status(200).json({ status: 'test endpoint working', body: req.body });
+});
+
+app.post(`/api/${API_VERSION}/progress/quiz`, express.json(), async (req, res) => {
+  try {
+    const { quizId, userId, score, totalQuestions, correctAnswers } = req.body;
+    if (!quizId || !userId || score === undefined) {
+      return res.status(400).json({ error: 'quizId, userId, and score are required' });
+    }
+    
+    res.status(200).json({ 
+      status: 'success', 
+      message: `Quiz ${quizId} result saved: ${score}% (${correctAnswers}/${totalQuestions}) for user ${userId}` 
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to save quiz result' });
+  }
+});
+
+// Get user progress (for dashboard)
+app.get(`/api/${API_VERSION}/progress/:userId`, async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    // For now, return mock data structure that matches our frontend needs
+    // Later this will fetch from the database
+    res.status(200).json({ 
+      status: 'success', 
+      data: {
+        completedLessons: ['fundamental-rights', 'government-structure'], // Mock data
+        quizResults: [
+          { id: 'fundamental-rights-quiz', score: 85, totalQuestions: 10 },
+          { id: 'government-structure-quiz', score: 92, totalQuestions: 8 }
+        ],
+        achievements: ['first_lesson', 'quiz_master']
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching user progress:', error);
+    res.status(500).json({ error: 'Failed to fetch progress' });
+  }
+});
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -125,9 +194,10 @@ async function findAvailablePort(start: number, maxAttempts = 10): Promise<numbe
 }
 
 (async () => {
-  const resolvedPort = await findAvailablePort(config.port);
-  if (resolvedPort !== config.port) {
-    log(`port ${config.port} in use, switching to ${resolvedPort}`);
+  // Always start from port 5001 to avoid conflicts with other services
+  const resolvedPort = await findAvailablePort(5001);
+  if (resolvedPort !== 5001) {
+    log(`port 5001 in use, switching to ${resolvedPort}`);
   }
   // Override config.port locally (do not mutate config object if frozen externally)
   const effectivePort = resolvedPort;
