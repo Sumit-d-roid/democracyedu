@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useRef, useCallback } from 'react';
-import { useContextMetrics } from './use-performance';
 
 type Selector<T, S> = (state: T) => S;
 
@@ -23,32 +22,20 @@ export function createSelectableContext<T>(contextName: string) {
 
   // Hook for selecting specific parts of the context state
   function useContextSelector<S>(selector: Selector<T, S>): S {
-    useContextMetrics(contextName);
+    // Removed useContextMetrics to fix hook call issue
     
     const context = useContext(Context);
     if (context === undefined) {
       throw new Error(`use${contextName} must be used within a ${contextName}Provider`);
     }
 
-    // Memoize the selector result
-    const lastValue = useRef<S>();
-    const lastContext = useRef<T>();
-
-    if (
-      lastContext.current !== context ||
-      !lastValue.current ||
-      selector(context) !== selector(lastContext.current)
-    ) {
-      lastValue.current = selector(context);
-      lastContext.current = context;
-    }
-
-    return lastValue.current;
+    // Simplified selector without complex memoization to avoid hook issues
+    return selector(context);
   }
 
   // Hook for using the entire context
   function useEntireContext(): T {
-    useContextMetrics(contextName);
+    // Removed useContextMetrics to fix hook call issue
     
     const context = useContext(Context);
     if (context === undefined) {

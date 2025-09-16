@@ -136,19 +136,9 @@ export function useCalculationCache<T>(
 
 // Hook for detecting context consumers and measuring context usage
 export function useContextMetrics(contextName: string) {
-  useEffect(() => {
-    const metric = {
-      contextName,
-      timestamp: Date.now(),
-      componentPath: new Error().stack
-        ?.split('\n')[2]
-        ?.trim()
-        ?.replace(/^at\s+/, '')
-    };
-
-    // You could send this to your analytics or monitoring service
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Context usage metric:', metric);
-    }
-  }, [contextName]);
+  // Simplified version that doesn't use useEffect to avoid hook call issues
+  // Just log immediately in development
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Context usage:', contextName);
+  }
 }
