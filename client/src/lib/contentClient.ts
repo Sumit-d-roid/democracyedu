@@ -53,4 +53,6 @@ export async function loadQuizBrowser(id: string): Promise<any> {
   return fetchJSON<any>(`${base}/content/${entry.file}`);
 }
 
-export function clearContentBrowserCache() { manifestCache = null; }
+export function clearContentBrowserCache() {
+  manifestCache = null;
+}

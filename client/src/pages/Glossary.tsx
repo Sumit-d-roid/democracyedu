@@ -1,5 +1,5 @@
-import React from "react";
-import Glossary from "../components/Glossary";
+import React from 'react';
+import Glossary from '../components/Glossary';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GlossaryPage: React.FC = () => {
@@ -12,7 +12,8 @@ const GlossaryPage: React.FC = () => {
             {t('glossary.title') || 'Glossary of Constitutional Terms'}
           </h1>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-            {t('glossary.description') || 'Explore important constitutional and civic terms with concise bilingual explanations.'}
+            {t('glossary.description') ||
+              'Explore important constitutional and civic terms with concise bilingual explanations.'}
           </p>
         </header>
         <Glossary />

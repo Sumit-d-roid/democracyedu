@@ -22,18 +22,21 @@ const options: Partial<Options> = {
   standardHeaders: true,
   legacyHeaders: false,
   handler: (req: Request, res: Response) => {
-    const reset = req.rateLimit?.resetTime ? Math.ceil((req.rateLimit.resetTime.getTime() - Date.now()) / 1000) : undefined;
+    const reset = req.rateLimit?.resetTime
+      ? Math.ceil((req.rateLimit.resetTime.getTime() - Date.now()) / 1000)
+      : undefined;
     res.status(429).json({
       error: 'Too many requests from this IP, please try again later',
-      retryAfter: reset
+      retryAfter: reset,
     });
   },
-  skip: (req: Request) => process.env.NODE_ENV === 'development' && !!req.ip && (
-    req.ip === '127.0.0.1' ||
-    req.ip === '::1' ||
-    req.ip === 'localhost' ||
-    req.ip.startsWith('172.')
-  )
+  skip: (req: Request) =>
+    process.env.NODE_ENV === 'development' &&
+    !!req.ip &&
+    (req.ip === '127.0.0.1' ||
+      req.ip === '::1' ||
+      req.ip === 'localhost' ||
+      req.ip.startsWith('172.')),
 };
 
 export const rateLimiter: RateLimitRequestHandler = rateLimit(options);

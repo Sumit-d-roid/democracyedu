@@ -1,5 +1,7 @@
+/* eslint-env serviceworker */
+/* eslint-disable no-undef */
 // Service Worker Version (increment to bust cache)
-const SW_VERSION = '5';
+const SW_VERSION = '6'; // bump version to invalidate old caches that stored Vite virtual modules
 const CACHE_NAME = `sambhidanx-static-v${SW_VERSION}`;
 const STATIC_ASSETS = [
   '/',
@@ -43,15 +45,21 @@ async function handleApiRequest(request) {
   try {
     const response = await fetch(request);
     if (response.ok) {
-      const cache = await caches.open(API_CACHE);
-      cache.put(request, response.clone());
+      // Only cache GET requests - POST, PUT, DELETE should not be cached
+      if (request.method === 'GET') {
+        const cache = await caches.open(API_CACHE);
+        cache.put(request, response.clone());
+      }
       return response;
     }
     throw new Error('Network response was not ok');
   } catch (error) {
-    const cachedResponse = await caches.match(request);
-    if (cachedResponse) {
-      return cachedResponse;
+    // Only try to serve from cache for GET requests
+    if (request.method === 'GET') {
+      const cachedResponse = await caches.match(request);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
     }
     throw error;
   }
@@ -62,11 +70,19 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
   // Ignore non-HTTP(S) schemes (e.g. chrome-extension://, data:, blob:, ws:, wss:)
-  if (!/^https?:$/i.test(url.protocol)) {
-    return; // do not intercept
-  }
+  if (!/^https?:$/i.test(url.protocol)) return;
 
   const sameOrigin = url.origin === self.location.origin;
+
+  // Don't interfere with Vite dev virtual modules or HMR endpoints.
+  // These were being cached previously causing stale /@react-refresh runtime.
+  if (sameOrigin && (
+    url.pathname.startsWith('/@') ||
+    url.pathname.startsWith('/node_modules/') ||
+    url.pathname.includes('__vite')
+  )) {
+    return; // network only, don't cache
+  }
 
   // API requests (network-first + caching) - only same-origin
   if (sameOrigin && url.pathname.startsWith('/api/')) {
@@ -80,40 +96,39 @@ self.addEventListener('fetch', (event) => {
       try {
         const preloadResp = await event.preloadResponse;
         if (preloadResp) return preloadResp;
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (_) {
+        return await fetch(event.request);
+  } catch {
         const cache = await caches.open(CACHE_NAME);
         const offline = await cache.match('/offline.html');
         return offline || new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
       }
-    })());
+  })());
     return;
   }
 
-  // Only handle static assets for same-origin
-  if (!sameOrigin) {
-    return; // pass through
-  }
+  if (!sameOrigin) return; // only cache same-origin static assets
 
-  event.respondWith(
-    caches.match(event.request, { ignoreVary: true }).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((resp) => {
-        if (!resp || resp.status !== 200 || (resp.type !== 'basic' && resp.type !== 'cors')) return resp;
+  // Only cache typical static asset extensions to avoid polluting cache
+  const shouldCache = /\.(css|js|html|svg|png|jpg|jpeg|gif|webp|ico|json|woff2?)$/i.test(url.pathname);
+  if (!shouldCache) return; // pass through
+
+  event.respondWith((async () => {
+    const cached = await caches.match(event.request, { ignoreVary: true });
+    if (cached) return cached;
+    try {
+      const resp = await fetch(event.request);
+      if (resp && resp.status === 200 && (resp.type === 'basic' || resp.type === 'cors')) {
         const clone = resp.clone();
         caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, clone).catch(() => { /* swallow */ });
+          cache.put(event.request, clone).catch(() => {/* ignore */});
         });
-        return resp;
-      }).catch(async () => {
-        // When offline, attempt cached match again (already ignoreVary)
-        const fallback = await caches.match(event.request, { ignoreVary: true });
-        if (fallback) return fallback;
-        return new Response('', { status: 504 });
-      });
-    })
-  );
+      }
+      return resp;
+    } catch {
+      const fallback = await caches.match(event.request, { ignoreVary: true });
+      return fallback || new Response('', { status: 504 });
+    }
+  })());
 });
 
 // Handle background sync for offline actions

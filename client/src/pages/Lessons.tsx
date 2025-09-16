@@ -6,9 +6,7 @@ function BookmarkButton({ lessonId }: { lessonId: string }) {
   function handleClick() {
     toggleBookmark(lessonId);
     toast({
-      title: isBookmarked(lessonId)
-        ? 'Removed from bookmarks'
-        : 'Added to bookmarks',
+      title: isBookmarked(lessonId) ? 'Removed from bookmarks' : 'Added to bookmarks',
       description: isBookmarked(lessonId)
         ? 'Lesson removed from your favorites.'
         : 'Lesson added to your favorites.',

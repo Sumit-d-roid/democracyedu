@@ -47,7 +47,7 @@ interface ProgressProviderProps {
 
 export function ProgressProvider({ children, onAchievementUnlocked }: ProgressProviderProps) {
   const { isOnline, saveOfflineProgress, syncOfflineProgress } = useOfflineSupport();
-  
+
   const [progress, setProgress] = useState<ProgressData>(() => {
     const saved = localStorage.getItem('education-for-democracy-progress');
     if (saved) {
@@ -57,7 +57,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         ...defaultProgress,
         ...parsedProgress,
         unlockedAchievements: parsedProgress.unlockedAchievements || [],
-        perfectQuizzes: parsedProgress.perfectQuizzes || []
+        perfectQuizzes: parsedProgress.perfectQuizzes || [],
       };
     }
     return defaultProgress;
@@ -67,7 +67,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   useEffect(() => {
     // Always save to localStorage
     localStorage.setItem('education-for-democracy-progress', JSON.stringify(progress));
-    
+
     // If offline, save to IndexedDB for later sync
     if (!isOnline) {
       saveOfflineProgress(progress);
@@ -82,20 +82,20 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   }, [isOnline, syncOfflineProgress]);
 
   const addPoints = (points: number) => {
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
-      totalPoints: prev.totalPoints + points
+      totalPoints: prev.totalPoints + points,
     }));
   };
 
   const markLessonComplete = async (lessonId: string) => {
     const now = Date.now();
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
-      completedLessons: prev.completedLessons.includes(lessonId) 
-        ? prev.completedLessons 
+      completedLessons: prev.completedLessons.includes(lessonId)
+        ? prev.completedLessons
         : [...prev.completedLessons, lessonId],
-      lastLessonCompletionTime: now
+      lastLessonCompletionTime: now,
     }));
 
     // Sync with API
@@ -104,7 +104,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         await progressAPI.markLessonComplete({
           lessonId,
           userId: progressAPI.getUserId(),
-          completed: true
+          completed: true,
         });
         console.log('Lesson completion synced with API:', lessonId);
       }
@@ -115,18 +115,19 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   };
 
   const recordQuizScore = async (quizId: string, score: number) => {
-    setProgress(prev => {
-      const newPerfectQuizzes = score === 100 && !prev.perfectQuizzes.includes(quizId)
-        ? [...prev.perfectQuizzes, quizId]
-        : prev.perfectQuizzes;
-      
+    setProgress((prev) => {
+      const newPerfectQuizzes =
+        score === 100 && !prev.perfectQuizzes.includes(quizId)
+          ? [...prev.perfectQuizzes, quizId]
+          : prev.perfectQuizzes;
+
       return {
         ...prev,
         quizScores: {
           ...prev.quizScores,
-          [quizId]: score
+          [quizId]: score,
         },
-        perfectQuizzes: newPerfectQuizzes
+        perfectQuizzes: newPerfectQuizzes,
       };
     });
 
@@ -136,13 +137,13 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         // Assuming a standard quiz has 10 questions and we calculate correctAnswers from score
         const totalQuestions = 10; // Default, should be passed as parameter in real implementation
         const correctAnswers = Math.round((score / 100) * totalQuestions);
-        
+
         await progressAPI.recordQuizResult({
           quizId,
           userId: progressAPI.getUserId(),
           score,
           totalQuestions,
-          correctAnswers
+          correctAnswers,
         });
         console.log('Quiz result synced with API:', { quizId, score });
       }
@@ -153,18 +154,18 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   };
 
   const markSectionComplete = (lessonId: string, sectionId: string) => {
-    setProgress(prev => {
+    setProgress((prev) => {
       const lessonSections = prev.completedSections[lessonId] || [];
-      const newSections = lessonSections.includes(sectionId) 
-        ? lessonSections 
+      const newSections = lessonSections.includes(sectionId)
+        ? lessonSections
         : [...lessonSections, sectionId];
-      
+
       return {
         ...prev,
         completedSections: {
           ...prev.completedSections,
-          [lessonId]: newSections
-        }
+          [lessonId]: newSections,
+        },
       };
     });
   };
@@ -178,124 +179,151 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     return progress.completedLessons.includes(lessonId);
   };
 
-  const checkAchievementUnlocked = useCallback((achievement: Achievement, currentProgress: ProgressData): boolean => {
-    const { requirement } = achievement;
-    
-    switch (requirement.type) {
-      case 'lessons_completed':
-        if (requirement.lessonId) {
-          return currentProgress.completedLessons.includes(requirement.lessonId);
-        }
-        
-        // Check for time-based dedication achievements
-        if (achievement.id === 'early_bird' && currentProgress.lastLessonCompletionTime) {
-          const completionDate = new Date(currentProgress.lastLessonCompletionTime);
-          const hour = completionDate.getHours();
-          return currentProgress.completedLessons.length >= requirement.value && hour >= 6 && hour < 11;
-        }
-        
-        if (achievement.id === 'night_owl' && currentProgress.lastLessonCompletionTime) {
-          const completionDate = new Date(currentProgress.lastLessonCompletionTime);
-          const hour = completionDate.getHours();
-          return currentProgress.completedLessons.length >= requirement.value && hour >= 18 && hour < 23;
-        }
-        
-        return currentProgress.completedLessons.length >= requirement.value;
-      
-      case 'sections_completed':
-        const totalSections = Object.values(currentProgress.completedSections)
-          .reduce((sum, sections) => sum + sections.length, 0);
-        return totalSections >= requirement.value;
-      
-      case 'quiz_score':
-        return Object.values(currentProgress.quizScores).some(score => score >= requirement.value);
-      
-      case 'points_earned':
-        return currentProgress.totalPoints >= requirement.value;
-      
-      case 'perfect_quizzes':
-        return currentProgress.perfectQuizzes.length >= requirement.value;
-      
-      default:
-        return false;
-    }
-  }, []);
+  const checkAchievementUnlocked = useCallback(
+    (achievement: Achievement, currentProgress: ProgressData): boolean => {
+      const { requirement } = achievement;
+
+      switch (requirement.type) {
+        case 'lessons_completed':
+          if (requirement.lessonId) {
+            return currentProgress.completedLessons.includes(requirement.lessonId);
+          }
+
+          // Check for time-based dedication achievements
+          if (achievement.id === 'early_bird' && currentProgress.lastLessonCompletionTime) {
+            const completionDate = new Date(currentProgress.lastLessonCompletionTime);
+            const hour = completionDate.getHours();
+            return (
+              currentProgress.completedLessons.length >= requirement.value && hour >= 6 && hour < 11
+            );
+          }
+
+          if (achievement.id === 'night_owl' && currentProgress.lastLessonCompletionTime) {
+            const completionDate = new Date(currentProgress.lastLessonCompletionTime);
+            const hour = completionDate.getHours();
+            return (
+              currentProgress.completedLessons.length >= requirement.value &&
+              hour >= 18 &&
+              hour < 23
+            );
+          }
+
+          return currentProgress.completedLessons.length >= requirement.value;
+
+        case 'sections_completed':
+          const totalSections = Object.values(currentProgress.completedSections).reduce(
+            (sum, sections) => sum + sections.length,
+            0
+          );
+          return totalSections >= requirement.value;
+
+        case 'quiz_score':
+          return Object.values(currentProgress.quizScores).some(
+            (score) => score >= requirement.value
+          );
+
+        case 'points_earned':
+          return currentProgress.totalPoints >= requirement.value;
+
+        case 'perfect_quizzes':
+          return currentProgress.perfectQuizzes.length >= requirement.value;
+
+        default:
+          return false;
+      }
+    },
+    []
+  );
 
   const checkForNewAchievements = useCallback((): Achievement[] => {
     const newAchievements: Achievement[] = [];
-    
+
     // Ensure unlockedAchievements exists
     const unlockedAchievements = progress.unlockedAchievements || [];
-    
+
     for (const achievement of achievements) {
-      if (!unlockedAchievements.includes(achievement.id) && 
-          checkAchievementUnlocked(achievement, progress)) {
+      if (
+        !unlockedAchievements.includes(achievement.id) &&
+        checkAchievementUnlocked(achievement, progress)
+      ) {
         newAchievements.push(achievement);
       }
     }
-    
+
     if (newAchievements.length > 0) {
-      setProgress(prev => ({
+      setProgress((prev) => ({
         ...prev,
-        unlockedAchievements: [...(prev.unlockedAchievements || []), ...newAchievements.map(a => a.id)],
-        totalPoints: prev.totalPoints + newAchievements.reduce((sum, achievement) => sum + achievement.points, 0)
+        unlockedAchievements: [
+          ...(prev.unlockedAchievements || []),
+          ...newAchievements.map((a) => a.id),
+        ],
+        totalPoints:
+          prev.totalPoints +
+          newAchievements.reduce((sum, achievement) => sum + achievement.points, 0),
       }));
-      
+
       // Notify about new achievements
-      newAchievements.forEach(achievement => {
+      newAchievements.forEach((achievement) => {
         if (onAchievementUnlocked) {
           onAchievementUnlocked(achievement);
         }
       });
     }
-    
+
     return newAchievements;
   }, [progress, checkAchievementUnlocked, onAchievementUnlocked]);
 
   const getUnlockedAchievements = useCallback((): Achievement[] => {
     const unlockedAchievements = progress.unlockedAchievements || [];
-    return achievements.filter(achievement => 
-      unlockedAchievements.includes(achievement.id)
-    );
+    return achievements.filter((achievement) => unlockedAchievements.includes(achievement.id));
   }, [progress.unlockedAchievements]);
 
   const getLockedAchievements = useCallback((): Achievement[] => {
     const unlockedAchievements = progress.unlockedAchievements || [];
-    return achievements.filter(achievement => 
-      !unlockedAchievements.includes(achievement.id)
-    );
+    return achievements.filter((achievement) => !unlockedAchievements.includes(achievement.id));
   }, [progress.unlockedAchievements]);
 
   const getTotalSectionsCompleted = useCallback((): number => {
-    return Object.values(progress.completedSections)
-      .reduce((sum, sections) => sum + sections.length, 0);
+    return Object.values(progress.completedSections).reduce(
+      (sum, sections) => sum + sections.length,
+      0
+    );
   }, [progress.completedSections]);
 
   // Check for achievements when progress changes
   useEffect(() => {
     checkForNewAchievements();
-  }, [progress.completedLessons, progress.totalPoints, progress.quizScores, progress.perfectQuizzes, progress.lastLessonCompletionTime, checkForNewAchievements]);
+  }, [
+    progress.completedLessons,
+    progress.totalPoints,
+    progress.quizScores,
+    progress.perfectQuizzes,
+    progress.lastLessonCompletionTime,
+    checkForNewAchievements,
+  ]);
 
   const resetProgress = () => {
     setProgress(defaultProgress);
   };
 
   return (
-    <ProgressContext.Provider value={{ 
-      progress, 
-      addPoints, 
-      markLessonComplete, 
-      markSectionComplete,
-      isSectionComplete,
-      isLessonComplete,
-      recordQuizScore, 
-      resetProgress,
-      getUnlockedAchievements,
-      getLockedAchievements,
-      checkForNewAchievements,
-      getTotalSectionsCompleted,
-      onAchievementUnlocked
-    }}>
+    <ProgressContext.Provider
+      value={{
+        progress,
+        addPoints,
+        markLessonComplete,
+        markSectionComplete,
+        isSectionComplete,
+        isLessonComplete,
+        recordQuizScore,
+        resetProgress,
+        getUnlockedAchievements,
+        getLockedAchievements,
+        checkForNewAchievements,
+        getTotalSectionsCompleted,
+        onAchievementUnlocked,
+      }}
+    >
       {children}
     </ProgressContext.Provider>
   );

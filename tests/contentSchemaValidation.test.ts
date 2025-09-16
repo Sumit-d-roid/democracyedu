@@ -35,7 +35,6 @@ describe('Lessons schema validity', () => {
       const data = load(f);
       const parsed = LessonContentSchema.safeParse(data);
       if (!parsed.success) {
-        // eslint-disable-next-line no-console
         console.error('Lesson schema errors', f, parsed.error.format());
       }
       expect(parsed.success).toBe(true);
@@ -49,7 +48,6 @@ describe('Quizzes schema validity', () => {
       const data = load(f);
       const parsed = QuizContentSchema.safeParse(data);
       if (!parsed.success) {
-        // eslint-disable-next-line no-console
         console.error('Quiz schema errors', f, parsed.error.format());
       }
       expect(parsed.success).toBe(true);

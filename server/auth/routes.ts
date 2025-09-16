@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
   try {
     // Validate request body
     const validatedData = registerSchema.parse(req.body);
-    
+
     // Check if username already exists
     const existingUser = await storage.getUserByUsername(validatedData.username);
     if (existingUser) {
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
 
     // Hash password and create user
     const hashedPassword = await hashPassword(validatedData.password);
-  const user = await storage.createUser({
+    const user = await storage.createUser({
       username: validatedData.username,
       password: hashedPassword,
     });
@@ -39,14 +39,19 @@ router.post('/register', async (req, res) => {
 
     res.status(201).json({
       message: 'User registered successfully',
-      user: { id: user.id, username: user.username }
+      user: { id: user.id, username: user.username },
     });
   } catch (error: unknown) {
-    if (error && typeof error === 'object' && 'name' in error && (error as any).name === 'ZodError') {
-      return res.status(400).json({ 
+    if (
+      error &&
+      typeof error === 'object' &&
+      'name' in error &&
+      (error as any).name === 'ZodError'
+    ) {
+      return res.status(400).json({
         message: 'Validation error',
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        errors: (error as any).errors 
+        errors: (error as any).errors,
       });
     }
     res.status(500).json({ message: 'Error registering user' });
@@ -81,14 +86,19 @@ router.post('/login', async (req, res) => {
 
     res.json({
       message: 'Login successful',
-      user: { id: user.id, username: user.username }
+      user: { id: user.id, username: user.username },
     });
   } catch (error: unknown) {
-    if (error && typeof error === 'object' && 'name' in error && (error as any).name === 'ZodError') {
-      return res.status(400).json({ 
+    if (
+      error &&
+      typeof error === 'object' &&
+      'name' in error &&
+      (error as any).name === 'ZodError'
+    ) {
+      return res.status(400).json({
         message: 'Validation error',
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        errors: (error as any).errors 
+        errors: (error as any).errors,
       });
     }
     res.status(500).json({ message: 'Error logging in' });

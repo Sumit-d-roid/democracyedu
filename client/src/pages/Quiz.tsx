@@ -15,21 +15,22 @@ export default function Quiz() {
   const filteredQuizzes = useMemo(() => {
     const term = search.trim().toLowerCase();
     if (!term) return quizzes;
-    return quizzes.filter(q =>
-      q.title.toLowerCase().includes(term) ||
-      q.description.toLowerCase().includes(term) ||
-      q.category.toLowerCase().includes(term)
+    return quizzes.filter(
+      (q) =>
+        q.title.toLowerCase().includes(term) ||
+        q.description.toLowerCase().includes(term) ||
+        q.category.toLowerCase().includes(term)
     );
   }, [search, quizzes]);
 
-  const selectedQuizData = quizzes.find(quiz => quiz.id === selectedQuiz);
+  const selectedQuizData = quizzes.find((quiz) => quiz.id === selectedQuiz);
 
   if (selectedQuiz && selectedQuizData) {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             onClick={() => setSelectedQuiz(null)}
             className="mb-6"
             data-testid="button-back-to-quizzes"
@@ -48,7 +49,7 @@ export default function Quiz() {
         <h1 className="text-3xl font-bold mb-8 text-center" data-testid="text-quiz-title">
           {t('quiz.title')}
         </h1>
-        
+
         <div className="mb-6">
           <input
             type="text"
@@ -62,14 +63,21 @@ export default function Quiz() {
         </div>
 
         {filteredQuizzes.length === 0 && (
-          <div className="text-center text-sm text-muted-foreground py-12" data-testid="text-quiz-no-results">
+          <div
+            className="text-center text-sm text-muted-foreground py-12"
+            data-testid="text-quiz-no-results"
+          >
             {t('quiz.no-results')}
           </div>
         )}
 
         <div className="grid md:grid-cols-2 gap-6">
           {filteredQuizzes.map((quiz) => (
-            <Card key={quiz.id} className="hover-elevate cursor-pointer" data-testid={`card-quiz-${quiz.id}`}>
+            <Card
+              key={quiz.id}
+              className="hover-elevate cursor-pointer"
+              data-testid={`card-quiz-${quiz.id}`}
+            >
               <CardHeader>
                 <CardTitle>{quiz.title}</CardTitle>
               </CardHeader>
@@ -79,9 +87,11 @@ export default function Quiz() {
                   <p className="text-sm text-muted-foreground">
                     {quiz.questions.length} {t('quiz.questions-count')}
                   </p>
-                  <Badge variant="outline" data-testid={`badge-quiz-category-${quiz.id}`}>{quiz.category}</Badge>
+                  <Badge variant="outline" data-testid={`badge-quiz-category-${quiz.id}`}>
+                    {quiz.category}
+                  </Badge>
                 </div>
-                <Button 
+                <Button
                   onClick={() => setSelectedQuiz(quiz.id)}
                   className="w-full"
                   data-testid={`button-start-quiz-${quiz.id}`}

@@ -1,6 +1,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { ContentManifestSchema, LessonContentSchema, QuizContentSchema, type ContentManifest, type LessonContent, type QuizContent } from './contentSchemas';
+import {
+  ContentManifestSchema,
+  LessonContentSchema,
+  QuizContentSchema,
+  type ContentManifest,
+  type LessonContent,
+  type QuizContent,
+} from './contentSchemas';
 
 // Simple in-memory caches. In production with multiple processes you'd swap for a shared cache.
 const manifestCache: { value?: ContentManifest; mtimeMs?: number } = {};
@@ -27,20 +34,28 @@ export async function loadManifest(force = false): Promise<ContentManifest> {
   return parsed;
 }
 
-export async function listLessons(): Promise<Pick<LessonContent, 'id' | 'title' | 'difficulty' | 'estimatedTime' | 'icon'>[]> {
+export async function listLessons(): Promise<
+  Pick<LessonContent, 'id' | 'title' | 'difficulty' | 'estimatedTime' | 'icon'>[]
+> {
   const manifest = await loadManifest();
-  return manifest.lessons.map(l => ({ id: l.id, title: l.title, difficulty: l.difficulty, estimatedTime: l.estimatedTime, icon: l.icon }));
+  return manifest.lessons.map((l) => ({
+    id: l.id,
+    title: l.title,
+    difficulty: l.difficulty,
+    estimatedTime: l.estimatedTime,
+    icon: l.icon,
+  }));
 }
 
 export async function listQuizzes(): Promise<Pick<QuizContent, 'id' | 'title' | 'category'>[]> {
   const manifest = await loadManifest();
-  return manifest.quizzes.map(q => ({ id: q.id, title: q.title, category: q.category }));
+  return manifest.quizzes.map((q) => ({ id: q.id, title: q.title, category: q.category }));
 }
 
 export async function loadLesson(id: string, force = false): Promise<LessonContent> {
   if (!force && lessonCache.has(id)) return lessonCache.get(id)!;
   const manifest = await loadManifest();
-  const entry = manifest.lessons.find(l => l.id === id);
+  const entry = manifest.lessons.find((l) => l.id === id);
   if (!entry) throw new Error(`Lesson not found: ${id}`);
   const lessonPath = path.join(CONTENT_ROOT, entry.file);
   const json = await readJSON<any>(lessonPath);
@@ -52,7 +67,7 @@ export async function loadLesson(id: string, force = false): Promise<LessonConte
 export async function loadQuiz(id: string, force = false): Promise<QuizContent> {
   if (!force && quizCache.has(id)) return quizCache.get(id)!;
   const manifest = await loadManifest();
-  const entry = manifest.quizzes.find(q => q.id === id);
+  const entry = manifest.quizzes.find((q) => q.id === id);
   if (!entry) throw new Error(`Quiz not found: ${id}`);
   const quizPath = path.join(CONTENT_ROOT, entry.file);
   const json = await readJSON<any>(quizPath);
@@ -71,7 +86,7 @@ export function clearContentCache() {
 // Utility to preload all content (e.g., warmup during server start if desired)
 export async function preloadAllContent(): Promise<{ lessons: number; quizzes: number }> {
   const manifest = await loadManifest();
-  await Promise.all(manifest.lessons.map(l => loadLesson(l.id)));
-  await Promise.all(manifest.quizzes.map(q => loadQuiz(q.id)));
+  await Promise.all(manifest.lessons.map((l) => loadLesson(l.id)));
+  await Promise.all(manifest.quizzes.map((q) => loadQuiz(q.id)));
   return { lessons: manifest.lessons.length, quizzes: manifest.quizzes.length };
 }

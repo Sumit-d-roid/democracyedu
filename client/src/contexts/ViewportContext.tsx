@@ -1,6 +1,12 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { useDebouncedCallback } from '../hooks/use-performance';
-import { createSelectableContext } from '../hooks/use-context-selector';
+import {
+  useEffect,
+  useState,
+  ReactNode,
+  useRef,
+  useCallback,
+  createContext,
+  useContext,
+} from 'react';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 export type Orientation = 'portrait' | 'landscape';
@@ -45,7 +51,7 @@ function getDeviceType(width: number): DeviceType {
   return 'mobile';
 }
 
-const { Provider, useContextSelector, useEntireContext } = createSelectableContext<ViewportState>('Viewport');
+const ViewportContext = createContext<ViewportState | undefined>(undefined);
 
 export function ViewportProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<ViewportState>(() => {
@@ -65,15 +71,23 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
       isTablet: width >= breakpoints.md && width < breakpoints.lg,
       isDesktop: width >= breakpoints.lg,
       isPwa: window.matchMedia('(display-mode: standalone)').matches,
-  // Non-standard iOS Safari property access via casting
-  isStandalone: (window.navigator as any).standalone || window.matchMedia('(display-mode: standalone)').matches,
+      // Non-standard iOS Safari property access via casting
+      isStandalone:
+        (window.navigator as any).standalone ||
+        window.matchMedia('(display-mode: standalone)').matches,
     };
   });
 
-  // Debounce viewport updates to avoid excessive re-renders
-  const debouncedSetState = useDebouncedCallback((updates: Partial<ViewportState>) => {
-    setState(prev => ({ ...prev, ...updates }));
-  }, 150);
+  // Simple debounce implementation to avoid excessive re-renders
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const debouncedSetState = useCallback((updates: Partial<ViewportState>) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setState((prev) => ({ ...prev, ...updates }));
+    }, 150);
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -114,13 +128,13 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
   // Update PWA status when display mode changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(display-mode: standalone)');
-    
+
     function handleDisplayModeChange(e: MediaQueryListEvent) {
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         isPwa: e.matches,
-  // Non-standard iOS Safari property access via casting
-  isStandalone: e.matches || (window.navigator as any).standalone || false,
+        // Non-standard iOS Safari property access via casting
+        isStandalone: e.matches || (window.navigator as any).standalone || false,
       }));
     }
 
@@ -128,35 +142,43 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
     return () => mediaQuery.removeEventListener('change', handleDisplayModeChange);
   }, []);
 
-  return <Provider value={state}>{children}</Provider>;
+  return <ViewportContext.Provider value={state}>{children}</ViewportContext.Provider>;
 }
 
 // Hook to access the entire viewport state
 export function useViewport() {
-  return useEntireContext();
+  const context = useContext(ViewportContext);
+  if (context === undefined) {
+    throw new Error('useViewport must be used within a ViewportProvider');
+  }
+  return context;
 }
 
 // Specialized hooks for specific viewport properties
 export function useBreakpoint() {
-  return useContextSelector(state => state.breakpoint);
+  const context = useViewport();
+  return context.breakpoint;
 }
 
 export function useDeviceType() {
-  return useContextSelector(state => state.deviceType);
+  const context = useViewport();
+  return context.deviceType;
 }
 
 export function useOrientation() {
-  return useContextSelector(state => state.orientation);
+  const context = useViewport();
+  return context.orientation;
 }
 
 export function useViewportSize() {
-  return useContextSelector(state => ({ width: state.width, height: state.height }));
+  const context = useViewport();
+  return { width: context.width, height: context.height };
 }
 
 export function useResponsiveValue<T>(values: Partial<Record<Breakpoint, T>>, defaultValue: T): T {
   const breakpoint = useBreakpoint();
   const breakpointOrder: Breakpoint[] = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
-  
+
   // Find the closest defined breakpoint value
   const index = breakpointOrder.indexOf(breakpoint);
   for (let i = index; i < breakpointOrder.length; i++) {
@@ -165,6 +187,6 @@ export function useResponsiveValue<T>(values: Partial<Record<Breakpoint, T>>, de
       return value;
     }
   }
-  
+
   return defaultValue;
 }

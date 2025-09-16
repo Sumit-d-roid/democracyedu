@@ -14,7 +14,7 @@ function ContactSection() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+        body: JSON.stringify({ name, email, message }),
       });
       if (res.ok) {
         setSubmitted(true);
@@ -30,8 +30,13 @@ function ContactSection() {
   }
 
   return (
-    <section className="max-w-2xl mx-auto my-16 p-6 border rounded bg-card card-hover-scale" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" className="text-2xl font-bold mb-3">{t('contact.title')}</h2>
+    <section
+      className="max-w-2xl mx-auto my-16 p-6 border rounded bg-card card-hover-scale"
+      aria-labelledby="contact-heading"
+    >
+      <h2 id="contact-heading" className="text-2xl font-bold mb-3">
+        {t('contact.title')}
+      </h2>
       <p className="mb-6 text-muted-foreground">{t('contact.description')}</p>
       {submitted && (
         <div className="mb-4 text-green-600 text-sm" role="status" aria-live="polite">
@@ -49,7 +54,7 @@ function ContactSection() {
             type="text"
             autoComplete="name"
             value={name}
-            onChange={e => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -63,7 +68,7 @@ function ContactSection() {
             type="email"
             autoComplete="email"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -76,11 +81,14 @@ function ContactSection() {
             className="w-full p-2 rounded border bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             rows={5}
             value={message}
-            onChange={e => setMessage(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
         </div>
-        <button type="submit" className="w-full p-3 bg-primary text-primary-foreground rounded font-semibold transition-base hover:brightness-110 active:brightness-90">
+        <button
+          type="submit"
+          className="w-full p-3 bg-primary text-primary-foreground rounded font-semibold transition-base hover:brightness-110 active:brightness-90"
+        >
           {t('contact.submit')}
         </button>
       </form>
@@ -91,8 +99,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 function AboutSection() {
   const { t } = useLanguage();
   return (
-    <section className="max-w-3xl mx-auto my-20 p-6 border rounded bg-card card-hover-scale" aria-labelledby="about-heading">
-      <h2 id="about-heading" className="text-3xl font-bold mb-4">{t('about.title')}</h2>
+    <section
+      className="max-w-3xl mx-auto my-20 p-6 border rounded bg-card card-hover-scale"
+      aria-labelledby="about-heading"
+    >
+      <h2 id="about-heading" className="text-3xl font-bold mb-4">
+        {t('about.title')}
+      </h2>
       <p className="mb-4 leading-relaxed text-muted-foreground">{t('about.description')}</p>
       <p className="leading-relaxed">{t('about.mission')}</p>
     </section>

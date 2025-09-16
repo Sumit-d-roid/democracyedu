@@ -2,9 +2,11 @@ import { locales } from './locales';
 
 export type SupportedLanguage = keyof typeof locales; // 'en' | 'ne'
 
-export interface TranslatorOptions { fallback?: SupportedLanguage; }
+export interface TranslatorOptions {
+  fallback?: SupportedLanguage;
+}
 
-type LocaleRecord = typeof locales[SupportedLanguage];
+type LocaleRecord = (typeof locales)[SupportedLanguage];
 type TranslationKey = keyof typeof locales.en & string; // keys shared across locales
 
 export async function createTranslator(lang: SupportedLanguage, opts: TranslatorOptions = {}) {
@@ -23,4 +25,6 @@ export async function createTranslator(lang: SupportedLanguage, opts: Translator
   };
 }
 
-export function clearI18nCache() { /* no dynamic cache used */ }
+export function clearI18nCache() {
+  /* no dynamic cache used */
+}

@@ -31,7 +31,7 @@ export function useOfflineSupport() {
     toast({
       title: type === 'error' ? 'Error' : 'Notification',
       description: message,
-      variant: type === 'error' ? 'destructive' : 'default'
+      variant: type === 'error' ? 'destructive' : 'default',
     });
   };
 
@@ -42,13 +42,15 @@ export function useOfflineSupport() {
   useEffect(() => {
     if (!isSupported) return;
 
-    navigator.serviceWorker.register('/service-worker.js')
+    navigator.serviceWorker
+      .register('/service-worker.js')
       .then((registration) => {
         console.log('ServiceWorker registration successful');
-        
+
         // Check for background sync support
         if ('sync' in registration && typeof (registration as any).sync?.register === 'function') {
-          (registration as any).sync.register('syncProgress')
+          (registration as any).sync
+            .register('syncProgress')
             .then(() => console.log('Background sync registered'))
             .catch((err: Error) => console.error('Background sync registration failed:', err));
         }
@@ -61,13 +63,13 @@ export function useOfflineSupport() {
   // Monitor online/offline status
   useEffect(() => {
     const handleOnline = () => {
-      setState(prev => ({ ...prev, isOnline: true }));
+      setState((prev) => ({ ...prev, isOnline: true }));
       addNotification('Back online! Syncing your progress...', 'success');
       syncOfflineProgress();
     };
 
     const handleOffline = () => {
-      setState(prev => ({ ...prev, isOnline: false }));
+      setState((prev) => ({ ...prev, isOnline: false }));
       addNotification('You are offline. Your progress will be saved locally.', 'info');
     };
 
@@ -88,7 +90,7 @@ export function useOfflineSupport() {
       const db = await openDB();
       const transaction = db.transaction('progress', 'readwrite');
       const store = transaction.objectStore('progress') as IDBStoreWithMethods;
-      
+
       // Get all pending progress items
       const pendingProgress = await new Promise<Progress[]>((resolve, reject) => {
         const request = store.getAll();
@@ -120,7 +122,7 @@ export function useOfflineSupport() {
         request.onerror = () => reject(request.error);
       });
 
-      setState(prev => ({ ...prev, pendingSyncs: 0, hasOfflineContent: false }));
+      setState((prev) => ({ ...prev, pendingSyncs: 0, hasOfflineContent: false }));
       addNotification('Progress synced successfully!', 'success');
     } catch (error) {
       console.error('Failed to sync progress:', error);
@@ -146,10 +148,10 @@ export function useOfflineSupport() {
         request.onerror = () => reject(request.error);
       });
 
-      setState(prev => ({ 
-        ...prev, 
+      setState((prev) => ({
+        ...prev,
         pendingSyncs: prev.pendingSyncs + 1,
-        hasOfflineContent: true
+        hasOfflineContent: true,
       }));
       addNotification('Progress saved offline', 'info');
     } catch (error) {
@@ -172,10 +174,10 @@ export function useOfflineSupport() {
 function openDB(): Promise<IDBDatabase> {
   return new Promise<IDBDatabase>((resolve, reject) => {
     const request = indexedDB.open('sambhidanx-offline', 1);
-    
+
     request.onerror = () => reject(request.error);
     request.onsuccess = () => resolve(request.result);
-    
+
     request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
       const db = (event.target as IDBOpenDBRequest).result;
       if (!db.objectStoreNames.contains('progress')) {
@@ -184,4 +186,3 @@ function openDB(): Promise<IDBDatabase> {
     };
   });
 }
-

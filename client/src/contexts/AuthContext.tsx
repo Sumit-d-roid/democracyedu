@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react';
-import { createSelectableContext } from '../hooks/use-context-selector';
+import { useEffect, useState, useCallback, ReactNode, createContext, useContext } from 'react';
 
 interface User {
   id: string;
@@ -41,7 +40,7 @@ interface AuthContextValue extends AuthState {
   verifyEmail: (token: string) => Promise<void>;
 }
 
-const { Provider, useContextSelector, useEntireContext } = createSelectableContext<AuthContextValue>('Auth');
+const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 // Default auth state
 const defaultAuthState: AuthState = {
@@ -69,19 +68,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const handleError = useCallback((error: unknown) => {
     const err = error instanceof Error ? error : new Error(String(error));
     console.error('Auth Error:', err);
-    setState(prev => ({ ...prev, error: err }));
+    setState((prev) => ({ ...prev, error: err }));
   }, []);
 
   // Save auth state to localStorage
   useEffect(() => {
     try {
       if (state.isAuthenticated) {
-        localStorage.setItem('auth-state', JSON.stringify({
-          isAuthenticated: state.isAuthenticated,
-          user: state.user,
-          accessToken: state.accessToken,
-          refreshToken: state.refreshToken,
-        }));
+        localStorage.setItem(
+          'auth-state',
+          JSON.stringify({
+            isAuthenticated: state.isAuthenticated,
+            user: state.user,
+            accessToken: state.accessToken,
+            refreshToken: state.refreshToken,
+          })
+        );
       } else {
         localStorage.removeItem('auth-state');
       }
@@ -126,7 +128,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!response.ok) throw new Error('Failed to refresh token');
 
       const data = await response.json();
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         accessToken: data.accessToken,
       }));
@@ -139,13 +141,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   function handleAuthError(error: unknown) {
     const err = error instanceof Error ? error : new Error(String(error));
-    setState(prev => ({ ...prev, error: err }));
+    setState((prev) => ({ ...prev, error: err }));
     console.error('Auth Error:', err);
   }
 
   async function login({ email, password }: LoginCredentials) {
     try {
-      setState(prev => ({ ...prev, loading: true, error: null }));
+      setState((prev) => ({ ...prev, loading: true, error: null }));
 
       const response = await fetch('/api/auth/login', {
         method: 'POST',
@@ -159,7 +161,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       const { user, accessToken, refreshToken } = await response.json();
 
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         isAuthenticated: true,
         user,
@@ -171,13 +173,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       handleAuthError(error);
     } finally {
-      setState(prev => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false }));
     }
   }
 
   async function register(data: RegisterData) {
     try {
-      setState(prev => ({ ...prev, loading: true, error: null }));
+      setState((prev) => ({ ...prev, loading: true, error: null }));
 
       const response = await fetch('/api/auth/register', {
         method: 'POST',
@@ -191,7 +193,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       handleAuthError(error);
     } finally {
-      setState(prev => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false }));
     }
   }
 
@@ -222,7 +224,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${state.accessToken}`,
+          Authorization: `Bearer ${state.accessToken}`,
         },
         body: JSON.stringify({ preferences }),
       });
@@ -230,7 +232,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!response.ok) throw new Error('Failed to update preferences');
 
       const updatedUser = await response.json();
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         user: updatedUser,
       }));
@@ -241,7 +243,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   async function resetPassword(email: string) {
     try {
-      setState(prev => ({ ...prev, loading: true, error: null }));
+      setState((prev) => ({ ...prev, loading: true, error: null }));
 
       const response = await fetch('/api/auth/reset-password', {
         method: 'POST',
@@ -255,13 +257,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       handleAuthError(error);
     } finally {
-      setState(prev => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false }));
     }
   }
 
   async function verifyEmail(token: string) {
     try {
-      setState(prev => ({ ...prev, loading: true, error: null }));
+      setState((prev) => ({ ...prev, loading: true, error: null }));
 
       const response = await fetch('/api/auth/verify-email', {
         method: 'POST',
@@ -275,12 +277,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       handleAuthError(error);
     } finally {
-      setState(prev => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false }));
     }
   }
 
   return (
-    <Provider
+    <AuthContext.Provider
       value={{
         ...state,
         login,
@@ -292,25 +294,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-    </Provider>
+    </AuthContext.Provider>
   );
 }
 
 // Hook to access the entire auth state and methods
 export function useAuth() {
-  return useEntireContext();
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 }
 
 // Specialized hooks for specific auth state properties
 export function useAuthStatus() {
-  return useContextSelector(state => ({
-    isAuthenticated: state.isAuthenticated,
-    loading: state.loading,
-  }));
+  const context = useAuth();
+  return {
+    isAuthenticated: context.isAuthenticated,
+    loading: context.loading,
+  };
 }
 
 export function useUser() {
-  return useContextSelector(state => state.user);
+  const context = useAuth();
+  return context.user;
 }
 
 // Higher-order component for protected routes

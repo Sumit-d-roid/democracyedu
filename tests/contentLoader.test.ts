@@ -1,5 +1,13 @@
 import { describe, it, expect, beforeAll } from 'vitest';
-import { loadManifest, listLessons, listQuizzes, loadLesson, loadQuiz, preloadAllContent, clearContentCache } from '../shared/contentLoader';
+import {
+  loadManifest,
+  listLessons,
+  listQuizzes,
+  loadLesson,
+  loadQuiz,
+  preloadAllContent,
+  clearContentCache,
+} from '../shared/contentLoader';
 
 describe('content loader', () => {
   beforeAll(() => {

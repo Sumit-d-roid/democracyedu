@@ -1,36 +1,32 @@
-import type {
-  Assessment,
-  Question,
-  AssessmentResult
-} from '../types/learning';
+import type { Assessment, Question, AssessmentResult } from '../types/learning';
 
 // Question evaluation functions
 export const evaluateQuestion = {
   'multiple-choice': (answer: string | string[], correctAnswer: string | string[]): boolean => {
-    return Array.isArray(answer) 
+    return Array.isArray(answer)
       ? answer.sort().join(',') === (correctAnswer as string[]).sort().join(',')
       : answer === correctAnswer;
   },
-  
+
   'true-false': (answer: string, correctAnswer: string): boolean => {
     return answer.toLowerCase() === correctAnswer.toLowerCase();
   },
-  
-  'essay': (answer: string, rubric: string[]): number => {
+
+  essay: (answer: string, rubric: string[]): number => {
     // Basic keyword matching - could be enhanced with NLP
-    const keywords = rubric.map(k => k.toLowerCase());
+    const keywords = rubric.map((k) => k.toLowerCase());
     const answerLower = answer.toLowerCase();
-    const matchedKeywords = keywords.filter(k => answerLower.includes(k));
+    const matchedKeywords = keywords.filter((k) => answerLower.includes(k));
     return (matchedKeywords.length / keywords.length) * 100;
   },
-  
-  'matching': (answer: Record<string, string>, correctAnswer: Record<string, string>): boolean => {
+
+  matching: (answer: Record<string, string>, correctAnswer: Record<string, string>): boolean => {
     return Object.entries(answer).every(([key, value]) => correctAnswer[key] === value);
   },
-  
+
   'fill-blank': (answer: string, correctAnswer: string): boolean => {
     return answer.toLowerCase().trim() === correctAnswer.toLowerCase().trim();
-  }
+  },
 };
 
 // Assessment scoring
@@ -38,18 +34,21 @@ export function scoreAssessment(
   assessment: Assessment,
   answers: Record<string, string | string[]>
 ): AssessmentResult {
-  const results = assessment.questions.map(question => {
+  const results = assessment.questions.map((question) => {
     const answer = answers[question.id];
     let correct = false;
     let points = 0;
 
     if (question.type === 'essay') {
-      points = evaluateQuestion[question.type](answer as string, question.correctAnswer as string[]);
+      points = evaluateQuestion[question.type](
+        answer as string,
+        question.correctAnswer as string[]
+      );
       correct = points >= 70; // Consider essay correct if it scores 70% or higher
     } else {
-  // Indexing evaluateQuestion with dynamic question.type needs a cast to the appropriate function signature
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  correct = (evaluateQuestion as any)[question.type](answer, question.correctAnswer);
+      // Indexing evaluateQuestion with dynamic question.type needs a cast to the appropriate function signature
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      correct = (evaluateQuestion as any)[question.type](answer, question.correctAnswer);
       points = correct ? question.points : 0;
     }
 
@@ -57,7 +56,7 @@ export function scoreAssessment(
       questionId: question.id,
       answer,
       correct,
-      points
+      points,
     };
   });
 
@@ -77,27 +76,25 @@ export function scoreAssessment(
 }
 
 // Generate feedback based on assessment results
-function generateFeedback(
-  score: number,
-  answers: AssessmentResult['answers']
-): string {
-  const incorrectAnswers = answers.filter(a => !a.correct);
-  
+function generateFeedback(score: number, answers: AssessmentResult['answers']): string {
+  const incorrectAnswers = answers.filter((a) => !a.correct);
+
   let feedback = `You scored ${score}%. `;
-  
+
   if (score >= 90) {
     feedback += 'Excellent work! You have a strong understanding of the material.';
   } else if (score >= 70) {
-    feedback += 'Good job! You grasp most of the concepts, but there\'s room for improvement.';
+    feedback += "Good job! You grasp most of the concepts, but there's room for improvement.";
   } else if (score >= 50) {
-    feedback += 'You\'re on the right track, but you might want to review some topics.';
+    feedback += "You're on the right track, but you might want to review some topics.";
   } else {
-    feedback += 'It seems you need more practice with this material. Consider reviewing the lessons.';
+    feedback +=
+      'It seems you need more practice with this material. Consider reviewing the lessons.';
   }
 
   if (incorrectAnswers.length > 0) {
     feedback += '\n\nTopics to review:';
-    incorrectAnswers.forEach(answer => {
+    incorrectAnswers.forEach((answer) => {
       feedback += `\n- Question ${answer.questionId}`;
     });
   }
@@ -117,27 +114,27 @@ export function formatQuestion(question: Question): {
       return {
         text: question.question,
         options: question.options || [],
-        type: question.type
+        type: question.type,
       };
-    
+
     case 'matching':
       return {
         text: question.question,
         options: question.options || [],
-        type: 'matching'
+        type: 'matching',
       };
-    
+
     case 'fill-blank':
       // Replace blank markers with underscores
       return {
         text: question.question.replace(/\{\{blank\}\}/g, '_____'),
-        type: 'fill-blank'
+        type: 'fill-blank',
       };
-    
+
     default:
       return {
         text: question.question,
-        type: question.type
+        type: question.type,
       };
   }
 }
@@ -157,17 +154,17 @@ export function generatePracticeQuestions(
   previousResults: AssessmentResult[]
 ): Question[] {
   // Find questions that user struggled with
-  const questionStats = assessment.questions.map(question => {
-    const attempts = previousResults.flatMap(result => 
-      result.answers.filter(a => a.questionId === question.id)
+  const questionStats = assessment.questions.map((question) => {
+    const attempts = previousResults.flatMap((result) =>
+      result.answers.filter((a) => a.questionId === question.id)
     );
-    
-    const correctCount = attempts.filter(a => a.correct).length;
+
+    const correctCount = attempts.filter((a) => a.correct).length;
     const accuracy = attempts.length > 0 ? correctCount / attempts.length : 0;
-    
+
     return {
       question,
-      accuracy
+      accuracy,
     };
   });
 
@@ -175,7 +172,7 @@ export function generatePracticeQuestions(
   return questionStats
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, 5)
-    .map(stat => stat.question);
+    .map((stat) => stat.question);
 }
 
 // Analyze assessment results for learning patterns
@@ -190,9 +187,9 @@ export function analyzeResults(results: AssessmentResult[]): {
 
   // Analyze performance by question
   const questionStats = new Map<string, { correct: number; total: number }>();
-  
-  results.forEach(result => {
-    result.answers.forEach(answer => {
+
+  results.forEach((result) => {
+    result.answers.forEach((answer) => {
       const stats = questionStats.get(answer.questionId) || { correct: 0, total: 0 };
       if (answer.correct) stats.correct++;
       stats.total++;
@@ -215,6 +212,6 @@ export function analyzeResults(results: AssessmentResult[]): {
   return {
     strengths,
     weaknesses,
-    improvement
+    improvement,
   };
 }

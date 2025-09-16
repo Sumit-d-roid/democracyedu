@@ -23,7 +23,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
   const [earnedPoints, setEarnedPoints] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [showHint, setShowHint] = useState(false);
-  
+
   const { addPoints, recordQuizScore } = useProgress();
   const { t } = useLanguage();
 
@@ -32,11 +32,11 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (answered) return;
-    
+
     if (currentQuestion.type === 'multiple-select') {
       const currentAnswers = Array.isArray(selectedAnswer) ? selectedAnswer : [];
       if (currentAnswers.includes(answerIndex)) {
-        setSelectedAnswer(currentAnswers.filter(a => a !== answerIndex));
+        setSelectedAnswer(currentAnswers.filter((a) => a !== answerIndex));
       } else {
         setSelectedAnswer([...currentAnswers, answerIndex]);
       }
@@ -47,27 +47,28 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
 
   const handleSubmitAnswer = () => {
     if (selectedAnswer === null) return;
-    
+
     let isCorrect = false;
-    
+
     if (currentQuestion.type === 'multiple-select') {
-      const correctAnswers = Array.isArray(currentQuestion.correctAnswer) 
-        ? currentQuestion.correctAnswer 
+      const correctAnswers = Array.isArray(currentQuestion.correctAnswer)
+        ? currentQuestion.correctAnswer
         : [currentQuestion.correctAnswer];
       const userAnswers = Array.isArray(selectedAnswer) ? selectedAnswer : [];
-      isCorrect = correctAnswers.length === userAnswers.length && 
-                  correctAnswers.every(answer => userAnswers.includes(answer));
+      isCorrect =
+        correctAnswers.length === userAnswers.length &&
+        correctAnswers.every((answer) => userAnswers.includes(answer));
     } else {
       isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     }
-    
+
     if (isCorrect) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
       const questionPoints = currentQuestion.points || 10;
-      setEarnedPoints(prev => prev + questionPoints);
+      setEarnedPoints((prev) => prev + questionPoints);
       addPoints(questionPoints);
     }
-    
+
     setAnswered(true);
     setShowResult(true);
   };
@@ -82,9 +83,9 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
         duration: 4000,
       });
     } else {
-      setCurrentQuestionIndex(prev => prev + 1);
+      setCurrentQuestionIndex((prev) => prev + 1);
     }
-    
+
     setSelectedAnswer(null);
     setAnswered(false);
     setShowResult(false);
@@ -107,14 +108,16 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
           <div className="text-6xl mb-4">✓</div>
           <h3 className="text-2xl font-bold mb-2">{t('quiz.excellent')}</h3>
           <p className="text-lg text-muted-foreground mb-4">
-            {t('quiz.score')}: {score}/{questions.length} ({Math.round((score / questions.length) * 100)}%)
+            {t('quiz.score')}: {score}/{questions.length} (
+            {Math.round((score / questions.length) * 100)}%)
           </p>
           <div className="mb-4 space-y-2">
             <p className="text-sm text-muted-foreground">
               {t('quiz.total-questions')}: {questions.length} | {t('quiz.correct-answers')}: {score}
             </p>
             <p className="text-sm text-muted-foreground">
-              {t('achievements.points-earned')}: {earnedPoints} / {questions.reduce((sum, q) => sum + (q.points || 10), 0)}
+              {t('achievements.points-earned')}: {earnedPoints} /{' '}
+              {questions.reduce((sum, q) => sum + (q.points || 10), 0)}
             </p>
           </div>
           <Button onClick={resetQuiz} data-testid="button-retake-quiz">
@@ -126,7 +129,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
   }
 
   return (
-  <Card className="w-full max-w-2xl mx-auto transition-base" data-testid="card-quiz-question">
+    <Card className="w-full max-w-2xl mx-auto transition-base" data-testid="card-quiz-question">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>{t('quiz.title')}</CardTitle>
@@ -135,24 +138,24 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
           </Badge>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <h3 className="text-lg font-medium" data-testid="text-question">
           {currentQuestion.question}
         </h3>
-        
+
         <div className="space-y-2">
           {currentQuestion.options.map((option, index) => (
             <Button
               key={index}
               variant={
                 answered && index === currentQuestion.correctAnswer
-                  ? "default"
+                  ? 'default'
                   : selectedAnswer === index
-                  ? answered && selectedAnswer !== currentQuestion.correctAnswer
-                    ? "destructive"
-                    : "secondary"
-                  : "outline"
+                    ? answered && selectedAnswer !== currentQuestion.correctAnswer
+                      ? 'destructive'
+                      : 'secondary'
+                    : 'outline'
               }
               className="w-full justify-start text-left h-auto p-4 transition-base"
               onClick={() => handleAnswerSelect(index)}
@@ -164,14 +167,16 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
                 {answered && index === currentQuestion.correctAnswer && (
                   <CheckCircle className="w-5 h-5 text-green-600 ml-2" />
                 )}
-                {answered && selectedAnswer === index && selectedAnswer !== currentQuestion.correctAnswer && (
-                  <XCircle className="w-5 h-5 text-red-600 ml-2" />
-                )}
+                {answered &&
+                  selectedAnswer === index &&
+                  selectedAnswer !== currentQuestion.correctAnswer && (
+                    <XCircle className="w-5 h-5 text-red-600 ml-2" />
+                  )}
               </div>
             </Button>
           ))}
         </div>
-        
+
         {/* Hint Button */}
         {!answered && currentQuestion.hint && (
           <div className="flex justify-center">
@@ -187,7 +192,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
             </Button>
           </div>
         )}
-        
+
         {showHint && currentQuestion.hint && (
           <div className="p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-md border border-yellow-200 dark:border-yellow-800">
             <p className="text-sm text-yellow-800 dark:text-yellow-200 flex items-start">
@@ -196,7 +201,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
             </p>
           </div>
         )}
-        
+
         {showResult && (
           <div className="p-4 rounded-md border">
             {selectedAnswer === currentQuestion.correctAnswer ? (
@@ -206,9 +211,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
                   {t('quiz.correct')} +{currentQuestion.points || 10} {t('quiz.points-earned')}
                 </p>
                 {currentQuestion.explanation && (
-                  <p className="text-sm text-muted-foreground">
-                    {currentQuestion.explanation}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{currentQuestion.explanation}</p>
                 )}
               </div>
             ) : (
@@ -218,19 +221,17 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
                   {t('quiz.incorrect')}
                 </p>
                 {currentQuestion.explanation && (
-                  <p className="text-sm text-muted-foreground">
-                    {currentQuestion.explanation}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{currentQuestion.explanation}</p>
                 )}
               </div>
             )}
           </div>
         )}
       </CardContent>
-      
+
       <CardFooter>
         {!answered ? (
-          <Button 
+          <Button
             onClick={handleSubmitAnswer}
             disabled={selectedAnswer === null}
             className="w-full transition-base"
@@ -239,7 +240,7 @@ export default function QuizCard({ questions, quizId }: QuizCardProps) {
             {t('quiz.submit')}
           </Button>
         ) : (
-          <Button 
+          <Button
             onClick={handleNextQuestion}
             className="w-full transition-base"
             data-testid="button-next-question"

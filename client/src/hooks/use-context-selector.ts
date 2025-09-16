@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useRef, useCallback } from 'react';
-import { useContextMetrics } from './use-performance';
+import React, { createContext, useContext, useRef } from 'react';
 
 type Selector<T, S> = (state: T) => S;
 
@@ -8,48 +7,24 @@ export function createSelectableContext<T>(contextName: string) {
   const Context = createContext<T | undefined>(undefined);
 
   function Provider({ value, children }: { value: T; children: React.ReactNode }) {
-    const stableValue = useRef(value);
-    
-    // Update the ref if the value changes
-    if (value !== stableValue.current) {
-      stableValue.current = value;
-    }
-
-    return React.createElement(Context.Provider, 
-      { value: stableValue.current },
-      children
-    );
+    // Use a more straightforward approach without ref optimization for now
+    return React.createElement(Context.Provider, { value }, children);
   }
 
   // Hook for selecting specific parts of the context state
   function useContextSelector<S>(selector: Selector<T, S>): S {
-    useContextMetrics(contextName);
-    
     const context = useContext(Context);
     if (context === undefined) {
       throw new Error(`use${contextName} must be used within a ${contextName}Provider`);
     }
 
-    // Memoize the selector result
-    const lastValue = useRef<S>();
-    const lastContext = useRef<T>();
-
-    if (
-      lastContext.current !== context ||
-      !lastValue.current ||
-      selector(context) !== selector(lastContext.current)
-    ) {
-      lastValue.current = selector(context);
-      lastContext.current = context;
-    }
-
-    return lastValue.current;
+    // For now, just return the selected value directly
+    // TODO: Add memoization optimization later
+    return selector(context);
   }
 
   // Hook for using the entire context
   function useEntireContext(): T {
-    useContextMetrics(contextName);
-    
     const context = useContext(Context);
     if (context === undefined) {
       throw new Error(`use${contextName} must be used within a ${contextName}Provider`);
@@ -60,10 +35,10 @@ export function createSelectableContext<T>(contextName: string) {
   return {
     Provider,
     useContextSelector,
-    useEntireContext
+    useEntireContext,
   };
 }
 
 // Example usage:
-// const { Provider: ProgressProvider, useContextSelector: useProgressSelector } = 
+// const { Provider: ProgressProvider, useContextSelector: useProgressSelector } =
 //   createSelectableContext<ProgressContextType>('Progress');

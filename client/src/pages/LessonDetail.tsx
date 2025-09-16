@@ -13,21 +13,22 @@ export default function LessonDetail() {
   const [, params] = useRoute('/lessons/:lessonId');
   const [, setLocation] = useLocation();
   const { t } = useLanguage();
-  const { markSectionComplete, isSectionComplete, markLessonComplete, isLessonComplete } = useProgress();
-  
+  const { markSectionComplete, isSectionComplete, markLessonComplete, isLessonComplete } =
+    useProgress();
+
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  
+
   const lessonId = params?.lessonId;
   const lesson: LessonContent | undefined = lessonId ? lessonContents[lessonId] : undefined;
-  
+
   useEffect(() => {
     if (!lesson) return;
-    
+
     // Find the first incomplete section
     const firstIncompleteIndex = lesson.sections.findIndex(
-      section => !isSectionComplete(lesson.id, section.id)
+      (section) => !isSectionComplete(lesson.id, section.id)
     );
-    
+
     if (firstIncompleteIndex !== -1) {
       setCurrentSectionIndex(firstIncompleteIndex);
     } else {
@@ -35,7 +36,7 @@ export default function LessonDetail() {
       setCurrentSectionIndex(lesson.sections.length - 1);
     }
   }, [lesson, isSectionComplete]);
-  
+
   if (!lesson) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -48,7 +49,7 @@ export default function LessonDetail() {
       </div>
     );
   }
-  
+
   const currentSection = lesson.sections[currentSectionIndex];
 
   // Reading time estimation (words per minute)
@@ -62,7 +63,7 @@ export default function LessonDetail() {
     return Math.max(1, Math.round(totalWords / READING_WPM));
   }, [currentSection]);
   const totalSections = lesson.sections.length;
-  const completedSections = lesson.sections.filter(section => 
+  const completedSections = lesson.sections.filter((section) =>
     isSectionComplete(lesson.id, section.id)
   ).length;
   const progressPercentage = (completedSections / totalSections) * 100;
@@ -97,43 +98,43 @@ export default function LessonDetail() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [currentSectionIndex]);
-  
+
   const handleSectionComplete = () => {
     markSectionComplete(lesson.id, currentSection.id);
-    
+
     // Check if all sections are now complete
-    const allSectionsComplete = lesson.sections.every(section => 
-      section.id === currentSection.id || isSectionComplete(lesson.id, section.id)
+    const allSectionsComplete = lesson.sections.every(
+      (section) => section.id === currentSection.id || isSectionComplete(lesson.id, section.id)
     );
-    
+
     if (allSectionsComplete) {
       markLessonComplete(lesson.id);
     }
   };
-  
+
   const handleNext = () => {
     if (currentSectionIndex < totalSections - 1) {
       setCurrentSectionIndex(currentSectionIndex + 1);
     }
   };
-  
+
   const handlePrevious = () => {
     if (currentSectionIndex > 0) {
       setCurrentSectionIndex(currentSectionIndex - 1);
     }
   };
-  
+
   const handleSectionJump = (index: number) => {
     setCurrentSectionIndex(index);
   };
-  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             onClick={() => setLocation('/lessons')}
             className="mb-4"
             data-testid="button-back-to-lessons"
@@ -141,7 +142,7 @@ export default function LessonDetail() {
             <ChevronLeft className="w-4 h-4 mr-2" />
             {t('lesson.back-to-lessons')}
           </Button>
-          
+
           <div className="flex items-start gap-4 mb-4">
             <div className="text-4xl">{lesson.icon}</div>
             <div className="flex-1">
@@ -149,7 +150,7 @@ export default function LessonDetail() {
                 {lesson.title}
               </h1>
               <p className="text-muted-foreground mb-4">{lesson.description}</p>
-              
+
               <div className="flex flex-wrap gap-2 mb-4">
                 <Badge variant="outline" data-testid="badge-difficulty">
                   {lesson.difficulty}
@@ -169,7 +170,7 @@ export default function LessonDetail() {
                   </Badge>
                 )}
               </div>
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span>{t('lesson.progress')}</span>
@@ -177,12 +178,16 @@ export default function LessonDetail() {
                     {completedSections}/{totalSections} {t('lesson.sections-count')}
                   </span>
                 </div>
-                <Progress value={progressPercentage} className="h-2" data-testid="progress-lesson" />
+                <Progress
+                  value={progressPercentage}
+                  className="h-2"
+                  data-testid="progress-lesson"
+                />
               </div>
             </div>
           </div>
         </div>
-        
+
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Section Navigation Sidebar */}
           <div className="lg:col-span-1">
@@ -194,27 +199,23 @@ export default function LessonDetail() {
                 {lesson.sections.map((section, index) => {
                   const sectionComplete = isSectionComplete(lesson.id, section.id);
                   const isCurrent = index === currentSectionIndex;
-                  
+
                   return (
                     <button
                       key={section.id}
                       onClick={() => handleSectionJump(index)}
                       className={`w-full text-left p-3 rounded-md transition-colors ${
-                        isCurrent 
-                          ? 'bg-primary text-primary-foreground' 
+                        isCurrent
+                          ? 'bg-primary text-primary-foreground'
                           : sectionComplete
-                          ? 'bg-green-50 hover:bg-green-100 text-green-800'
-                          : 'hover:bg-accent'
+                            ? 'bg-green-50 hover:bg-green-100 text-green-800'
+                            : 'hover:bg-accent'
                       }`}
                       data-testid={`button-section-${index}`}
                     >
                       <div className="flex items-center gap-2">
-                        {sectionComplete && (
-                          <CheckCircle2 className="w-4 h-4 text-green-600" />
-                        )}
-                        <span className="text-sm font-medium truncate">
-                          {section.title}
-                        </span>
+                        {sectionComplete && <CheckCircle2 className="w-4 h-4 text-green-600" />}
+                        <span className="text-sm font-medium truncate">{section.title}</span>
                       </div>
                     </button>
                   );
@@ -222,7 +223,7 @@ export default function LessonDetail() {
               </CardContent>
             </Card>
           </div>
-          
+
           {/* Main Content */}
           <div className="lg:col-span-3">
             <Card>
@@ -237,14 +238,22 @@ export default function LessonDetail() {
                 </div>
                 <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
                   <Clock className="w-3 h-3" />
-                  <span data-testid="text-section-reading-time">{sectionReadingTimeMinutes} min read</span>
+                  <span data-testid="text-section-reading-time">
+                    {sectionReadingTimeMinutes} min read
+                  </span>
                   <span aria-hidden>•</span>
-                  <span className="flex items-center gap-1" data-testid="text-section-scroll-progress">
+                  <span
+                    className="flex items-center gap-1"
+                    data-testid="text-section-scroll-progress"
+                  >
                     {Math.round(sectionScrollProgress)}% {t('lesson.progress')}
                   </span>
                 </div>
                 <div className="mt-2">
-                  <div className="h-1 w-full bg-muted rounded overflow-hidden" aria-label="Section scroll progress">
+                  <div
+                    className="h-1 w-full bg-muted rounded overflow-hidden"
+                    aria-label="Section scroll progress"
+                  >
                     <div
                       className="h-full bg-primary transition-all duration-200"
                       style={{ width: `${sectionScrollProgress}%` }}
@@ -253,13 +262,17 @@ export default function LessonDetail() {
                   </div>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 {/* Section Content */}
-                <div className="prose max-w-none" data-testid="text-section-content" ref={sectionContentRef}>
+                <div
+                  className="prose max-w-none"
+                  data-testid="text-section-content"
+                  ref={sectionContentRef}
+                >
                   <p className="text-base leading-relaxed">{currentSection.content}</p>
                 </div>
-                
+
                 {/* Key Points */}
                 <div>
                   <h3 className="text-lg font-semibold mb-3">Key Points</h3>
@@ -276,7 +289,7 @@ export default function LessonDetail() {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Section Actions */}
                 <div className="pt-6 border-t">
                   <div className="flex flex-col sm:flex-row gap-3 justify-between">
@@ -290,7 +303,7 @@ export default function LessonDetail() {
                         <ChevronLeft className="w-4 h-4 mr-2" />
                         Previous
                       </Button>
-                      
+
                       <Button
                         variant="outline"
                         onClick={handleNext}
@@ -301,18 +314,19 @@ export default function LessonDetail() {
                         <ChevronRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>
-                    
+
                     <div>
                       {!isCurrentSectionComplete ? (
-                        <Button 
-                          onClick={handleSectionComplete}
-                          data-testid="button-mark-complete"
-                        >
+                        <Button onClick={handleSectionComplete} data-testid="button-mark-complete">
                           <CheckCircle2 className="w-4 h-4 mr-2" />
                           Mark as Complete
                         </Button>
                       ) : (
-                        <Badge variant="default" className="bg-green-600" data-testid="badge-section-completed">
+                        <Badge
+                          variant="default"
+                          className="bg-green-600"
+                          data-testid="badge-section-completed"
+                        >
                           <CheckCircle2 className="w-4 h-4 mr-2" />
                           Completed
                         </Badge>
@@ -320,7 +334,7 @@ export default function LessonDetail() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Lesson Summary (shown on last section) */}
                 {isLastSection && lessonCompleted && (
                   <div className="p-6 bg-green-50 rounded-md border border-green-200">
@@ -339,9 +353,9 @@ export default function LessonDetail() {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="mt-4 pt-4 border-t border-green-200">
-                      <Button 
+                      <Button
                         onClick={() => setLocation('/quiz')}
                         className="bg-green-600 hover:bg-green-700"
                         data-testid="button-take-quiz"

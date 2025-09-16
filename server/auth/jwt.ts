@@ -23,13 +23,16 @@ export function verifyRefreshToken(token: string): TokenPayload {
   return jwt.verify(token, JWT_REFRESH_SECRET) as TokenPayload;
 }
 
-export function setTokenCookies(res: Response, { accessToken, refreshToken }: { accessToken: string, refreshToken: string }) {
+export function setTokenCookies(
+  res: Response,
+  { accessToken, refreshToken }: { accessToken: string; refreshToken: string }
+) {
   // Set access token in cookie
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
-    maxAge: 15 * 60 * 1000 // 15 minutes
+    maxAge: 15 * 60 * 1000, // 15 minutes
   });
 
   // Set refresh token in cookie
@@ -38,7 +41,7 @@ export function setTokenCookies(res: Response, { accessToken, refreshToken }: { 
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
     path: '/api/v1/auth/refresh', // Only sent to refresh endpoint
-    maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   });
 }
 

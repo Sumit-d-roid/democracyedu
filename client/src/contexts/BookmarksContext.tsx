@@ -15,9 +15,9 @@ export function BookmarksProvider({ children }: { children: ReactNode }) {
   });
 
   function toggleBookmark(lessonId: string) {
-    setBookmarks(prev => {
+    setBookmarks((prev) => {
       const updated = prev.includes(lessonId)
-        ? prev.filter(id => id !== lessonId)
+        ? prev.filter((id) => id !== lessonId)
         : [...prev, lessonId];
       localStorage.setItem('bookmarked-lessons', JSON.stringify(updated));
       return updated;

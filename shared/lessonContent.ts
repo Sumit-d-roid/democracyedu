@@ -20,7 +20,8 @@ export const lessonContents: Record<string, LessonContent> = {
   'labor-rights': {
     id: 'labor-rights',
     title: 'Labor Rights and Employment',
-    description: 'Understanding labor rights, employment laws, and worker protections in Nepal\'s Constitution.',
+    description:
+      "Understanding labor rights, employment laws, and worker protections in Nepal's Constitution.",
     icon: '👷',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -33,8 +34,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional labor rights',
           'Worker welfare protection',
           'Fair wage guarantees',
-          'Safe working conditions'
-        ]
+          'Safe working conditions',
+        ],
       },
       {
         id: 'fundamental-rights',
@@ -45,8 +46,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Union formation rights',
           'Collective bargaining',
           'Anti-discrimination measures',
-          'Social security provisions'
-        ]
+          'Social security provisions',
+        ],
       },
       {
         id: 'employment-laws',
@@ -57,8 +58,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Working hour regulations',
           'Leave policies',
           'Termination rules',
-          'Dispute resolution'
-        ]
+          'Dispute resolution',
+        ],
       },
       {
         id: 'social-security',
@@ -69,8 +70,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Accident compensation',
           'Retirement benefits',
           'Employer contributions',
-          'Informal sector protection'
-        ]
+          'Informal sector protection',
+        ],
       },
       {
         id: 'implementation',
@@ -81,22 +82,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Workplace monitoring',
           'Union roles',
           'Legal remedies',
-          'Policy reviews'
-        ]
-      }
+          'Policy reviews',
+        ],
+      },
     ],
     summary: [
       'Comprehensive constitutional protection of labor rights',
       'Detailed regulations through Labor Act',
       'Strong social security system',
       'Effective implementation mechanisms',
-      'Active role of trade unions in rights protection'
-    ]
+      'Active role of trade unions in rights protection',
+    ],
   },
   'right-to-information': {
     id: 'right-to-information',
     title: 'Right to Information',
-    description: 'Understanding Nepal\'s constitutional provisions for Right to Information (RTI) and its implementation.',
+    description:
+      "Understanding Nepal's constitutional provisions for Right to Information (RTI) and its implementation.",
     icon: '📝',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -109,8 +111,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional guarantee of RTI',
           'Access to public information',
           'Transparency promotion',
-          'Accountability measures'
-        ]
+          'Accountability measures',
+        ],
       },
       {
         id: 'legal-framework',
@@ -121,8 +123,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Coverage of public bodies',
           'Request procedures',
           'Response timeframes',
-          'Appeal processes'
-        ]
+          'Appeal processes',
+        ],
       },
       {
         id: 'implementation',
@@ -133,8 +135,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Information Officer duties',
           'Record maintenance',
           'Proactive disclosure',
-          'Digital platforms'
-        ]
+          'Digital platforms',
+        ],
       },
       {
         id: 'exemptions',
@@ -145,8 +147,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Privacy protection',
           'Commercial confidentiality',
           'Public interest test',
-          'Disclosure guidelines'
-        ]
+          'Disclosure guidelines',
+        ],
       },
       {
         id: 'citizen-engagement',
@@ -157,22 +159,22 @@ export const lessonContents: Record<string, LessonContent> = {
           'Governance improvement',
           'Success stories',
           'Civil society role',
-          'Public awareness'
-        ]
-      }
+          'Public awareness',
+        ],
+      },
     ],
     summary: [
       'Constitutional guarantee of Right to Information',
       'Comprehensive legal framework through RTI Act',
       'Strong implementation mechanisms and oversight',
       'Clear guidelines on exemptions and restrictions',
-      'Significant impact on governance and transparency'
-    ]
+      'Significant impact on governance and transparency',
+    ],
   },
   'property-rights': {
     id: 'property-rights',
     title: 'Property Rights',
-    description: 'Understanding property rights and restrictions under Nepal\'s Constitution.',
+    description: "Understanding property rights and restrictions under Nepal's Constitution.",
     icon: '🏠',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -185,8 +187,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional guarantee of property rights',
           'Balance with social justice',
           'Framework for ownership',
-          'Social welfare considerations'
-        ]
+          'Social welfare considerations',
+        ],
       },
       {
         id: 'ownership-rights',
@@ -197,8 +199,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Protection against seizure',
           'Compensation requirements',
           'Land ownership rules',
-          'Transfer rights'
-        ]
+          'Transfer rights',
+        ],
       },
       {
         id: 'restrictions-limitations',
@@ -209,8 +211,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Foreign ownership rules',
           'Environmental restrictions',
           'Urban planning compliance',
-          'Public benefit considerations'
-        ]
+          'Public benefit considerations',
+        ],
       },
       {
         id: 'inheritance-succession',
@@ -221,8 +223,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Gender equality',
           'Succession framework',
           'Family property protection',
-          'Joint ownership rules'
-        ]
+          'Joint ownership rules',
+        ],
       },
       {
         id: 'implementation-remedies',
@@ -233,22 +235,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Administrative protections',
           'Dispute resolution systems',
           'Registration procedures',
-          'Record maintenance'
-        ]
-      }
+          'Record maintenance',
+        ],
+      },
     ],
     summary: [
       'Constitutional protection of property rights',
       'Balance between individual rights and social welfare',
       'Clear framework for ownership and transfer',
       'Equal inheritance rights regardless of gender',
-      'Strong implementation and protection mechanisms'
-    ]
+      'Strong implementation and protection mechanisms',
+    ],
   },
   'media-press-freedom': {
     id: 'media-press-freedom',
     title: 'Media and Press Freedom',
-    description: 'Understanding constitutional guarantees for media freedom and press rights in Nepal.',
+    description:
+      'Understanding constitutional guarantees for media freedom and press rights in Nepal.',
     icon: '📰',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -261,8 +264,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional guarantees for press freedom',
           'Protection across all media types',
           'Role in democratic governance',
-          'Information flow safeguards'
-        ]
+          'Information flow safeguards',
+        ],
       },
       {
         id: 'fundamental-rights',
@@ -273,8 +276,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Registration safeguards',
           'Source protection rights',
           'Operational independence',
-          'Equipment protection'
-        ]
+          'Equipment protection',
+        ],
       },
       {
         id: 'regulatory-framework',
@@ -285,8 +288,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Ethical guidelines',
           'Licensing procedures',
           'Broadcasting standards',
-          'Professional requirements'
-        ]
+          'Professional requirements',
+        ],
       },
       {
         id: 'digital-media',
@@ -297,8 +300,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Online content rights',
           'Cybersecurity balance',
           'Digital privacy safeguards',
-          'Social media considerations'
-        ]
+          'Social media considerations',
+        ],
       },
       {
         id: 'challenges-solutions',
@@ -309,22 +312,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Journalist safety measures',
           'Technology adaptation',
           'Policy reforms',
-          'Capacity development'
-        ]
-      }
+          'Capacity development',
+        ],
+      },
     ],
     summary: [
       'Comprehensive constitutional protection for press freedom',
       'Balanced regulatory framework ensuring responsible journalism',
       'Extended protection for digital media platforms',
       'Strong institutional support through Press Council',
-      'Ongoing adaptation to address modern challenges'
-    ]
+      'Ongoing adaptation to address modern challenges',
+    ],
   },
   'language-culture': {
     id: 'language-culture',
     title: 'Language and Cultural Rights',
-    description: 'Understanding Nepal\'s constitutional provisions for language rights and cultural preservation.',
+    description:
+      "Understanding Nepal's constitutional provisions for language rights and cultural preservation.",
     icon: '🗣️',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -337,8 +341,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional recognition of diversity',
           'Language and cultural rights protection',
           'Heritage preservation guarantees',
-          'Balance with national unity'
-        ]
+          'Balance with national unity',
+        ],
       },
       {
         id: 'language-rights',
@@ -349,8 +353,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Mother tongue education rights',
           'Regional official languages',
           'Language Commission role',
-          'Preservation mechanisms'
-        ]
+          'Preservation mechanisms',
+        ],
       },
       {
         id: 'cultural-preservation',
@@ -359,10 +363,10 @@ export const lessonContents: Record<string, LessonContent> = {
         keyPoints: [
           'Protection of traditions',
           'Community cultural rights',
-          'Indigenous peoples\' rights',
+          "Indigenous peoples' rights",
           'State support for preservation',
-          'Heritage site protection'
-        ]
+          'Heritage site protection',
+        ],
       },
       {
         id: 'implementation-mechanisms',
@@ -373,8 +377,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Educational programs',
           'Local government role',
           'Legal protection measures',
-          'Community participation'
-        ]
+          'Community participation',
+        ],
       },
       {
         id: 'challenges-progress',
@@ -385,22 +389,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Resource allocation issues',
           'Education standardization',
           'Modernization balance',
-          'Community-based solutions'
-        ]
-      }
+          'Community-based solutions',
+        ],
+      },
     ],
     summary: [
       'Constitutional protection for linguistic and cultural diversity',
       'Comprehensive language rights including mother tongue education',
       'Strong cultural preservation mechanisms',
       'Multiple implementation institutions and programs',
-      'Ongoing efforts to address challenges'
-    ]
+      'Ongoing efforts to address challenges',
+    ],
   },
   'financial-procedures': {
     id: 'financial-procedures',
     title: 'Financial Procedures',
-    description: 'Understanding Nepal\'s government financial procedures, budget process, and fiscal management.',
+    description:
+      "Understanding Nepal's government financial procedures, budget process, and fiscal management.",
     icon: '💰',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
@@ -413,8 +418,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional financial framework',
           'Public resource management',
           'Multi-level fiscal system',
-          'Transparency requirements'
-        ]
+          'Transparency requirements',
+        ],
       },
       {
         id: 'budget-process',
@@ -425,8 +430,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Ministry-level preparation',
           'Parliamentary presentation',
           'Debate and scrutiny',
-          'Implementation approval'
-        ]
+          'Implementation approval',
+        ],
       },
       {
         id: 'revenue-management',
@@ -437,8 +442,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Multi-level revenue rights',
           'Collection efficiency',
           'Fiscal transfer system',
-          'Policy coordination'
-        ]
+          'Policy coordination',
+        ],
       },
       {
         id: 'expenditure-control',
@@ -446,11 +451,11 @@ export const lessonContents: Record<string, LessonContent> = {
         content: `Expenditure control mechanisms include pre-audit checks, budget controls, and treasury management. The Office of the Auditor General conducts annual audits of all government accounts. Parliamentary committees review audit reports and can recommend actions. The system emphasizes accountability and prevention of financial irregularities.`,
         keyPoints: [
           'Internal control systems',
-          'Auditor General\'s role',
+          "Auditor General's role",
           'Parliamentary oversight',
           'Treasury management',
-          'Accountability measures'
-        ]
+          'Accountability measures',
+        ],
       },
       {
         id: 'fiscal-federalism',
@@ -461,22 +466,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Commission recommendations',
           'Inter-governmental coordination',
           'Dispute resolution',
-          'Cooperative development'
-        ]
-      }
+          'Cooperative development',
+        ],
+      },
     ],
     summary: [
       'Structured budget process ensures planned development',
       'Multi-level revenue management system',
       'Strong expenditure control and audit mechanisms',
       'Fiscal federalism promotes balanced development',
-      'Emphasis on transparency and accountability'
-    ]
+      'Emphasis on transparency and accountability',
+    ],
   },
   'parliamentary-procedures': {
     id: 'parliamentary-procedures',
     title: 'Parliamentary Procedures',
-    description: 'Understanding how Nepal\'s Parliament functions, including legislative processes and parliamentary conventions.',
+    description:
+      "Understanding how Nepal's Parliament functions, including legislative processes and parliamentary conventions.",
     icon: '🏛️',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
@@ -489,8 +495,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Established rules and procedures',
           'Orderly conduct of business',
           'Legislative process framework',
-          'Democratic governance principles'
-        ]
+          'Democratic governance principles',
+        ],
       },
       {
         id: 'legislative-process',
@@ -501,8 +507,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Multiple reading stages',
           'Committee examination',
           'Public consultation',
-          'Voting procedures'
-        ]
+          'Voting procedures',
+        ],
       },
       {
         id: 'parliamentary-committees',
@@ -513,8 +519,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Specialized oversight',
           'Investigative powers',
           'Evidence gathering authority',
-          'Recommendation making'
-        ]
+          'Recommendation making',
+        ],
       },
       {
         id: 'oversight-functions',
@@ -525,8 +531,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Question Hour procedures',
           'Opposition Day rights',
           'Motion procedures',
-          'Parliamentary privileges'
-        ]
+          'Parliamentary privileges',
+        ],
       },
       {
         id: 'house-business',
@@ -534,39 +540,40 @@ export const lessonContents: Record<string, LessonContent> = {
         content: `Daily parliamentary business follows a structured schedule including Question Hour, Zero Hour for urgent matters, and scheduled debates. The Speaker maintains order and ensures adherence to rules. Various parliamentary tools like calling attention motions and adjournment motions allow members to raise important issues.`,
         keyPoints: [
           'Daily business structure',
-          'Speaker\'s role',
+          "Speaker's role",
           'Time allocation',
           'Debate procedures',
-          'Member participation tools'
-        ]
-      }
+          'Member participation tools',
+        ],
+      },
     ],
     summary: [
       'Structured procedures ensure effective lawmaking',
       'Committees play crucial oversight role',
       'Multiple mechanisms for executive accountability',
       'Parliamentary privileges protect member functions',
-      'Organized conduct of daily business'
-    ]
+      'Organized conduct of daily business',
+    ],
   },
-  'judiciary': {
+  judiciary: {
     id: 'judiciary',
     title: 'Judiciary System',
-    description: 'Understanding Nepal\'s judicial system, court hierarchy, and the administration of justice.',
+    description:
+      "Understanding Nepal's judicial system, court hierarchy, and the administration of justice.",
     icon: '⚖️',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
     sections: [
       {
         id: 'introduction',
-        title: 'Introduction to Nepal\'s Judiciary',
+        title: "Introduction to Nepal's Judiciary",
         content: `Nepal's judiciary is an independent branch of government responsible for interpreting laws, administering justice, and protecting constitutional rights. The Constitution establishes a three-tier court system with the Supreme Court at the apex. The judiciary plays a crucial role in maintaining the rule of law and ensuring justice for all citizens.`,
         keyPoints: [
           'Independent judicial branch',
           'Three-tier court system',
           'Constitutional protection',
-          'Rule of law maintenance'
-        ]
+          'Rule of law maintenance',
+        ],
       },
       {
         id: 'supreme-court',
@@ -577,8 +584,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional interpretation power',
           'Original and appellate jurisdiction',
           'Binding decisions',
-          'Extraordinary writ authority'
-        ]
+          'Extraordinary writ authority',
+        ],
       },
       {
         id: 'high-courts',
@@ -589,8 +596,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'District-level courts',
           'Original jurisdiction cases',
           'Appeal mechanisms',
-          'Local justice access'
-        ]
+          'Local justice access',
+        ],
       },
       {
         id: 'special-courts',
@@ -601,8 +608,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Expert case handling',
           'Administrative matters',
           'Labor disputes',
-          'Efficient justice delivery'
-        ]
+          'Efficient justice delivery',
+        ],
       },
       {
         id: 'judicial-independence',
@@ -613,22 +620,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Financial autonomy',
           'Judicial oversight',
           'Transparency requirements',
-          'Accountability measures'
-        ]
-      }
+          'Accountability measures',
+        ],
+      },
     ],
     summary: [
       'Three-tier court system ensures comprehensive justice delivery',
       'Supreme Court as final constitutional interpreter',
       'Provincial and district courts provide local access to justice',
       'Special courts handle specialized legal matters',
-      'Balance between independence and accountability maintained'
-    ]
+      'Balance between independence and accountability maintained',
+    ],
   },
   'public-service': {
     id: 'public-service',
     title: 'Public Service Commission',
-    description: 'Understanding Nepal\'s Public Service Commission, its role in civil service recruitment, and administrative functions.',
+    description:
+      "Understanding Nepal's Public Service Commission, its role in civil service recruitment, and administrative functions.",
     icon: '👔',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -641,8 +649,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Independent constitutional body',
           'Merit-based recruitment system',
           'Competitive examination process',
-          'Professional civil service standards'
-        ]
+          'Professional civil service standards',
+        ],
       },
       {
         id: 'structure-composition',
@@ -653,8 +661,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Six-year term of office',
           'Qualification requirements',
           'Nationwide operational network',
-          'Regional office system'
-        ]
+          'Regional office system',
+        ],
       },
       {
         id: 'functions-powers',
@@ -665,8 +673,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Policy recommendations',
           'Personnel management advice',
           'Promotion oversight',
-          'Binding recommendations'
-        ]
+          'Binding recommendations',
+        ],
       },
       {
         id: 'examination-process',
@@ -677,8 +685,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Comprehensive testing methods',
           'Transparency in selection',
           'Equal opportunity principles',
-          'Inclusive representation'
-        ]
+          'Inclusive representation',
+        ],
       },
       {
         id: 'recent-developments',
@@ -689,22 +697,22 @@ export const lessonContents: Record<string, LessonContent> = {
           'Digital transformation',
           'Updated examination patterns',
           'Federal structure adaptation',
-          'Administrative modernization'
-        ]
-      }
+          'Administrative modernization',
+        ],
+      },
     ],
     summary: [
       'PSC ensures merit-based civil service recruitment',
       'Independent constitutional body with nationwide presence',
       'Comprehensive examination and selection process',
       'Promotes inclusive representation in civil service',
-      'Modernizing systems for better efficiency'
-    ]
+      'Modernizing systems for better efficiency',
+    ],
   },
   'constitutional-amendments': {
     id: 'constitutional-amendments',
     title: 'Constitutional Amendments',
-    description: 'Understanding the process and history of amending Nepal\'s Constitution.',
+    description: "Understanding the process and history of amending Nepal's Constitution.",
     icon: '📜',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
@@ -717,8 +725,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Purpose of constitutional amendments',
           'Balance between stability and change',
           'Democratic importance',
-          'Constitutional evolution process'
-        ]
+          'Constitutional evolution process',
+        ],
       },
       {
         id: 'amendment-process',
@@ -729,8 +737,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Two-thirds majority needed',
           'Provincial approval for certain changes',
           'Protected constitutional features',
-          'Public consultation process'
-        ]
+          'Public consultation process',
+        ],
       },
       {
         id: 'historical-amendments',
@@ -741,8 +749,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Changes in federal structure',
           'Citizenship provisions',
           'Representation issues',
-          'Social impact of changes'
-        ]
+          'Social impact of changes',
+        ],
       },
       {
         id: 'limitations',
@@ -753,8 +761,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Special amendment procedures',
           'Core value protection',
           'Sovereignty safeguards',
-          'Democratic principle preservation'
-        ]
+          'Democratic principle preservation',
+        ],
       },
       {
         id: 'current-debates',
@@ -765,22 +773,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Federal structure debates',
           'Electoral system discussions',
           'Citizenship issues',
-          'Democratic development'
-        ]
-      }
+          'Democratic development',
+        ],
+      },
     ],
     summary: [
       'Amendments allow constitutional evolution while maintaining stability',
       'Process requires broad consensus and careful consideration',
       'Historical amendments have strengthened democracy',
       'Core constitutional features have special protection',
-      'Ongoing debates shape future amendments'
-    ]
+      'Ongoing debates shape future amendments',
+    ],
   },
   'emergency-powers': {
     id: 'emergency-powers',
     title: 'Emergency Powers',
-    description: 'Understanding constitutional provisions for emergency situations and their implementation in Nepal.',
+    description:
+      'Understanding constitutional provisions for emergency situations and their implementation in Nepal.',
     icon: '🚨',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
@@ -793,8 +802,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional basis for emergency powers',
           'Balance between crisis management and rights',
           'Specific conditions for declaration',
-          'Democratic safeguards'
-        ]
+          'Democratic safeguards',
+        ],
       },
       {
         id: 'declaration-process',
@@ -802,11 +811,11 @@ export const lessonContents: Record<string, LessonContent> = {
         content: `The President, on the recommendation of the Council of Ministers, can declare a state of emergency if serious threats arise to sovereignty, territorial integrity, or security. The declaration must be approved by Parliament within 30 days and can be extended for up to three months at a time. The government must justify the necessity and scope of emergency measures.`,
         keyPoints: [
           'Presidential declaration required',
-          'Council of Ministers\' recommendation',
+          "Council of Ministers' recommendation",
           'Parliamentary approval necessary',
           'Time limitations apply',
-          'Justification requirements'
-        ]
+          'Justification requirements',
+        ],
       },
       {
         id: 'scope-limitations',
@@ -817,8 +826,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Core rights remain protected',
           'Additional government powers',
           'Constitutional limitations',
-          'Oversight mechanisms'
-        ]
+          'Oversight mechanisms',
+        ],
       },
       {
         id: 'oversight-accountability',
@@ -829,8 +838,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Judicial review available',
           'Regular reporting required',
           'Transparency mechanisms',
-          'Prevention of power abuse'
-        ]
+          'Prevention of power abuse',
+        ],
       },
       {
         id: 'historical-context',
@@ -841,22 +850,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Modern safeguards',
           'Crisis response capability',
           'Recent applications',
-          'Lessons from experience'
-        ]
-      }
+          'Lessons from experience',
+        ],
+      },
     ],
     summary: [
       'Emergency powers allow special measures during crises',
       'Declaration requires multiple approvals and justification',
       'Core rights remain protected even during emergencies',
       'Strong oversight mechanisms prevent abuse',
-      'Modern framework balances security and democracy'
-    ]
+      'Modern framework balances security and democracy',
+    ],
   },
-  'citizenship': {
+  citizenship: {
     id: 'citizenship',
     title: 'Citizenship and Immigration',
-    description: 'Understanding citizenship acquisition, rights, and immigration policies in Nepal.',
+    description:
+      'Understanding citizenship acquisition, rights, and immigration policies in Nepal.',
     icon: '📝',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -869,8 +879,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Legal relationship between individual and state',
           'Constitutional provisions for citizenship',
           'Rights and duties of citizens',
-          'Importance of legal identity'
-        ]
+          'Importance of legal identity',
+        ],
       },
       {
         id: 'acquisition-methods',
@@ -881,8 +891,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Citizenship by birth',
           'Naturalization process',
           'Honorary citizenship provisions',
-          'Requirements for each method'
-        ]
+          'Requirements for each method',
+        ],
       },
       {
         id: 'citizenship-rights',
@@ -893,8 +903,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional duties',
           'Property ownership rights',
           'Political participation',
-          'Restrictions for non-citizens'
-        ]
+          'Restrictions for non-citizens',
+        ],
       },
       {
         id: 'immigration-policy',
@@ -905,8 +915,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Residence permit regulations',
           'Foreign registration system',
           'Immigration control measures',
-          'Security considerations'
-        ]
+          'Security considerations',
+        ],
       },
       {
         id: 'current-issues',
@@ -917,22 +927,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Gender equality in citizenship',
           'Reform initiatives',
           'International standards',
-          'Policy modernization efforts'
-        ]
-      }
+          'Policy modernization efforts',
+        ],
+      },
     ],
     summary: [
       'Multiple pathways exist for acquiring Nepali citizenship',
       'Citizens have both constitutional rights and duties',
       'Immigration policies regulate foreign nationals',
       'Ongoing reforms address current challenges',
-      'Balance between accessibility and security maintained'
-    ]
+      'Balance between accessibility and security maintained',
+    ],
   },
   'political-parties': {
     id: 'political-parties',
     title: 'Political Parties and Elections',
-    description: 'Understanding Nepal\'s political party system, election processes, and democratic governance.',
+    description:
+      "Understanding Nepal's political party system, election processes, and democratic governance.",
     icon: '🗳️',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -945,8 +956,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Essential democratic institutions',
           'Represent diverse political ideologies',
           'Constitutional recognition of multi-party system',
-          'Role in government formation'
-        ]
+          'Role in government formation',
+        ],
       },
       {
         id: 'party-registration',
@@ -957,8 +968,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Democratic internal structure required',
           'Inclusive representation mandatory',
           'Financial transparency essential',
-          'Non-discrimination principles'
-        ]
+          'Non-discrimination principles',
+        ],
       },
       {
         id: 'election-system',
@@ -969,8 +980,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'FPTP for direct representation',
           'PR for inclusive participation',
           'Multiple levels of elections',
-          'Balanced representation approach'
-        ]
+          'Balanced representation approach',
+        ],
       },
       {
         id: 'election-process',
@@ -981,8 +992,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Strict code of conduct enforcement',
           'Security arrangements',
           'Technology integration',
-          'Result management system'
-        ]
+          'Result management system',
+        ],
       },
       {
         id: 'political-financing',
@@ -993,22 +1004,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Transparent financial reporting',
           'Campaign spending limits',
           'State funding provisions',
-          'Penalty for violations'
-        ]
-      }
+          'Penalty for violations',
+        ],
+      },
     ],
     summary: [
-      'Political parties are fundamental to Nepal\'s democracy',
+      "Political parties are fundamental to Nepal's democracy",
       'Mixed electoral system ensures balanced representation',
       'Election Commission manages comprehensive electoral processes',
       'Strict regulations govern party operations and financing',
-      'System promotes inclusive and transparent democracy'
-    ]
+      'System promotes inclusive and transparent democracy',
+    ],
   },
   'local-government': {
     id: 'local-government',
     title: 'Local Government System',
-    description: 'Understanding the structure, functions, and importance of local governments in Nepal\'s federal system.',
+    description:
+      "Understanding the structure, functions, and importance of local governments in Nepal's federal system.",
     icon: '🏛️',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -1021,8 +1033,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional status of local governments',
           'Closest governing body to citizens',
           'Autonomous operation and service delivery',
-          'Foundation of grassroots democracy'
-        ]
+          'Foundation of grassroots democracy',
+        ],
       },
       {
         id: 'structure-types',
@@ -1033,8 +1045,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Rural Municipalities for rural areas',
           'Legislative and executive bodies',
           'Mayor/Chair leads executive functions',
-          'Judicial committees at local level'
-        ]
+          'Judicial committees at local level',
+        ],
       },
       {
         id: 'powers-functions',
@@ -1045,8 +1057,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Basic service delivery',
           'Revenue collection powers',
           'Local law-making authority',
-          'Environmental management'
-        ]
+          'Environmental management',
+        ],
       },
       {
         id: 'fiscal-management',
@@ -1057,8 +1069,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Local revenue generation',
           'Budget preparation and execution',
           'Development project implementation',
-          'Financial accountability measures'
-        ]
+          'Financial accountability measures',
+        ],
       },
       {
         id: 'citizen-participation',
@@ -1069,22 +1081,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Public hearings and consultations',
           'Transparent decision-making',
           'Social audit requirements',
-          'Citizen monitoring mechanisms'
-        ]
-      }
+          'Citizen monitoring mechanisms',
+        ],
+      },
     ],
     summary: [
       'Local governments are fundamental units of democratic governance',
       'Two types: Municipalities and Rural Municipalities',
       'Extensive powers for local development and service delivery',
       'Independent fiscal management with multiple funding sources',
-      'Strong focus on citizen participation and accountability'
-    ]
+      'Strong focus on citizen participation and accountability',
+    ],
   },
   'constitutional-bodies': {
     id: 'constitutional-bodies',
     title: 'Constitutional Bodies of Nepal',
-    description: 'Understanding the independent constitutional bodies that ensure good governance, oversight, and protection of citizens\' rights.',
+    description:
+      "Understanding the independent constitutional bodies that ensure good governance, oversight, and protection of citizens' rights.",
     icon: '🏛️',
     difficulty: 'intermediate',
     estimatedTime: '25 minutes',
@@ -1097,8 +1110,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Independent institutions established by Constitution',
           'Ensure good governance and oversight',
           'Report directly to Federal Parliament',
-          'Maintain democratic checks and balances'
-        ]
+          'Maintain democratic checks and balances',
+        ],
       },
       {
         id: 'commission-for-investigation',
@@ -1109,8 +1122,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Files cases against corrupt officials',
           'Prevents abuse of authority',
           'Promotes transparency in governance',
-          'Protects public resources'
-        ]
+          'Protects public resources',
+        ],
       },
       {
         id: 'election-commission',
@@ -1121,8 +1134,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Maintains voter registration',
           'Enforces election codes of conduct',
           'Ensures free and fair voting',
-          'Has power to void compromised elections'
-        ]
+          'Has power to void compromised elections',
+        ],
       },
       {
         id: 'national-human-rights',
@@ -1133,8 +1146,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Investigates rights violations',
           'Recommends victim compensation',
           'Inspects detention facilities',
-          'Advises on human rights policies'
-        ]
+          'Advises on human rights policies',
+        ],
       },
       {
         id: 'other-commissions',
@@ -1145,22 +1158,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Fiscal Commission handles resource distribution',
           'Women Commission protects gender rights',
           'Special commissions for marginalized communities',
-          'Each body has specific mandate and powers'
-        ]
-      }
+          'Each body has specific mandate and powers',
+        ],
+      },
     ],
     summary: [
       'Constitutional Bodies are independent institutions ensuring good governance',
       'CIAA fights corruption and abuse of authority',
       'Election Commission ensures free and fair elections',
       'NHRC protects and promotes human rights',
-      'Specialized commissions serve various national needs'
-    ]
+      'Specialized commissions serve various national needs',
+    ],
   },
   'fundamental-duties': {
     id: 'fundamental-duties',
     title: 'Fundamental Duties of Citizens',
-    description: 'Learn about the constitutional duties and responsibilities of Nepali citizens that complement fundamental rights.',
+    description:
+      'Learn about the constitutional duties and responsibilities of Nepali citizens that complement fundamental rights.',
     icon: '🤝',
     difficulty: 'beginner',
     estimatedTime: '15 minutes',
@@ -1173,19 +1187,19 @@ export const lessonContents: Record<string, LessonContent> = {
           'Constitutional duties complement fundamental rights',
           'Duties strengthen democracy and rule of law',
           'Promote civic responsibility and awareness',
-          'Ensure citizens act in society\'s interest'
-        ]
+          "Ensure citizens act in society's interest",
+        ],
       },
       {
         id: 'loyalty-rule-of-law',
         title: 'Loyalty and Rule of Law',
         content: `Citizens have a duty to be loyal to Nepal and uphold its sovereignty, unity, and integrity. This includes respecting the Constitution, national flag, anthem, and symbols. Additionally, citizens must obey the laws of the nation and ensure law and order is maintained in their communities. Active participation in democracy through voting and responsible engagement in public affairs is also a key duty.`,
         keyPoints: [
-          'Loyalty to Nepal\'s sovereignty and unity',
+          "Loyalty to Nepal's sovereignty and unity",
           'Respect for national symbols and Constitution',
           'Obedience to laws and maintaining order',
-          'Participation in democratic processes'
-        ]
+          'Participation in democratic processes',
+        ],
       },
       {
         id: 'social-environmental',
@@ -1195,8 +1209,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Oppose discrimination and promote equality',
           'Protect natural resources and biodiversity',
           'Support sustainable development',
-          'Promote social harmony and justice'
-        ]
+          'Promote social harmony and justice',
+        ],
       },
       {
         id: 'education-security',
@@ -1206,22 +1220,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Promote education and research',
           'Protect cultural heritage and languages',
           'Contribute to national security',
-          'Build civic-minded society'
-        ]
-      }
+          'Build civic-minded society',
+        ],
+      },
     ],
     summary: [
       'Fundamental Duties balance constitutional rights with responsibilities',
       'Citizens must uphold democracy, law, and national unity',
       'Environmental and social justice duties promote sustainable development',
       'Education and cultural preservation ensure national progress',
-      'National security duties protect sovereignty and integrity'
-    ]
+      'National security duties protect sovereignty and integrity',
+    ],
   },
   'directive-principles': {
     id: 'directive-principles',
     title: 'Directive Principles & State Policies',
-    description: 'Learn about the guidelines for governance given to the State in Part 4 of Nepal\'s Constitution.',
+    description:
+      "Learn about the guidelines for governance given to the State in Part 4 of Nepal's Constitution.",
     icon: '📋',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -1234,8 +1249,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Guidelines for governance and state direction',
           'Not directly enforceable in court',
           'Guide law-making and policy formation',
-          'Promote democratic and inclusive development'
-        ]
+          'Promote democratic and inclusive development',
+        ],
       },
       {
         id: 'directive-principles',
@@ -1246,8 +1261,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Promote democracy and rule of law',
           'Achieve socialism-oriented economy',
           'Ensure inclusive governance',
-          'Encourage marginalized community participation'
-        ]
+          'Encourage marginalized community participation',
+        ],
       },
       {
         id: 'state-policies',
@@ -1258,8 +1273,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Social policies for marginalized groups',
           'Education and cultural preservation',
           'Healthcare and environmental protection',
-          'International relations and cooperation'
-        ]
+          'International relations and cooperation',
+        ],
       },
       {
         id: 'state-obligations',
@@ -1270,22 +1285,23 @@ export const lessonContents: Record<string, LessonContent> = {
           'Guide law and budget formation',
           'Annual progress reporting required',
           'Ensures political accountability',
-          'Shapes government programs'
-        ]
-      }
+          'Shapes government programs',
+        ],
+      },
     ],
     summary: [
       'Directive Principles guide state governance and policy',
       'Not court-enforceable but politically binding',
       'Cover economic, social, educational, and environmental aspects',
       'State must report on implementation progress',
-      'Ensures inclusive and sustainable development'
-    ]
+      'Ensures inclusive and sustainable development',
+    ],
   },
   'fundamental-rights': {
     id: 'fundamental-rights',
     title: 'Fundamental Rights',
-    description: 'Learn about the fundamental rights guaranteed by Nepal\'s Constitution, including civil liberties and human rights protections.',
+    description:
+      "Learn about the fundamental rights guaranteed by Nepal's Constitution, including civil liberties and human rights protections.",
     icon: '⚖️',
     difficulty: 'beginner',
     estimatedTime: '15 minutes',
@@ -1298,8 +1314,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Fundamental rights are constitutionally guaranteed',
           'They protect all citizens equally',
           'These rights ensure human dignity and freedom',
-          'They are enforceable through courts'
-        ]
+          'They are enforceable through courts',
+        ],
       },
       {
         id: 'right-to-equality',
@@ -1309,8 +1325,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'All citizens are equal before the law',
           'No discrimination based on religion, race, caste, or gender',
           'Untouchability is prohibited and punishable',
-          'Equal access to public services and facilities'
-        ]
+          'Equal access to public services and facilities',
+        ],
       },
       {
         id: 'freedom-rights',
@@ -1321,8 +1337,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Freedom of opinion and expression',
           'Right to access information',
           'Freedom of peaceful assembly',
-          'Rights subject to reasonable restrictions'
-        ]
+          'Rights subject to reasonable restrictions',
+        ],
       },
       {
         id: 'economic-social-rights',
@@ -1333,23 +1349,24 @@ export const lessonContents: Record<string, LessonContent> = {
           'Right to healthcare services',
           'Right to food sovereignty',
           'Right to safe drinking water and sanitation',
-          'Progressive implementation by the state'
-        ]
-      }
+          'Progressive implementation by the state',
+        ],
+      },
     ],
     summary: [
       'Fundamental rights ensure equality and dignity for all citizens',
       'Article 18 guarantees right to equality and prohibits discrimination',
       'Freedom rights include expression, information, and assembly',
       'Economic and social rights cover education, health, and basic needs',
-      'These rights are enforceable through constitutional mechanisms'
-    ]
+      'These rights are enforceable through constitutional mechanisms',
+    ],
   },
-  
+
   'government-structure': {
     id: 'government-structure',
     title: 'Government Structure',
-    description: 'Understand the structure of Nepal\'s government including the executive, legislative, and judicial branches.',
+    description:
+      "Understand the structure of Nepal's government including the executive, legislative, and judicial branches.",
     icon: '🏛️',
     difficulty: 'intermediate',
     estimatedTime: '20 minutes',
@@ -1362,8 +1379,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Executive branch implements and enforces laws',
           'Legislative branch makes laws',
           'Judicial branch interprets laws and ensures justice',
-          'Separation of powers prevents concentration of authority'
-        ]
+          'Separation of powers prevents concentration of authority',
+        ],
       },
       {
         id: 'executive-branch',
@@ -1373,8 +1390,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'President is the Head of State',
           'Prime Minister is the Head of Government',
           'Council of Ministers assists in governance',
-          'Executive implements policies and laws'
-        ]
+          'Executive implements policies and laws',
+        ],
       },
       {
         id: 'legislative-branch',
@@ -1385,8 +1402,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'House of Representatives: 275 members',
           'National Assembly: 59 members',
           'Makes laws and controls public finances',
-          'Provides oversight of executive actions'
-        ]
+          'Provides oversight of executive actions',
+        ],
       },
       {
         id: 'judicial-branch',
@@ -1397,23 +1414,24 @@ export const lessonContents: Record<string, LessonContent> = {
           'High Courts operate at provincial level',
           'District Courts handle local matters',
           'Independent judiciary ensures rule of law',
-          'Courts protect constitutional rights'
-        ]
-      }
+          'Courts protect constitutional rights',
+        ],
+      },
     ],
     summary: [
       'Nepal follows separation of powers with three branches',
       'Executive led by President and Prime Minister',
       'Bicameral federal parliament makes laws',
       'Independent judiciary ensures constitutional compliance',
-      'System provides checks and balances for democratic governance'
-    ]
+      'System provides checks and balances for democratic governance',
+    ],
   },
 
   'federal-system': {
     id: 'federal-system',
     title: 'Federal System',
-    description: 'Explore Nepal\'s federal system with provinces, local governments, and power distribution.',
+    description:
+      "Explore Nepal's federal system with provinces, local governments, and power distribution.",
     icon: '🗺️',
     difficulty: 'advanced',
     estimatedTime: '25 minutes',
@@ -1427,8 +1445,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Three levels of government: federal, provincial, local',
           'Seven provinces with constitutional status',
           '753 local governments across the country',
-          'Focus on inclusive and equitable development'
-        ]
+          'Focus on inclusive and equitable development',
+        ],
       },
       {
         id: 'three-levels',
@@ -1439,8 +1457,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Provincial level: education, health, internal security',
           'Local level: basic services, local infrastructure',
           'Concurrent powers shared between levels',
-          'Clear division prevents overlap and conflict'
-        ]
+          'Clear division prevents overlap and conflict',
+        ],
       },
       {
         id: 'seven-provinces',
@@ -1451,8 +1469,8 @@ export const lessonContents: Record<string, LessonContent> = {
           'Each province has its own government and assembly',
           'Provincial assemblies make laws on provincial matters',
           'Chief Minister heads provincial government',
-          'Provinces can address regional development needs'
-        ]
+          'Provinces can address regional development needs',
+        ],
       },
       {
         id: 'local-governments',
@@ -1463,16 +1481,16 @@ export const lessonContents: Record<string, LessonContent> = {
           'Elected councils govern local areas',
           'Autonomous delivery of basic services',
           'Local taxation and budget powers',
-          'Community-focused development programs'
-        ]
-      }
+          'Community-focused development programs',
+        ],
+      },
     ],
     summary: [
       'Nepal adopted federal system through 2015 Constitution',
       'Three levels: federal, provincial, and local governments',
       'Seven provinces with their own governments and assemblies',
       '753 local governments provide basic services',
-      'System promotes inclusive development and local autonomy'
-    ]
-  }
+      'System promotes inclusive development and local autonomy',
+    ],
+  },
 };

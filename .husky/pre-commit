@@ -1,0 +1,56 @@
+#!/bin/sh
+set -eu
+
+echo "[pre-commit] Starting checks..."
+
+changed_files() {
+	git diff --cached --name-only --diff-filter=ACMR | tr '\n' ' '
+}
+
+has_ts_changes=false
+case "$(changed_files)" in
+	*\.ts*|*\.tsx*) has_ts_changes=true ;;
+esac
+
+if [ "$has_ts_changes" = true ]; then
+	echo "[pre-commit] Type checking (changed TS detected)..."
+	npm run typecheck --silent || { echo "Typecheck failed"; exit 1; }
+else
+	echo "[pre-commit] Skipping typecheck (no TS changes)"
+fi
+
+# Collect staged JS/TS files (avoid word splitting by iterating)
+STAGED_JS=""
+for f in $(changed_files); do
+	case "$f" in
+		*.ts|*.tsx|*.js|*.jsx) STAGED_JS="$STAGED_JS $f" ;;
+	esac
+done
+
+if [ -n "$(echo $STAGED_JS | tr -d ' ')" ]; then
+	echo "[pre-commit] Linting staged JS/TS files..."
+	# shellcheck disable=2086
+	npx eslint --fix $STAGED_JS || { echo "Lint failed"; exit 1; }
+else
+	echo "[pre-commit] No JS/TS files to lint"
+fi
+
+run_tests=false
+for f in $(changed_files); do
+	case "$f" in
+		client/src/*|server/*|shared/*|tests/*)
+			case "$f" in
+				*.ts|*.tsx|*.js) run_tests=true ;;
+			esac
+		;;
+	esac
+done
+
+if [ "$run_tests" = true ]; then
+	echo "[pre-commit] Running tests (affected source changed)..."
+	npx vitest run --reporter=dot --passWithNoTests || { echo "Tests failed"; exit 1; }
+else
+	echo "[pre-commit] Skipping tests (no relevant source changes)"
+fi
+
+echo "[pre-commit] All checks passed."

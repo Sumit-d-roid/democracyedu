@@ -39,7 +39,7 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
 
   const toggleLanguage = () => {
     try {
-      setLanguage(prev => prev === 'en' ? 'ne' : 'en');
+      setLanguage((prev) => (prev === 'en' ? 'ne' : 'en'));
       setError(null);
     } catch (error) {
       const err = error instanceof Error ? error : new Error('Failed to toggle language');
@@ -53,15 +53,24 @@ export function BaseLanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
     createTranslator(language, { fallback: 'en' })
-      .then(tfn => { if (active) setTranslator(() => tfn); })
-      .catch(err => { setError(err instanceof Error ? err : new Error('Failed to load translations')); });
-    return () => { active = false; };
+      .then((tfn) => {
+        if (active) setTranslator(() => tfn);
+      })
+      .catch((err) => {
+        setError(err instanceof Error ? err : new Error('Failed to load translations'));
+      });
+    return () => {
+      active = false;
+    };
   }, [language]);
 
-  const t = useCallback((key: string) => {
-    if (!translator) return key; // loading state
-    return translator(key);
-  }, [translator]);
+  const t = useCallback(
+    (key: string) => {
+      if (!translator) return key; // loading state
+      return translator(key);
+    },
+    [translator]
+  );
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t, error }}>

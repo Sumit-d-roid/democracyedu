@@ -1,4 +1,12 @@
-import { createContext, useContext, useState, useCallback, ReactNode, Component, ErrorInfo } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  ReactNode,
+  Component,
+  ErrorInfo,
+} from 'react';
 
 interface ErrorState {
   hasError: boolean;
@@ -48,12 +56,12 @@ export class ErrorBoundary extends Component<Props, State> {
 
   render() {
     const { fallback: Fallback, children } = this.props;
-    
+
     if (this.state.hasError && this.state.error) {
       if (Fallback) {
         return <Fallback error={this.state.error} resetError={this.resetError} />;
       }
-      
+
       return (
         <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg">
           <h2 className="text-lg font-semibold text-red-800">Something went wrong</h2>
@@ -77,13 +85,13 @@ export function ErrorProvider({ children }: { children: ReactNode }) {
   const [errors, setErrors] = useState<Record<string, ErrorState>>({});
 
   const addError = useCallback((contextName: string, error: Error, errorInfo?: ErrorInfo) => {
-    setErrors(prev => ({
+    setErrors((prev) => ({
       ...prev,
       [contextName]: {
         hasError: true,
         error,
-        errorInfo: errorInfo || null
-      }
+        errorInfo: errorInfo || null,
+      },
     }));
 
     // Log error to console in development
@@ -99,7 +107,7 @@ export function ErrorProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const clearError = useCallback((contextName: string) => {
-    setErrors(prev => {
+    setErrors((prev) => {
       const newErrors = { ...prev };
       delete newErrors[contextName];
       return newErrors;
@@ -116,7 +124,7 @@ export function ErrorProvider({ children }: { children: ReactNode }) {
         errors,
         addError,
         clearError,
-        clearAllErrors
+        clearAllErrors,
       }}
     >
       {children}
@@ -141,9 +149,7 @@ export function withErrorHandling<P extends object>(
     const { addError } = useError();
 
     return (
-      <ErrorBoundary
-        onError={(error, errorInfo) => addError(contextName, error, errorInfo)}
-      >
+      <ErrorBoundary onError={(error, errorInfo) => addError(contextName, error, errorInfo)}>
         <WrappedComponent {...props} />
       </ErrorBoundary>
     );

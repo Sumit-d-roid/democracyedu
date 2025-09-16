@@ -6,7 +6,7 @@ import type {
   Prerequisite,
   ContentProgress,
   DifficultyLevel,
-  CompletionStatus
+  CompletionStatus,
 } from '../types/learning';
 
 // Helper to check if prerequisites are met
@@ -14,8 +14,8 @@ export function checkPrerequisites(
   prerequisites: Prerequisite[],
   progress: ContentProgress[]
 ): boolean {
-  return prerequisites.every(prerequisite => {
-    const prereqProgress = progress.find(p => p.contentId === prerequisite.id);
+  return prerequisites.every((prerequisite) => {
+    const prereqProgress = progress.find((p) => p.contentId === prerequisite.id);
     if (!prereqProgress) return false;
 
     if (prerequisite.requiredScore && prereqProgress.score) {
@@ -37,22 +37,22 @@ export function getNextAvailableContent(
 ): { type: 'module' | 'lesson'; id: string } | null {
   // Check modules in order
   for (const module of course.modules) {
-    const moduleProgress = progress.find(p => p.contentId === module.id);
-    
+    const moduleProgress = progress.find((p) => p.contentId === module.id);
+
     // If module not started or in progress, check prerequisites
     if (!moduleProgress || moduleProgress.status !== 'completed') {
       if (!module.prerequisites || checkPrerequisites(module.prerequisites, progress)) {
         // Check lessons in this module
         for (const lesson of module.lessons) {
-          const lessonProgress = progress.find(p => p.contentId === lesson.id);
-          
+          const lessonProgress = progress.find((p) => p.contentId === lesson.id);
+
           if (!lessonProgress || lessonProgress.status !== 'completed') {
             if (!lesson.prerequisites || checkPrerequisites(lesson.prerequisites, progress)) {
               return { type: 'lesson', id: lesson.id };
             }
           }
         }
-        
+
         // If no specific lesson found but module not complete
         if (moduleProgress?.status !== 'completed') {
           return { type: 'module', id: module.id };
@@ -60,7 +60,7 @@ export function getNextAvailableContent(
       }
     }
   }
-  
+
   return null;
 }
 
@@ -69,8 +69,8 @@ export function calculateCompletionPercentage(
   contentId: string,
   progress: ContentProgress[]
 ): number {
-  const contentProgress = progress.filter(p => p.contentId === contentId);
-  const completed = contentProgress.filter(p => p.status === 'completed').length;
+  const contentProgress = progress.filter((p) => p.contentId === contentId);
+  const completed = contentProgress.filter((p) => p.status === 'completed').length;
   return (completed / contentProgress.length) * 100;
 }
 
@@ -119,7 +119,7 @@ export function generateLearningSchedule(
         schedule.push({
           date: new Date(currentDate),
           contentId: content.id,
-          duration: content.duration
+          duration: content.duration,
         });
         totalDuration += content.duration;
       } else {
@@ -128,7 +128,7 @@ export function generateLearningSchedule(
         schedule.push({
           date: new Date(currentDate),
           contentId: content.id,
-          duration: content.duration
+          duration: content.duration,
         });
       }
     }
@@ -138,9 +138,7 @@ export function generateLearningSchedule(
 }
 
 // Helper to sort content by dependencies
-export function sortContentByDependencies(
-  modules: Module[]
-): Module[] {
+export function sortContentByDependencies(modules: Module[]): Module[] {
   const visited = new Set<string>();
   const sorted: Module[] = [];
 
@@ -150,7 +148,7 @@ export function sortContentByDependencies(
 
     if (module.prerequisites) {
       for (const prereq of module.prerequisites) {
-        const dependentModule = modules.find(m => m.id === prereq.id);
+        const dependentModule = modules.find((m) => m.id === prereq.id);
         if (dependentModule) {
           visit(dependentModule);
         }
@@ -173,7 +171,7 @@ export function validateLearningPath(
 
   // Check if all courses exist
   for (const pathCourse of path.courses) {
-    const course = courses.find(c => c.id === pathCourse.courseId);
+    const course = courses.find((c) => c.id === pathCourse.courseId);
     if (!course) {
       errors.push(`Course ${pathCourse.courseId} not found`);
       continue;
@@ -182,7 +180,7 @@ export function validateLearningPath(
     // Check prerequisites
     if (course.prerequisites) {
       for (const prereq of course.prerequisites) {
-        const prereqCourse = path.courses.find(pc => pc.courseId === prereq.id);
+        const prereqCourse = path.courses.find((pc) => pc.courseId === prereq.id);
         if (!prereqCourse) {
           errors.push(`Prerequisite course ${prereq.id} not included in path`);
         } else if (prereqCourse.order >= pathCourse.order) {
@@ -194,7 +192,7 @@ export function validateLearningPath(
 
   return {
     valid: errors.length === 0,
-    errors
+    errors,
   };
 }
 

@@ -1,13 +1,13 @@
 import contactRoute from './contactRoute';
-import type { Express } from "express";
+import type { Express } from 'express';
 import express from 'express';
 import { z } from 'zod';
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { createServer, type Server } from 'http';
+import { storage } from './storage';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const API_VERSION = 'v1';
-  
+
   // Health check endpoint
   app.get('/health', (req, res) => {
     res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
@@ -18,13 +18,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Unified progress sync endpoint (keeping existing one)
   const progressSchema = z.object({
-    progress: z.array(z.object({
-      lessonId: z.string(),
-      sectionId: z.string().optional(),
-      completed: z.boolean().optional(),
-      points: z.number().optional(),
-      timestamp: z.string().optional()
-    })).min(1)
+    progress: z
+      .array(
+        z.object({
+          lessonId: z.string(),
+          sectionId: z.string().optional(),
+          completed: z.boolean().optional(),
+          points: z.number().optional(),
+          timestamp: z.string().optional(),
+        })
+      )
+      .min(1),
   });
 
   app.post(`/api/${API_VERSION}/progress/sync`, express.json(), (req, res) => {

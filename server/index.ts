@@ -1,17 +1,17 @@
-import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
-import helmet from "helmet";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import config from "./config";
-import { rateLimiter } from "./middleware/rateLimit";
-import { cacheMiddleware } from "./middleware/cache";
-import { errorHandler } from "./middleware/errorHandler";
-import authRoutes from "./auth/routes";
+import express, { type Request, Response, NextFunction } from 'express';
+import { registerRoutes } from './routes';
+import { setupVite, serveStatic, log } from './vite';
+import helmet from 'helmet';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import config from './config';
+import { rateLimiter } from './middleware/rateLimit';
+import { cacheMiddleware } from './middleware/cache';
+import { errorHandler } from './middleware/errorHandler';
+import authRoutes from './auth/routes';
 
 // API Version
-const API_VERSION = "v1";
+const API_VERSION = 'v1';
 
 const app = express();
 
@@ -24,31 +24,38 @@ const disableCSP = process.env.DISABLE_CSP === 'true';
 
 app.use(
   helmet({
-    contentSecurityPolicy: disableCSP ? false : process.env.NODE_ENV === 'development' ? {
-      useDefaults: true,
-      directives: {
-        // Base
-        'default-src': ["'self'"],
-        // Development convenience: allow inline/eval for Vite + React Refresh
-        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        // Allow websocket + any localhost port + fonts + data/blob + same-origin API
-        'connect-src': [
-          "'self'",
-          'ws:',
-          'wss:',
-          'http://localhost:*',
-          'https://localhost:*',
-          'data:',
-          'blob:',
-          'https://fonts.googleapis.com',
-          'https://fonts.gstatic.com'
-        ],
-        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-        'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
-        'img-src': ["'self'", 'data:', 'blob:'],
-        'worker-src': ["'self'", 'blob:'],
-      },
-    } : undefined,
+    contentSecurityPolicy: disableCSP
+      ? false
+      : process.env.NODE_ENV === 'development'
+        ? {
+            useDefaults: true,
+            directives: {
+              // Base
+              'default-src': ["'self'"],
+              // Development convenience: allow inline/eval for Vite + React Refresh
+              'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+              // Allow websocket + any localhost port + fonts + data/blob + same-origin API + codespaces
+              'connect-src': [
+                "'self'",
+                'ws:',
+                'wss:',
+                'http://localhost:*',
+                'https://localhost:*',
+                'http://*.app.github.dev:*',
+                'https://*.app.github.dev:*',
+                'wss://*.app.github.dev:*',
+                'data:',
+                'blob:',
+                'https://fonts.googleapis.com',
+                'https://fonts.gstatic.com',
+              ],
+              'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+              'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
+              'img-src': ["'self'", 'data:', 'blob:'],
+              'worker-src': ["'self'", 'blob:'],
+            },
+          }
+        : undefined,
   })
 );
 
@@ -86,11 +93,11 @@ app.post(`/api/${API_VERSION}/progress/lesson`, express.json(), async (req, res)
     if (!lessonId || !userId) {
       return res.status(400).json({ error: 'lessonId and userId are required' });
     }
-    
+
     // For now, just return success (later we'll connect to storage)
-    res.status(200).json({ 
-      status: 'success', 
-      message: `Lesson ${lessonId} marked as ${completed ? 'complete' : 'in-progress'} for user ${userId}` 
+    res.status(200).json({
+      status: 'success',
+      message: `Lesson ${lessonId} marked as ${completed ? 'complete' : 'in-progress'} for user ${userId}`,
     });
   } catch (error) {
     console.log('Error in lesson endpoint:', error);
@@ -104,16 +111,29 @@ app.post(`/api/${API_VERSION}/test`, express.json(), async (req, res) => {
   res.status(200).json({ status: 'test endpoint working', body: req.body });
 });
 
+// Console log endpoint for debugging browser errors
+app.post(`/api/${API_VERSION}/log`, express.json(), async (req, res) => {
+  const { level, message, error, url } = req.body;
+  console.log(`[BROWSER ${level?.toUpperCase()}]`, message);
+  if (error) {
+    console.log('[BROWSER ERROR DETAILS]', error);
+  }
+  if (url) {
+    console.log('[BROWSER URL]', url);
+  }
+  res.status(200).json({ status: 'logged' });
+});
+
 app.post(`/api/${API_VERSION}/progress/quiz`, express.json(), async (req, res) => {
   try {
     const { quizId, userId, score, totalQuestions, correctAnswers } = req.body;
     if (!quizId || !userId || score === undefined) {
       return res.status(400).json({ error: 'quizId, userId, and score are required' });
     }
-    
-    res.status(200).json({ 
-      status: 'success', 
-      message: `Quiz ${quizId} result saved: ${score}% (${correctAnswers}/${totalQuestions}) for user ${userId}` 
+
+    res.status(200).json({
+      status: 'success',
+      message: `Quiz ${quizId} result saved: ${score}% (${correctAnswers}/${totalQuestions}) for user ${userId}`,
     });
   } catch (error) {
     res.status(500).json({ error: 'Failed to save quiz result' });
@@ -130,16 +150,16 @@ app.get(`/api/${API_VERSION}/progress/:userId`, async (req, res) => {
 
     // For now, return mock data structure that matches our frontend needs
     // Later this will fetch from the database
-    res.status(200).json({ 
-      status: 'success', 
+    res.status(200).json({
+      status: 'success',
       data: {
         completedLessons: ['fundamental-rights', 'government-structure'], // Mock data
         quizResults: [
           { id: 'fundamental-rights-quiz', score: 85, totalQuestions: 10 },
-          { id: 'government-structure-quiz', score: 92, totalQuestions: 8 }
+          { id: 'government-structure-quiz', score: 92, totalQuestions: 8 },
         ],
-        achievements: ['first_lesson', 'quiz_master']
-      }
+        achievements: ['first_lesson', 'quiz_master'],
+      },
     });
   } catch (error) {
     console.error('Error fetching user progress:', error);
@@ -158,16 +178,16 @@ app.use((req, res, next) => {
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
 
-  res.on("finish", () => {
+  res.on('finish', () => {
     const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
+    if (path.startsWith('/api')) {
       let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
 
       if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
+        logLine = logLine.slice(0, 79) + '…';
       }
 
       log(logLine);
@@ -183,7 +203,8 @@ async function findAvailablePort(start: number, maxAttempts = 10): Promise<numbe
   for (let i = 0; i < maxAttempts; i++) {
     const port = start + i;
     const available = await new Promise<boolean>((resolve) => {
-      const tester = net.createServer()
+      const tester = net
+        .createServer()
         .once('error', () => resolve(false))
         .once('listening', () => tester.close(() => resolve(true)))
         .listen(port, '0.0.0.0');
@@ -210,7 +231,7 @@ async function findAvailablePort(start: number, maxAttempts = 10): Promise<numbe
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
+  if (app.get('env') === 'development') {
     await setupVite(app, server);
   } else {
     serveStatic(app);
@@ -220,11 +241,14 @@ async function findAvailablePort(start: number, maxAttempts = 10): Promise<numbe
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-    server.listen({
-    port: effectivePort,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${effectivePort}`);
-  });
+  server.listen(
+    {
+      port: effectivePort,
+      host: '0.0.0.0',
+      reusePort: true,
+    },
+    () => {
+      log(`serving on port ${effectivePort}`);
+    }
+  );
 })();

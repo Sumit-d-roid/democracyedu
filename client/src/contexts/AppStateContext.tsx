@@ -46,8 +46,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
 
   // Handle online/offline status
   useEffect(() => {
-    const handleOnline = () => setState(prev => ({ ...prev, isOnline: true }));
-    const handleOffline = () => setState(prev => ({ ...prev, isOnline: false }));
+    const handleOnline = () => setState((prev) => ({ ...prev, isOnline: true }));
+    const handleOffline = () => setState((prev) => ({ ...prev, isOnline: false }));
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
@@ -82,7 +82,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
 
     const handleMessage = (event: MessageEvent) => {
       if (event.data.type === 'STATE_UPDATE') {
-        setState(prev => ({ ...prev, ...event.data.payload }));
+        setState((prev) => ({ ...prev, ...event.data.payload }));
       }
     };
 
@@ -93,7 +93,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   // Apply theme and color scheme to document
   useEffect(() => {
     const root = document.documentElement;
-    
+
     // Apply theme
     if (state.theme === 'system') {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -107,31 +107,31 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   }, [state.theme, state.colorScheme]);
 
   const setTheme = (theme: Theme) => {
-    setState(prev => ({ ...prev, theme }));
+    setState((prev) => ({ ...prev, theme }));
     broadcastChannel?.postMessage({ type: 'STATE_UPDATE', payload: { theme } });
   };
 
   const setColorScheme = (colorScheme: ColorScheme) => {
-    setState(prev => ({ ...prev, colorScheme }));
+    setState((prev) => ({ ...prev, colorScheme }));
     broadcastChannel?.postMessage({ type: 'STATE_UPDATE', payload: { colorScheme } });
   };
 
   const toggleMenu = () => {
-    setState(prev => ({ ...prev, isMenuOpen: !prev.isMenuOpen }));
+    setState((prev) => ({ ...prev, isMenuOpen: !prev.isMenuOpen }));
   };
 
   const toggleSidebar = () => {
-    setState(prev => ({ ...prev, isSidebarCollapsed: !prev.isSidebarCollapsed }));
+    setState((prev) => ({ ...prev, isSidebarCollapsed: !prev.isSidebarCollapsed }));
     broadcastChannel?.postMessage({
       type: 'STATE_UPDATE',
-      payload: { isSidebarCollapsed: !state.isSidebarCollapsed }
+      payload: { isSidebarCollapsed: !state.isSidebarCollapsed },
     });
   };
 
   const addNotification = (message: string, type: 'info' | 'success' | 'error' | 'warning') => {
     try {
       const id = Date.now().toString();
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         notifications: [...prev.notifications, { id, message, type }],
       }));
@@ -144,9 +144,9 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   };
 
   const removeNotification = (id: string) => {
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
-      notifications: prev.notifications.filter(n => n.id !== id),
+      notifications: prev.notifications.filter((n) => n.id !== id),
     }));
   };
 

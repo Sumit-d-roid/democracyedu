@@ -1,7 +1,7 @@
-import { useMemo, useCallback, useRef, useEffect, useState } from 'react';
+import React, { useMemo, useCallback, useRef, useEffect, useState } from 'react';
 
 // Generic memoization hook for expensive operations
-export function useMemoizedValue<T>(value: T, deps: any[]): T {
+export function useMemoizedValue<T>(value: T, deps: React.DependencyList): T {
   return useMemo(() => value, deps);
 }
 
@@ -27,34 +27,37 @@ export function useDebouncedCallback<T extends (...args: any[]) => any>(
   callback: T,
   delay: number
 ): T {
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
-  return useCallback((...args: Parameters<T>) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+  return useCallback(
+    (...args: Parameters<T>) => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
 
-    timeoutRef.current = setTimeout(() => {
-      callback(...args);
-    }, delay);
-  }, [callback, delay]) as T;
+      timeoutRef.current = setTimeout(() => {
+        callback(...args);
+      }, delay);
+    },
+    [callback, delay]
+  ) as T;
 }
 
 // Throttle hook for limiting the rate of function calls
-export function useThrottle<T extends (...args: any[]) => any>(
-  func: T,
-  delay: number
-): T {
+export function useThrottle<T extends (...args: any[]) => any>(func: T, delay: number): T {
   const lastRan = useRef(Date.now());
 
-  return useCallback((...args: Parameters<T>) => {
-    const now = Date.now();
+  return useCallback(
+    (...args: Parameters<T>) => {
+      const now = Date.now();
 
-    if (now - lastRan.current >= delay) {
-      func(...args);
-      lastRan.current = now;
-    }
-  }, [func, delay]) as T;
+      if (now - lastRan.current >= delay) {
+        func(...args);
+        lastRan.current = now;
+      }
+    },
+    [func, delay]
+  ) as T;
 }
 
 // Hook for tracking expensive renders and logging performance issues
@@ -67,7 +70,8 @@ export function useRenderTracking(componentName: string) {
     const timeSinceLastRender = currentTime - lastRenderTime.current;
     renderCount.current += 1;
 
-    if (timeSinceLastRender > 16) { // More than 1 frame (60fps)
+    if (timeSinceLastRender > 16) {
+      // More than 1 frame (60fps)
       console.warn(
         `Slow render detected in ${componentName}:`,
         `Render #${renderCount.current} took ${timeSinceLastRender.toFixed(2)}ms`
@@ -89,16 +93,13 @@ export function useRenderOptimization(componentName: string, props: Record<strin
       if (prevProps.current[key] !== value) {
         changedProps[key] = {
           prev: prevProps.current[key],
-          next: value
+          next: value,
         };
       }
     });
 
     if (Object.keys(changedProps).length > 0) {
-      console.log(
-        `${componentName} re-rendered due to prop changes:`,
-        changedProps
-      );
+      console.log(`${componentName} re-rendered due to prop changes:`, changedProps);
     }
 
     prevProps.current = props;
@@ -106,11 +107,7 @@ export function useRenderOptimization(componentName: string, props: Record<strin
 }
 
 // Hook for caching expensive calculations
-export function useCalculationCache<T>(
-  calculation: () => T,
-  deps: any[],
-  cacheSize: number = 10
-) {
+export function useCalculationCache<T>(calculation: () => T, deps: any[], cacheSize: number = 10) {
   const cache = useRef<Map<string, T>>(new Map());
 
   return useMemo(() => {
@@ -143,7 +140,7 @@ export function useContextMetrics(contextName: string) {
       componentPath: new Error().stack
         ?.split('\n')[2]
         ?.trim()
-        ?.replace(/^at\s+/, '')
+        ?.replace(/^at\s+/, ''),
     };
 
     // You could send this to your analytics or monitoring service

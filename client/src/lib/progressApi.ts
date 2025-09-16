@@ -32,7 +32,7 @@ export interface UserProgressData {
 class ProgressAPI {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
     const url = `${API_BASE}${endpoint}`;
-    
+
     try {
       const response = await fetch(url, {
         headers: {
@@ -45,14 +45,18 @@ class ProgressAPI {
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(`API request failed: ${response.status} ${response.statusText}. Response: ${errorText}`);
+        throw new Error(
+          `API request failed: ${response.status} ${response.statusText}. Response: ${errorText}`
+        );
       }
 
       const data = await response.json();
       return data;
     } catch (error) {
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        throw new Error('Network error: Unable to connect to server. Please check if the server is running.');
+        throw new Error(
+          'Network error: Unable to connect to server. Please check if the server is running.'
+        );
       }
       throw error;
     }

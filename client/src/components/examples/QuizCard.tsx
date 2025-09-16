@@ -10,9 +10,9 @@ const sampleQuestions: QuizQuestion[] = [
     type: 'multiple-choice',
     options: ['2015', '2016', '2017', '2018'],
     correctAnswer: 0,
-    explanation: 'Nepal\'s Constitution was adopted in 2015.',
+    explanation: "Nepal's Constitution was adopted in 2015.",
     difficulty: 'easy',
-    points: 10
+    points: 10,
   },
   {
     id: 'sample-2',
@@ -22,8 +22,8 @@ const sampleQuestions: QuizQuestion[] = [
     correctAnswer: 2,
     explanation: 'There are 7 provinces.',
     difficulty: 'easy',
-    points: 10
-  }
+    points: 10,
+  },
 ];
 
 export default function QuizCardExample() {

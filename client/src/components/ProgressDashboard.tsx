@@ -13,9 +13,10 @@ export default function ProgressDashboard() {
   const [testing, setTesting] = useState(false);
 
   const quizScores = Object.values(progress.quizScores);
-  const averageScore = quizScores.length > 0 
-    ? Math.round(quizScores.reduce((sum, score) => sum + score, 0) / quizScores.length)
-    : 0;
+  const averageScore =
+    quizScores.length > 0
+      ? Math.round(quizScores.reduce((sum, score) => sum + score, 0) / quizScores.length)
+      : 0;
 
   // Test API integration
   const handleTestLessonComplete = async () => {
@@ -25,7 +26,10 @@ export default function ProgressDashboard() {
       alert('✅ Lesson completion sent to API! Check browser console for details.');
     } catch (error) {
       console.error('Test failed:', error);
-      alert('❌ Test failed - check console for details. Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
+      alert(
+        '❌ Test failed - check console for details. Error: ' +
+          (error instanceof Error ? error.message : 'Unknown error')
+      );
     } finally {
       setTesting(false);
     }
@@ -39,7 +43,10 @@ export default function ProgressDashboard() {
       alert(`✅ Quiz result (${randomScore}%) sent to API! Check browser console for details.`);
     } catch (error) {
       console.error('Test failed:', error);
-      alert('❌ Test failed - check console for details. Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
+      alert(
+        '❌ Test failed - check console for details. Error: ' +
+          (error instanceof Error ? error.message : 'Unknown error')
+      );
     } finally {
       setTesting(false);
     }
@@ -91,10 +98,10 @@ export default function ProgressDashboard() {
           return (
             <Card key={index} className="hover-elevate" data-testid={`card-stat-${index}`}>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
-                  {stat.title}
-                </CardTitle>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${stat.bgColor}`}>
+                <CardTitle className="text-sm font-medium">{stat.title}</CardTitle>
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center ${stat.bgColor}`}
+                >
                   <IconComponent className={`w-4 h-4 ${stat.color}`} />
                 </div>
               </CardHeader>
@@ -119,8 +126,13 @@ export default function ProgressDashboard() {
           <CardContent className="pt-0">
             <div className="flex flex-wrap gap-2">
               {progress.completedLessons.map((lessonId, index) => (
-                <Badge key={index} variant="secondary" className="text-xs md:text-sm" data-testid={`badge-completed-lesson-${index}`}>
-                  {lessonId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="text-xs md:text-sm"
+                  data-testid={`badge-completed-lesson-${index}`}
+                >
+                  {lessonId.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
                 </Badge>
               ))}
             </div>
@@ -164,7 +176,7 @@ export default function ProgressDashboard() {
           </div>
           <div className="mt-3 p-3 bg-blue-50 rounded-lg">
             <p className="text-xs text-blue-800">
-              <strong>Note:</strong> These buttons will send test data to the backend API endpoints. 
+              <strong>Note:</strong> These buttons will send test data to the backend API endpoints.
               Open browser DevTools → Console to see the API requests and responses.
             </p>
           </div>

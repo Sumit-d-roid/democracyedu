@@ -17,7 +17,16 @@ interface LessonCardProps {
   progress?: number;
 }
 
-export default function LessonCard({ id, title, description, icon, difficulty, estimatedTime, category = 'Constitutional Rights', progress = 0 }: LessonCardProps) {
+export default function LessonCard({
+  id,
+  title,
+  description,
+  icon,
+  difficulty,
+  estimatedTime,
+  category = 'Constitutional Rights',
+  progress = 0,
+}: LessonCardProps) {
   const { isLessonComplete } = useProgress();
   const { t } = useLanguage();
   const [, setLocation] = useLocation();
@@ -34,7 +43,10 @@ export default function LessonCard({ id, title, description, icon, difficulty, e
   };
 
   return (
-    <Card className="hover-elevate transition-base hover:shadow-md flex flex-col" data-testid={`card-lesson-${id}`}>
+    <Card
+      className="hover-elevate transition-base hover:shadow-md flex flex-col"
+      data-testid={`card-lesson-${id}`}
+    >
       <CardContent className="p-5 flex-1 flex flex-col">
         <div className="flex items-start gap-4 mb-4">
           <div
@@ -44,17 +56,36 @@ export default function LessonCard({ id, title, description, icon, difficulty, e
             <span className="translate-y-[1px]">{icon}</span>
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-semibold leading-snug mb-1" data-testid={`text-lesson-title-${id}`}>{title}</h3>
+            <h3
+              className="text-lg font-semibold leading-snug mb-1"
+              data-testid={`text-lesson-title-${id}`}
+            >
+              {title}
+            </h3>
             <div className="flex flex-wrap items-center gap-2 text-[11px] md:text-xs">
-              <Badge variant="outline" className="px-2 py-0.5 leading-none">{category}</Badge>
-              <Badge variant="secondary" className={`${difficultyColors[difficulty]} px-2 py-0.5 leading-none`}>{difficulty}</Badge>
+              <Badge variant="outline" className="px-2 py-0.5 leading-none">
+                {category}
+              </Badge>
+              <Badge
+                variant="secondary"
+                className={`${difficultyColors[difficulty]} px-2 py-0.5 leading-none`}
+              >
+                {difficulty}
+              </Badge>
               {isCompleted && (
-                <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-0.5 leading-none flex items-center gap-1">
-                  <CheckCircle className="w-3 h-3" />{t('lessons.completed')}
+                <Badge
+                  variant="secondary"
+                  className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-0.5 leading-none flex items-center gap-1"
+                >
+                  <CheckCircle className="w-3 h-3" />
+                  {t('lessons.completed')}
                 </Badge>
               )}
               {!isCompleted && progress > 0 && (
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-0.5 leading-none">
+                <Badge
+                  variant="secondary"
+                  className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-0.5 leading-none"
+                >
                   {Math.round(progress)}% {t('lessons.inProgress')}
                 </Badge>
               )}
@@ -62,11 +93,14 @@ export default function LessonCard({ id, title, description, icon, difficulty, e
           </div>
         </div>
         <div className="space-y-3 flex-1">
-          <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">{description}</p>
+          <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
+            {description}
+          </p>
           <div className="flex items-center gap-3">
             {estimatedTime && (
               <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-medium">
-                <span aria-hidden>⏱️</span>{estimatedTime}
+                <span aria-hidden>⏱️</span>
+                {estimatedTime}
               </span>
             )}
             <div className="flex-1 h-1.5 rounded-full bg-muted/60 overflow-hidden">

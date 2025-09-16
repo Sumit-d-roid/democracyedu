@@ -5,7 +5,13 @@ export interface Achievement {
   icon: string;
   category: 'learning' | 'progress' | 'mastery' | 'dedication';
   requirement: {
-    type: 'lessons_completed' | 'sections_completed' | 'quiz_score' | 'points_earned' | 'streak_days' | 'perfect_quizzes';
+    type:
+      | 'lessons_completed'
+      | 'sections_completed'
+      | 'quiz_score'
+      | 'points_earned'
+      | 'streak_days'
+      | 'perfect_quizzes';
     value: number;
     lessonId?: string; // for lesson-specific achievements
   };
@@ -18,11 +24,11 @@ export const achievements: Achievement[] = [
   {
     id: 'first_lesson',
     title: 'Constitutional Explorer',
-    description: 'Complete your first lesson about Nepal\'s Constitution',
+    description: "Complete your first lesson about Nepal's Constitution",
     icon: '🌟',
     category: 'learning',
     requirement: { type: 'lessons_completed', value: 1 },
-    points: 100
+    points: 100,
   },
   {
     id: 'rights_expert',
@@ -31,7 +37,7 @@ export const achievements: Achievement[] = [
     icon: '⚖️',
     category: 'learning',
     requirement: { type: 'lessons_completed', value: 1, lessonId: 'fundamental-rights' },
-    points: 150
+    points: 150,
   },
   {
     id: 'government_guru',
@@ -40,7 +46,7 @@ export const achievements: Achievement[] = [
     icon: '🏛️',
     category: 'learning',
     requirement: { type: 'lessons_completed', value: 1, lessonId: 'government-structure' },
-    points: 150
+    points: 150,
   },
   {
     id: 'federal_master',
@@ -49,7 +55,7 @@ export const achievements: Achievement[] = [
     icon: '🗺️',
     category: 'learning',
     requirement: { type: 'lessons_completed', value: 1, lessonId: 'federal-system' },
-    points: 200
+    points: 200,
   },
   {
     id: 'constitution_scholar',
@@ -58,7 +64,7 @@ export const achievements: Achievement[] = [
     icon: '🎓',
     category: 'mastery',
     requirement: { type: 'lessons_completed', value: 3 },
-    points: 500
+    points: 500,
   },
 
   // Progress Achievements
@@ -69,7 +75,7 @@ export const achievements: Achievement[] = [
     icon: '📖',
     category: 'progress',
     requirement: { type: 'sections_completed', value: 5 },
-    points: 50
+    points: 50,
   },
   {
     id: 'dedicated_reader',
@@ -78,7 +84,7 @@ export const achievements: Achievement[] = [
     icon: '📚',
     category: 'progress',
     requirement: { type: 'sections_completed', value: 10 },
-    points: 100
+    points: 100,
   },
   {
     id: 'knowledge_seeker',
@@ -87,7 +93,7 @@ export const achievements: Achievement[] = [
     icon: '🔍',
     category: 'progress',
     requirement: { type: 'sections_completed', value: 15 },
-    points: 200
+    points: 200,
   },
 
   // Quiz Achievements
@@ -98,7 +104,7 @@ export const achievements: Achievement[] = [
     icon: '🏃',
     category: 'learning',
     requirement: { type: 'quiz_score', value: 70 },
-    points: 75
+    points: 75,
   },
   {
     id: 'quiz_champion',
@@ -107,7 +113,7 @@ export const achievements: Achievement[] = [
     icon: '🏆',
     category: 'mastery',
     requirement: { type: 'quiz_score', value: 90 },
-    points: 250
+    points: 250,
   },
   {
     id: 'perfect_score',
@@ -116,7 +122,7 @@ export const achievements: Achievement[] = [
     icon: '💯',
     category: 'mastery',
     requirement: { type: 'quiz_score', value: 100 },
-    points: 300
+    points: 300,
   },
   {
     id: 'quiz_perfectionist',
@@ -125,7 +131,7 @@ export const achievements: Achievement[] = [
     icon: '🎯',
     category: 'mastery',
     requirement: { type: 'perfect_quizzes', value: 3 },
-    points: 500
+    points: 500,
   },
 
   // Points Achievements
@@ -136,7 +142,7 @@ export const achievements: Achievement[] = [
     icon: '🪙',
     category: 'progress',
     requirement: { type: 'points_earned', value: 100 },
-    points: 25
+    points: 25,
   },
   {
     id: 'point_master',
@@ -145,7 +151,7 @@ export const achievements: Achievement[] = [
     icon: '💰',
     category: 'progress',
     requirement: { type: 'points_earned', value: 500 },
-    points: 100
+    points: 100,
   },
   {
     id: 'point_legend',
@@ -154,7 +160,7 @@ export const achievements: Achievement[] = [
     icon: '👑',
     category: 'mastery',
     requirement: { type: 'points_earned', value: 1000 },
-    points: 200
+    points: 200,
   },
 
   // Dedication Achievements
@@ -165,7 +171,7 @@ export const achievements: Achievement[] = [
     icon: '🌅',
     category: 'dedication',
     requirement: { type: 'lessons_completed', value: 1 },
-    points: 50
+    points: 50,
   },
   {
     id: 'night_owl',
@@ -174,30 +180,40 @@ export const achievements: Achievement[] = [
     icon: '🌙',
     category: 'dedication',
     requirement: { type: 'lessons_completed', value: 1 },
-    points: 50
-  }
+    points: 50,
+  },
 ];
 
 export const getAchievementsByCategory = (category: Achievement['category']): Achievement[] => {
-  return achievements.filter(achievement => achievement.category === category);
+  return achievements.filter((achievement) => achievement.category === category);
 };
 
 export const getCategoryIcon = (category: Achievement['category']): string => {
   switch (category) {
-    case 'learning': return '📚';
-    case 'progress': return '📈';
-    case 'mastery': return '🎯';
-    case 'dedication': return '⭐';
-    default: return '🏆';
+    case 'learning':
+      return '📚';
+    case 'progress':
+      return '📈';
+    case 'mastery':
+      return '🎯';
+    case 'dedication':
+      return '⭐';
+    default:
+      return '🏆';
   }
 };
 
 export const getCategoryColor = (category: Achievement['category']): string => {
   switch (category) {
-    case 'learning': return 'blue';
-    case 'progress': return 'green';
-    case 'mastery': return 'purple';
-    case 'dedication': return 'orange';
-    default: return 'gray';
+    case 'learning':
+      return 'blue';
+    case 'progress':
+      return 'green';
+    case 'mastery':
+      return 'purple';
+    case 'dedication':
+      return 'orange';
+    default:
+      return 'gray';
   }
 };

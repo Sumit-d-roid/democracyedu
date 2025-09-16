@@ -8,20 +8,26 @@ export interface IStorage {
   getUser(id: string): Promise<any>;
   getUserByUsername(username: string): Promise<any>;
   createUser(user: { username: string; password: string }): Promise<any>;
-  
+
   // Progress methods
   getUserProgress(userId: string, lessonId: string): Promise<any>;
   updateUserProgress(userId: string, lessonId: string, progress: number): Promise<any>;
   markLessonComplete(userId: string, lessonId: string): Promise<any>;
-  
+
   // Quiz methods
-  saveQuizResult(userId: string, quizId: string, score: number, totalQuestions: number, correctAnswers: number): Promise<any>;
+  saveQuizResult(
+    userId: string,
+    quizId: string,
+    score: number,
+    totalQuestions: number,
+    correctAnswers: number
+  ): Promise<any>;
   getQuizResults(userId: string, quizId: string): Promise<any>;
-  
+
   // Achievement methods
   unlockAchievement(userId: string, achievementId: string): Promise<any>;
   getUserAchievements(userId: string): Promise<any>;
-  
+
   // Bookmark methods
   addBookmark(userId: string, lessonId: string): Promise<any>;
   removeBookmark(userId: string, lessonId: string): Promise<any>;
@@ -47,37 +53,27 @@ export class SqliteStorage implements IStorage {
     return await db
       .select()
       .from(userProgress)
-      .where(
-        and(
-          eq(userProgress.userId, userId),
-          eq(userProgress.lessonId, lessonId)
-        )
-      )
+      .where(and(eq(userProgress.userId, userId), eq(userProgress.lessonId, lessonId)))
       .get();
   }
 
   async updateUserProgress(userId: string, lessonId: string, progress: number) {
     const existing = await this.getUserProgress(userId, lessonId);
     const id = existing?.id || randomUUID();
-    
+
     if (existing) {
-      await db
-        .update(userProgress)
-        .set({ progress })
-        .where(eq(userProgress.id, id));
+      await db.update(userProgress).set({ progress }).where(eq(userProgress.id, id));
     } else {
-      await db
-        .insert(userProgress)
-        .values({ id, userId, lessonId, progress });
+      await db.insert(userProgress).values({ id, userId, lessonId, progress });
     }
-    
+
     return this.getUserProgress(userId, lessonId);
   }
 
   async markLessonComplete(userId: string, lessonId: string) {
     const existing = await this.getUserProgress(userId, lessonId);
     const id = existing?.id || randomUUID();
-    
+
     if (existing) {
       await db
         .update(userProgress)
@@ -88,7 +84,7 @@ export class SqliteStorage implements IStorage {
         .insert(userProgress)
         .values({ id, userId, lessonId, progress: 100, completed: true });
     }
-    
+
     return this.getUserProgress(userId, lessonId);
   }
 
@@ -125,20 +121,15 @@ export class SqliteStorage implements IStorage {
       .select()
       .from(userAchievements)
       .where(
-        and(
-          eq(userAchievements.userId, userId),
-          eq(userAchievements.achievementId, achievementId)
-        )
+        and(eq(userAchievements.userId, userId), eq(userAchievements.achievementId, achievementId))
       )
       .get();
-    
+
     if (!existing) {
       const id = randomUUID();
-      await db
-        .insert(userAchievements)
-        .values({ id, userId, achievementId });
+      await db.insert(userAchievements).values({ id, userId, achievementId });
     }
-    
+
     return this.getUserAchievements(userId);
   }
 
@@ -155,38 +146,25 @@ export class SqliteStorage implements IStorage {
     const existing = await db
       .select()
       .from(bookmarks)
-      .where(
-        and(
-          eq(bookmarks.userId, userId),
-          eq(bookmarks.lessonId, lessonId)
-        )
-      )
+      .where(and(eq(bookmarks.userId, userId), eq(bookmarks.lessonId, lessonId)))
       .get();
-    
+
     if (!existing) {
       const id = randomUUID();
-      await db
-        .insert(bookmarks)
-        .values({ id, userId, lessonId });
+      await db.insert(bookmarks).values({ id, userId, lessonId });
     }
-    
+
     return this.getBookmarks(userId);
   }
 
   async removeBookmark(userId: string, lessonId: string) {
     await db
       .delete(bookmarks)
-      .where(
-        and(eq(bookmarks.userId, userId), eq(bookmarks.lessonId, lessonId))
-      );
+      .where(and(eq(bookmarks.userId, userId), eq(bookmarks.lessonId, lessonId)));
   }
 
   async getBookmarks(userId: string) {
-    return await db
-      .select()
-      .from(bookmarks)
-      .where(eq(bookmarks.userId, userId))
-      .all();
+    return await db.select().from(bookmarks).where(eq(bookmarks.userId, userId)).all();
   }
 }
 
