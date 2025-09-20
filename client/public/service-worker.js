@@ -1,5 +1,5 @@
 // Service Worker Version (increment to bust cache)
-const SW_VERSION = '5';
+const SW_VERSION = '6';
 const CACHE_NAME = `sambhidanx-static-v${SW_VERSION}`;
 const STATIC_ASSETS = [
   '/',
@@ -13,7 +13,7 @@ const API_CACHE = `sambhidanx-api-v${SW_VERSION}`;
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  // Do not call skipWaiting here; allow client to trigger controlled update
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(STATIC_ASSETS);
@@ -30,12 +30,20 @@ self.addEventListener('activate', (event) => {
       .map((name) => caches.delete(name))
     );
     await self.clients.claim();
-    // Notify all clients to reload (optional prompt could be implemented instead)
+    // Notify clients that a new version is active
     const clientsList = await self.clients.matchAll({ includeUncontrolled: true });
     for (const client of clientsList) {
       client.postMessage({ type: 'SW_ACTIVATED', version: SW_VERSION });
     }
   })());
+});
+
+// Listen for client messages (e.g., to trigger skipWaiting)
+self.addEventListener('message', (event) => {
+  const { type } = event.data || {};
+  if (type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // Helper function to handle API requests

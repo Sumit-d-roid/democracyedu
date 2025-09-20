@@ -22,6 +22,8 @@ import NotFound from '@/pages/not-found';
 import Footer from '@/components/Footer';
 import { SearchProvider } from '@/contexts/SearchContext';
 import SearchCommand from '@/components/SearchCommand';
+import { usePwa } from '@/hooks/use-pwa';
+import UpdateBanner from '@/components/UpdateBanner';
 
 function Router() {
   return (
@@ -40,6 +42,7 @@ function Router() {
 
 function App() {
   const [achievementNotification, setAchievementNotification] = useState<Achievement | null>(null);
+  usePwa();
 
   const handleAchievementUnlocked = (achievement: Achievement) => {
     setAchievementNotification(achievement);
@@ -48,6 +51,8 @@ function App() {
   const handleCloseNotification = () => {
     setAchievementNotification(null);
   };
+
+  // UpdateBanner handles the UI for updates.
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -58,6 +63,7 @@ function App() {
               <SearchProvider>
               <div className="min-h-screen bg-background flex flex-col">
                 <Header />
+                <UpdateBanner />
                 <div className="flex-1">
                   <Router />
                 </div>

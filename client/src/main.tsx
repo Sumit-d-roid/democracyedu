@@ -50,32 +50,9 @@ createRoot(document.getElementById("root")!).render(
   </ErrorProvider>
 );
 
-// Register service worker (production only). In development, actively unregister
-// any existing SW to avoid mixing module graphs that can cause duplicate React runtimes.
+// In development, actively unregister any existing SW to avoid module graph splits.
 if ('serviceWorker' in navigator) {
-  if (import.meta.env.PROD) {
-    window.addEventListener('load', () => {
-      const versionParam = `v=${Date.now()}`; // force fresh fetch
-      navigator.serviceWorker.register(`/service-worker.js?${versionParam}`)
-        .then(registration => {
-          console.log('ServiceWorker new registration scope:', registration.scope);
-        })
-        .catch(error => {
-          console.error('ServiceWorker registration failed:', error);
-        });
-    });
-
-    navigator.serviceWorker.addEventListener('message', (event) => {
-      if (event.data?.type === 'SW_ACTIVATED') {
-        console.log('[SW] Activated version', event.data.version);
-        // Optionally auto-reload once when a new version activates.
-        if (!sessionStorage.getItem('sw-reloaded')) {
-          sessionStorage.setItem('sw-reloaded', '1');
-          window.location.reload();
-        }
-      }
-    });
-  } else {
+  if (!import.meta.env.PROD) {
     // Development: ensure no SW is controlling the page
     window.addEventListener('load', () => {
       navigator.serviceWorker.getRegistrations().then(registrations => {
