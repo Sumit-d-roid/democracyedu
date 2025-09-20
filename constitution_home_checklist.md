@@ -1,0 +1,20 @@
+- [ ] Design a simple homepage layout for Nepal's constitution hub
+- [ ] Add navigation links to key sections (rights, government, amendments, etc.)
+- [ ] Display featured lessons and quizzes on homepage
+- [ ] Add a glossary or quick facts section
+- [ ] Ensure homepage is mobile responsive
+- [ ] Add a search bar for constitution topics
+- [ ] Link to achievement badges and progress tracking
+- [ ] Add visual icons/images for main sections
+- [ ] Test homepage for accessibility
+- [ ] Get feedback and iterate on design
+
+--- Expansion Ideas ---
+- [ ] Add interactive features (forums, polls, Q&A)
+- [ ] Integrate visual dashboards for progress/statistics
+- [ ] Enrich lessons with multimedia (videos, infographics)
+- [ ] Add advanced search/filtering (topic, difficulty, etc.)
+- [ ] Enable user feedback/suggestions on content
+- [ ] Localize more content and UI
+- [ ] Gamify with leaderboards/challenges
+- [ ] Add "What’s New" or update section for constitutional changes

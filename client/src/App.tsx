@@ -27,6 +27,10 @@ import UpdateBanner from '@/components/UpdateBanner';
 import StreakBanner from '@/components/StreakBanner';
 import DailyGoalBar from '@/components/DailyGoalBar';
 
+import Forum from '@/pages/Forum';
+import Polls from '@/pages/Polls';
+import QnA from '@/pages/QnA';
+
 function Router() {
   return (
     <Switch>
@@ -37,6 +41,9 @@ function Router() {
       <Route path="/progress" component={Progress} />
       <Route path="/achievements" component={Achievements} />
       <Route path="/glossary" component={GlossaryPage} />
+      <Route path="/forum" component={Forum} />
+      <Route path="/polls" component={Polls} />
+      <Route path="/qna" component={QnA} />
       <Route component={NotFound} />
     </Switch>
   );

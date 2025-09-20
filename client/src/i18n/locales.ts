@@ -1,5 +1,9 @@
 // Consolidated translation maps to eliminate JSON module import issues in production.
 export const en = {
+  "nav.community": "Community",
+  "nav.forum": "Forum",
+  "nav.polls": "Polls",
+  "nav.qna": "Q&A",
   "nav.home": "Home",
   "nav.lessons": "Lessons",
   "nav.quiz": "Quiz",

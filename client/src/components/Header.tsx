@@ -4,6 +4,7 @@ import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Menu, X, Globe, Sun, Moon, Search, Download, Target } from 'lucide-react';
+import { MessageCircle, BarChart2, HelpCircle, Users } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSearch } from '@/contexts/SearchContext';
@@ -45,6 +46,11 @@ export default function Header({ onToggleDailyGoal, dailyGoalOpen }: HeaderProps
     { path: '/progress', key: 'nav.progress' },
     { path: '/glossary', key: 'nav.glossary' },
   ];
+  const communityItems = [
+    { path: '/forum', key: 'nav.forum', icon: <MessageCircle className="h-4 w-4 mr-2" aria-hidden /> },
+    { path: '/polls', key: 'nav.polls', icon: <BarChart2 className="h-4 w-4 mr-2" aria-hidden /> },
+    { path: '/qna', key: 'nav.qna', icon: <HelpCircle className="h-4 w-4 mr-2" aria-hidden /> },
+  ];
 
   return (
     <>
@@ -68,12 +74,41 @@ export default function Header({ onToggleDailyGoal, dailyGoalOpen }: HeaderProps
                     size="sm"
                     data-testid={`nav-${item.key.split('.')[1]}`}
                     aria-current={isActive(item.path) ? 'page' : undefined}
-                    className="transition-base"
+                    className="transition-base flex items-center"
                   >
                     {t(item.key)}
                   </Button>
                 </Link>
               ))}
+              {/* Community Dropdown */}
+              <div className="relative group">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center gap-2 transition-base"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <Users className="h-4 w-4" aria-hidden />
+                  <span>{t('nav.community') || 'Community'}</span>
+                </Button>
+                <div className="absolute left-0 top-full mt-2 min-w-[180px] bg-background border rounded shadow-lg z-10 hidden group-hover:block">
+                  {communityItems.map((item) => (
+                    <Link key={item.path} href={item.path}>
+                      <Button
+                        variant={isActive(item.path) ? 'secondary' : 'ghost'}
+                        size="sm"
+                        className="w-full justify-start flex items-center px-3 py-2"
+                        data-testid={`nav-${item.key.split('.')[1]}`}
+                        aria-current={isActive(item.path) ? 'page' : undefined}
+                      >
+                        {item.icon}
+                        {t(item.key)}
+                      </Button>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </nav>
 
           {/* Points and Language Toggle */}
@@ -177,7 +212,7 @@ export default function Header({ onToggleDailyGoal, dailyGoalOpen }: HeaderProps
                 <Link key={item.path} href={item.path}>
                   <Button
                     variant={isActive(item.path) ? 'secondary' : 'ghost'}
-                    className="w-full justify-start transition-base"
+                    className="w-full justify-start transition-base flex items-center"
                     onClick={() => setIsMenuOpen(false)}
                     data-testid={`mobile-nav-${item.key.split('.')[1]}`}
                     aria-current={isActive(item.path) ? 'page' : undefined}
@@ -186,6 +221,24 @@ export default function Header({ onToggleDailyGoal, dailyGoalOpen }: HeaderProps
                   </Button>
                 </Link>
               ))}
+              {/* Community Section for Mobile */}
+              <div className="pt-2 border-t mt-2">
+                <div className="font-semibold text-xs mb-2 flex items-center gap-2"><Users className="h-4 w-4" />{t('nav.community') || 'Community'}</div>
+                {communityItems.map((item) => (
+                  <Link key={item.path} href={item.path}>
+                    <Button
+                      variant={isActive(item.path) ? 'secondary' : 'ghost'}
+                      className="w-full justify-start flex items-center px-3 py-2"
+                      onClick={() => setIsMenuOpen(false)}
+                      data-testid={`mobile-nav-${item.key.split('.')[1]}`}
+                      aria-current={isActive(item.path) ? 'page' : undefined}
+                    >
+                      {item.icon}
+                      {t(item.key)}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
               <div className="pt-2 border-t space-y-2">
                 <Badge variant="secondary" className="flex items-center gap-1 w-fit transition-base">
                   <span className="text-xs" aria-hidden>🏆</span>
