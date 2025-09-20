@@ -106,6 +106,12 @@ export default function Header() {
               <span className="text-xs" aria-hidden>🏆</span>
               {progress.totalPoints}
             </Badge>
+            {progress.streakDays > 0 && (
+              <Badge variant="outline" className="hidden sm:inline-flex items-center gap-1 transition-base" data-testid="streak-badge" aria-label={`Streak: ${progress.streakDays} days`}>
+                <span className="text-xs" aria-hidden>🔥</span>
+                {progress.streakDays}d
+              </Badge>
+            )}
             
             <Button
               variant="secondary"

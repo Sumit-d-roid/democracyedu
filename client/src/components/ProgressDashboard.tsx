@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Trophy, BookOpen, Target, Play, Brain } from 'lucide-react';
+import { Trophy, BookOpen, Target, Play, Brain, Flame } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import achievementBadge from '@assets/generated_images/Achievement_Badge_Icon_a648ffe6.png';
@@ -67,6 +67,13 @@ export default function ProgressDashboard() {
       color: 'text-green-600',
       bgColor: 'bg-green-100 dark:bg-green-900/20',
     },
+    {
+      title: 'Current Streak',
+      value: `${progress.streakDays} days` as any,
+      icon: Flame,
+      color: 'text-orange-600',
+      bgColor: 'bg-orange-100 dark:bg-orange-900/20',
+    },
   ];
 
   return (
@@ -102,6 +109,9 @@ export default function ProgressDashboard() {
                 <div className="text-2xl font-bold" data-testid={`text-stat-value-${index}`}>
                   {stat.value}
                 </div>
+                {stat.icon === Flame && (
+                  <div className="text-xs text-muted-foreground mt-1">Best: {progress.bestStreak} days</div>
+                )}
               </CardContent>
             </Card>
           );

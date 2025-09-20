@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import { achievements, Achievement } from '@shared/achievements';
+import { updateStreak } from '@/lib/streak';
 import { useOfflineSupport } from '../hooks/use-offline-support';
 import { progressAPI } from '@/lib/progressApi';
 
@@ -11,6 +12,10 @@ interface ProgressData {
   unlockedAchievements: string[];
   perfectQuizzes: string[]; // quizIds with 100% score
   lastLessonCompletionTime?: number; // timestamp for dedication achievements
+  // Streak fields
+  lastActiveAt?: number | null;
+  streakDays: number;
+  bestStreak: number;
 }
 
 interface ProgressContextType {
@@ -36,6 +41,9 @@ const defaultProgress: ProgressData = {
   quizScores: {},
   unlockedAchievements: [],
   perfectQuizzes: [],
+  lastActiveAt: null,
+  streakDays: 0,
+  bestStreak: 0,
 };
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -57,7 +65,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         ...defaultProgress,
         ...parsedProgress,
         unlockedAchievements: parsedProgress.unlockedAchievements || [],
-        perfectQuizzes: parsedProgress.perfectQuizzes || []
+        perfectQuizzes: parsedProgress.perfectQuizzes || [],
+        lastActiveAt: parsedProgress.lastActiveAt ?? null,
+        streakDays: parsedProgress.streakDays ?? 0,
+        bestStreak: parsedProgress.bestStreak ?? 0,
       };
     }
     return defaultProgress;
@@ -90,13 +101,19 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
 
   const markLessonComplete = async (lessonId: string) => {
     const now = Date.now();
-    setProgress(prev => ({
-      ...prev,
-      completedLessons: prev.completedLessons.includes(lessonId) 
-        ? prev.completedLessons 
-        : [...prev.completedLessons, lessonId],
-      lastLessonCompletionTime: now
-    }));
+    setProgress(prev => {
+      const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
+      return {
+        ...prev,
+        completedLessons: prev.completedLessons.includes(lessonId)
+          ? prev.completedLessons
+          : [...prev.completedLessons, lessonId],
+        lastLessonCompletionTime: now,
+        lastActiveAt: streak.lastActiveAt,
+        streakDays: streak.streakDays,
+        bestStreak: streak.bestStreak,
+      };
+    });
 
     // Sync with API
     try {
@@ -115,7 +132,9 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   };
 
   const recordQuizScore = async (quizId: string, score: number) => {
+    const now = Date.now();
     setProgress(prev => {
+      const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
       const newPerfectQuizzes = score === 100 && !prev.perfectQuizzes.includes(quizId)
         ? [...prev.perfectQuizzes, quizId]
         : prev.perfectQuizzes;
@@ -126,7 +145,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
           ...prev.quizScores,
           [quizId]: score
         },
-        perfectQuizzes: newPerfectQuizzes
+        perfectQuizzes: newPerfectQuizzes,
+        lastActiveAt: streak.lastActiveAt,
+        streakDays: streak.streakDays,
+        bestStreak: streak.bestStreak,
       };
     });
 
@@ -153,7 +175,9 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   };
 
   const markSectionComplete = (lessonId: string, sectionId: string) => {
+    const now = Date.now();
     setProgress(prev => {
+      const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
       const lessonSections = prev.completedSections[lessonId] || [];
       const newSections = lessonSections.includes(sectionId) 
         ? lessonSections 
@@ -164,7 +188,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         completedSections: {
           ...prev.completedSections,
           [lessonId]: newSections
-        }
+        },
+        lastActiveAt: streak.lastActiveAt,
+        streakDays: streak.streakDays,
+        bestStreak: streak.bestStreak,
       };
     });
   };
@@ -212,6 +239,8 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
       
       case 'points_earned':
         return currentProgress.totalPoints >= requirement.value;
+      case 'streak_days':
+        return (currentProgress.streakDays || 0) >= requirement.value;
       
       case 'perfect_quizzes':
         return currentProgress.perfectQuizzes.length >= requirement.value;

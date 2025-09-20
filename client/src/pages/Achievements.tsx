@@ -45,6 +45,8 @@ export default function Achievements() {
       
       case 'points_earned':
         return progress.totalPoints;
+      case 'streak_days':
+        return progress.streakDays || 0;
       
       case 'perfect_quizzes':
         return (progress.perfectQuizzes || []).length;

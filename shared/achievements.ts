@@ -175,6 +175,44 @@ export const achievements: Achievement[] = [
     category: 'dedication',
     requirement: { type: 'lessons_completed', value: 1 },
     points: 50
+  },
+
+  // Streak Achievements
+  {
+    id: 'streak_3',
+    title: '3-Day Spark',
+    description: 'Keep a 3-day learning streak going',
+    icon: '🔥',
+    category: 'dedication',
+    requirement: { type: 'streak_days', value: 3 },
+    points: 50
+  },
+  {
+    id: 'streak_7',
+    title: '7-Day Flame',
+    description: 'Reach a 7-day learning streak',
+    icon: '🔥',
+    category: 'dedication',
+    requirement: { type: 'streak_days', value: 7 },
+    points: 120
+  },
+  {
+    id: 'streak_14',
+    title: '14-Day Blaze',
+    description: 'Maintain a 14-day learning streak',
+    icon: '🔥',
+    category: 'dedication',
+    requirement: { type: 'streak_days', value: 14 },
+    points: 250
+  },
+  {
+    id: 'streak_30',
+    title: '30-Day Inferno',
+    description: 'Achieve a 30-day learning streak',
+    icon: '🔥',
+    category: 'dedication',
+    requirement: { type: 'streak_days', value: 30 },
+    points: 600
   }
 ];
 

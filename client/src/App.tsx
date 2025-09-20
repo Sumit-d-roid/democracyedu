@@ -24,6 +24,7 @@ import { SearchProvider } from '@/contexts/SearchContext';
 import SearchCommand from '@/components/SearchCommand';
 import { usePwa } from '@/hooks/use-pwa';
 import UpdateBanner from '@/components/UpdateBanner';
+import StreakBanner from '@/components/StreakBanner';
 
 function Router() {
   return (
@@ -64,6 +65,7 @@ function App() {
               <div className="min-h-screen bg-background flex flex-col">
                 <Header />
                 <UpdateBanner />
+                <StreakBanner />
                 <div className="flex-1">
                   <Router />
                 </div>
