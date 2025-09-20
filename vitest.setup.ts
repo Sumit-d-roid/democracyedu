@@ -1,18 +1,26 @@
 import '@testing-library/jest-dom';
-import { expect, afterEach } from 'vitest';
+import { expect, afterEach, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
-import matchers from '@testing-library/jest-dom/matchers';
+import * as matchers from '@testing-library/jest-dom/matchers';
 
-// Defensive: only extend if matchers is a non-null object
-if (matchers && typeof matchers === 'object') {
-  // @ts-ignore - vitest expect has extend
-  expect.extend(matchers as any);
+// Ensure jest-dom matchers are available on vitest expect
+expect.extend(matchers);
+
+// JSDOM lacks IndexedDB by default; provide a minimal stub to avoid crashes in hooks
+if (!(globalThis as any).indexedDB) {
+  (globalThis as any).indexedDB = {
+    open: () => ({
+      result: {
+        createObjectStore: vi.fn(),
+        objectStoreNames: { contains: vi.fn().mockReturnValue(true) },
+      },
+      onerror: null,
+      onsuccess: null,
+      onupgradeneeded: null,
+    }),
+  } as any;
 }
 
 afterEach(() => {
-  try {
-    cleanup();
-  } catch {
-    // ignore cleanup errors for non-DOM tests
-  }
+  cleanup();
 });

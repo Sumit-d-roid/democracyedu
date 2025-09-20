@@ -25,6 +25,7 @@ import SearchCommand from '@/components/SearchCommand';
 import { usePwa } from '@/hooks/use-pwa';
 import UpdateBanner from '@/components/UpdateBanner';
 import StreakBanner from '@/components/StreakBanner';
+import DailyGoalBar from '@/components/DailyGoalBar';
 
 function Router() {
   return (
@@ -43,6 +44,12 @@ function Router() {
 
 function App() {
   const [achievementNotification, setAchievementNotification] = useState<Achievement | null>(null);
+  const [showDaily, setShowDaily] = useState<boolean>(() => {
+    try {
+      const v = localStorage.getItem('education-for-democracy-show-daily');
+      return v === null ? false : v === '1';
+    } catch { return false; }
+  });
   usePwa();
 
   const handleAchievementUnlocked = (achievement: Achievement) => {
@@ -51,6 +58,11 @@ function App() {
 
   const handleCloseNotification = () => {
     setAchievementNotification(null);
+  };
+
+  const setShowDailyPersist = (val: boolean) => {
+    setShowDaily(val);
+    try { localStorage.setItem('education-for-democracy-show-daily', val ? '1' : '0'); } catch {}
   };
 
   // UpdateBanner handles the UI for updates.
@@ -63,7 +75,10 @@ function App() {
             <BookmarksProvider>
               <SearchProvider>
               <div className="min-h-screen bg-background flex flex-col">
-                <Header />
+                <Header onToggleDailyGoal={() => setShowDailyPersist(!showDaily)} dailyGoalOpen={showDaily} />
+                {showDaily && (
+                  <DailyGoalBar onClose={() => setShowDailyPersist(false)} />
+                )}
                 <UpdateBanner />
                 <StreakBanner />
                 <div className="flex-1">

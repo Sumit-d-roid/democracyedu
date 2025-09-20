@@ -6,9 +6,10 @@ import { useProgress } from '@/contexts/ProgressContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import achievementBadge from '@assets/generated_images/Achievement_Badge_Icon_a648ffe6.png';
 import { useState } from 'react';
+import { Input } from '@/components/ui/input';
 
 export default function ProgressDashboard() {
-  const { progress, markLessonComplete, recordQuizScore } = useProgress();
+  const { progress, markLessonComplete, recordQuizScore, setDailyGoal } = useProgress();
   const { t } = useLanguage();
   const [testing, setTesting] = useState(false);
 
@@ -117,6 +118,43 @@ export default function ProgressDashboard() {
           );
         })}
       </div>
+
+      {/* Daily Goal Settings */}
+      <Card className="hover-elevate">
+        <CardHeader className="pb-4">
+          <CardTitle className="text-lg font-semibold tracking-tight flex items-center gap-2">
+            <Target className="h-5 w-5 text-primary" />
+            {t('progress.set-daily-goal') || 'Set daily goal'}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-0">
+          <div className="flex items-center gap-3 max-w-sm">
+            <label htmlFor="daily-goal" className="text-sm text-muted-foreground">
+              {t('progress.daily-goal-target') || 'Daily target'}
+            </label>
+            <Input
+              id="daily-goal"
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={200}
+              step={1}
+              value={progress.dailyGoal}
+              aria-label={(t('progress.daily-goal-target') || 'Daily target') as string}
+              data-testid="input-daily-goal"
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                if (!Number.isNaN(val)) setDailyGoal(val);
+              }}
+              className="w-28"
+              aria-describedby="daily-goal-help"
+            />
+            <div id="daily-goal-help" className="text-xs text-muted-foreground">
+              {t('progress.daily-goal-help') || 'Points per day'}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {progress.completedLessons.length > 0 && (
         <Card className="shadow-lift transition-base">

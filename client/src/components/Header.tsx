@@ -3,14 +3,19 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Menu, X, Globe, Sun, Moon, Search, Download } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon, Search, Download, Target } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSearch } from '@/contexts/SearchContext';
 import { usePwa } from '@/hooks/use-pwa';
 
 
-export default function Header() {
+type HeaderProps = {
+  onToggleDailyGoal?: () => void;
+  dailyGoalOpen?: boolean;
+};
+
+export default function Header({ onToggleDailyGoal, dailyGoalOpen }: HeaderProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   function toggleTheme() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -24,6 +29,11 @@ export default function Header() {
   const [location] = useLocation();
   const { open: openSearch } = useSearch();
   const { canInstall, promptInstall } = usePwa();
+
+  const safeT = (key: string, fallback: string) => {
+    const val = t(key);
+    return val === key ? fallback : val;
+  };
 
   const isActive = (path: string) => location === path;
 
@@ -68,6 +78,20 @@ export default function Header() {
 
           {/* Points and Language Toggle */}
           <div className="flex items-center space-x-3">
+            {typeof onToggleDailyGoal === 'function' && (
+              <Button
+                variant={dailyGoalOpen ? 'secondary' : 'outline'}
+                size="sm"
+                className="hidden sm:inline-flex items-center gap-2"
+                onClick={onToggleDailyGoal}
+                aria-label={safeT('progress.daily-goal.toggle', 'Toggle daily goal')}
+                aria-pressed={!!dailyGoalOpen}
+                data-testid="button-toggle-daily-goal"
+              >
+                <Target className="h-4 w-4" />
+                <span className="hidden md:inline">{safeT('progress.daily-goal', 'Daily Goal')}</span>
+              </Button>
+            )}
             {canInstall && (
               <Button
                 variant="secondary"
@@ -112,6 +136,10 @@ export default function Header() {
                 {progress.streakDays}d
               </Badge>
             )}
+            <Badge variant="outline" className="hidden sm:inline-flex items-center gap-1 transition-base" data-testid="daily-goal-badge" aria-label={`Daily goal: ${progress.dailyPoints}/${progress.dailyGoal}`}>
+              <span className="text-xs" aria-hidden>🎯</span>
+              {progress.dailyPoints}/{progress.dailyGoal}
+            </Badge>
             
             <Button
               variant="secondary"
@@ -158,11 +186,24 @@ export default function Header() {
                   </Button>
                 </Link>
               ))}
-              <div className="pt-2 border-t">
+              <div className="pt-2 border-t space-y-2">
                 <Badge variant="secondary" className="flex items-center gap-1 w-fit transition-base">
                   <span className="text-xs" aria-hidden>🏆</span>
                   {t('progress.points')}: {progress.totalPoints}
                 </Badge>
+                {typeof onToggleDailyGoal === 'function' && (
+                  <Button
+                    variant={dailyGoalOpen ? 'secondary' : 'outline'}
+                    className="w-full justify-start transition-base"
+                    onClick={() => { onToggleDailyGoal(); setIsMenuOpen(false); }}
+                    aria-label={safeT('progress.daily-goal.toggle', 'Toggle daily goal')}
+                    aria-pressed={!!dailyGoalOpen}
+                    data-testid="mobile-button-toggle-daily-goal"
+                  >
+                    <Target className="h-4 w-4 mr-2" />
+                    {safeT('progress.daily-goal', 'Daily Goal')}
+                  </Button>
+                )}
               </div>
             </nav>
           </div>

@@ -1,11 +1,16 @@
-import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect, useCallback, useRef } from 'react';
 import { achievements, Achievement } from '@shared/achievements';
 import { updateStreak } from '@/lib/streak';
+import { applyDailyIncrement } from '@/lib/dailyGoal';
 import { useOfflineSupport } from '../hooks/use-offline-support';
 import { progressAPI } from '@/lib/progressApi';
+import { toast } from '@/hooks/use-toast';
 
 interface ProgressData {
   totalPoints: number;
+  dailyPoints: number;
+  dailyGoal: number;
+  dailyDate?: string | null;
   completedLessons: string[];
   completedSections: Record<string, string[]>; // lessonId -> sectionIds[]
   quizScores: Record<string, number>;
@@ -21,6 +26,7 @@ interface ProgressData {
 interface ProgressContextType {
   progress: ProgressData;
   addPoints: (points: number) => void;
+  setDailyGoal: (goal: number) => void;
   markLessonComplete: (lessonId: string) => Promise<void>;
   markSectionComplete: (lessonId: string, sectionId: string) => void;
   isSectionComplete: (lessonId: string, sectionId: string) => boolean;
@@ -36,6 +42,9 @@ interface ProgressContextType {
 
 const defaultProgress: ProgressData = {
   totalPoints: 0,
+  dailyPoints: 0,
+  dailyGoal: 20,
+  dailyDate: null,
   completedLessons: [],
   completedSections: {},
   quizScores: {},
@@ -55,6 +64,7 @@ interface ProgressProviderProps {
 
 export function ProgressProvider({ children, onAchievementUnlocked }: ProgressProviderProps) {
   const { isOnline, saveOfflineProgress, syncOfflineProgress } = useOfflineSupport();
+  const didToastDailyGoalRef = useRef<string | null>(null);
   
   const [progress, setProgress] = useState<ProgressData>(() => {
     const saved = localStorage.getItem('education-for-democracy-progress');
@@ -64,6 +74,9 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
       return {
         ...defaultProgress,
         ...parsedProgress,
+        dailyPoints: parsedProgress.dailyPoints ?? 0,
+        dailyGoal: parsedProgress.dailyGoal ?? 20,
+        dailyDate: parsedProgress.dailyDate ?? null,
         unlockedAchievements: parsedProgress.unlockedAchievements || [],
         perfectQuizzes: parsedProgress.perfectQuizzes || [],
         lastActiveAt: parsedProgress.lastActiveAt ?? null,
@@ -93,9 +106,24 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
   }, [isOnline, syncOfflineProgress]);
 
   const addPoints = (points: number) => {
+    setProgress(prev => {
+      const nextDaily = applyDailyIncrement({ dailyPoints: prev.dailyPoints, dailyGoal: prev.dailyGoal, dailyDate: prev.dailyDate }, points);
+      return {
+        ...prev,
+        totalPoints: prev.totalPoints + points,
+        dailyPoints: nextDaily.dailyPoints,
+        dailyDate: nextDaily.dailyDate,
+        dailyGoal: nextDaily.dailyGoal,
+      };
+    });
+  };
+
+  const setDailyGoal = (goal: number) => {
+    const next = Math.max(1, Math.min(200, Math.round(goal)));
     setProgress(prev => ({
       ...prev,
-      totalPoints: prev.totalPoints + points
+      dailyGoal: next,
+      // keep same dailyDate and dailyPoints; not resetting progress on change
     }));
   };
 
@@ -103,6 +131,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     const now = Date.now();
     setProgress(prev => {
       const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
+      const nextDaily = applyDailyIncrement({ dailyPoints: prev.dailyPoints, dailyGoal: prev.dailyGoal, dailyDate: prev.dailyDate }, 5);
       return {
         ...prev,
         completedLessons: prev.completedLessons.includes(lessonId)
@@ -112,6 +141,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         lastActiveAt: streak.lastActiveAt,
         streakDays: streak.streakDays,
         bestStreak: streak.bestStreak,
+        dailyPoints: nextDaily.dailyPoints,
+        dailyDate: nextDaily.dailyDate,
+        dailyGoal: nextDaily.dailyGoal,
+        totalPoints: prev.totalPoints + 10,
       };
     });
 
@@ -135,6 +168,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     const now = Date.now();
     setProgress(prev => {
       const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
+      const nextDaily = applyDailyIncrement({ dailyPoints: prev.dailyPoints, dailyGoal: prev.dailyGoal, dailyDate: prev.dailyDate }, 3);
       const newPerfectQuizzes = score === 100 && !prev.perfectQuizzes.includes(quizId)
         ? [...prev.perfectQuizzes, quizId]
         : prev.perfectQuizzes;
@@ -149,6 +183,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         lastActiveAt: streak.lastActiveAt,
         streakDays: streak.streakDays,
         bestStreak: streak.bestStreak,
+        dailyPoints: nextDaily.dailyPoints,
+        dailyDate: nextDaily.dailyDate,
+        dailyGoal: nextDaily.dailyGoal,
+        totalPoints: prev.totalPoints + Math.round(score / 10),
       };
     });
 
@@ -178,6 +216,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     const now = Date.now();
     setProgress(prev => {
       const streak = updateStreak({ lastActiveAt: prev.lastActiveAt, streakDays: prev.streakDays, bestStreak: prev.bestStreak }, now);
+      const nextDaily = applyDailyIncrement({ dailyPoints: prev.dailyPoints, dailyGoal: prev.dailyGoal, dailyDate: prev.dailyDate }, 2);
       const lessonSections = prev.completedSections[lessonId] || [];
       const newSections = lessonSections.includes(sectionId) 
         ? lessonSections 
@@ -192,6 +231,10 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
         lastActiveAt: streak.lastActiveAt,
         streakDays: streak.streakDays,
         bestStreak: streak.bestStreak,
+        dailyPoints: nextDaily.dailyPoints,
+        dailyDate: nextDaily.dailyDate,
+        dailyGoal: nextDaily.dailyGoal,
+        totalPoints: prev.totalPoints + 2,
       };
     });
   };
@@ -305,6 +348,35 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     checkForNewAchievements();
   }, [progress.completedLessons, progress.totalPoints, progress.quizScores, progress.perfectQuizzes, progress.lastLessonCompletionTime, checkForNewAchievements]);
 
+  // Celebrate when daily goal is completed (once per day, persisted)
+  useEffect(() => {
+    const goal = progress.dailyGoal || 0;
+    const pts = progress.dailyPoints || 0;
+    const key = progress.dailyDate || null;
+    // read persisted toast day
+    const persisted = typeof localStorage !== 'undefined' ? localStorage.getItem('education-for-democracy-daily-goal-toast') : null;
+    const alreadyToastedFor = didToastDailyGoalRef.current || persisted;
+    const completed = goal > 0 && pts >= goal;
+    // Fire once per date key
+    if (completed && key && alreadyToastedFor !== key) {
+      didToastDailyGoalRef.current = key;
+      try {
+        localStorage.setItem('education-for-democracy-daily-goal-toast', key);
+      } catch {}
+      toast({
+        title: 'Daily goal reached! 🎯',
+        description: `Great job hitting ${pts}/${goal} today. Keep the streak going!`,
+      });
+    }
+    // Reset the guard if date changes back (e.g., midnight reset)
+    if (key && alreadyToastedFor && alreadyToastedFor !== key) {
+      didToastDailyGoalRef.current = null;
+      try {
+        localStorage.removeItem('education-for-democracy-daily-goal-toast');
+      } catch {}
+    }
+  }, [progress.dailyPoints, progress.dailyGoal, progress.dailyDate]);
+
   const resetProgress = () => {
     setProgress(defaultProgress);
   };
@@ -313,6 +385,7 @@ export function ProgressProvider({ children, onAchievementUnlocked }: ProgressPr
     <ProgressContext.Provider value={{ 
       progress, 
       addPoints, 
+      setDailyGoal,
       markLessonComplete, 
       markSectionComplete,
       isSectionComplete,
