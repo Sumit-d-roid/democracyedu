@@ -20,6 +20,8 @@ import Achievements from '@/pages/Achievements';
 import GlossaryPage from '@/pages/Glossary';
 import NotFound from '@/pages/not-found';
 import Footer from '@/components/Footer';
+import { SearchProvider } from '@/contexts/SearchContext';
+import SearchCommand from '@/components/SearchCommand';
 
 function Router() {
   return (
@@ -53,6 +55,7 @@ function App() {
         <LanguageProvider>
           <ProgressProvider onAchievementUnlocked={handleAchievementUnlocked}>
             <BookmarksProvider>
+              <SearchProvider>
               <div className="min-h-screen bg-background flex flex-col">
                 <Header />
                 <div className="flex-1">
@@ -60,6 +63,7 @@ function App() {
                 </div>
                 <Footer />
               </div>
+              <SearchCommand />
               <Toaster />
               {/* Achievement Notification */}
               {achievementNotification && (
@@ -70,6 +74,7 @@ function App() {
                 />
               )}
               <OfflineIndicator />
+              </SearchProvider>
             </BookmarksProvider>
           </ProgressProvider>
         </LanguageProvider>

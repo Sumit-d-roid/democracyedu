@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import QuizCard from '@/components/QuizCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,6 +23,16 @@ export default function Quiz() {
   }, [search, quizzes]);
 
   const selectedQuizData = quizzes.find(quiz => quiz.id === selectedQuiz);
+
+  // Deep-link support: /quiz?id=quizId
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (id && quizzes.some(q => q.id === id)) {
+      setSelectedQuiz(id);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (selectedQuiz && selectedQuizData) {
     return (

@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon, Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useSearch } from '@/contexts/SearchContext';
 
 
 export default function Header() {
@@ -20,6 +21,7 @@ export default function Header() {
   const { language, toggleLanguage, t } = useLanguage();
   const { progress } = useProgress();
   const [location] = useLocation();
+  const { open: openSearch } = useSearch();
 
   const isActive = (path: string) => location === path;
 
@@ -64,6 +66,18 @@ export default function Header() {
 
           {/* Points and Language Toggle */}
           <div className="flex items-center space-x-3">
+            <Button
+              variant="outline"
+              size="sm"
+              className="hidden sm:inline-flex items-center gap-2"
+              onClick={openSearch}
+              aria-label="Open search"
+            >
+              <Search className="h-4 w-4" />
+              <span className="hidden md:inline">Search</span>
+              <kbd className="ml-1 hidden lg:inline rounded border bg-muted px-1.5 py-0.5 text-[10px] leading-none">/
+              </kbd>
+            </Button>
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center h-9 w-9 rounded-md border hover-elevate transition-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-background"
