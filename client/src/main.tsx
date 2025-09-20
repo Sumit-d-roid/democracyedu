@@ -50,27 +50,48 @@ createRoot(document.getElementById("root")!).render(
   </ErrorProvider>
 );
 
-// Register service worker
+// Register service worker (production only). In development, actively unregister
+// any existing SW to avoid mixing module graphs that can cause duplicate React runtimes.
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    const versionParam = `v=${Date.now()}`; // force fresh fetch
-    navigator.serviceWorker.register(`/service-worker.js?${versionParam}`)
-      .then(registration => {
-        console.log('ServiceWorker new registration scope:', registration.scope);
-      })
-      .catch(error => {
-        console.error('ServiceWorker registration failed:', error);
-      });
-  });
+  if (import.meta.env.PROD) {
+    window.addEventListener('load', () => {
+      const versionParam = `v=${Date.now()}`; // force fresh fetch
+      navigator.serviceWorker.register(`/service-worker.js?${versionParam}`)
+        .then(registration => {
+          console.log('ServiceWorker new registration scope:', registration.scope);
+        })
+        .catch(error => {
+          console.error('ServiceWorker registration failed:', error);
+        });
+    });
 
-  navigator.serviceWorker.addEventListener('message', (event) => {
-    if (event.data?.type === 'SW_ACTIVATED') {
-      console.log('[SW] Activated version', event.data.version);
-      // Optionally auto-reload once when a new version activates.
-      if (!sessionStorage.getItem('sw-reloaded')) {
-        sessionStorage.setItem('sw-reloaded', '1');
-        window.location.reload();
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      if (event.data?.type === 'SW_ACTIVATED') {
+        console.log('[SW] Activated version', event.data.version);
+        // Optionally auto-reload once when a new version activates.
+        if (!sessionStorage.getItem('sw-reloaded')) {
+          sessionStorage.setItem('sw-reloaded', '1');
+          window.location.reload();
+        }
       }
-    }
-  });
+    });
+  } else {
+    // Development: ensure no SW is controlling the page
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        if (registrations.length) {
+          console.log('[SW] Unregistering existing service workers for development...');
+        }
+        registrations.forEach(reg => reg.unregister());
+      }).catch(() => {/* ignore */});
+      // Also try to clear SW-related caches to avoid stale index.html in dev
+      if ('caches' in window) {
+        caches.keys().then(keys => {
+          keys.forEach(k => {
+            if (k.startsWith('sambhidanx-')) caches.delete(k);
+          });
+        }).catch(() => {/* ignore */});
+      }
+    });
+  }
 }

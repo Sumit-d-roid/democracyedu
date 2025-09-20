@@ -1,5 +1,6 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { useDebouncedCallback } from '../hooks/use-performance';
+import { createContext, useContext, useEffect, useState, ReactNode, useCallback, useRef } from 'react';
+// Avoid importing debounce hook across module graphs in dev to prevent duplicate React dispatcher
+// import { useDebouncedCallback } from '../hooks/use-performance';
 import { createSelectableContext } from '../hooks/use-context-selector';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -70,10 +71,16 @@ export function ViewportProvider({ children }: { children: ReactNode }) {
     };
   });
 
-  // Debounce viewport updates to avoid excessive re-renders
-  const debouncedSetState = useDebouncedCallback((updates: Partial<ViewportState>) => {
-    setState(prev => ({ ...prev, ...updates }));
-  }, 150);
+  // Debounce viewport updates to avoid excessive re-renders (local implementation)
+  const debounceTimeoutRef = useRef<number | null>(null);
+  const debouncedSetState = useCallback((updates: Partial<ViewportState>) => {
+    if (debounceTimeoutRef.current !== null) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+    debounceTimeoutRef.current = window.setTimeout(() => {
+      setState(prev => ({ ...prev, ...updates }));
+    }, 150);
+  }, []);
 
   useEffect(() => {
     function handleResize() {

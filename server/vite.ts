@@ -86,12 +86,12 @@ export async function setupVite(app: Express, server: Server) {
       );
 
       // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
-  let page = await vite.transformIndexHtml(url, template);
+      const template = await fs.promises.readFile(clientTemplate, "utf-8");
+      // IMPORTANT: Do not add random query params to the React entry file.
+      // Doing so can lead to multiple React runtimes being instantiated
+      // (e.g., when HMR refreshes), which causes "Invalid hook call" errors.
+      // Vite HMR already handles cache-busting for modules.
+      const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
