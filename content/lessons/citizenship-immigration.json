@@ -1,178 +1,188 @@
 {
   "id": "citizenship-immigration",
-  "title": "Citizenship and Immigration",
-  "description": "Understanding citizenship acquisition, rights, and immigration policies in Nepal.",
+  "title": "Citizenship and Immigration in Nepal",
+  "description": "Comprehensive guide to understanding citizenship acquisition, rights, obligations, and immigration policies under Nepal’s Constitution and legal framework.",
   "icon": "🛂",
   "difficulty": "intermediate",
-  "estimatedTime": "20 minutes",
+  "estimatedTime": "40 minutes",
   "sections": [
     {
       "id": "citizenship-categories",
       "title": "Categories of Citizenship",
-      "content": "Citizenship may be acquired by descent, birth under defined criteria, naturalization, or honorary grant. Each pathway carries specific eligibility requirements.",
+      "content": "The Constitution of Nepal (2015) provides multiple pathways for acquiring citizenship. Article 11 lays down the categories and conditions. Citizenship may be acquired by descent, birth (under transitional provisions), naturalization, or by honorary grant of the federal parliament. Each pathway carries detailed requirements, often shaped by Nepal’s unique geopolitical and social context.\n\n\n\n",
       "keyPoints": [
-        "Descent and birth routes",
-        "Naturalization criteria",
-        "Honorary citizenship cases",
-        "Documentation prerequisites"
+        "Descent: Child of a Nepali citizen father or mother may acquire citizenship by descent (Article 11(2)), though practical issues exist in gender-equal implementation.",
+        "Birth: Persons permanently residing in Nepal and born before September 20, 2015, who meet criteria under Article 11(3), may acquire citizenship.",
+        "Naturalization: Available for foreigners married to Nepali citizens and long-term residents, subject to language, culture, and residency conditions (Article 11(6)).",
+        "Honorary Citizenship: May be granted by the Federal Parliament to distinguished foreigners contributing to Nepal’s interests.",
+        "Documentation prerequisites: Citizenship certificates (nagrita) issued by District Administration Offices are required for most rights."
       ]
     },
     {
       "id": "rights-obligations",
       "title": "Rights and Obligations",
-      "content": "Citizens enjoy fundamental rights, political participation, and access to public services while bearing obligations such as loyalty to the state and tax compliance.",
+      "content": "Citizenship in Nepal is not just a legal identity but also the basis for exercising fundamental rights and fulfilling duties. Rights flow from Part 3 of the Constitution, while obligations are implied in civic and tax responsibilities.\n\n\n\n",
       "keyPoints": [
-        "Political participation rights",
-        "Access to services",
-        "Tax and civic duties",
-        "Protection responsibilities"
+        "Political Rights: Only Nepali citizens can vote, contest elections, and hold public office (Articles 84, 87).",
+        "Access to Services: Citizens access state education, healthcare, land ownership, and employment in public service.",
+        "Economic Rights: Land ownership and certain business permits are limited to citizens.",
+        "Obligations: Citizens must comply with tax laws, uphold loyalty to the state, and respect sovereignty and integrity.",
+        "Protection: Citizens are entitled to state protection abroad, while bearing duties to protect Nepal’s national interest."
       ]
     },
     {
       "id": "immigration-policy",
       "title": "Immigration Policy Framework",
-      "content": "Immigration regulations govern entry, residence, work authorization, and deportation procedures, balancing economic needs with security and social cohesion.",
+      "content": "Immigration in Nepal is regulated through the Immigration Act, 1992, and subsidiary rules. Policies balance national security, employment, and Nepal’s obligations under bilateral and international frameworks.\n\n\n\n",
       "keyPoints": [
-        "Entry and visa regulation",
-        "Work permit considerations",
-        "Residence compliance",
-        "Removal procedures safeguards"
+        "Entry Regulation: Foreigners require visas under various categories—tourist, student, non-tourist, work, and diplomatic.",
+        "Work Permit Considerations: Foreigners must obtain labor permits through the Department of Labor and Immigration.",
+        "Residence Compliance: Foreigners must register and comply with visa terms; overstays lead to fines or deportation.",
+        "Deportation and Safeguards: Procedures exist under the Immigration Rules; appeals may be filed to the Ministry of Home Affairs."
       ]
     },
     {
       "id": "emerging-issues",
       "title": "Emerging Issues and Debates",
-      "content": "Debates focus on diaspora engagement, statelessness risks, gender equality in transmission, and modernization of identity systems.",
+      "content": "Citizenship and immigration remain politically charged. Recent constitutional and legal debates show deep divides on identity, gender equality, and diaspora engagement.\n\n\n\n",
       "keyPoints": [
-        "Diaspora policy evolution",
-        "Addressing statelessness",
-        "Gender parity concerns",
-        "Digital identity modernization"
+        "Diaspora Policy Evolution: Non-Resident Nepali (NRN) citizenship is debated; current law permits NRNs economic rights but not political participation.",
+        "Statelessness: Madhesi communities and children of single mothers face statelessness due to documentary or discriminatory barriers.",
+        "Gender Parity Concerns: The Constitution allows transmission of citizenship by mother, but implementing laws often impose stricter scrutiny compared to paternal transmission.",
+        "Digital Identity: National ID rollout raises issues of privacy, access, and integration with immigration systems."
       ]
     },
     {
       "id": "historical-evolution",
       "title": "Historical Evolution",
-      "content": "Citizenship and immigration frameworks shifted alongside political transitions, refining eligibility clarity, gender equity, and procedural safeguards.",
+      "content": "Nepal’s citizenship law has evolved with political transitions. From the Citizenship Act of 1964 to the Citizenship Act of 2006, and the Constitution of 2015, reforms reflect changing ideas of identity, inclusion, and sovereignty.\n\n\n\n",
       "keyPoints": [
-        "Transition-driven legal updates",
-        "Gender equity improvements",
-        "Clarified eligibility pathways",
-        "Strengthened procedural safeguards"
+        "1962 Panchayat Era: Restrictive citizenship laws consolidated centralized control.",
+        "1990 Constitution: Liberalized citizenship through descent but excluded many marginalized groups.",
+        "2006 Interim Constitution: Expanded citizenship to children of Nepali mothers and allowed wider regularization.",
+        "2015 Constitution: Retained descent-based provisions but debates persist around gender equality and dual citizenship."
       ]
     },
     {
       "id": "diaspora-engagement",
       "title": "Diaspora Engagement Strategies",
-      "content": "Policy focus on investment facilitation, knowledge exchange, and cultural linkage programs encourages diaspora contributions while maintaining regulatory compliance.",
+      "content": "Nepal’s diaspora contributes remittances, investment, and knowledge transfer. Policy debates focus on balancing diaspora inclusion with sovereignty concerns.\n\n\n\n",
       "keyPoints": [
-        "Investment facilitation",
-        "Knowledge and skills networks",
-        "Cultural linkage initiatives",
-        "Regulatory compliance balance"
+        "Remittance Importance: Remittances comprise nearly 25% of GDP, making diaspora engagement vital.",
+        "Investment Facilitation: NRN citizenship provides rights to invest, open bank accounts, and own property in specific categories.",
+        "Cultural Linkages: Diaspora festivals and cultural councils strengthen identity ties.",
+        "Political Restrictions: NRN citizenship excludes political rights to safeguard national sovereignty."
       ]
     },
     {
       "id": "statelessness-mitigation",
       "title": "Statelessness Mitigation",
-      "content": "Targeted documentation drives, birth registration expansion, and gender‑neutral transmission policies reduce statelessness risk among vulnerable populations.",
+      "content": "Statelessness remains a pressing challenge, particularly in border regions. Nepal’s Constitution and laws attempt to reduce risks but implementation gaps persist.\n\n\n\n",
       "keyPoints": [
-        "Birth registration expansion",
-        "Documentation outreach",
-        "Gender‑neutral policy impact",
-        "Risk reduction for vulnerable groups"
+        "Birth Registration Expansion: Efforts to universalize registration help establish legal identity.",
+        "Documentation Outreach: Mobile camps in Madhes and remote hills address gaps.",
+        "Gender-Neutral Policy Impact: Equal maternal transmission promised in Constitution but constrained by practice.",
+        "At-Risk Populations: Madhesis, Dalits, and children of cross-border marriages face higher risk."
       ]
     },
     {
       "id": "case-study-digital-id",
       "title": "Case Study: Digital Identity Rollout",
-      "content": "Pilot digital ID linking civil registry and immigration records improved verification speed and reduced duplicate applications while raising data privacy considerations.",
+      "content": "Nepal launched the National Identity Card program in 2018 to integrate civil registry, citizenship, and immigration records. While successful in pilot districts, challenges remain.\n\n\n\n",
       "keyPoints": [
-        "Verification speed gains",
-        "Duplicate reduction",
-        "Data privacy implications",
-        "Model for integrated registries"
+        "Verification Speed: Integrated database reduces duplication in service delivery.",
+        "Fraud Prevention: Biometric IDs help reduce fake citizenship and voter fraud.",
+        "Data Privacy Concerns: Absence of comprehensive data protection law raises risks.",
+        "Future Model: A foundation for e-governance and secure cross-border mobility."
       ]
     },
     {
       "id": "future-outlook",
       "title": "Future Outlook",
-      "content": "Integrated digital identity ecosystems, streamlined risk‑based visa processes, diaspora innovation platforms, and robust privacy safeguards will shape modernization.",
+      "content": "Nepal’s future in citizenship and immigration hinges on striking balance between inclusion, sovereignty, and modernization.\n\n\n\n",
       "keyPoints": [
-        "Integrated digital ecosystems",
-        "Risk-based processing",
-        "Diaspora innovation platforms",
-        "Enhanced privacy governance"
+        "Integrated Digital Ecosystem: Linking civil registry, immigration, and taxation records.",
+        "Risk-Based Visa Processing: Facilitating genuine travelers while screening threats.",
+        "Diaspora Innovation Platforms: Leveraging NRNs for technology and knowledge transfer.",
+        "Privacy Safeguards: Enacting robust data protection laws to secure digital identity."
       ]
     },
     {
       "id": "case-study-application",
       "title": "Case Study: Applying Concepts",
-      "content": "A practical scenario demonstrates how principles from \"Citizenship and Immigration\" operate in real life. Consider a local authority decision challenged for compliance with constitutional norms. Analyze actors involved, legal basis, and remedy pathways to understand implementation dynamics.",
+      "content": "Scenario: A district administration office denies citizenship to a child of a Nepali mother and foreign father despite constitutional provisions. The case is challenged in the Supreme Court. This reflects how constitutional guarantees meet bureaucratic discretion and legal remedies.\n\n\n\n",
       "keyPoints": [
-        "Translate concepts into real-world steps",
-        "Identify actors, mandates, and processes",
-        "Assess remedies and accountability routes",
-        "Reflect on lessons for future decisions"
+        "Actors: Applicant, District Administration Office, Ministry of Home Affairs, Supreme Court.",
+        "Legal Basis: Article 11(2)(b) of the Constitution vs restrictive provisions in the Citizenship Act.",
+        "Remedy: Judicial review under Article 133 (writ jurisdiction).",
+        "Lesson: Implementation requires harmonization of constitutional rights and administrative law."
       ]
     },
     {
       "id": "implementation-gaps",
       "title": "Implementation Gaps and Challenges",
-      "content": "Even with strong legal and policy frameworks, realizing \"Citizenship and Immigration\" can face capacity, coordination, and resource constraints. Data quality and awareness gaps may slow progress and produce uneven outcomes across regions.",
+      "content": "Despite progressive provisions, practical challenges hinder realization of citizenship and immigration rights.\n\n\n\n",
       "keyPoints": [
-        "Capacity and resource constraints",
-        "Inter-agency coordination needs",
-        "Data and monitoring limitations",
-        "Awareness and access disparities"
+        "Capacity Gaps: District Administration Offices face resource shortages and politicization.",
+        "Coordination Failures: Weak inter-agency linkages between immigration, civil registration, and courts.",
+        "Data Gaps: Incomplete civil registry undermines digital initiatives.",
+        "Awareness Disparities: Rural populations lack information about rights and procedures."
       ]
     },
     {
       "id": "key-terms-glossary",
       "title": "Key Terms and Definitions",
-      "content": "This section clarifies important terms frequently used in \"Citizenship and Immigration\" to make core ideas easier to remember and apply.",
+      "content": "Clarifying frequently used terms in Nepal’s constitutional and legal discourse on citizenship and immigration.\n\n\n\n",
       "keyPoints": [
-        "Plain-language definitions of core concepts",
-        "Examples that illustrate usage",
-        "Contrast with commonly confused terms",
-        "Memory aids for quick recall"
+        "Naturalization: Citizenship granted to foreigners meeting residency, language, and loyalty criteria.",
+        "Descent: Citizenship acquired through a Nepali parent.",
+        "Statelessness: Being unrecognized as a citizen by any country.",
+        "Non-Resident Nepali (NRN) Citizenship: Limited form of citizenship allowing economic rights for diaspora without political participation.",
+        "Nagrita: Nepali term for citizenship certificate, essential for rights exercise."
       ]
     },
     {
       "id": "quick-recap",
       "title": "Quick Recap and Reflection",
-      "content": "Use this recap to check your understanding of \"Citizenship and Immigration\". Try to explain each key point in your own words and note any questions for later review.",
+      "content": "Check your understanding of Nepal’s constitutional approach to citizenship and immigration. Reflect on ongoing debates, practical implications, and areas for reform.\n\n\n\n",
       "keyPoints": [
-        "Restate concepts briefly from memory",
-        "List two practical implications",
-        "Identify one area needing deeper study",
-        "Plan one action to apply the lesson"
+        "Restate pathways: descent, birth, naturalization, honorary.",
+        "List implications: gender parity, diaspora engagement, statelessness reduction.",
+        "Identify challenges: bureaucratic discretion, lack of data protection, political resistance.",
+        "Action Point: Track pending amendments to the Citizenship Act for reforms."
       ]
     }
   ],
   "summary": [
-    "Multiple acquisition pathways with clarified eligibility",
-    "Rights balanced by civic and tax obligations",
-    "Historical evolution improved gender equity & safeguards",
-    "Diaspora engagement leverages investment & knowledge",
-    "Statelessness mitigation hinges on documentation & registration",
-    "Digital ID pilots enhance integrity but raise privacy needs",
-    "Policy debates steer modernization & inclusion aims",
-    "Future: integrated IDs, risk-based processing, privacy frameworks",
-    "Future focus on evidence, digital tools, and participation"
+    "Constitution of Nepal (2015) governs citizenship via Article 11 with descent, birth, naturalization, and honorary routes.",
+    "Rights include political participation, access to services, and economic ownership, balanced by civic obligations.",
+    "Gender parity in transmission remains contentious, producing statelessness risks.",
+    "Diaspora citizenship provides economic rights but excludes political ones.",
+    "Historical evolution reflects political transitions from Panchayat to Federal Republic.",
+    "Digital identity pilots modernize systems but lack data privacy safeguards.",
+    "Implementation gaps stem from bureaucracy, awareness deficits, and regional disparities.",
+    "Future reforms must balance sovereignty, inclusivity, and digital modernization."
   ],
   "glossary": [
     {
       "term": "Naturalization",
-      "definition": "Granting citizenship to a non-citizen upon meeting conditions."
+      "definition": "Granting citizenship to a non-citizen upon meeting residency, cultural knowledge, and loyalty conditions under Article 11(6)."
     },
     {
       "term": "Descent",
-      "definition": "Citizenship acquired through parents."
+      "definition": "Citizenship acquired through a Nepali father or mother under Article 11(2)."
     },
     {
       "term": "Statelessness",
-      "definition": "Condition of not being recognized as a citizen by any state."
+      "definition": "Condition of not being recognized as a citizen by any state, affecting thousands in Nepal’s Madhes region."
+    },
+    {
+      "term": "Non-Resident Nepali (NRN) Citizenship",
+      "definition": "Special status granted to diaspora Nepalis with economic rights but no political participation, per Article 14."
+    },
+    {
+      "term": "Nagrita",
+      "definition": "Nepali citizenship certificate, required for voting, owning property, and accessing services."
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "id": "citizenship-immigration",
-  "title": "Citizenship & Immigration",
-  "description": "Quiz on acquisition, naturalization, and citizenship principles.",
+  "id": "citizenship-immigration-quiz",
+  "title": "Citizenship & Immigration Quiz",
+  "description": "Quiz on acquisition, naturalization, and citizenship principles in Nepal.",
   "category": "Rights",
   "questions": [
     {
@@ -23,10 +23,7 @@
       "id": "2",
       "question": "True or False: Naturalization often requires residency periods.",
       "type": "true-false",
-      "options": [
-        "True",
-        "False"
-      ],
+      "options": ["True", "False"],
       "correctAnswer": 0,
       "explanation": "Residence demonstrates connection and integration.",
       "difficulty": "easy",
@@ -42,11 +39,7 @@
         "Registration",
         "Unilateral foreign decree"
       ],
-      "correctAnswer": [
-        0,
-        1,
-        2
-      ],
+      "correctAnswer": [0, 1, 2],
       "explanation": "Standard modes exclude foreign unilateral grants.",
       "difficulty": "medium",
       "points": 15
@@ -121,11 +114,7 @@
         "Irrelevant myths unrelated to the topic",
         "Practical examples or case studies"
       ],
-      "correctAnswer": [
-        0,
-        1,
-        3
-      ],
+      "correctAnswer": [0, 1, 3],
       "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
       "difficulty": "medium",
       "points": 15
@@ -134,10 +123,7 @@
       "id": "9",
       "question": "Case studies help apply abstract concepts to real situations.",
       "type": "true-false",
-      "options": [
-        "True",
-        "False"
-      ],
+      "options": ["True", "False"],
       "correctAnswer": 0,
       "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
       "difficulty": "easy",
@@ -183,11 +169,7 @@
         "Rely solely on anonymous social posts",
         "Look for credible data and context"
       ],
-      "correctAnswer": [
-        0,
-        1,
-        3
-      ],
+      "correctAnswer": [0, 1, 3],
       "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
       "difficulty": "hard",
       "points": 20
@@ -196,17 +178,8 @@
       "id": "13",
       "question": "Which are recognized paths to citizenship?",
       "type": "multiple-select",
-      "options": [
-        "Descent",
-        "Birth",
-        "Naturalization",
-        "Auction"
-      ],
-      "correctAnswer": [
-        0,
-        1,
-        2
-      ],
+      "options": ["Descent", "Birth", "Naturalization", "Auction"],
+      "correctAnswer": [0, 1, 2],
       "explanation": "Descent, birth, and naturalization are valid paths; auction is not.",
       "difficulty": "easy",
       "points": 10
@@ -215,12 +188,7 @@
       "id": "14",
       "question": "Which right is specifically reserved for citizens?",
       "type": "multiple-choice",
-      "options": [
-        "Right to fair trial",
-        "Right to vote",
-        "Right to life",
-        "Freedom from torture"
-      ],
+      "options": ["Right to fair trial", "Right to vote", "Right to life", "Freedom from torture"],
       "correctAnswer": 1,
       "explanation": "Voting is reserved for citizens.",
       "difficulty": "medium",
@@ -230,10 +198,7 @@
       "id": "15",
       "question": "True or False: Statelessness is a challenge in Nepal’s citizenship system.",
       "type": "true-false",
-      "options": [
-        "True",
-        "False"
-      ],
+      "options": ["True", "False"],
       "correctAnswer": 0,
       "explanation": "Statelessness affects certain populations and is a policy challenge.",
       "difficulty": "medium",
