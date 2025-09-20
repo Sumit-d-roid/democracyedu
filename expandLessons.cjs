@@ -1,27 +1,32 @@
-const fetch = require('node-fetch');
-
-
-
 const fs = require('fs');
 const path = require('path');
 let fetchFn = global.fetch;
 if (!fetchFn) {
-  fetchFn = require('node:fetch');
+  fetchFn = require('node-fetch');
 }
 
 const LESSONS_DIR = './content/lessons';
-const MODEL_URL = 'https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct'; // Larger, richer output
+const GEMINI_API_KEY = 'AIzaSyCEUcunYewJLAurcK9FQbCavt_o6PzIsBA';
+const MODEL_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-// Use fetchFn for compatibility
 async function expandText(text) {
-  const prompt = `Expand this educational content with more examples, case studies, and practical exercises:\n${text}`;
-  const response = await fetchFn(MODEL_URL, {
+  const prompt = `You are an expert educational content writer. Deeply expand and enrich the following information with detailed examples, case studies, practical exercises, and additional explanations. Make the content suitable for intermediate learners and ensure it is relevant to Nepal's constitution and civic education.\n\n${text}`;
+  const response = await fetchFn(MODEL_URL + '?key=' + GEMINI_API_KEY, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ inputs: prompt })
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [
+            { text: prompt }
+          ]
+        }
+      ]
+    })
   });
   const result = await response.json();
-  return result[0]?.generated_text || '';
+  // Gemini returns candidates[0].content.parts[0].text
+  return result.candidates?.[0]?.content?.parts?.[0]?.text || '';
 }
 
 async function processLesson(file) {
