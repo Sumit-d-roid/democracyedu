@@ -139,6 +139,28 @@
         "Periodic progress reporting",
         "Stronger local implementation frameworks"
       ]
+    },
+    {
+      "id": "key-terms-glossary",
+      "title": "Key Terms and Definitions",
+      "content": "This section clarifies important terms frequently used in \"Fundamental Rights\" to make core ideas easier to remember and apply.",
+      "keyPoints": [
+        "Plain-language definitions of core concepts",
+        "Examples that illustrate usage",
+        "Contrast with commonly confused terms",
+        "Memory aids for quick recall"
+      ]
+    },
+    {
+      "id": "quick-recap",
+      "title": "Quick Recap and Reflection",
+      "content": "Use this recap to check your understanding of \"Fundamental Rights\". Try to explain each key point in your own words and note any questions for later review.",
+      "keyPoints": [
+        "Restate concepts briefly from memory",
+        "List two practical implications",
+        "Identify one area needing deeper study",
+        "Plan one action to apply the lesson"
+      ]
     }
   ],
   "summary": [
@@ -149,6 +171,21 @@
     "Affirmative measures pursue substantive—not only formal—equality",
     "Implementation gaps persist in data, funding, and awareness",
     "Strategic litigation catalyzes policy adaptation",
-    "Future focus: impact assessment and transparent progress reviews"
+    "Future focus: impact assessment and transparent progress reviews",
+    "Future focus on evidence, digital tools, and participation"
+  ],
+  "glossary": [
+    {
+      "term": "Fundamental Rights",
+      "definition": "Basic rights guaranteed by the Constitution enforceable through courts."
+    },
+    {
+      "term": "Proportionality",
+      "definition": "A legal test ensuring limitations on rights are necessary and minimally impairing."
+    },
+    {
+      "term": "Habeas Corpus",
+      "definition": "A writ requiring a detained person be brought before a court."
+    }
   ]
 }

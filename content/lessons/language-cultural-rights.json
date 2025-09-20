@@ -104,6 +104,50 @@
         "Culturally responsive pedagogy",
         "Sustainable funding pathways"
       ]
+    },
+    {
+      "id": "case-study-application",
+      "title": "Case Study: Applying Concepts",
+      "content": "A practical scenario demonstrates how principles from \"Language and Cultural Rights\" operate in real life. Consider a local authority decision challenged for compliance with constitutional norms. Analyze actors involved, legal basis, and remedy pathways to understand implementation dynamics.",
+      "keyPoints": [
+        "Translate concepts into real-world steps",
+        "Identify actors, mandates, and processes",
+        "Assess remedies and accountability routes",
+        "Reflect on lessons for future decisions"
+      ]
+    },
+    {
+      "id": "implementation-gaps",
+      "title": "Implementation Gaps and Challenges",
+      "content": "Even with strong legal and policy frameworks, realizing \"Language and Cultural Rights\" can face capacity, coordination, and resource constraints. Data quality and awareness gaps may slow progress and produce uneven outcomes across regions.",
+      "keyPoints": [
+        "Capacity and resource constraints",
+        "Inter-agency coordination needs",
+        "Data and monitoring limitations",
+        "Awareness and access disparities"
+      ]
+    },
+    {
+      "id": "key-terms-glossary",
+      "title": "Key Terms and Definitions",
+      "content": "This section clarifies important terms frequently used in \"Language and Cultural Rights\" to make core ideas easier to remember and apply.",
+      "keyPoints": [
+        "Plain-language definitions of core concepts",
+        "Examples that illustrate usage",
+        "Contrast with commonly confused terms",
+        "Memory aids for quick recall"
+      ]
+    },
+    {
+      "id": "quick-recap",
+      "title": "Quick Recap and Reflection",
+      "content": "Use this recap to check your understanding of \"Language and Cultural Rights\". Try to explain each key point in your own words and note any questions for later review.",
+      "keyPoints": [
+        "Restate concepts briefly from memory",
+        "List two practical implications",
+        "Identify one area needing deeper study",
+        "Plan one action to apply the lesson"
+      ]
     }
   ],
   "summary": [
@@ -114,6 +158,21 @@
     "Globalization pressures mitigated by targeted strategies",
     "Case evidence: bilingual pilots boost literacy & retention",
     "Future: integrated digital corpora & collaboration hubs",
-    "Sustainable funding vital for long-term cultural resilience"
+    "Sustainable funding vital for long-term cultural resilience",
+    "Future focus on evidence, digital tools, and participation"
+  ],
+  "glossary": [
+    {
+      "term": "Mother Tongue Education",
+      "definition": "Right to receive basic education in one’s native language."
+    },
+    {
+      "term": "Cultural Heritage",
+      "definition": "Inherited traditions and artifacts of a community."
+    },
+    {
+      "term": "Language Commission",
+      "definition": "Advisory body on language policies and preservation."
+    }
   ]
 }

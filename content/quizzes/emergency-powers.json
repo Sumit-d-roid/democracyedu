@@ -4,12 +4,240 @@
   "description": "Quiz on constitutional emergency declarations, safeguards, and limitations.",
   "category": "Governance",
   "questions": [
-    {"id":"1","question":"Emergency powers aim to:","type":"multiple-choice","options":["Address crises within legal bounds","Permanently suspend constitution","Eliminate oversight","Extend arbitrary rule"],"correctAnswer":0,"explanation":"They enable rapid response while preserving core norms.","difficulty":"easy","points":10},
-    {"id":"2","question":"True or False: Some rights remain non-derogable during emergencies.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Certain fundamental rights stay protected always.","difficulty":"easy","points":10},
-    {"id":"3","question":"Select safeguards on emergency powers.","type":"multiple-select","options":["Time limits","Legislative approval","Judicial review","Indefinite secret rule"],"correctAnswer":[0,1,2],"explanation":"Temporal, legislative, and judicial checks prevent abuse.","difficulty":"medium","points":15},
-    {"id":"4","question":"Risk of indefinite emergency rule:","type":"multiple-choice","options":["Democratic erosion","Strengthened accountability","Transparent rotation","Enhanced rights"],"correctAnswer":0,"explanation":"Extended emergencies can erode democratic norms.","difficulty":"medium","points":15},
-    {"id":"5","question":"Indicator of proportional emergency measure:","type":"multiple-choice","options":["Narrowly tailored to threat","Unlimited general bans","Permanent surveillance for all","Unbounded decrees"],"correctAnswer":0,"explanation":"Proportionality aligns scope to necessity.","difficulty":"hard","points":20},
-    {"id":"6","question":"Exit strategy feature:","type":"multiple-choice","options":["Sunset triggers review","Automatic indefinite extension","No reporting","Secret annulment"],"correctAnswer":0,"explanation":"Sunsets force formal reconsideration.","difficulty":"medium","points":15},
-    {"id":"7","question":"Oversight body during emergency might:","type":"multiple-choice","options":["Publish compliance reports","Suspend legal standards","Criminalize scrutiny","Block courts"],"correctAnswer":0,"explanation":"Reporting sustains accountability.","difficulty":"medium","points":15}
+    {
+      "id": "1",
+      "question": "Emergency powers aim to:",
+      "type": "multiple-choice",
+      "options": [
+        "Address crises within legal bounds",
+        "Permanently suspend constitution",
+        "Eliminate oversight",
+        "Extend arbitrary rule"
+      ],
+      "correctAnswer": 0,
+      "explanation": "They enable rapid response while preserving core norms.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "True or False: Some rights remain non-derogable during emergencies.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Certain fundamental rights stay protected always.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "3",
+      "question": "Select safeguards on emergency powers.",
+      "type": "multiple-select",
+      "options": [
+        "Time limits",
+        "Legislative approval",
+        "Judicial review",
+        "Indefinite secret rule"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Temporal, legislative, and judicial checks prevent abuse.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "4",
+      "question": "Risk of indefinite emergency rule:",
+      "type": "multiple-choice",
+      "options": [
+        "Democratic erosion",
+        "Strengthened accountability",
+        "Transparent rotation",
+        "Enhanced rights"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Extended emergencies can erode democratic norms.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "5",
+      "question": "Indicator of proportional emergency measure:",
+      "type": "multiple-choice",
+      "options": [
+        "Narrowly tailored to threat",
+        "Unlimited general bans",
+        "Permanent surveillance for all",
+        "Unbounded decrees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Proportionality aligns scope to necessity.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "6",
+      "question": "Exit strategy feature:",
+      "type": "multiple-choice",
+      "options": [
+        "Sunset triggers review",
+        "Automatic indefinite extension",
+        "No reporting",
+        "Secret annulment"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sunsets force formal reconsideration.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "7",
+      "question": "Oversight body during emergency might:",
+      "type": "multiple-choice",
+      "options": [
+        "Publish compliance reports",
+        "Suspend legal standards",
+        "Criminalize scrutiny",
+        "Block courts"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Reporting sustains accountability.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "8",
+      "question": "Select all components that deepen understanding of Emergency Powers.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "9",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "10",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "What is a practical way to connect Emergency Powers to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "13",
+      "question": "Who declares a state of emergency and on whose recommendation?",
+      "type": "multiple-choice",
+      "options": [
+        "Prime Minister alone",
+        "President on Council of Ministers recommendation",
+        "Parliament Speaker",
+        "Chief Justice"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The President declares on recommendation of the Council of Ministers.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "14",
+      "question": "Select rights that cannot be suspended even during emergencies.",
+      "type": "multiple-select",
+      "options": [
+        "Right to life",
+        "Habeas corpus",
+        "Right to vote",
+        "Protection against torture"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core rights like life, habeas corpus, and protection against torture are preserved.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "15",
+      "question": "True or False: Parliament must approve an emergency within 30 days.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Parliamentary approval is required within 30 days.",
+      "difficulty": "easy",
+      "points": 10
+    }
   ]
 }

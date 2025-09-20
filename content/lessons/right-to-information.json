@@ -104,6 +104,39 @@
         "Stronger denial sanctions",
         "Expanded public RTI literacy"
       ]
+    },
+    {
+      "id": "case-study-application",
+      "title": "Case Study: Applying Concepts",
+      "content": "A practical scenario demonstrates how principles from \"Right to Information\" operate in real life. Consider a local authority decision challenged for compliance with constitutional norms. Analyze actors involved, legal basis, and remedy pathways to understand implementation dynamics.",
+      "keyPoints": [
+        "Translate concepts into real-world steps",
+        "Identify actors, mandates, and processes",
+        "Assess remedies and accountability routes",
+        "Reflect on lessons for future decisions"
+      ]
+    },
+    {
+      "id": "key-terms-glossary",
+      "title": "Key Terms and Definitions",
+      "content": "This section clarifies important terms frequently used in \"Right to Information\" to make core ideas easier to remember and apply.",
+      "keyPoints": [
+        "Plain-language definitions of core concepts",
+        "Examples that illustrate usage",
+        "Contrast with commonly confused terms",
+        "Memory aids for quick recall"
+      ]
+    },
+    {
+      "id": "quick-recap",
+      "title": "Quick Recap and Reflection",
+      "content": "Use this recap to check your understanding of \"Right to Information\". Try to explain each key point in your own words and note any questions for later review.",
+      "keyPoints": [
+        "Restate concepts briefly from memory",
+        "List two practical implications",
+        "Identify one area needing deeper study",
+        "Plan one action to apply the lesson"
+      ]
     }
   ],
   "summary": [
@@ -114,6 +147,21 @@
     "Implementation gaps: digitization, metadata, training variability",
     "Case studies show RTI catalyzes corrective governance action",
     "Future: proactive machine‑readable publication & accountability",
-    "Digital literacy expansion increases equitable utilization"
+    "Digital literacy expansion increases equitable utilization",
+    "Future focus on evidence, digital tools, and participation"
+  ],
+  "glossary": [
+    {
+      "term": "RTI",
+      "definition": "Right to request and receive information of public importance."
+    },
+    {
+      "term": "Information Officer",
+      "definition": "Designated official to handle information requests."
+    },
+    {
+      "term": "Proactive Disclosure",
+      "definition": "Publishing information without a specific request."
+    }
   ]
 }

@@ -104,6 +104,50 @@
         "Program budgeting scaling",
         "Predictive analytics utilization"
       ]
+    },
+    {
+      "id": "case-study-application",
+      "title": "Case Study: Applying Concepts",
+      "content": "A practical scenario demonstrates how principles from \"Financial Procedures\" operate in real life. Consider a local authority decision challenged for compliance with constitutional norms. Analyze actors involved, legal basis, and remedy pathways to understand implementation dynamics.",
+      "keyPoints": [
+        "Translate concepts into real-world steps",
+        "Identify actors, mandates, and processes",
+        "Assess remedies and accountability routes",
+        "Reflect on lessons for future decisions"
+      ]
+    },
+    {
+      "id": "implementation-gaps",
+      "title": "Implementation Gaps and Challenges",
+      "content": "Even with strong legal and policy frameworks, realizing \"Financial Procedures\" can face capacity, coordination, and resource constraints. Data quality and awareness gaps may slow progress and produce uneven outcomes across regions.",
+      "keyPoints": [
+        "Capacity and resource constraints",
+        "Inter-agency coordination needs",
+        "Data and monitoring limitations",
+        "Awareness and access disparities"
+      ]
+    },
+    {
+      "id": "key-terms-glossary",
+      "title": "Key Terms and Definitions",
+      "content": "This section clarifies important terms frequently used in \"Financial Procedures\" to make core ideas easier to remember and apply.",
+      "keyPoints": [
+        "Plain-language definitions of core concepts",
+        "Examples that illustrate usage",
+        "Contrast with commonly confused terms",
+        "Memory aids for quick recall"
+      ]
+    },
+    {
+      "id": "quick-recap",
+      "title": "Quick Recap and Reflection",
+      "content": "Use this recap to check your understanding of \"Financial Procedures\". Try to explain each key point in your own words and note any questions for later review.",
+      "keyPoints": [
+        "Restate concepts briefly from memory",
+        "List two practical implications",
+        "Identify one area needing deeper study",
+        "Plan one action to apply the lesson"
+      ]
     }
   ],
   "summary": [
@@ -114,6 +158,21 @@
     "Procurement modernization boosts value & integrity",
     "Case oversight dashboards curb overruns in capital projects",
     "Reform challenges: capacity, data integration, timeliness",
-    "Future: accrual pilots, program budgeting & predictive analytics"
+    "Future: accrual pilots, program budgeting & predictive analytics",
+    "Future focus on evidence, digital tools, and participation"
+  ],
+  "glossary": [
+    {
+      "term": "Appropriation",
+      "definition": "Authorization for government expenditure."
+    },
+    {
+      "term": "Audit",
+      "definition": "Independent examination of financial records."
+    },
+    {
+      "term": "Equalization Grants",
+      "definition": "Transfers to balance resources among jurisdictions."
+    }
   ]
 }

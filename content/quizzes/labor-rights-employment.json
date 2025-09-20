@@ -4,12 +4,239 @@
   "description": "Quiz on labor protections, workplace standards, and employment regulations in Nepal.",
   "category": "Rights",
   "questions": [
-    {"id":"1","question":"Which principle underpins fair labor standards?","type":"multiple-choice","options":["Exploitation","Decent work","Arbitrary dismissal","Child labor"],"correctAnswer":1,"explanation":"Decent work encapsulates fair wages, safety, and dignity.","difficulty":"easy","points":10},
-    {"id":"2","question":"Select protections typically included in labor rights.","type":"multiple-select","options":["Safe workplace","Forced overtime without pay","Collective bargaining","Freedom of association"],"correctAnswer":[0,2,3],"explanation":"Labor rights include safety, unions, and bargaining; forced unpaid overtime violates standards.","difficulty":"medium","points":15},
-    {"id":"3","question":"True or False: Minimum wage policies help mitigate in-work poverty.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Minimum wages set a floor that can reduce extreme low pay.","difficulty":"easy","points":10},
-    {"id":"4","question":"Which factor strengthens enforcement of labor rights?","type":"multiple-choice","options":["Weak inspection systems","Transparent compliance monitoring","Informal-only regulation","Absence of penalties"],"correctAnswer":1,"explanation":"Transparent monitoring and penalties improve compliance.","difficulty":"medium","points":15},
-    {"id":"5","question":"Which situation signifies disguised employment?","type":"multiple-choice","options":["Formal contract with benefits","Independent label but controlled hours & tools","Collective bargaining agreement","Voluntary part-time with autonomy"],"correctAnswer":1,"explanation":"Control without formal employment suggests misclassification.","difficulty":"hard","points":20},
-    {"id":"6","question":"Which is a gender equity measure in workplaces?","type":"multiple-choice","options":["Wage secrecy mandates","Equal pay audits","Dismissal for pregnancy","Mandatory unpaid overtime"],"correctAnswer":1,"explanation":"Equal pay audits detect and reduce unjustified gaps.","difficulty":"medium","points":15},
-    {"id":"7","question":"Which indicator best evaluates decent work progress?","type":"multiple-choice","options":["Executive bonuses only","Occupational injury rates","Stock index volatility","Patent filings"],"correctAnswer":1,"explanation":"Injury rates show workplace safety performance.","difficulty":"easy","points":10}
+    {
+      "id": "1",
+      "question": "Which principle underpins fair labor standards?",
+      "type": "multiple-choice",
+      "options": [
+        "Exploitation",
+        "Decent work",
+        "Arbitrary dismissal",
+        "Child labor"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Decent work encapsulates fair wages, safety, and dignity.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "Select protections typically included in labor rights.",
+      "type": "multiple-select",
+      "options": [
+        "Safe workplace",
+        "Forced overtime without pay",
+        "Collective bargaining",
+        "Freedom of association"
+      ],
+      "correctAnswer": [
+        0,
+        2,
+        3
+      ],
+      "explanation": "Labor rights include safety, unions, and bargaining; forced unpaid overtime violates standards.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "3",
+      "question": "True or False: Minimum wage policies help mitigate in-work poverty.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Minimum wages set a floor that can reduce extreme low pay.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "4",
+      "question": "Which factor strengthens enforcement of labor rights?",
+      "type": "multiple-choice",
+      "options": [
+        "Weak inspection systems",
+        "Transparent compliance monitoring",
+        "Informal-only regulation",
+        "Absence of penalties"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Transparent monitoring and penalties improve compliance.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "5",
+      "question": "Which situation signifies disguised employment?",
+      "type": "multiple-choice",
+      "options": [
+        "Formal contract with benefits",
+        "Independent label but controlled hours & tools",
+        "Collective bargaining agreement",
+        "Voluntary part-time with autonomy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Control without formal employment suggests misclassification.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "6",
+      "question": "Which is a gender equity measure in workplaces?",
+      "type": "multiple-choice",
+      "options": [
+        "Wage secrecy mandates",
+        "Equal pay audits",
+        "Dismissal for pregnancy",
+        "Mandatory unpaid overtime"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Equal pay audits detect and reduce unjustified gaps.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "7",
+      "question": "Which indicator best evaluates decent work progress?",
+      "type": "multiple-choice",
+      "options": [
+        "Executive bonuses only",
+        "Occupational injury rates",
+        "Stock index volatility",
+        "Patent filings"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Injury rates show workplace safety performance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "8",
+      "question": "Select all components that deepen understanding of Labor Rights & Employment.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "9",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "10",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "What is a practical way to connect Labor Rights & Employment to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "13",
+      "question": "Which practices are explicitly prohibited under labor rights provisions?",
+      "type": "multiple-select",
+      "options": [
+        "Forced labor",
+        "Child labor",
+        "Collective bargaining",
+        "Safety inspections"
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "explanation": "Forced and child labor are prohibited; collective bargaining and inspections are part of rights/enforcement.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "14",
+      "question": "True or False: Social security can include health, accident, and retirement benefits.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Nepal’s social security framework typically includes health, accident, and retirement benefits.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "15",
+      "question": "Which bodies primarily enforce labor rights disputes?",
+      "type": "multiple-choice",
+      "options": [
+        "Parliamentary committees",
+        "Labor offices and tribunals",
+        "Election Commission",
+        "Press Council"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Labor offices and tribunals handle enforcement and dispute resolution.",
+      "difficulty": "medium",
+      "points": 15
+    }
   ]
 }

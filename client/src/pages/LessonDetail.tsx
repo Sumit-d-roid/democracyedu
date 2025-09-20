@@ -351,6 +351,22 @@ export default function LessonDetail() {
                     </div>
                   </div>
                 )}
+
+                {/* Glossary Section */}
+                {lesson.glossary && lesson.glossary.length > 0 && (
+                  <div className="pt-6 border-t">
+                    <h3 className="text-xl font-semibold mb-2">{t('glossary.title')}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{t('glossary.description')}</p>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {lesson.glossary.map((item, idx) => (
+                        <div key={idx} className="border rounded-md p-4">
+                          <div className="font-medium text-primary">{item.term}</div>
+                          <div className="text-sm mt-1">{item.definition}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>

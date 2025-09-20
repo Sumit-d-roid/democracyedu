@@ -4,12 +4,240 @@
   "description": "Quiz on civic responsibilities, constitutional loyalty, and public ethics.",
   "category": "Civic",
   "questions": [
-    {"id":"1","question":"A fundamental civic duty aims to:","type":"multiple-choice","options":["Undermine rule of law","Promote constitutional adherence","Enable tax evasion","Block public cooperation"],"correctAnswer":1,"explanation":"Duties reinforce respect for constitutional order.","difficulty":"easy","points":10},
-    {"id":"2","question":"True or False: Civic duties complement rights by fostering reciprocity.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Duties and rights are interdependent.","difficulty":"easy","points":10},
-    {"id":"3","question":"Select examples of civic participation.","type":"multiple-select","options":["Jury or community service","Informed voting","Lawful tax payment","Systematic misinformation"],"correctAnswer":[0,1,2],"explanation":"Service, voting, and tax compliance sustain institutions.","difficulty":"medium","points":15},
-    {"id":"4","question":"Ethical public conduct includes:","type":"multiple-choice","options":["Conflict disclosure","Concealed corruption","Abuse of office","Retaliation against critics"],"correctAnswer":0,"explanation":"Disclosure prevents hidden conflicts.","difficulty":"medium","points":15},
-    {"id":"5","question":"Indicator of civic responsibility culture:","type":"multiple-choice","options":["Volunteerism rates","Chronic disengagement","Deliberate non-compliance","Persistent apathy"],"correctAnswer":0,"explanation":"Volunteerism signals active responsibility.","difficulty":"hard","points":20},
-    {"id":"6","question":"Community resilience strengthened by:","type":"multiple-choice","options":["Mutual aid networks","Intentional fragmentation","Disaster misinformation","Excluding collaboration"],"correctAnswer":0,"explanation":"Mutual aid fosters adaptive response.","difficulty":"medium","points":15},
-    {"id":"7","question":"Civic education programs help by:","type":"multiple-choice","options":["Increasing informed engagement","Suppressing awareness","Eliminating dialogue","Spreading ignorance"],"correctAnswer":0,"explanation":"Education empowers constructive participation.","difficulty":"medium","points":15}
+    {
+      "id": "1",
+      "question": "A fundamental civic duty aims to:",
+      "type": "multiple-choice",
+      "options": [
+        "Undermine rule of law",
+        "Promote constitutional adherence",
+        "Enable tax evasion",
+        "Block public cooperation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Duties reinforce respect for constitutional order.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "True or False: Civic duties complement rights by fostering reciprocity.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Duties and rights are interdependent.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "3",
+      "question": "Select examples of civic participation.",
+      "type": "multiple-select",
+      "options": [
+        "Jury or community service",
+        "Informed voting",
+        "Lawful tax payment",
+        "Systematic misinformation"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Service, voting, and tax compliance sustain institutions.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "4",
+      "question": "Ethical public conduct includes:",
+      "type": "multiple-choice",
+      "options": [
+        "Conflict disclosure",
+        "Concealed corruption",
+        "Abuse of office",
+        "Retaliation against critics"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Disclosure prevents hidden conflicts.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "5",
+      "question": "Indicator of civic responsibility culture:",
+      "type": "multiple-choice",
+      "options": [
+        "Volunteerism rates",
+        "Chronic disengagement",
+        "Deliberate non-compliance",
+        "Persistent apathy"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Volunteerism signals active responsibility.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "6",
+      "question": "Community resilience strengthened by:",
+      "type": "multiple-choice",
+      "options": [
+        "Mutual aid networks",
+        "Intentional fragmentation",
+        "Disaster misinformation",
+        "Excluding collaboration"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Mutual aid fosters adaptive response.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "7",
+      "question": "Civic education programs help by:",
+      "type": "multiple-choice",
+      "options": [
+        "Increasing informed engagement",
+        "Suppressing awareness",
+        "Eliminating dialogue",
+        "Spreading ignorance"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Education empowers constructive participation.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "8",
+      "question": "Select all components that deepen understanding of Fundamental Duties of Citizens.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "9",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "10",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "What is a practical way to connect Fundamental Duties of Citizens to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "13",
+      "question": "Which of the following are Fundamental Duties?",
+      "type": "multiple-select",
+      "options": [
+        "Obey the law",
+        "Participate in democratic processes",
+        "Exploit natural resources recklessly",
+        "Promote social harmony"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Duties include obeying law, engaging democratically, and promoting harmony; reckless exploitation is contrary to duties.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "14",
+      "question": "True or False: Protecting forests, rivers, and biodiversity is part of environmental responsibilities.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Environmental protection is a core duty.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "15",
+      "question": "Which area relates to culture and knowledge duties?",
+      "type": "multiple-choice",
+      "options": [
+        "Ignoring education",
+        "Promoting education and research",
+        "Destroying heritage",
+        "Censorship of language"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Duties include promoting education, research, and cultural preservation.",
+      "difficulty": "hard",
+      "points": 20
+    }
   ]
 }

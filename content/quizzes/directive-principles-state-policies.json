@@ -4,12 +4,240 @@
   "description": "Quiz on guiding principles shaping governance and social justice objectives.",
   "category": "Civic",
   "questions": [
-    {"id":"1","question":"Directive principles are typically:","type":"multiple-choice","options":["Non-justiciable guiding norms","Criminal statutes","Private contracts","Judicial decrees"],"correctAnswer":0,"explanation":"They guide policy but aren't directly enforceable claims.","difficulty":"easy","points":10},
-    {"id":"2","question":"True or False: They influence interpretation of constitutional provisions.","type":"true-false","options":["True","False"],"correctAnswer":0,"explanation":"Courts may use them as interpretive context.","difficulty":"easy","points":10},
-    {"id":"3","question":"Select themes often found in directive principles.","type":"multiple-select","options":["Social justice","Environmental stewardship","Public welfare","Private vendetta"],"correctAnswer":[0,1,2],"explanation":"They emphasize welfare, justice, sustainability.","difficulty":"medium","points":15},
-    {"id":"4","question":"Policy alignment indicator:","type":"multiple-choice","options":["Budget allocations reflect priority principles","Chronic neglect of stated goals","Unrelated ad-hoc spending","Opaque divergence"],"correctAnswer":0,"explanation":"Resource alignment shows operationalization.","difficulty":"medium","points":15},
-    {"id":"5","question":"Risk of ignoring principles:","type":"multiple-choice","options":["Policy incoherence","Enhanced coherence","Improved equity","Strategic consistency"],"correctAnswer":0,"explanation":"Ignoring them leads to fragmented governance.","difficulty":"hard","points":20},
-    {"id":"6","question":"Monitoring progress tool:","type":"multiple-choice","options":["Indicator dashboards","Eliminating data","Untracked assertions","Closed metrics"],"correctAnswer":0,"explanation":"Dashboards support accountability.","difficulty":"medium","points":15},
-    {"id":"7","question":"Principles foster evolution by:","type":"multiple-choice","options":["Guiding long-term policy direction","Preventing adaptation","Locking outdated norms","Blocking innovation"],"correctAnswer":0,"explanation":"They serve as a compass for progressive realization.","difficulty":"medium","points":15}
+    {
+      "id": "1",
+      "question": "Directive principles are typically:",
+      "type": "multiple-choice",
+      "options": [
+        "Non-justiciable guiding norms",
+        "Criminal statutes",
+        "Private contracts",
+        "Judicial decrees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "They guide policy but aren't directly enforceable claims.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "True or False: They influence interpretation of constitutional provisions.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Courts may use them as interpretive context.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "3",
+      "question": "Select themes often found in directive principles.",
+      "type": "multiple-select",
+      "options": [
+        "Social justice",
+        "Environmental stewardship",
+        "Public welfare",
+        "Private vendetta"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "They emphasize welfare, justice, sustainability.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "4",
+      "question": "Policy alignment indicator:",
+      "type": "multiple-choice",
+      "options": [
+        "Budget allocations reflect priority principles",
+        "Chronic neglect of stated goals",
+        "Unrelated ad-hoc spending",
+        "Opaque divergence"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Resource alignment shows operationalization.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "5",
+      "question": "Risk of ignoring principles:",
+      "type": "multiple-choice",
+      "options": [
+        "Policy incoherence",
+        "Enhanced coherence",
+        "Improved equity",
+        "Strategic consistency"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Ignoring them leads to fragmented governance.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "6",
+      "question": "Monitoring progress tool:",
+      "type": "multiple-choice",
+      "options": [
+        "Indicator dashboards",
+        "Eliminating data",
+        "Untracked assertions",
+        "Closed metrics"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dashboards support accountability.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "7",
+      "question": "Principles foster evolution by:",
+      "type": "multiple-choice",
+      "options": [
+        "Guiding long-term policy direction",
+        "Preventing adaptation",
+        "Locking outdated norms",
+        "Blocking innovation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "They serve as a compass for progressive realization.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "8",
+      "question": "Select all components that deepen understanding of Directive Principles & State Policies.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "9",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "10",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "What is a practical way to connect Directive Principles & State Policies to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "13",
+      "question": "Directive Principles, Policies and Obligations are in which Part?",
+      "type": "multiple-choice",
+      "options": [
+        "Part 2",
+        "Part 3",
+        "Part 4",
+        "Part 5"
+      ],
+      "correctAnswer": 2,
+      "explanation": "They are in Part 4 of the Constitution (Articles 50–55).",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "14",
+      "question": "Select accurate statements about Directive Principles.",
+      "type": "multiple-select",
+      "options": [
+        "Guide laws and policies",
+        "Directly enforceable in courts",
+        "State must report progress",
+        "Promote inclusive and sustainable development"
+      ],
+      "correctAnswer": [
+        0,
+        2,
+        3
+      ],
+      "explanation": "They guide policy, require reporting, and promote inclusive/sustainable goals; they are not directly enforceable.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "15",
+      "question": "True or False: Biodiversity protection and climate mitigation are included in State Policies.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Environmental protection is noted in State Policies.",
+      "difficulty": "medium",
+      "points": 15
+    }
   ]
 }

@@ -8,7 +8,12 @@
       "id": "1",
       "question": "Which article of Nepal's Constitution deals with the Right to Equality?",
       "type": "multiple-choice",
-      "options": ["Article 16", "Article 17", "Article 18", "Article 19"],
+      "options": [
+        "Article 16",
+        "Article 17",
+        "Article 18",
+        "Article 19"
+      ],
       "correctAnswer": 2,
       "explanation": "Article 18 of Nepal's Constitution guarantees the Right to Equality, ensuring all citizens are equal before the law.",
       "difficulty": "medium",
@@ -18,7 +23,12 @@
       "id": "2",
       "question": "The Right to Information is guaranteed under which article?",
       "type": "multiple-choice",
-      "options": ["Article 27", "Article 28", "Article 29", "Article 30"],
+      "options": [
+        "Article 27",
+        "Article 28",
+        "Article 29",
+        "Article 30"
+      ],
       "correctAnswer": 0,
       "explanation": "Article 27 of the Constitution guarantees the Right to Information, ensuring citizens can access information from public bodies.",
       "difficulty": "medium",
@@ -28,8 +38,17 @@
       "id": "3",
       "question": "Which of the following are considered components of freedom rights (Articles 16-17)?",
       "type": "multiple-select",
-      "options": ["Freedom of peaceful assembly", "Right to live with dignity", "Freedom from taxation", "Freedom of expression"],
-      "correctAnswer": [0,1,3],
+      "options": [
+        "Freedom of peaceful assembly",
+        "Right to live with dignity",
+        "Freedom from taxation",
+        "Freedom of expression"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
       "explanation": "Freedom rights include dignity (Art 16) and freedoms of expression and peaceful assembly (Art 17); there is no 'freedom from taxation'.",
       "difficulty": "hard",
       "points": 20,
@@ -39,7 +58,10 @@
       "id": "4",
       "question": "True or False: Untouchability practices are prohibited and punishable under the Right to Equality provisions.",
       "type": "true-false",
-      "options": ["True", "False"],
+      "options": [
+        "True",
+        "False"
+      ],
       "correctAnswer": 0,
       "explanation": "Article 18 explicitly prohibits untouchability and caste-based discrimination.",
       "difficulty": "easy",
@@ -49,7 +71,12 @@
       "id": "5",
       "question": "Which right best supports transparency and combats corruption?",
       "type": "multiple-choice",
-      "options": ["Right to Privacy", "Right to Information", "Right to Property", "Right to Religion"],
+      "options": [
+        "Right to Privacy",
+        "Right to Information",
+        "Right to Property",
+        "Right to Religion"
+      ],
       "correctAnswer": 1,
       "explanation": "The Right to Information enables citizens to request and scrutinize public records, aiding transparency.",
       "difficulty": "easy",
@@ -59,7 +86,12 @@
       "id": "6",
       "question": "Progressive realization most directly applies to which cluster of rights?",
       "type": "multiple-choice",
-      "options": ["Civil and political rights", "Economic and social rights", "Freedom rights", "Electoral rights"],
+      "options": [
+        "Civil and political rights",
+        "Economic and social rights",
+        "Freedom rights",
+        "Electoral rights"
+      ],
       "correctAnswer": 1,
       "explanation": "Economic and social rights (education, health, food) are typically implemented progressively due to resource constraints.",
       "difficulty": "medium",
@@ -69,7 +101,12 @@
       "id": "7",
       "question": "A petitioner seeks a court order compelling an authority to provide access to public information wrongfully denied. Which writ-like remedy aligns best?",
       "type": "multiple-choice",
-      "options": ["Habeas corpus", "Mandamus", "Certiorari", "Prohibition"],
+      "options": [
+        "Habeas corpus",
+        "Mandamus",
+        "Certiorari",
+        "Prohibition"
+      ],
       "correctAnswer": 1,
       "explanation": "Mandamus directs a public authority to perform a duty it is legally obliged to fulfill.",
       "difficulty": "hard",
@@ -80,7 +117,12 @@
       "id": "8",
       "question": "Which principle helps courts assess if a restriction on freedom of expression is lawful?",
       "type": "multiple-choice",
-      "options": ["Proportionality", "Retroactivity", "Indefeasibility", "Vicarious liability"],
+      "options": [
+        "Proportionality",
+        "Retroactivity",
+        "Indefeasibility",
+        "Vicarious liability"
+      ],
       "correctAnswer": 0,
       "explanation": "Proportionality tests necessity and minimal impairment when restricting fundamental rights.",
       "difficulty": "medium",
@@ -90,11 +132,140 @@
       "id": "9",
       "question": "Which statement best distinguishes formal from substantive equality?",
       "type": "multiple-choice",
-      "options": ["Formal equality allows differential treatment; substantive forbids it always", "Formal equality treats likes alike; substantive considers outcomes and historical disadvantage", "Substantive equality ignores context; formal equality emphasizes context", "They are identical concepts"],
+      "options": [
+        "Formal equality allows differential treatment; substantive forbids it always",
+        "Formal equality treats likes alike; substantive considers outcomes and historical disadvantage",
+        "Substantive equality ignores context; formal equality emphasizes context",
+        "They are identical concepts"
+      ],
       "correctAnswer": 1,
       "explanation": "Formal equality focuses on identical treatment; substantive equality evaluates whether outcomes address historical disadvantage.",
       "difficulty": "hard",
       "points": 20
+    },
+    {
+      "id": "10",
+      "question": "Select all components that deepen understanding of Fundamental Rights.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "13",
+      "question": "What is a practical way to connect Fundamental Rights to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "14",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "15",
+      "question": "Which article prohibits untouchability and caste-based discrimination?",
+      "type": "multiple-choice",
+      "options": [
+        "Article 16",
+        "Article 17",
+        "Article 18",
+        "Article 31"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 18 (Right to Equality) prohibits untouchability and caste-based discrimination.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "16",
+      "question": "Which writ compels a public authority to perform a legal duty?",
+      "type": "multiple-choice",
+      "options": [
+        "Habeas corpus",
+        "Mandamus",
+        "Certiorari",
+        "Prohibition"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mandamus directs a public authority to perform a required duty.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "17",
+      "question": "True or False: Economic and social rights are typically realized progressively.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "These rights depend on resource availability and are implemented over time.",
+      "difficulty": "easy",
+      "points": 10
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { render, cleanup } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import DailyGoalBar from '../client/src/components/DailyGoalBar';
 import { ProgressProvider } from '../client/src/contexts/ProgressContext';
 import { LanguageProvider } from '../client/src/contexts/LanguageContext';
@@ -17,16 +18,19 @@ describe('DailyGoalBar UI', () => {
   });
 
   it('renders without crashing and shows numbers', () => {
-    const { getByText } = render(
-      <LanguageProvider>
-        <ProgressProvider>
-          <DailyGoalBar />
-        </ProgressProvider>
-      </LanguageProvider>
-    );
+    let utils: ReturnType<typeof render> | null = null;
+    act(() => {
+      utils = render(
+        <LanguageProvider>
+          <ProgressProvider>
+            <DailyGoalBar />
+          </ProgressProvider>
+        </LanguageProvider>
+      );
+    });
 
     // Default progress is 0/20 per ProgressContext default
-    expect(getByText(/0\/20/)).toBeInTheDocument();
+    expect(utils!.getByText(/0\/20/)).toBeInTheDocument();
   });
 
   it('shows Completed when goal reached', () => {
@@ -46,14 +50,17 @@ describe('DailyGoalBar UI', () => {
       bestStreak: 0,
     }));
 
-    const { getByText } = render(
-      <LanguageProvider>
-        <ProgressProvider>
-          <DailyGoalBar />
-        </ProgressProvider>
-      </LanguageProvider>
-    );
+    let utils: ReturnType<typeof render> | null = null;
+    act(() => {
+      utils = render(
+        <LanguageProvider>
+          <ProgressProvider>
+            <DailyGoalBar />
+          </ProgressProvider>
+        </LanguageProvider>
+      );
+    });
 
-    expect(getByText(/Completed/i)).toBeInTheDocument();
+    expect(utils!.getByText(/Completed/i)).toBeInTheDocument();
   });
 });

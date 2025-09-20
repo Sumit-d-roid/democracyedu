@@ -4,12 +4,242 @@
   "description": "Quiz on transparency, public access to records, and accountability frameworks.",
   "category": "Rights",
   "questions": [
-    {"id":"1","question":"Core purpose of Right to Information?","type":"multiple-choice","options":["Restrict civic scrutiny","Enable public oversight","Privatize records","Monetize all data"],"correctAnswer":1,"explanation":"RTI empowers citizens to scrutinize governance.","difficulty":"easy","points":10},
-    {"id":"2","question":"True or False: All security documents are permanently exempt.","type":"true-false","options":["True","False"],"correctAnswer":1,"explanation":"Exemptions are usually narrow, time-bound, and harm-tested.","difficulty":"medium","points":15},
-    {"id":"3","question":"Select legitimate grounds to deny an RTI request (typical).","type":"multiple-select","options":["National security risk","Protection of whistleblowers","Personal privacy invasion","Embarrassment of officials"],"correctAnswer":[0,1,2],"explanation":"Security, privacy, and safety justify denials; embarrassment is invalid.","difficulty":"medium","points":15},
-    {"id":"4","question":"Which mechanism improves proactive disclosure?","type":"multiple-choice","options":["Fragmented filing","Centralized open data portal","Manual-only registers","Undefined retention"],"correctAnswer":1,"explanation":"Centralized portals standardize release and access.","difficulty":"medium","points":15},
-    {"id":"5","question":"Appeal escalation pathway often includes:","type":"multiple-choice","options":["Initial authority -> appellate body -> court","Directly to international tribunal","Secret arbitration only","No escalation allowed"],"correctAnswer":0,"explanation":"Structured appeals ensure procedural fairness.","difficulty":"easy","points":10},
-    {"id":"6","question":"Which indicator signals RTI system health?","type":"multiple-choice","options":["Average response time","Social media likes","Office furniture cost","Number of sealed archives"],"correctAnswer":0,"explanation":"Response timeliness measures administrative performance.","difficulty":"easy","points":10},
-    {"id":"7","question":"Best practice for redactions:","type":"multiple-choice","options":["Remove unrelated unrequested pages","Black out entire document","Narrowly redact sensitive sections","Invent replacement text"],"correctAnswer":2,"explanation":"Redactions should be minimal and specific.","difficulty":"hard","points":20}
+    {
+      "id": "1",
+      "question": "Core purpose of Right to Information?",
+      "type": "multiple-choice",
+      "options": [
+        "Restrict civic scrutiny",
+        "Enable public oversight",
+        "Privatize records",
+        "Monetize all data"
+      ],
+      "correctAnswer": 1,
+      "explanation": "RTI empowers citizens to scrutinize governance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "question": "True or False: All security documents are permanently exempt.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Exemptions are usually narrow, time-bound, and harm-tested.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "3",
+      "question": "Select legitimate grounds to deny an RTI request (typical).",
+      "type": "multiple-select",
+      "options": [
+        "National security risk",
+        "Protection of whistleblowers",
+        "Personal privacy invasion",
+        "Embarrassment of officials"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Security, privacy, and safety justify denials; embarrassment is invalid.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "4",
+      "question": "Which mechanism improves proactive disclosure?",
+      "type": "multiple-choice",
+      "options": [
+        "Fragmented filing",
+        "Centralized open data portal",
+        "Manual-only registers",
+        "Undefined retention"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Centralized portals standardize release and access.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "5",
+      "question": "Appeal escalation pathway often includes:",
+      "type": "multiple-choice",
+      "options": [
+        "Initial authority -> appellate body -> court",
+        "Directly to international tribunal",
+        "Secret arbitration only",
+        "No escalation allowed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Structured appeals ensure procedural fairness.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "6",
+      "question": "Which indicator signals RTI system health?",
+      "type": "multiple-choice",
+      "options": [
+        "Average response time",
+        "Social media likes",
+        "Office furniture cost",
+        "Number of sealed archives"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Response timeliness measures administrative performance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "7",
+      "question": "Best practice for redactions:",
+      "type": "multiple-choice",
+      "options": [
+        "Remove unrelated unrequested pages",
+        "Black out entire document",
+        "Narrowly redact sensitive sections",
+        "Invent replacement text"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Redactions should be minimal and specific.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "8",
+      "question": "Select all components that deepen understanding of Right to Information.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "9",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "10",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "11",
+      "question": "What is a practical way to connect Right to Information to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "12",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "13",
+      "question": "Select obligations of public bodies under RTI.",
+      "type": "multiple-select",
+      "options": [
+        "Appoint Information Officers",
+        "Maintain records",
+        "Proactively disclose certain info",
+        "Delete requests after 24 hours"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "They must appoint officers, maintain records, and proactively disclose specific information.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "14",
+      "question": "Which body oversees RTI implementation?",
+      "type": "multiple-choice",
+      "options": [
+        "Supreme Court",
+        "National Information Commission",
+        "Audit Office",
+        "Public Service Commission"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The National Information Commission oversees implementation and compliance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "15",
+      "question": "RTI exemptions are typically justified by:",
+      "type": "multiple-choice",
+      "options": [
+        "Public interest tests and guidelines",
+        "Discretion without criteria",
+        "Budget availability",
+        "Media opinion"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Exemptions rely on public interest tests and clear guidelines.",
+      "difficulty": "hard",
+      "points": 20
+    }
   ]
 }

@@ -21,7 +21,16 @@ export const LessonContentSchema = z.object({
   sections: z.array(LessonSectionSchema).min(1),
   summary: z.array(z.string().min(1)).min(1),
   // Traceability to constitutional articles / parts
-  sourceRefs: z.array(z.object({ article: z.string().min(1), part: z.string().optional(), note: z.string().optional() })).optional()
+  sourceRefs: z.array(z.object({ article: z.string().min(1), part: z.string().optional(), note: z.string().optional() })).optional(),
+  // Optional structured glossary for key terms
+  glossary: z
+    .array(
+      z.object({
+        term: z.string().min(1),
+        definition: z.string().min(1),
+      })
+    )
+    .optional()
 });
 
 // Quiz question schema

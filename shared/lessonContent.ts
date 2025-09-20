@@ -14,6 +14,7 @@ export interface LessonContent {
   estimatedTime: string;
   sections: LessonSection[];
   summary: string[];
+  glossary?: { term: string; definition: string }[];
 }
 
 export const lessonContents: Record<string, LessonContent> = {

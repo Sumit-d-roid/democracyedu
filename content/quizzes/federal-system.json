@@ -8,7 +8,12 @@
       "id": "1",
       "question": "How many provinces does Nepal have under its federal structure?",
       "type": "multiple-choice",
-      "options": ["5", "6", "7", "8"],
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
       "correctAnswer": 2,
       "explanation": "Nepal is constitutionally divided into seven provinces.",
       "difficulty": "easy",
@@ -18,7 +23,12 @@
       "id": "2",
       "question": "Which level typically handles local water supply and sanitation services?",
       "type": "multiple-choice",
-      "options": ["Federal", "Provincial", "Local", "International"],
+      "options": [
+        "Federal",
+        "Provincial",
+        "Local",
+        "International"
+      ],
       "correctAnswer": 2,
       "explanation": "Local governments oversee basic service delivery like water and sanitation.",
       "difficulty": "easy",
@@ -28,8 +38,17 @@
       "id": "3",
       "question": "Select the elements commonly associated with fiscal federalism.",
       "type": "multiple-select",
-      "options": ["Revenue assignment", "Equalization transfers", "Judicial impeachment", "Intergovernmental grants"],
-      "correctAnswer": [0,1,3],
+      "options": [
+        "Revenue assignment",
+        "Equalization transfers",
+        "Judicial impeachment",
+        "Intergovernmental grants"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
       "explanation": "Fiscal federalism concerns revenue assignment, transfers, and grants—not judicial impeachment.",
       "difficulty": "medium",
       "points": 15
@@ -38,7 +57,10 @@
       "id": "4",
       "question": "True or False: All provinces possess identical fiscal capacity and administrative resources.",
       "type": "true-false",
-      "options": ["True", "False"],
+      "options": [
+        "True",
+        "False"
+      ],
       "correctAnswer": 1,
       "explanation": "Resource disparities necessitate equalization and capacity-building measures.",
       "difficulty": "easy",
@@ -48,7 +70,12 @@
       "id": "5",
       "question": "Which coordination body/tool helps manage overlapping mandates across levels?",
       "type": "multiple-choice",
-      "options": ["Intergovernmental forums", "Electoral rolls", "Court registries", "Diplomatic missions"],
+      "options": [
+        "Intergovernmental forums",
+        "Electoral rolls",
+        "Court registries",
+        "Diplomatic missions"
+      ],
       "correctAnswer": 0,
       "explanation": "Forums and councils negotiate overlaps in shared functional areas.",
       "difficulty": "medium",
@@ -58,7 +85,12 @@
       "id": "6",
       "question": "A key challenge in early devolution phases is:",
       "type": "multiple-choice",
-      "options": ["Excess surplus capacity everywhere", "Uniform revenue distribution", "Administrative capacity gaps", "Elimination of local discretion"],
+      "options": [
+        "Excess surplus capacity everywhere",
+        "Uniform revenue distribution",
+        "Administrative capacity gaps",
+        "Elimination of local discretion"
+      ],
       "correctAnswer": 2,
       "explanation": "Capacity gaps often slow effective devolution and service improvement.",
       "difficulty": "medium",
@@ -68,7 +100,12 @@
       "id": "7",
       "question": "Which metric best evaluates local service delivery impact?",
       "type": "multiple-choice",
-      "options": ["Number of constitutional amendments", "Citizen satisfaction and coverage outcomes", "Judicial vacancy count", "Size of national cabinet"],
+      "options": [
+        "Number of constitutional amendments",
+        "Citizen satisfaction and coverage outcomes",
+        "Judicial vacancy count",
+        "Size of national cabinet"
+      ],
       "correctAnswer": 1,
       "explanation": "Service impact is assessed via coverage, quality, and citizen satisfaction, not cabinet size.",
       "difficulty": "hard",
@@ -78,11 +115,144 @@
       "id": "8",
       "question": "Which characteristic distinguishes Nepal's federal model in its consolidation phase?",
       "type": "multiple-choice",
-      "options": ["Total centralization", "Inclusion-focused adaptation", "Absence of local governments", "Fixed unchanging institutional design"],
+      "options": [
+        "Total centralization",
+        "Inclusion-focused adaptation",
+        "Absence of local governments",
+        "Fixed unchanging institutional design"
+      ],
       "correctAnswer": 1,
       "explanation": "An emphasis on inclusion and adaptive evolution marks Nepal's federal consolidation.",
       "difficulty": "hard",
       "points": 20
+    },
+    {
+      "id": "9",
+      "question": "Select all components that deepen understanding of Federal System Quiz.",
+      "type": "multiple-select",
+      "options": [
+        "Clear definitions and key terms",
+        "Legal/institutional frameworks where applicable",
+        "Irrelevant myths unrelated to the topic",
+        "Practical examples or case studies"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Core concepts, applicable frameworks, and practical examples build robust understanding; unrelated myths do not.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "10",
+      "question": "Case studies help apply abstract concepts to real situations.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Applying concepts in realistic contexts strengthens comprehension and recall.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "11",
+      "question": "Which study approach most improves retention of key ideas?",
+      "type": "multiple-choice",
+      "options": [
+        "Passive re-reading only",
+        "Active recall with practice questions",
+        "Ignoring difficult sections",
+        "Cramming without breaks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Active recall and practice yield better retention than passive reading or cramming.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "12",
+      "question": "What is a practical way to connect Federal System Quiz to real-world decisions?",
+      "type": "multiple-choice",
+      "options": [
+        "Avoid examples to stay abstract",
+        "Relate concepts to local news or policies",
+        "Memorize without context",
+        "Focus only on unrelated trivia"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linking concepts to current events and local policies improves understanding and relevance.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": "13",
+      "question": "Select good strategies to evaluate claims about this topic.",
+      "type": "multiple-select",
+      "options": [
+        "Check primary legal/policy sources",
+        "Consider institutional mandates",
+        "Rely solely on anonymous social posts",
+        "Look for credible data and context"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Verifying against primary sources, mandates, and credible data yields more reliable conclusions.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "14",
+      "question": "Which functions are exclusive to the federal level?",
+      "type": "multiple-select",
+      "options": [
+        "Foreign policy",
+        "National defense",
+        "Primary education delivery",
+        "Currency issuance"
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Foreign policy, defense, and currency are federal responsibilities.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": "15",
+      "question": "The mixed electoral system combines which two models?",
+      "type": "multiple-choice",
+      "options": [
+        "STV and RCV",
+        "FPTP and PR",
+        "MMP and AV",
+        "Block and Limited"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Nepal uses First-Past-the-Post and Proportional Representation.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": "16",
+      "question": "True or False: All levels of government in Nepal have equal powers.",
+      "type": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Powers are distinct and coordinated, not equal across levels.",
+      "difficulty": "easy",
+      "points": 10
     }
   ]
 }
